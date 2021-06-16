@@ -1,0 +1,23 @@
+{
+  "name": "whoisnnamdi.com",
+  "version": "1.0.0",
+  "description": "Personal site",
+  "main": "index.js",
+  "repository": "https://github.com/whoisnnamdi/whoisnnamdi.com.git",
+  "author": "Nnamdi Iregbulem <30379073+whoisnnamdi@users.noreply.github.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts":{
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.2.6",
+    "next": "^11.0.0",
+    "postcss": "^8.3.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "tailwindcss": "^2.1.4"
+  }
+}
