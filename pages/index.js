@@ -1,15 +1,15 @@
 export default function Home () {
     return (
-        <div className="max-w-3xl mx-6 sm:mx-auto mt-10">
+        <div className="max-w-3xl px-6 sm:mx-auto md:px-4 lg:px-0 mt-10">
             <div className="">
-                <div className="flex flex-col sm:flex-row sm:space-x-4 justify-between mb-4">
+                <div className="flex flex-col sm:flex-row sm:space-x-6 justify-between mb-4">
                     <div className="">
                         <h1 className="font-bold text-4xl text-gray-900 mb-4">Hi, I'm Nnamdi</h1>
-                        <h2 className="font-semibold text-md text-gray-500 mb-4">I'm a coder, economist, and venture investor.</h2>
-                        <p className="text-sm font-semibold mb-4">I write good stuff that you should read sometime. Subscribe below, and find my essays just below that.</p>
-                        <p className="text-sm font-semibold mb-4 sm:mb-0">...</p>
+                        <h2 className="font-normal text-2xl text-gray-600 mb-4">I'm a coder, economist, and venture investor.</h2>
+                        <p className="text-xl font-normal mb-4">I write good stuff that you should read sometime. Subscribe below, and find my essays just below that.</p>
+                        <p className="text-xl font-normal mb-4 sm:mb-0">...</p>
                     </div>
-                    <div className="h-60 max-w-80 sm:w-80 rounded-md bg-gray-800">
+                    <div className="h-80 sm:w-2/3 rounded-md bg-gray-800">
                     </div>
                 </div>
                 <div className="py-3 px-4 mb-4 rounded-md bg-blue-100 shadow-md">
