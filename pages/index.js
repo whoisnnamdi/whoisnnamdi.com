@@ -1,6 +1,6 @@
 export default function Home () {
     return (
-        <div className="max-w-2xl sm:mx-auto mt-10 px-5">
+        <div className="max-w-2xl sm:mx-auto mt-10">
             <div className="">
                 <div className="flex flex-col sm:flex-row justify-between mb-4">
                     <div className="">
@@ -25,17 +25,17 @@ export default function Home () {
                 <div className="flex flex-col sm:flex-row justify-between space-y-10 sm:space-x-10 sm:space-y-0">
                     <div className="font-normal text-md text-center py-6 px-6 rounded-md shadow-lg">
                         <p className="text-5xl sm:text-4xl mb-3">🚀</p>
-                        <h2 className="font-bold text-2xl sm:text-xl mb-2">Founders</h2>
+                        <h2 className="font-bold text-2xl sm:text-xl mb-2 text-gray-900">Founders</h2>
                         <p>Here is some test text for the section descriptions</p>
                     </div>
                     <div className="font-normal text-md text-center py-6 px-6 rounded-md shadow-lg">
                         <p className="text-5xl sm:text-4xl mb-3">👨‍💻👩‍💻</p>
-                        <h2 className="font-bold text-2xl sm:text-xl mb-2">Developers</h2>
+                        <h2 className="font-bold text-2xl sm:text-xl mb-2 text-gray-900">Developers</h2>
                         <p>Here is some test text for the section descriptions</p>
                     </div>
                     <div className="font-normal text-md text-center py-6 px-6 rounded-md shadow-lg">
                         <p className="text-5xl sm:text-4xl mb-3">💸</p>
-                        <h2 className="font-bold text-2xl sm:text-xl mb-2">Investors</h2>
+                        <h2 className="font-bold text-2xl sm:text-xl mb-2 text-gray-900">Investors</h2>
                         <p>Here is some test text for the section descriptions</p>
                     </div>
                 </div>
