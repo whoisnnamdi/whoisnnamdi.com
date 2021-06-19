@@ -1,10 +1,49 @@
+import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
+import Navbar from '../components/navbar'
+import Footer from '../components/footer'
+import { getPosts } from '../api/ghost_data'
+import PostPreview from '../components/postpreview'
 import portrait from '../public/images/portrait-color.png'
 
-export default function Home () {
+export async function getStaticProps() {
+    const posts = await getPosts()
+
+    posts.map((post) => {
+        const options = {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+        }
+
+        post.dateFormatted = new Intl.DateTimeFormat('default', options).format(
+            new Date(post.published_at)
+        )
+        
+        post.excerpt = post.excerpt.replace(/\[(.*?)\]/, "")
+
+        const cutoff = 166
+
+        post.excerpt = post.excerpt.substring(0, Math.min(cutoff, post.excerpt.length)) + (post.excerpt.length > cutoff ? "..." : "")
+        post.excerpt = post.excerpt.replace(/\[(.*?)[$^.]/, "")
+    })
+
+    return {
+        props: {
+            posts
+        }
+    }
+}
+
+export default function Home ({ posts }) {
     return (
         <div className="max-w-4xl px-6 sm:mx-auto lg:px-0 mt-10 mb-10">
-            <div className="">
+            <Head>
+                <title>Who Is Nnamdi?</title>
+            </Head>
+            <Navbar />
+            <div className="mb-4 sm:mb-8">
                 <div className="flex flex-col sm:flex-row sm:space-x-4 justify-between mb-4 sm:mb-8">
                     <div className="flex flex-col justify-between mb-4 sm:mb-0 sm:w-2/3 md:w-2/3 lg:w-2/3">
                         <div className="">
@@ -31,23 +70,40 @@ export default function Home () {
                     />
                 </div>
                 <div className="flex flex-col sm:flex-row justify-between space-y-10 sm:space-x-10 sm:space-y-0">
-                    <div className="flex-1 transition duration-500 ease-in-out transform hover:scale-105 font-normal text-md text-center py-10 px-6 rounded-md shadow-lg">
-                        <p className="text-5xl mb-5">🚀</p>
-                        <h2 className="font-bold text-2xl sm:text-2xl mb-2 text-gray-900">Founders</h2>
-                        <p className="text-xl md:text-lg lg:text-xl">The theories and realities of building a valuable tech startup</p>
-                    </div>
-                    <div className="flex-1 transition duration-500 ease-in-out transform hover:scale-105 hover:font-normal text-md text-center py-10 px-6 rounded-md shadow-lg">
-                        <p className="text-5xl mb-5">👨‍💻👩‍💻</p>
-                        <h2 className="font-bold text-2xl sm:text-2xl mb-2 text-gray-900">Developers</h2>
-                        <p className="text-xl md:text-lg lg:text-xl">Software development, tooling, and the careers of software engineers</p>
-                    </div>
-                    <div className="flex-1 transition duration-500 ease-in-out transform hover:scale-105 font-normal text-md text-center py-10 px-6 rounded-md shadow-lg">
-                        <p className="text-5xl mb-5">💸</p>
-                        <h2 className="font-bold text-2xl sm:text-2xl mb-2 text-gray-900">Investors</h2>
-                        <p className="text-xl md:text-lg lg:text-xl">Analyis, charts, and equations for nerdy investors (like myself)</p>
-                    </div>
+                    <Link href="#">
+                        <a className="flex-1 transition duration-500 ease-in-out transform hover:scale-105 font-normal text-md text-center py-10 px-6 rounded-md shadow-lg">
+                            <p className="text-5xl mb-5">🚀</p>
+                            <h2 className="font-bold text-2xl sm:text-2xl mb-2 text-gray-900">Founders</h2>
+                            <p className="text-xl md:text-lg lg:text-xl">The theories and realities of building a valuable tech startup</p>
+                        </a>
+                    </Link>
+                    <Link href="#">
+                        <a className="flex-1 transition duration-500 ease-in-out transform hover:scale-105 font-normal text-md text-center py-10 px-6 rounded-md shadow-lg">
+                            <p className="text-5xl mb-5">👨‍💻👩‍💻</p>
+                            <h2 className="font-bold text-2xl sm:text-2xl mb-2 text-gray-900">Developers</h2>
+                            <p className="text-xl md:text-lg lg:text-xl">Software development, tooling, and the careers of software engineers</p>
+                        </a>
+                    </Link>
+                    <Link href="#">
+                        <a className="flex-1 transition duration-500 ease-in-out transform hover:scale-105 font-normal text-md text-center py-10 px-6 rounded-md shadow-lg">
+                            <p className="text-5xl mb-5">💸</p>
+                            <h2 className="font-bold text-2xl sm:text-2xl mb-2 text-gray-900">Investors</h2>
+                            <p className="text-xl md:text-lg lg:text-xl">Analyis, charts, and equations for nerdy investors (like myself)</p>
+                        </a>
+                    </Link>
                 </div>
             </div>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                Latest Essays
+            </h2>
+            <ul>
+                {posts.slice(0, 5).map((post) => (
+                    <li key={post.key}>
+                        <PostPreview post={post}/>
+                    </li>
+                ))}
+            </ul>
+            <Footer />
         </div>
     );
 }
