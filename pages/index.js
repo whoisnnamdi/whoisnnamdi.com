@@ -3,9 +3,32 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
+import { getPosts } from '../api/ghost_data'
 import portrait from '../public/images/portrait-color.png'
 
-export default function Home () {
+export async function getStaticProps() {
+    const posts = await getPosts()
+
+    posts.map((post) => {
+        const options = {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+        }
+
+        post.dateFormatted = new Intl.DateTimeFormat('default', options).format(
+            new Date(post.published_at)
+        )
+    })
+
+    return {
+        props: {
+            posts
+        }
+    }
+}
+
+export default function Home ({ posts }) {
     return (
         <div className="max-w-4xl px-6 sm:mx-auto lg:px-0 mt-10 mb-10">
             <Head>
@@ -62,6 +85,13 @@ export default function Home () {
                     </Link>
                 </div>
             </div>
+            <ul>
+                {posts.map((post) => (
+                    <li>
+                        {post.title}
+                    </li>
+                ))}
+            </ul>
             <Footer />
         </div>
     );
