@@ -4,7 +4,7 @@ import Image from 'next/image'
 export default function PostPreview ({ post }) {
     return (
         <div className="">
-            <Link href="#">
+            <Link href="[slug]" as={`/${post.slug}`}>
                 <a className="flex flex-row justify-between rounded-lg transition duration-500 ease-in-out transform hover:opacity-80 mb-4">
                     <img
                         src={post.feature_image}
