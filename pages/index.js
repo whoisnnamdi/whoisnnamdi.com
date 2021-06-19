@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
 import { getPosts } from '../api/ghost_data'
+import PostPreview from '../components/postpreview'
 import portrait from '../public/images/portrait-color.png'
 
 export async function getStaticProps() {
@@ -19,6 +20,13 @@ export async function getStaticProps() {
         post.dateFormatted = new Intl.DateTimeFormat('default', options).format(
             new Date(post.published_at)
         )
+        
+        post.excerpt = post.excerpt.replace(/\[(.*?)\]/, "")
+
+        const cutoff = 166
+
+        post.excerpt = post.excerpt.substring(0, Math.min(cutoff, post.excerpt.length)) + (post.excerpt.length > cutoff ? "..." : "")
+        post.excerpt = post.excerpt.replace(/\[(.*?)[$^.]/, "")
     })
 
     return {
@@ -35,7 +43,7 @@ export default function Home ({ posts }) {
                 <title>Who Is Nnamdi?</title>
             </Head>
             <Navbar />
-            <div className="mb-4">
+            <div className="mb-4 sm:mb-8">
                 <div className="flex flex-col sm:flex-row sm:space-x-4 justify-between mb-4 sm:mb-8">
                     <div className="flex flex-col justify-between mb-4 sm:mb-0 sm:w-2/3 md:w-2/3 lg:w-2/3">
                         <div className="">
@@ -85,10 +93,11 @@ export default function Home ({ posts }) {
                     </Link>
                 </div>
             </div>
+            
             <ul>
                 {posts.map((post) => (
-                    <li>
-                        {post.title}
+                    <li key={post.key}>
+                        <PostPreview post={post}/>
                     </li>
                 ))}
             </ul>
