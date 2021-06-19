@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import portrait from '../public/images/portrait-color.png'
 
 export default function Home () {
     return (
@@ -23,7 +24,7 @@ export default function Home () {
                         </form>                   
                     </div>
                     <Image
-                        src="/../public/images/portrait-color.png"
+                        src={portrait}
                         width={346}
                         height={400}
                         className="sm:w-1/3 md:w-1/3 lg:w-1/3 rounded-md"
