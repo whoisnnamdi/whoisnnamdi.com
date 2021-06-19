@@ -93,9 +93,11 @@ export default function Home ({ posts }) {
                     </Link>
                 </div>
             </div>
-            
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                Latest Essays
+            </h2>
             <ul>
-                {posts.map((post) => (
+                {posts.slice(0, 5).map((post) => (
                     <li key={post.key}>
                         <PostPreview post={post}/>
                     </li>
