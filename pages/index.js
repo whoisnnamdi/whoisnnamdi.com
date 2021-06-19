@@ -12,9 +12,11 @@ export default function Home () {
                             <p className="text-xl font-normal mb-4"><span className="font-bold">✨Subscribe below</span>, and find my writing just below that.</p>
                         </div>
                         <form className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-between">
-                            <input className="flex-1 transition duration-500 hover:bg-gray-200 bg-gray-100 sm:w-80 rounded-md px-4 py-2 focus:ring-blue-500 focus:outline-none" />
+                            <input 
+                                placeholder="elon@musk.com"
+                                className="text-gray-500 flex-1 transition duration-500 hover:bg-gray-200 bg-gray-100 sm:w-80 rounded-md px-4 py-2 focus:ring-blue-500 focus:outline-none" />
                             <button className="md:w-1/4 transition duration-500 ease-in-out sm:w-40 rounded-md py-2 px-2 text-white font-semibold bg-blue-500 shadow-md hover:bg-blue-400 focus:outline-none">
-                                Sign Up
+                                Subscribe
                             </button>
                         </form>                   
                     </div>
