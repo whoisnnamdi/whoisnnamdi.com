@@ -71,7 +71,7 @@ export default function Home ({ posts }) {
                 </div>
                 <div className="flex flex-col sm:flex-row justify-between space-y-10 sm:space-x-10 sm:space-y-0">
                     <Link href="#">
-                        <a className="flex-1 transition duration-500 ease-in-out transform hover:scale-105 font-normal text-md text-center py-10 px-6 rounded-xl shadow-lg">
+                        <a className="flex-1 transition duration-500 ease-in-out transform sm:hover:scale-105 font-normal text-md text-center py-10 px-6 rounded-xl shadow-lg">
                             <p className="text-5xl mb-5">🚀</p>
                             <h2 className="font-bold text-2xl sm:text-2xl mb-2 text-gray-900">Founders</h2>
                             <p className="text-xl md:text-lg lg:text-xl">The theories and realities of building a valuable tech startup</p>
