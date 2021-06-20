@@ -4,13 +4,13 @@ import Image from 'next/image'
 export default function PostPreview ({ post }) {
     return (
         <div className="">
-            <Link href="#">
-                <a className="flex flex-row justify-between rounded-lg transition duration-500 ease-in-out transform hover:opacity-80 mb-4">
+            <Link href="[slug]" as={`/${post.slug}`}>
+                <a className="flex flex-col sm:flex-row justify-between rounded-lg shadow-md sm:shadow-none transition duration-500 ease-in-out transform hover:opacity-80 mb-4">
                     <img
                         src={post.feature_image}
-                        className="flex-1 w-1/2 rounded-l-lg" 
+                        className="flex-1 sm:w-1/2 rounded-t-lg sm:rounded-l-lg" 
                     />
-                    <div className="flex-1 py-4 px-8 w1/2">
+                    <div className="flex-1 px-3 py-4 sm:px-8 sm:w-1/2">
                         <h3 className="font-bold text-2xl text-gray-700 mb-4">
                             {post.title}
                         </h3>

@@ -16,3 +16,33 @@ export async function getPosts() {
             console.error(err)
         })
 }
+
+export async function getPost(postSlug) {
+    return await api.posts
+        .read({
+            slug: postSlug
+        })
+        .catch((err) => {
+            console.error(err)
+        })
+}
+
+export async function getPages() {
+    return await api.pages
+        .browse({
+            limit: 'all'
+        })
+        .catch((err) => {
+            console.error(err)
+        })
+}
+
+export async function getPage(pageSlug) {
+    return await api.pages
+        .read({
+            slug: pageSlug
+        })
+        .catch((err) => {
+            console.error(err)
+        })
+}
