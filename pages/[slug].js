@@ -32,7 +32,7 @@ export default function PostPage ({ post }) {
     let _title = post.title
 
     return (
-        <div className="prose max-w-4xl px-6 sm:mx-auto lg:px-0 mt-10 mb-10">
+        <div className="prose md:prose-md lg:prose-lg max-w-4xl px-6 sm:mx-auto lg:px-0 mt-10 mb-10">
             <Head>
                 <title>{_title}</title>
             </Head>
