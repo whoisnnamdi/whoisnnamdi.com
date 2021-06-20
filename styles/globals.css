@@ -5,3 +5,7 @@
 .prose img {
     @apply mx-auto
 }
+
+.prose figcaption {
+    @apply text-center
+}
