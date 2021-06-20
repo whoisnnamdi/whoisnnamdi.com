@@ -98,7 +98,7 @@ export default function Home ({ posts }) {
             </h2>
             <ul>
                 {posts.slice(0, 5).map((post) => (
-                    <li key={post.key}>
+                    <li key={post.id}>
                         <PostPreview post={post}/>
                     </li>
                 ))}
