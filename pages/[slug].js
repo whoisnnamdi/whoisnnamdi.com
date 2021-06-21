@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { getPosts, getPost, getPages, getPage } from '../api/ghost_data'
 import Navbar from '../components/navbar'
+import LinkConverter from '../components/linkconverter'
 
 export async function getStaticPaths() {
     const posts = await getPosts()
@@ -44,7 +45,7 @@ export default function PostPage ({ post }) {
                 src={post.feature_image}
                 className="rounded-lg" 
             />
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            <LinkConverter content={post.html} />
         </div>
     )
 }
