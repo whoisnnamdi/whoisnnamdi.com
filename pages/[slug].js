@@ -31,7 +31,7 @@ export async function getStaticProps({ params }) {
 
 export default function PostPage ({ post }) {
     return (
-        <div className="max-w-4xl sm:mx-auto px-6 mt-8 mb-10">
+        <div className="max-w-4xl sm:mx-auto px-6 mt-8 mb-10 lg:px-0">
             <Head>
                 <meta charSet="utf-8" />
                 <title>{post.title}</title>
@@ -61,7 +61,7 @@ export default function PostPage ({ post }) {
                 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
             </Head>
             <Navbar />
-            <div className="prose md:prose-md lg:prose-lg max-w-4xl sm:mx-auto lg:px-0">
+            <div className="prose md:prose-md lg:prose-lg max-w-4xl sm:mx-auto">
                 <h1>
                     {post.title}
                 </h1>
