@@ -33,7 +33,7 @@ export default function PostPage ({ post }) {
     return (
         <div className="prose md:prose-md lg:prose-lg max-w-4xl px-6 sm:mx-auto lg:px-0 mt-10 mb-10">
             <Head>
-                <meta charset="utf-8" />
+                <meta charSet="utf-8" />
                 <title>{post.title}</title>
                 <meta name="description" content={post.meta_description}/>
                 <link rel="canonical" content={post.canonical_url} />
@@ -58,6 +58,7 @@ export default function PostPage ({ post }) {
                 <meta name="twitter:creator" content="@whoisnnamdi" />
                 <meta property="og:image:width" content="1172" />
                 <meta property="og:image:height" content="584" />
+                <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
             </Head>
             <Navbar />
             <h1>
