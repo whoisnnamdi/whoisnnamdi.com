@@ -65,10 +65,13 @@ export default function PostPage ({ post }) {
                 <h1>
                     {post.title}
                 </h1>
-                <img
-                    src={post.feature_image}
-                    className="rounded-lg" 
-                />
+                {post.feature_image ?
+                    <img
+                        src={post.feature_image}
+                        className="rounded-lg" 
+                    /> :
+                    null
+                }
                 <LinkConverter content={post.html} />
             </div>
         </div>
