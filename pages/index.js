@@ -38,7 +38,7 @@ export async function getStaticProps() {
 
 export default function Home ({ posts }) {
     return (
-        <div className="max-w-4xl px-6 mx-auto lg:px-0 mt-10 mb-10">
+        <div className="max-w-4xl px-6 mx-auto lg:px-0 mt-8 mb-10">
             <Head>
                 <title>Who Is Nnamdi?</title>
             </Head>
