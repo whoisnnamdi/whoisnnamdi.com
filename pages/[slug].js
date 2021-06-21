@@ -30,16 +30,39 @@ export async function getStaticProps({ params }) {
 }
 
 export default function PostPage ({ post }) {
-    let _title = post.title
-
     return (
         <div className="prose md:prose-md lg:prose-lg max-w-4xl px-6 sm:mx-auto lg:px-0 mt-10 mb-10">
             <Head>
-                <title>{_title}</title>
+                <meta charSet="utf-8" />
+                <title>{post.title}</title>
+                <meta name="description" content={post.meta_description}/>
+                <link rel="canonical" content={post.canonical_url} />
+                <meta property="og:site_name" content="Who is Nnamdi?" />
+                <meta property="og:type" content="article" />
+                <meta property="og:title" content={post.title} />
+                <meta property="og:description" content={post.og_description} />
+                <meta property="og:url" content={"https://whoisnnamdi.com/" + post.slug + "/"} />
+                <meta property="og:image" content={post.feature_image} />
+                <meta property="article:published_time" content={post.published_at} />
+                <meta property="article:modified_time" content={post.updated_at} />
+                <meta property="article:publisher" content="https://www.facebook.com/nnamdi.iregbulem" />
+                <meta property="article:author" content="https://www.facebook.com/nnamdi.iregbulem" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={post.twitter_title} />
+                <meta name="twitter:description" content={post.twitter_description} />
+                <meta name="twitter:url" content={"https://whoisnnamdi.com/" + post.slug + "/"} />
+                <meta name="twitter:image" content={post.twitter_image} />
+                <meta name="twitter:label1" content="Written by" />
+                <meta name="twitter:data1" content="Nnamdi Iregbulem" />
+                <meta name="twitter:site" content="@whoisnnamdi" />
+                <meta name="twitter:creator" content="@whoisnnamdi" />
+                <meta property="og:image:width" content="1172" />
+                <meta property="og:image:height" content="584" />
+                <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
             </Head>
             <Navbar />
             <h1>
-                {_title}
+                {post.title}
             </h1>
             <img
                 src={post.feature_image}
