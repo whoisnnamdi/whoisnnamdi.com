@@ -38,19 +38,36 @@ export async function getStaticProps() {
 }
 
 export default function Home ({ posts }) {
+    const input = useRef(null)
+
+    const [message, setMessage] = useState('')
+    
     const subscribe = async (e) => {
         e.preventDefault()
 
-        const res = await fetch('/api/mailchimp', {
-            method: 'GET'
+        const res = await fetch('/api/subscribe', {
+            body: JSON.stringify({
+                email: input.current.value,
+                merge: {
+                    'SOURCE': 'Hero'
+                }
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: 'POST'
         })
 
         const error = await res.json()
 
-        if (error) {
-            console.log(error)
+        if (error !== "") {
+            setMessage(error.error)
+            input.current.value = message
             return
         }
+
+        setMessage('You are now subscribed!')
+        input.current.value = message
     }
 
     return (
@@ -71,7 +88,12 @@ export default function Home ({ posts }) {
                         </div>
                         <form onSubmit={subscribe} className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-between">
                             <input 
+                                id="email-input"
+                                name="email"
                                 placeholder="elon@musk.com"
+                                ref={input}
+                                type="email"
+                                required
                                 className="text-gray-500 flex-1 transition duration-500 hover:bg-gray-200 bg-gray-100 sm:w-80 rounded-md px-4 py-2 focus:ring-blue-500 focus:outline-none" />
                             <button type="submit" className="md:w-1/4 transition duration-500 ease-in-out sm:w-40 rounded-md py-2 px-2 text-white font-semibold bg-blue-500 shadow-md hover:bg-blue-400 focus:outline-none">
                                 Subscribe
