@@ -6,7 +6,7 @@ import { ChevronDownIcon } from '@heroicons/react/solid'
 export default function Navbar() {
     return (
         <div className="flex justify-end mb-5">
-            <div class="hidden sm:block px-2 pt-2 pb-3 space-y-1">
+            <div className="hidden sm:block px-2 pt-2 pb-3 space-y-1">
                 <Link href="/">
                     <a className="px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
                         Home
