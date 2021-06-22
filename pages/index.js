@@ -60,7 +60,7 @@ export default function Home ({ posts }) {
 
         const error = await res.json()
 
-        if (error !== "") {
+        if (error.error !== "") {
             setMessage(error.error)
             input.current.value = message
             return
