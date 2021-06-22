@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { getPosts, getPost, getPages, getPage } from '../api/ghost_data'
+import { getPosts, getPost, getPages, getPage } from './api/ghost_data'
 import Navbar from '../components/navbar'
 import LinkConverter from '../components/linkconverter'
 

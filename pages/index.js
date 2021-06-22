@@ -3,7 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
-import { getPosts } from '../api/ghost_data'
+import React, { useRef, useState } from 'react'
+import { getPosts } from './api/ghost_data'
 import PostPreview from '../components/postpreview'
 import portrait from '../public/images/portrait-color.png'
 
@@ -37,6 +38,21 @@ export async function getStaticProps() {
 }
 
 export default function Home ({ posts }) {
+    const subscribe = async (e) => {
+        e.preventDefault()
+
+        const res = await fetch('/api/mailchimp', {
+            method: 'GET'
+        })
+
+        const error = await res.json()
+
+        if (error) {
+            console.log(error)
+            return
+        }
+    }
+
     return (
         <div className="max-w-4xl px-6 mx-auto lg:px-0 mt-8 mb-10">
             <Head>
@@ -53,11 +69,11 @@ export default function Home ({ posts }) {
                             <p className="text-xl md:text-base lg:text-xl font-normal mb-4 md:mb-5 lg:mb-7"><span className="font-bold underline">I love writing.</span> My most popular essays combine theory, data, real-world relevance.</p>
                             <p className="text-xl md:text-base lg:text-xl font-normal mb-4 md:mb-5 lg:mb-7"><span className="font-bold">✨Subscribe below</span>, and find my writing just below that.</p>
                         </div>
-                        <form className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-between">
+                        <form onSubmit={subscribe} className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-between">
                             <input 
                                 placeholder="elon@musk.com"
                                 className="text-gray-500 flex-1 transition duration-500 hover:bg-gray-200 bg-gray-100 sm:w-80 rounded-md px-4 py-2 focus:ring-blue-500 focus:outline-none" />
-                            <button className="md:w-1/4 transition duration-500 ease-in-out sm:w-40 rounded-md py-2 px-2 text-white font-semibold bg-blue-500 shadow-md hover:bg-blue-400 focus:outline-none">
+                            <button type="submit" className="md:w-1/4 transition duration-500 ease-in-out sm:w-40 rounded-md py-2 px-2 text-white font-semibold bg-blue-500 shadow-md hover:bg-blue-400 focus:outline-none">
                                 Subscribe
                             </button>
                         </form>                   
