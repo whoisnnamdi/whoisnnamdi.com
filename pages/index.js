@@ -39,8 +39,6 @@ export async function getStaticProps() {
 
 export default function Home ({ posts }) {
     const input = useRef(null)
-
-    const [message, setMessage] = useState('')
     
     const subscribe = async (e) => {
         e.preventDefault()
@@ -58,16 +56,11 @@ export default function Home ({ posts }) {
             method: 'POST'
         })
 
-        const error = await res.json()
+        const response = await res.json()
 
-        if (error.error !== "") {
-            setMessage(error.error)
-            input.current.value = message
-            return
-        }
-
-        setMessage('You are now subscribed!')
-        input.current.value = message
+        console.log(response.message)
+        input.current.value = ""
+        input.current.placeholder = response.message
     }
 
     return (
