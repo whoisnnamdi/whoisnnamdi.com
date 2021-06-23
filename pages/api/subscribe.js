@@ -5,29 +5,38 @@ mailchimp.setConfig({
     server: process.env.MAILCHIMP_API_SERVER
 })
 
-export default async function subscribe(req, res) {
-    const { email, merge } = req.body
+module.exports = async (req, res) => {
+    if (req.method === "GET") {
+        const response = await mailchimp.ping.get()
 
-    if (!email) {
-        return res.status(400).json({ error: 'Email is required' })
-    }
+        res.status(200).json(response)
+    } else if (req.method === "POST") {
+        const { email, merge } = req.body
 
-    try {
-        await mailchimp.lists.addListMember(process.env.MAILCHIMP_AUDIENCE_ID, {
-            email_address: email,
-            status: 'subscribed',
-            merge_fields: {
-                "SOURCE": merge.SOURCE
-            }
-        })
-
-        return res.status(201).json({ error: '' })
-    } catch (error) {
-        if (error.response.body.title === "Member Exists") {
-            return res.status(500).json({ error: "You're already subscribed!" })
-        } else if (error.response.body.title === "Invalid Resource") {
-            return res.status(500).json({ error: "Seems like a spam email?" })
+        if (!email) {
+            return res.status(201).json({ error: "Email is required" })
         }
-        return res.status(500).json({ error: 'Something went wrong.' })
+        
+        try {
+            await mailchimp.lists.addListMember(process.env.MAILCHIMP_AUDIENCE_ID, {
+                email_address: email,
+                status: "subscribed",
+                merge_fields: {
+                    "SOURCE": merge.SOURCE
+                }
+            })
+
+            res.status(200).json({ message: "You are now subscribed!" })
+        } catch (error) {
+            if (error.response.body.title == "Member Exists") {
+                res.status(400).json({ message: "You're already subscribed!" })
+            } else if (error.response.body.title == "Invalid Resource") {
+                res.status(400).json({ message: "Seems like a spam email?" })
+            } else {
+                res.status(400).json({ message: "Something went wrong." })
+            }
+        }
+    } else {
+        res.status(500).json({ message: "Was not a GET or POST" })
     }
 }
