@@ -6,7 +6,7 @@ import { ChevronDownIcon } from '@heroicons/react/solid'
 export default function Navbar() {
     return (
         <div className="flex justify-end mb-5">
-            <div className="hidden sm:block px-2 pt-2 pb-3 space-y-1">
+            <div className="hidden md:block px-2 pt-2 pb-3 space-y-1">
                 <Link href="/">
                     <a className="px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
                         Home
@@ -36,7 +36,7 @@ export default function Navbar() {
             <button className="max-h-10 transition duration-500 ease-in-out rounded-md py-2 px-4 text-white font-semibold bg-blue-500 shadow-md hover:bg-blue-400 focus:outline-none">
                 Subscribe
             </button>
-            <Menu as="div" className="sm:hidden relative inline-block text-left ml-3">
+            <Menu as="div" className="md:hidden relative inline-block text-left ml-3">
                 <Menu.Button className="transition duration-500 ease-in-out inline-flex justify-center py-2 px-4 text-white font-semibold bg-gray-900 hover:bg-gray-500 shadow-md rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
                     <ChevronDownIcon
                         className="w-5 h-5 py-0.5"
