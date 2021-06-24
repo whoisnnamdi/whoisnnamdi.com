@@ -1,41 +1,87 @@
 import Link from 'next/link'
-import { Menu, Transition } from '@headlessui/react'
+import { Menu, Transition, Popover } from '@headlessui/react'
 import { Fragment, useRef } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 
 export default function Navbar() {
+    const input = useRef(null)
+    
+    const subscribe = async (e) => {
+        e.preventDefault()
+
+        const res = await fetch('/api/subscribe', {
+            body: JSON.stringify({
+                email: input.current.value,
+                merge: {
+                    'SOURCE': 'Hero'
+                }
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: 'POST'
+        })
+
+        const response = await res.json()
+
+        console.log(response.message)
+        input.current.value = ""
+        input.current.placeholder = response.message
+    }
+    
     return (
         <div className="flex justify-end mb-5">
-            <div className="hidden md:block px-2 pt-2 pb-3 space-y-1">
+            <div className="hidden md:block px-2 pt-2 pb-3 space-y-1 md:text-sm lg:text-base font-medium text-gray-700">
                 <Link href="/">
-                    <a className="px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                    <a className="px-3 py-2 rounded-md hover:text-gray-900 hover:bg-gray-50">
                         Home
                     </a>
                 </Link>
                 <Link href="/about-me">
-                    <a className="px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                    <a className="px-3 py-2 rounded-md hover:text-gray-900 hover:bg-gray-50">
                         About Me
                     </a>
                 </Link>
                 <Link href="/portfolio">
-                    <a className="px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                    <a className="px-3 py-2 rounded-md hover:text-gray-900 hover:bg-gray-50">
                         Portfolio
                     </a>
                 </Link>
                 <Link href="/talks">
-                    <a className="px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                    <a className="px-3 py-2 rounded-md hover:text-gray-900 hover:bg-gray-50">
                         Talks
                     </a>
                 </Link>
                 <Link href="/the-developer-productivity-flywheel">
-                    <a className="px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                    <a className="px-3 py-2 rounded-md hover:text-gray-900 hover:bg-gray-50">
                         The Developer Productivity Manifesto
                     </a>
                 </Link>                 
             </div>
-            <button className="max-h-10 transition duration-500 ease-in-out rounded-md py-2 px-4 text-white font-semibold bg-blue-500 shadow-md hover:bg-blue-400 focus:outline-none">
-                Subscribe
-            </button>
+            <Popover>
+                {({ open }) => (
+                    <div>
+                        <Popover.Button className={`${open ? "hidden" : "max-h-10 transition duration-500 ease-in-out rounded-md py-2 px-4 text-white font-semibold bg-blue-500 shadow-md hover:bg-blue-400 focus:outline-none"}`}>
+                            Subscribe
+                        </Popover.Button>
+                        <Popover.Panel className="w-64 sm:w-96">
+                            <form onSubmit={subscribe} className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-between">
+                                <input 
+                                    id="email-input"
+                                    name="email"
+                                    placeholder="Type your email..."
+                                    ref={input}
+                                    type="email"
+                                    required
+                                    className="text-gray-500 flex-1 transition duration-500 hover:bg-gray-200 bg-gray-100 sm:w-80 rounded-md px-4 py-2 focus:ring-blue-500 focus:outline-none" />
+                                <button type="submit" className="max-h-10 transition duration-500 ease-in-out rounded-md py-2 px-4 text-white font-semibold bg-blue-500 shadow-md hover:bg-blue-400 focus:outline-none">
+                                    Subscribe
+                                </button>
+                            </form>
+                        </Popover.Panel>
+                    </div>
+                )}
+            </Popover>
             <Menu as="div" className="md:hidden relative inline-block text-left ml-3">
                 <Menu.Button className="transition duration-500 ease-in-out inline-flex justify-center py-2 px-4 text-white font-semibold bg-gray-900 hover:bg-gray-500 shadow-md rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
                     <ChevronDownIcon
