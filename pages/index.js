@@ -69,7 +69,7 @@ export default function Home ({ posts }) {
                 <title>Who Is Nnamdi?</title>
             </Head>
             <Navbar />
-            <div className="mb-4 sm:mb-8">
+            <div className="mb-8">
                 <div className="flex flex-col sm:flex-row sm:space-x-4 justify-between mb-4 sm:mb-8">
                     <div className="flex flex-col justify-between mb-4 sm:mb-0 sm:w-2/3 md:w-2/3 lg:w-2/3">
                         <div className="">
