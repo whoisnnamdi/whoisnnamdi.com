@@ -1,9 +1,9 @@
 import GhostContentAPI from '@tryghost/content-api'
 
 const api = new GhostContentAPI({
-    url: 'https://whoisnnamdi.com',
-    key: '4247c5d1c1b4726e7a58cc3a96',
-    version: 'v3'
+    url: process.env.GHOST_API_URL,
+    key: process.env.GHOST_API_KEY,
+    version: process.env.GHOST_API_VERSION
 })
 
 export async function getPosts() {
