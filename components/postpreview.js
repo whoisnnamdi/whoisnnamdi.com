@@ -5,7 +5,7 @@ export default function PostPreview ({ post }) {
     return (
         <div className="">
             <Link href="[slug]" as={`/${post.slug}`}>
-                <a className="flex flex-col sm:flex-row sm:max-h-80 justify-between rounded-xl shadow-md sm:shadow-none transition duration-500 ease-in-out transform hover:opacity-80 mb-4">
+                <a className="flex flex-col sm:flex-row sm:max-h-64 justify-between rounded-xl shadow-md sm:shadow-none transition duration-500 ease-in-out transform hover:opacity-80 mb-4">
                     <img
                         src={post.feature_image}
                         className="flex-1 sm:w-1/2 rounded-t-xl sm:rounded-l-xl sm:rounded-r-none" 
