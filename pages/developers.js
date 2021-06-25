@@ -34,13 +34,15 @@ export async function getStaticProps() {
 }
 
 export default function Page ({ posts }) {
+    const slug = "developers"
+    
     return (
         <div className="max-w-4xl sm:mx-auto px-6 mt-8 mb-10 lg:px-0">
             <Head>
                 <title>Who Is Nnamdi?</title>
             </Head>
-            <Navbar />
-            <SectionPage slug={"developers"} posts={posts}/>
+            <Navbar source={slug}/>
+            <SectionPage slug={slug} posts={posts}/>
             <Footer />
         </div>
     )
