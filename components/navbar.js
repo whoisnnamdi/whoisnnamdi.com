@@ -82,7 +82,7 @@ export default function Navbar({ source }) {
                     </div>
                 )}
             </Popover>
-            <Menu as="div" className="md:hidden relative inline-block text-left ml-3">
+            <Menu as="div" className="flex flex-col md:hidden relative text-left ml-3">
                 <Menu.Button className="transition duration-500 ease-in-out inline-flex justify-center py-2 px-4 text-white font-semibold bg-gray-900 hover:bg-gray-500 shadow-md rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
                     <ChevronDownIcon
                         className="w-5 h-5 py-0.5"
@@ -98,7 +98,7 @@ export default function Navbar({ source }) {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                 >
-                    <Menu.Items className="absolute mt-4 w-64 right-0 origin-top-right bg-gray-100 rounded-lg shadow-lg">
+                    <Menu.Items className="mt-4 w-52 right-0 origin-top-right bg-gray-100 rounded-lg shadow-lg">
                         <Menu.Item>
                             {({ active }) => (
                                 <Link href="/">
