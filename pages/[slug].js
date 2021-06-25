@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { getPosts, getPost, getPages, getPage } from './api/ghost_data'
 import Navbar from '../components/navbar'
+import Footer from '../components/footer'
 import LinkConverter from '../components/linkconverter'
 import { MathJax, MathJaxContext } from "better-react-mathjax"
 
@@ -78,6 +79,7 @@ export default function PostPage ({ post }) {
                     </div>
                 </MathJax>
             </MathJaxContext>
+            <Footer />
         </div>
     )
 }
