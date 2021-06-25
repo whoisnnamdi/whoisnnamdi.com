@@ -5,12 +5,12 @@ export default function PostPreview ({ post }) {
     return (
         <div className="">
             <Link href="[slug]" as={`/${post.slug}`}>
-                <a className="flex flex-col sm:flex-row justify-between rounded-xl shadow-md sm:shadow-none transition duration-500 ease-in-out transform hover:opacity-80 mb-4">
+                <a className="flex flex-col md:flex-row justify-between rounded-xl shadow-md md:shadow-none transition duration-500 ease-in-out transform hover:opacity-80 mb-4">
                     <img
                         src={post.feature_image}
-                        className="flex-1 sm:w-1/2 rounded-t-xl sm:rounded-l-xl sm:rounded-r-none" 
+                        className="flex-1 md:w-1/2 rounded-t-xl md:rounded-l-xl md:rounded-r-none" 
                     />
-                    <div className="flex flex-col items-start place-content-center flex-1 px-3 py-4 sm:px-8 sm:w-1/2 context-center">
+                    <div className="flex flex-col items-start place-content-center flex-1 px-3 py-4 md:px-8 md:w-1/2 context-center">
                         <h3 className="font-bold text-xl text-gray-700 mb-4">
                             {post.title}
                         </h3>
