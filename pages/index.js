@@ -119,7 +119,7 @@ export default function Home ({ posts }) {
                         <a className="flex-1 transition duration-500 ease-in-out transform hover:scale-105 font-normal text-md text-center py-10 px-6 rounded-xl shadow-lg">
                             <p className="text-5xl mb-5">💸</p>
                             <h2 className="font-bold text-2xl sm:text-2xl mb-2 text-gray-900">Investors</h2>
-                            <p className="text-xl md:text-lg lg:text-xl">Analyis, charts, and equations for nerdy investors (like myself)</p>
+                            <p className="text-xl md:text-lg lg:text-xl">Analysis, charts, and equations for nerdy investors (like myself)</p>
                         </a>
                     </Link>
                 </div>
