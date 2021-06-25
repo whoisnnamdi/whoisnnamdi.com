@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { getPosts, getPost, getPages, getPage } from './api/ghost_data'
 import Navbar from '../components/navbar'
 import LinkConverter from '../components/linkconverter'
+import { MathJax, MathJaxContext } from "better-react-mathjax"
 
 export async function getStaticPaths() {
     const posts = await getPosts()
@@ -58,22 +59,25 @@ export default function PostPage ({ post }) {
                 <meta name="twitter:creator" content="@whoisnnamdi" />
                 <meta property="og:image:width" content="1172" />
                 <meta property="og:image:height" content="584" />
-                <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
             </Head>
             <Navbar />
-            <div className="prose md:prose-md lg:prose-lg max-w-4xl sm:mx-auto">
-                <h1>
-                    {post.title}
-                </h1>
-                {post.feature_image ?
-                    <img
-                        src={post.feature_image}
-                        className="rounded-lg" 
-                    /> :
-                    null
-                }
-                <LinkConverter content={post.html} />
-            </div>
+            <MathJaxContext hideUntilTypeset="first">
+                <MathJax>
+                    <div className="prose md:prose-md lg:prose-lg max-w-4xl sm:mx-auto">
+                        <h1>
+                            {post.title}
+                        </h1>
+                        {post.feature_image ?
+                            <img
+                                src={post.feature_image}
+                                className="rounded-lg" 
+                            /> :
+                            null
+                        }
+                        <LinkConverter content={post.html} />
+                    </div>
+                </MathJax>
+            </MathJaxContext>
         </div>
     )
 }
