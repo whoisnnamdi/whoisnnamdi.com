@@ -68,7 +68,7 @@ export default function Home ({ posts }) {
             <Head>
                 <title>Who Is Nnamdi?</title>
             </Head>
-            <Navbar />
+            <Navbar source="Home"/>
             <div className="mb-8">
                 <div className="flex flex-col sm:flex-row sm:space-x-4 justify-between mb-4 sm:mb-8">
                     <div className="flex flex-col justify-between mb-4 sm:mb-0 sm:w-2/3 md:w-2/3 lg:w-2/3">
@@ -101,21 +101,21 @@ export default function Home ({ posts }) {
                     />
                 </div>
                 <div className="flex flex-col sm:flex-row justify-between space-y-10 sm:space-x-10 sm:space-y-0">
-                    <Link href="#">
+                    <Link href="/founders">
                         <a className="flex-1 transition duration-500 ease-in-out transform sm:hover:scale-105 font-normal text-md text-center py-10 px-6 rounded-xl shadow-lg">
                             <p className="text-5xl mb-5">🚀</p>
                             <h2 className="font-bold text-2xl sm:text-2xl mb-2 text-gray-900">Founders</h2>
                             <p className="text-xl md:text-lg lg:text-xl">The theories and realities of building a valuable tech startup</p>
                         </a>
                     </Link>
-                    <Link href="#">
+                    <Link href="/developers">
                         <a className="flex-1 transition duration-500 ease-in-out transform hover:scale-105 font-normal text-md text-center py-10 px-6 rounded-xl shadow-lg">
                             <p className="text-5xl mb-5">👨‍💻👩‍💻</p>
                             <h2 className="font-bold text-2xl sm:text-2xl mb-2 text-gray-900">Developers</h2>
                             <p className="text-xl md:text-lg lg:text-xl">Software development, tooling, and the careers of software engineers</p>
                         </a>
                     </Link>
-                    <Link href="#">
+                    <Link href="/investors">
                         <a className="flex-1 transition duration-500 ease-in-out transform hover:scale-105 font-normal text-md text-center py-10 px-6 rounded-xl shadow-lg">
                             <p className="text-5xl mb-5">💸</p>
                             <h2 className="font-bold text-2xl sm:text-2xl mb-2 text-gray-900">Investors</h2>

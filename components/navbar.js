@@ -3,7 +3,7 @@ import { Menu, Transition, Popover } from '@headlessui/react'
 import { Fragment, useRef } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 
-export default function Navbar() {
+export default function Navbar({ source }) {
     const input = useRef(null)
     
     const subscribe = async (e) => {
@@ -13,7 +13,7 @@ export default function Navbar() {
             body: JSON.stringify({
                 email: input.current.value,
                 merge: {
-                    'SOURCE': 'Hero'
+                    'SOURCE': "Navbar: " + source
                 }
             }),
             headers: {
