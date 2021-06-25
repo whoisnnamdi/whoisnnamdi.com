@@ -61,7 +61,7 @@ export default function PostPage ({ post }) {
                 <meta property="og:image:width" content="1172" />
                 <meta property="og:image:height" content="584" />
             </Head>
-            <Navbar />
+            <Navbar source={post.title}/>
             <MathJaxContext hideUntilTypeset="first">
                 <MathJax>
                     <div className="prose md:prose-md lg:prose-lg max-w-4xl sm:mx-auto">
