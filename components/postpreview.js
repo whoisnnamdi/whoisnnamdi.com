@@ -10,12 +10,12 @@ export default function PostPreview ({ post }) {
                         src={post.feature_image}
                         className="flex-1 sm:w-1/2 rounded-t-xl sm:rounded-l-xl sm:rounded-r-none" 
                     />
-                    <div className="flex-1 px-3 py-4 sm:px-8 sm:w-1/2">
-                        <h3 className="font-bold text-2xl text-gray-700 mb-4">
+                    <div className="flex flex-col items-start place-content-center flex-1 px-3 py-4 sm:px-8 sm:w-1/2 context-center">
+                        <h3 className="font-bold text-xl text-gray-700 mb-4">
                             {post.title}
                         </h3>
                         <div 
-                            className="text-xl text-gray-500 mb-4"
+                            className="text-lg text-gray-500 mb-4"
                             dangerouslySetInnerHTML={{ __html: post.excerpt }}
                         />
                         <p className="py-1 px-2 inline font-bold rounded-full text-sm text-white bg-blue-500">
