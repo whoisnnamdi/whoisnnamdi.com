@@ -19,7 +19,7 @@
 }
 
 .subscribe-form {
-    @apply mx-auto w-full sm:w-1/2
+    @apply mx-auto w-full sm:w-1/2 mb-8
 }
 
 .subscribe-form h3 {
