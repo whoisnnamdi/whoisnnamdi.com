@@ -65,7 +65,7 @@ export default function Navbar({ source }) {
                             Subscribe
                         </Popover.Button>
                         <Popover.Panel className="w-64 sm:w-96">
-                            <form onSubmit={subscribe} className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-between">
+                            <form onSubmit={subscribe} className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-3 justify-between">
                                 <input 
                                     id="email-input"
                                     name="email"
