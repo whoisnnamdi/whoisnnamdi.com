@@ -30,8 +30,8 @@ export default function Navbar({ source }) {
     }
     
     return (
-        <div className="flex justify-end mb-5">
-            <div className="hidden md:block px-1 py-2 md:text-base lg:text-base font-semibold text-gray-700">
+        <div className="flex justify-end mb-5 overflow-hidden">
+            <div className="flex-shrink-0 hidden md:block px-1 py-2 md:text-base lg:text-base font-semibold text-gray-700">
                 <Link href="/">
                     <a className="px-3 py-2 rounded-md hover:text-gray-900 hover:bg-gray-50">
                         Home
