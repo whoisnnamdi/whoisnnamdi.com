@@ -31,7 +31,7 @@ export default function Navbar({ source }) {
     
     return (
         <div className="flex justify-end mb-5">
-            <div className="hidden md:block px-2 pt-2 pb-3 space-y-1 md:text-sm lg:text-base font-medium text-gray-700">
+            <div className="hidden md:block px-1 py-2 md:text-base lg:text-base font-semibold text-gray-700">
                 <Link href="/">
                     <a className="px-3 py-2 rounded-md hover:text-gray-900 hover:bg-gray-50">
                         Home
@@ -60,8 +60,8 @@ export default function Navbar({ source }) {
             </div>
             <Popover>
                 {({ open }) => (
-                    <div>
-                        <Popover.Button className={`${open ? "hidden" : "max-h-10 transition duration-500 ease-in-out rounded-md py-2 px-4 text-white font-semibold bg-blue-500 shadow-md hover:bg-blue-400 focus:outline-none"}`}>
+                    <div className="">
+                        <Popover.Button className={`${open ? "hidden" : "transition duration-500 ease-in-out rounded-md py-2 px-4 text-white font-semibold bg-blue-500 shadow-md hover:bg-blue-400 focus:outline-none"}`}>
                             Subscribe
                         </Popover.Button>
                         <Popover.Panel className="w-64 sm:w-96">
