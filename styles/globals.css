@@ -45,3 +45,14 @@
 mjx-container {
     @apply overflow-auto overflow-y-hidden
 }
+
+.imageContainer div {
+    position: unset !important
+}
+
+.imageImage {
+    object-fit: contain;
+    width: 100% !important;
+    position: relative !important;
+    height: unset !important;
+}
