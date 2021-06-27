@@ -63,10 +63,10 @@ export default function PostPage ({ post }) {
             <Navbar source={post.title}/>
             <MathJaxContext hideUntilTypeset="first">
                 <MathJax>
+                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6 text-gray-900">
+                        {post.title}
+                    </h1>
                     <div className="prose md:prose-md lg:prose-lg max-w-4xl sm:mx-auto">
-                        <h1>
-                            {post.title}
-                        </h1>
                         {post.feature_image ?
                             <div className="imageContainer">
                                 <Image
