@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Link from 'next/link'
+import Image from 'next/image'
 import { getPosts, getPost, getPages, getPage } from './api/ghost_data'
 import Navbar from '../components/navbar'
 import LinkConverter from '../components/linkconverter'
@@ -68,10 +68,14 @@ export default function PostPage ({ post }) {
                             {post.title}
                         </h1>
                         {post.feature_image ?
-                            <img
-                                src={post.feature_image}
-                                className="rounded-lg" 
-                            /> :
+                            <div className="imageContainer">
+                                <Image
+                                    src={post.feature_image}
+                                    alt={post.title}
+                                    layout="fill"
+                                    className="imageImage rounded-lg" 
+                                />
+                            </div> :
                             null
                         }
                         <LinkConverter content={post.html} />
