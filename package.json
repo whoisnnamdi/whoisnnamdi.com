@@ -16,6 +16,7 @@
     "@headlessui/react": "^1.2.0",
     "@heroicons/react": "^1.0.1",
     "@mailchimp/mailchimp_marketing": "^3.0.48",
+    "@tailwindcss/jit": "^0.1.18",
     "@tailwindcss/typography": "^0.4.1",
     "@tryghost/content-api": "^1.5.8",
     "autoprefixer": "^10.2.6",
