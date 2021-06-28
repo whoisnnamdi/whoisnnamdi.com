@@ -83,11 +83,10 @@ export default function Navbar({ source }) {
                 )}
             </Popover>
             <Menu as="div" className="flex flex-col md:hidden relative text-left ml-3">
-                <Menu.Button className="transition duration-500 ease-in-out inline-flex justify-center py-2 px-4 text-white font-semibold bg-gray-900 hover:bg-gray-500 shadow-md rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+                <Menu.Button aria-label="Open Menu" className="transition duration-500 ease-in-out inline-flex justify-center py-2 px-4 text-white font-semibold bg-gray-900 hover:bg-gray-500 shadow-md rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
                     <ChevronDownIcon
                         className="w-5 h-5 py-0.5"
                         aria-hidden="true"
-                        aria-label="Open Menu"
                     />
                 </Menu.Button>
                 <Transition
