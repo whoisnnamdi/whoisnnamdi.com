@@ -66,7 +66,22 @@ export default function Home ({ posts }) {
     return (
         <div className="max-w-4xl px-6 mx-auto lg:px-0 mt-8 mb-10">
             <Head>
+                <meta charSet="utf-8" />
                 <title>Who Is Nnamdi?</title>
+                <meta name="description" content="Thoughts on technology, venture capital, and the economics of both" />
+                <link rel="canonical" href="https://whoisnnamdi.com/" />
+                <meta name="referrer" content="no-referrer-when-downgrade" />
+                <meta property="og:site_name" content="Who is Nnamdi?" />
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="Who is Nnamdi?" />
+                <meta property="og:description" content="Thoughts on technology, venture capital, and the economics of both" />
+                <meta property="og:url" content="https://whoisnnamdi.com/" />
+                <meta property="article:publisher" content="https://www.facebook.com/nnamdi.iregbulem" />
+                <meta name="twitter:card" content="summary" />
+                <meta name="twitter:title" content="Who is Nnamdi?" />
+                <meta name="twitter:description" content="Thoughts on technology, venture capital, and the economics of both" />
+                <meta name="twitter:url" content="https://whoisnnamdi.com/" />
+                <meta name="twitter:site" content="@whoisnnamdi" />
             </Head>
             <Navbar source="Home"/>
             <div className="mb-8">
