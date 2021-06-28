@@ -113,6 +113,7 @@ export default function Home ({ posts }) {
                         src={portrait}
                         width={346}
                         height={400}
+                        alt="Nnamdi Iregbulem"
                         className="sm:w-1/3 md:w-1/3 lg:w-1/3 rounded-md"
                     />
                 </div>
