@@ -76,6 +76,7 @@ export default function Home ({ posts }) {
                 <meta property="og:title" content="Who is Nnamdi?" />
                 <meta property="og:description" content="Thoughts on technology, venture capital, and the economics of both" />
                 <meta property="og:url" content="https://whoisnnamdi.com/" />
+                <meta property="og:image" content="https://whoisnnamdi.com/content/images/2019/10/DSC_0562_cropped_2.jpg" />
                 <meta property="article:publisher" content="https://www.facebook.com/nnamdi.iregbulem" />
                 <meta name="twitter:card" content="summary" />
                 <meta name="twitter:title" content="Who is Nnamdi?" />
