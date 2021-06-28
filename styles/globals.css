@@ -14,6 +14,14 @@
     @apply mx-auto max-w-full
 }
 
+.prose blockquote p:first-of-type::before {
+    content: none
+}
+
+.prose blockquote p:last-of-type::after {
+    content: none
+}
+
 .twitter-tweet  {
     @apply mx-auto
 }
