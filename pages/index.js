@@ -66,7 +66,23 @@ export default function Home ({ posts }) {
     return (
         <div className="max-w-4xl px-6 mx-auto lg:px-0 mt-8 mb-10">
             <Head>
+                <meta charSet="utf-8" />
                 <title>Who Is Nnamdi?</title>
+                <meta name="description" content="Thoughts on technology, venture capital, and the economics of both" />
+                <link rel="canonical" href="https://whoisnnamdi.com/" />
+                <meta name="referrer" content="no-referrer-when-downgrade" />
+                <meta property="og:site_name" content="Who is Nnamdi?" />
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="Who is Nnamdi?" />
+                <meta property="og:description" content="Thoughts on technology, venture capital, and the economics of both" />
+                <meta property="og:url" content="https://whoisnnamdi.com/" />
+                <meta property="og:image" content="https://whoisnnamdi.com/content/images/2019/10/DSC_0562_cropped_2.jpg" />
+                <meta property="article:publisher" content="https://www.facebook.com/nnamdi.iregbulem" />
+                <meta name="twitter:card" content="summary" />
+                <meta name="twitter:title" content="Who is Nnamdi?" />
+                <meta name="twitter:description" content="Thoughts on technology, venture capital, and the economics of both" />
+                <meta name="twitter:url" content="https://whoisnnamdi.com/" />
+                <meta name="twitter:site" content="@whoisnnamdi" />
             </Head>
             <Navbar source="Home"/>
             <div className="mb-8">
@@ -119,7 +135,7 @@ export default function Home ({ posts }) {
                         <a className="flex-1 transition duration-500 ease-in-out transform hover:scale-105 font-normal text-md text-center py-10 px-6 rounded-xl shadow-lg">
                             <p className="text-5xl mb-5">💸</p>
                             <h2 className="font-bold text-2xl sm:text-2xl mb-2 text-gray-900">Investors</h2>
-                            <p className="text-xl md:text-lg lg:text-xl">Analyis, charts, and equations for nerdy investors (like myself)</p>
+                            <p className="text-xl md:text-lg lg:text-xl">Analysis, charts, and equations for nerdy investors (like myself)</p>
                         </a>
                     </Link>
                 </div>

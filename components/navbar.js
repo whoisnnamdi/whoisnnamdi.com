@@ -30,8 +30,8 @@ export default function Navbar({ source }) {
     }
     
     return (
-        <div className="flex justify-end mb-5">
-            <div className="hidden md:block px-2 pt-2 pb-3 space-y-1 md:text-sm lg:text-base font-medium text-gray-700">
+        <div className="flex justify-end mb-5 overflow-hidden">
+            <div className="flex-shrink-0 hidden md:block px-1 py-2 md:text-base lg:text-base font-semibold text-gray-700">
                 <Link href="/">
                     <a className="px-3 py-2 rounded-md hover:text-gray-900 hover:bg-gray-50">
                         Home
@@ -60,12 +60,12 @@ export default function Navbar({ source }) {
             </div>
             <Popover>
                 {({ open }) => (
-                    <div>
-                        <Popover.Button className={`${open ? "hidden" : "max-h-10 transition duration-500 ease-in-out rounded-md py-2 px-4 text-white font-semibold bg-blue-500 shadow-md hover:bg-blue-400 focus:outline-none"}`}>
+                    <div className="">
+                        <Popover.Button className={`${open ? "hidden" : "transition duration-500 ease-in-out rounded-md py-2 px-4 text-white font-semibold bg-blue-500 shadow-md hover:bg-blue-400 focus:outline-none"}`}>
                             Subscribe
                         </Popover.Button>
                         <Popover.Panel className="w-64 sm:w-96">
-                            <form onSubmit={subscribe} className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-between">
+                            <form onSubmit={subscribe} className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-3 justify-between">
                                 <input 
                                     id="email-input"
                                     name="email"
@@ -82,7 +82,7 @@ export default function Navbar({ source }) {
                     </div>
                 )}
             </Popover>
-            <Menu as="div" className="md:hidden relative inline-block text-left ml-3">
+            <Menu as="div" className="flex flex-col md:hidden relative text-left ml-3">
                 <Menu.Button className="transition duration-500 ease-in-out inline-flex justify-center py-2 px-4 text-white font-semibold bg-gray-900 hover:bg-gray-500 shadow-md rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
                     <ChevronDownIcon
                         className="w-5 h-5 py-0.5"
@@ -98,7 +98,7 @@ export default function Navbar({ source }) {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                 >
-                    <Menu.Items className="absolute mt-4 w-64 right-0 origin-top-right bg-gray-100 rounded-lg shadow-lg">
+                    <Menu.Items className="mt-4 w-52 right-0 origin-top-right bg-gray-100 rounded-lg shadow-lg">
                         <Menu.Item>
                             {({ active }) => (
                                 <Link href="/">

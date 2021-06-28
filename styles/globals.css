@@ -14,12 +14,20 @@
     @apply mx-auto max-w-full
 }
 
+.prose blockquote p:first-of-type::before {
+    content: none
+}
+
+.prose blockquote p:last-of-type::after {
+    content: none
+}
+
 .twitter-tweet  {
     @apply mx-auto
 }
 
 .subscribe-form {
-    @apply mx-auto w-full sm:w-1/2
+    @apply mx-auto w-full sm:w-1/2 mb-8
 }
 
 .subscribe-form h3 {
@@ -44,4 +52,15 @@
 
 mjx-container {
     @apply overflow-auto overflow-y-hidden
+}
+
+.imageContainer div {
+    position: unset !important
+}
+
+.imageImage {
+    object-fit: contain;
+    width: 100% !important;
+    position: relative !important;
+    height: unset !important;
 }

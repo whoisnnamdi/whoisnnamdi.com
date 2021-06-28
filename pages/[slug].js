@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Link from 'next/link'
+import Image from 'next/image'
 import { getPosts, getPost, getPages, getPage } from './api/ghost_data'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
@@ -64,15 +64,19 @@ export default function PostPage ({ post }) {
             <Navbar source={post.title}/>
             <MathJaxContext hideUntilTypeset="first">
                 <MathJax>
+                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6 text-gray-900">
+                        {post.title}
+                    </h1>
                     <div className="prose md:prose-md lg:prose-lg max-w-4xl sm:mx-auto">
-                        <h1>
-                            {post.title}
-                        </h1>
                         {post.feature_image ?
-                            <img
-                                src={post.feature_image}
-                                className="rounded-lg" 
-                            /> :
+                            <div className="imageContainer">
+                                <Image
+                                    src={post.feature_image}
+                                    alt={post.title}
+                                    layout="fill"
+                                    className="imageImage rounded-lg" 
+                                />
+                            </div> :
                             null
                         }
                         <LinkConverter content={post.html} />
