@@ -12,6 +12,7 @@ export default function Footer() {
                         src={twitter}
                         height={45}
                         width={45}
+                        alt="Twitter"
                     />
                 </a>
                 <a href="https://www.linkedin.com/in/nnamdiiregbulem/" className="transition duration-500 ease-in-out mx-5 -mt-0.5 py-1 hover:opacity-80">
@@ -19,6 +20,7 @@ export default function Footer() {
                         src={linkedin}
                         height={45}
                         width={45}
+                        alt="LinkedIn"
                     />
                 </a>
                 <a href="https://github.com/whoisnnamdi/" className="transition duration-500 ease-in-out mx-5 py-1 hover:opacity-80">
@@ -26,6 +28,7 @@ export default function Footer() {
                         src={github}
                         height={45}
                         width={45}
+                        alt="GitHub"
                     />
                 </a>
             </div>
