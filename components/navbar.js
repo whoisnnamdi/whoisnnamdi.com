@@ -87,6 +87,7 @@ export default function Navbar({ source }) {
                     <ChevronDownIcon
                         className="w-5 h-5 py-0.5"
                         aria-hidden="true"
+                        aria-label="Open Menu"
                     />
                 </Menu.Button>
                 <Transition
