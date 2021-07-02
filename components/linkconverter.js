@@ -3,8 +3,7 @@ import { useEffect } from 'react'
 
 export default function LinkConverter({ content }) { 
     const router = useRouter()
-    const host = "https://whoisnnamdi.com"
-    //const host = new RegExp(`^https?://whoisnnamdi.com`)
+    const host = process.env.NEXT_PUBLIC_HOST_URL
     
     useEffect(() => {
         let links = document.querySelectorAll("a")
@@ -16,6 +15,14 @@ export default function LinkConverter({ content }) {
                     e.preventDefault()
                     router.push(e.target.href)
                 }, false)
+            }
+        })
+
+        let images = document.querySelectorAll("img")
+
+        images.forEach((image) => {
+            if (image.src.includes("/content/images")) {
+                image.src = image.src.replace(/\bhttps?:\/\/[^)''"\/]+/, "")
             }
         })
     })

@@ -4,12 +4,16 @@ import Link from 'next/link'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
 import React, { useRef, useState } from 'react'
-import { getPosts } from './api/ghost_data'
+import { getPosts, getAll } from './api/ghost_data'
 import PostPreview from '../components/postpreview'
 import portrait from '../public/images/portrait-color.png'
+import fs from 'fs-extra'
+import axios from 'axios'
+import path from 'path'
 
 export async function getStaticProps() {
     const posts = await getPosts()
+    const postsPages = await getAll()
 
     posts.map((post) => {
         const options = {
@@ -28,6 +32,28 @@ export async function getStaticProps() {
 
         post.excerpt = post.excerpt.substring(0, Math.min(cutoff, post.excerpt.length)) + (post.excerpt.length > cutoff ? "..." : "")
         post.excerpt = post.excerpt.replace(/\[(.*?)[$^.]/, "")
+    })
+
+    const downloadImage = async (image) => {
+        try {
+            const filePath = path.join("public", image.replace(/\bhttps?:\/\/[^)''"\/]+/, ""))
+            await fs.ensureDir(path.dirname(filePath))
+            const res = await axios({ url: image, responseType: "stream" })
+            res.data.pipe(fs.createWriteStream(filePath))
+        } catch {
+            console.log("Image download failed: ", image)
+        }
+
+    }
+
+    postsPages.forEach(post => {
+        try {
+            post.html.match(/\bhttps?:[^)''"]+\/content\/images[^)''"]+\.(?:jpg|jpeg|gif|png)/g).forEach(image => {
+                downloadImage(image)
+            })
+        } catch {
+
+        }
     })
 
     return {
