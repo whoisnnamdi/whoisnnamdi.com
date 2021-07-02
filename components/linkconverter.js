@@ -7,24 +7,32 @@ export default function LinkConverter({ content }) {
     
     useEffect(() => {
         let links = document.querySelectorAll("a")
-       
-        links.forEach((link) => {
-            if (link.href.includes(host)) {
-                link.href = link.href.replace(host + "/", "/")
-                link.addEventListener("click", (e) => {
-                    e.preventDefault()
-                    router.push(e.target.href)
-                }, false)
-            }
-        })
+        
+        try {
+            links.forEach((link) => {
+                if (link.href.includes(host)) {
+                    link.href = link.href.replace(host + "/", "/")
+                    link.addEventListener("click", (e) => {
+                        e.preventDefault()
+                        router.push(e.target.href)
+                    }, false)
+                }
+            })
+        } catch {
+
+        }
 
         let images = document.querySelectorAll("img")
 
-        images.forEach((image) => {
-            if (image.src.includes("/content/images")) {
-                image.src = image.src.replace(/\bhttps?:\/\/[^)''"\/]+/, "")
-            }
-        })
+        try {
+            images.forEach((image) => {
+                if (image.src.includes("/content/images")) {
+                    image.src = image.src.replace(/\bhttps?:\/\/[^)''"\/]+/, "")
+                }
+            })
+        } catch {
+
+        }
     })
 
     return (
