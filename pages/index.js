@@ -38,8 +38,15 @@ export async function getStaticProps() {
         try {
             const filePath = path.join("public", image.replace(/\bhttps?:\/\/[^)''"\/]+/, ""))
             await fs.ensureDir(path.dirname(filePath))
-            const res = await axios({ url: image, responseType: "stream" })
-            res.data.pipe(fs.createWriteStream(filePath))
+
+            fs.open(filePath, "wx", async (err, fd) => {
+                if (err.code === "EEXIST") {
+                    return
+                } else {
+                    const res = await axios({ url: image, responseType: "stream" })
+                    res.data.pipe(fs.createWriteStream(filePath))
+                }
+            })
         } catch {
             console.log("Image download failed: ", image)
         }
