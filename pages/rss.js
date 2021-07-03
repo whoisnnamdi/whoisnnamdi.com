@@ -1,4 +1,4 @@
-import { getAll } from './api/ghost_data'
+import { getPosts } from './api/ghost_data'
 
 const options = {
     year: 'numeric',
@@ -68,7 +68,7 @@ const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
 `
 
 export async function getServerSideProps({ res }) {
-    const postsPages = await getAll()
+    const postsPages = await getPosts()
 
     res.setHeader("Content-Type", "text/xml")
     res.write(createRSS(postsPages))
