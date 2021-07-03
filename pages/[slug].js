@@ -74,7 +74,7 @@ export default function PostPage ({ post }) {
                                     src={post.feature_image}
                                     alt={post.title}
                                     layout="fill"
-                                    className="imageImage rounded-lg" 
+                                    className="imageImage rounded-lg"
                                 />
                             </div> :
                             null

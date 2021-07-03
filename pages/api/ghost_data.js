@@ -46,3 +46,24 @@ export async function getPage(pageSlug) {
             console.error(err)
         })
 }
+
+export async function getAll() {
+    const posts = await api.posts
+    .browse({
+        include: 'tags, authors',
+        limit: 'all'
+    })
+    .catch((err) => {
+        console.error(err)
+    })
+
+    const pages = await api.pages
+    .browse({
+        limit: 'all'
+    })
+    .catch((err) => {
+        console.error(err)
+    })
+
+    return posts.concat(pages)
+}
