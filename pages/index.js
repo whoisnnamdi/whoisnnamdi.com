@@ -148,6 +148,7 @@ export default function Home ({ posts }) {
                         height={400}
                         alt="Nnamdi Iregbulem"
                         className="sm:w-1/3 md:w-1/3 lg:w-1/3 rounded-md"
+                        priority
                     />
                 </div>
                 <div className="flex flex-col sm:flex-row justify-between space-y-10 sm:space-x-10 sm:space-y-0">
