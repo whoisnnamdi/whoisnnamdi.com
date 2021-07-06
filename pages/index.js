@@ -57,7 +57,7 @@ export async function getStaticProps() {
     postsPages.forEach(post => {
         try {
             post.html.match(/\bhttps?:[^)''"]+\/content\/images[^)''"]+\.(?:jpg|jpeg|gif|png)/g).forEach(image => {
-                if (!image.includes("600w") && !image.includes("1000w")) {
+                if (!image.includes("600w") && !image.includes("1000w") && !image.includes("1600w")) {
                     downloadImage(image)
                 }
             })
