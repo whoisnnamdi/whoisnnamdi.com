@@ -65,5 +65,5 @@ export async function getAll() {
         console.error(err)
     })
 
-    return posts.concat(pages)
+    return await posts.concat(pages)
 }
