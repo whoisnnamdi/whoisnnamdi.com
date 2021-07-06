@@ -11,6 +11,8 @@ import fs from 'fs-extra'
 import axios from 'axios'
 import path from 'path'
 
+process.removeAllListeners('warning')
+
 export async function getStaticProps() {
     const posts = await getPosts()
     // const postsPages = await getAll()
