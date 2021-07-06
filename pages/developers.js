@@ -3,6 +3,7 @@ import Navbar from '../components/navbar'
 import { getPosts } from './api/ghost_data'
 import SectionPage from '../components/sectionpage'
 import Footer from '../components/footer'
+import Analytics from '../components/analytics'
 
 export async function getStaticProps() {
     const posts = await getPosts()
@@ -55,6 +56,7 @@ export default function Page ({ posts }) {
                 <meta name="twitter:description" content="Software development, tooling, and the careers of software engineers" />
                 <meta name="twitter:url" content="https://whoisnnamdi.com/developers" />
                 <meta name="twitter:site" content="@whoisnnamdi" />
+                <Analytics />
             </Head>
             <Navbar source={slug}/>
             <SectionPage slug={slug} posts={posts}/>
