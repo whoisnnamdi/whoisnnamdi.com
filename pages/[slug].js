@@ -4,6 +4,7 @@ import { getPosts, getPost, getPages, getPage } from './api/ghost_data'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
 import LinkConverter from '../components/linkconverter'
+import Analytics from '../components/analytics'
 import { MathJax, MathJaxContext } from "better-react-mathjax"
 
 export async function getStaticPaths() {
@@ -60,6 +61,7 @@ export default function PostPage ({ post }) {
                 <meta name="twitter:creator" content="@whoisnnamdi" />
                 <meta property="og:image:width" content="1172" />
                 <meta property="og:image:height" content="584" />
+                <Analytics />
             </Head>
             <Navbar source={post.title}/>
             <MathJaxContext hideUntilTypeset="first">

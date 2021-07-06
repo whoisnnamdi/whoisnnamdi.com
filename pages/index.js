@@ -6,6 +6,7 @@ import Footer from '../components/footer'
 import React, { useRef } from 'react'
 import { getPosts, getAll } from './api/ghost_data'
 import PostPreview from '../components/postpreview'
+import Analytics from '../components/analytics'
 import portrait from '../public/images/portrait-color.png'
 import fs from 'fs-extra'
 import axios from 'axios'
@@ -116,6 +117,7 @@ export default function Home ({ posts }) {
                 <meta name="twitter:description" content="Thoughts on technology, venture capital, and the economics of both" />
                 <meta name="twitter:url" content="https://whoisnnamdi.com/" />
                 <meta name="twitter:site" content="@whoisnnamdi" />
+                <Analytics />
             </Head>
             <Navbar source="Home"/>
             <div className="mb-8">
