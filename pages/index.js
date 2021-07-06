@@ -3,8 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
-import React, { useRef, useState } from 'react'
-import { getPosts, getAll } from './api/ghost_data'
+import React, { useRef } from 'react'
+import { getPosts } from './api/ghost_data'
 import PostPreview from '../components/postpreview'
 import portrait from '../public/images/portrait-color.png'
 import fs from 'fs-extra'
@@ -13,7 +13,7 @@ import path from 'path'
 
 export async function getStaticProps() {
     const posts = await getPosts()
-    const postsPages = await getAll()
+    // const postsPages = await getAll()
 
     posts.map((post) => {
         const options = {
@@ -53,15 +53,15 @@ export async function getStaticProps() {
 
     }
 
-    postsPages.forEach(post => {
-        try {
-            post.html.match(/\bhttps?:[^)''"]+\/content\/images[^)''"]+\.(?:jpg|jpeg|gif|png)/g).forEach(image => {
-                downloadImage(image)
-            })
-        } catch {
+    // postsPages.forEach(post => {
+    //     try {
+    //         post.html.match(/\bhttps?:[^)''"]+\/content\/images[^)''"]+\.(?:jpg|jpeg|gif|png)/g).forEach(image => {
+    //             downloadImage(image)
+    //         })
+    //     } catch {
 
-        }
-    })
+    //     }
+    // })
 
     return {
         props: {
