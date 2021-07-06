@@ -30,6 +30,7 @@ export default function LinkConverter({ content }) {
             images.forEach((image) => {
                 if (image.src.includes("/content/images")) {
                     image.src = image.src.replace(/\bhttps?:\/\/[^)''"\/]+/, "")
+                    image.srcset = ""
                 }
             })
         } catch {
