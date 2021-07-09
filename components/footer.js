@@ -3,6 +3,10 @@ import twitter from '../public/images/twitter.svg'
 import linkedin from '../public/images/linkedin.svg'
 import github from '../public/images/github.svg'
 
+const sumo = `
+    <script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='1faf02ea2882c9344411237c16fc052441e2f8d9f5bbfb6ebcd511ec85827585';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script>
+`
+
 export default function Footer() {
     return (
         <div className="mt-8">
@@ -32,6 +36,9 @@ export default function Footer() {
                     />
                 </a>
             </div>
+            <div
+                dangerouslySetInnerHTML={{ __html: sumo }}
+            />
         </div>
     )
 }
