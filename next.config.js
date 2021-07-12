@@ -17,4 +17,5 @@ module.exports = {
       locales: ["en"],
       defaultLocale: "en",
     },
+    trailingSlash: true,
 }

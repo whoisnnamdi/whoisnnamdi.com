@@ -36,7 +36,7 @@ const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
                         <description>
                             <![CDATA[${post.excerpt}]]>
                         </description>
-                        <link>${`https://whoisnnamdi.com/${post.slug}`}</link>
+                        <link>${`https://whoisnnamdi.com/${post.slug}/`}</link>
                         <guid isPermaLink="false">${post.id}</guid>
                         ${post.tags ?
                             post

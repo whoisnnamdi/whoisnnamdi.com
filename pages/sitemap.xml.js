@@ -15,7 +15,7 @@ const createSitemap = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
         .map(({ slug }) => {
             return `
                 <url>
-                    <loc>${`https://whoisnnamdi.com/${slug}`}</loc>
+                    <loc>${`https://whoisnnamdi.com/${slug}/`}</loc>
                 </url>
             `
         })
@@ -25,7 +25,7 @@ const createSitemap = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
         .map((slug) => {
             return `
                 <url>
-                    <loc>${`https://whoisnnamdi.com/${slug}`}</loc>
+                    <loc>${`https://whoisnnamdi.com/${slug}/`}</loc>
                 </url>
             `
         })
