@@ -4,7 +4,7 @@ import Image from 'next/image'
 export default function PostPreview ({ post }) {
     return (
         <div className="">
-            <Link href="[slug]" as={`/${post.slug}`}>
+            <Link href="[slug]" as={`/${post.slug}/`}>
                 <a className="flex flex-col sm:flex-row sm:max-h-64 justify-between rounded-xl shadow-md sm:shadow-none transition duration-500 ease-in-out transform hover:opacity-80 mb-4">
                     <div className="relative block w-full h-44 sm:w-1/2 sm:h-56">
                         <Image
