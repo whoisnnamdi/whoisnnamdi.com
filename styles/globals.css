@@ -27,7 +27,7 @@
 }
 
 .subscribe-form {
-    @apply mx-auto w-full mb-8 bg-blue-600 bg-opacity-90 rounded-xl pt-10 pb-10 px-10
+    @apply mx-auto w-full mb-8 bg-blue-600 bg-opacity-90 rounded-xl pt-10 pb-10 px-10 shadow-xl
 }
 
 .prose .subscribe-form-title {
