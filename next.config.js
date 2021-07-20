@@ -2,6 +2,7 @@ module.exports = {
     images: {
       domains: ['whoisnnamdi.com', 
                 '138.68.29.23',
+                'nnamdi.net',
                 'res-9.cloudinary.com',  
                 'res-8.cloudinary.com', 
                 'res-7.cloudinary.com', 

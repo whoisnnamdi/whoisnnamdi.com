@@ -4,28 +4,10 @@ import { getPosts } from './api/ghost_data'
 import SectionPage from '../components/sectionpage'
 import Footer from '../components/footer'
 import Analytics from '../components/analytics'
+import postFormat from '../components/postformat'
 
 export async function getStaticProps() {
-    const posts = await getPosts()
-
-    posts.map((post) => {
-        const options = {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric'
-        }
-
-        post.dateFormatted = new Intl.DateTimeFormat('default', options).format(
-            new Date(post.published_at)
-        )
-        
-        post.excerpt = post.excerpt.replace(/\[(.*?)\]/, "")
-
-        const cutoff = 166
-
-        post.excerpt = post.excerpt.substring(0, Math.min(cutoff, post.excerpt.length)) + (post.excerpt.length > cutoff ? "..." : "")
-        post.excerpt = post.excerpt.replace(/\[(.*?)[$^.]/, "")
-    })
+    const posts = postFormat(await getPosts())
 
     return {
         props: {
