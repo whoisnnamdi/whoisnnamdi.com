@@ -66,14 +66,19 @@ export async function getStaticProps() {
         }
     })
 
+    const featuredPosts = posts.filter((post) => {
+        return ["never-enough-developers", "developer-productivity-trends", "software-fat-tailed"].includes(post.slug)
+    })
+
     return {
         props: {
-            posts
+            posts,
+            featuredPosts
         }
     }
 }
 
-export default function Home ({ posts }) {
+export default function Home ({ posts, featuredPosts }) {
     const input = useRef(null)
     
     const subscribe = async (e) => {
@@ -179,7 +184,17 @@ export default function Home ({ posts }) {
                     </Link>
                 </div>
             </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center mt-8">
+                Featured Essays
+            </h2>
+            <ul>
+                {featuredPosts.slice(0, 3).map((post) => (
+                    <li key={post.id}>
+                        <PostPreview post={post}/>
+                    </li>
+                ))}
+            </ul>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center mt-8">
                 Latest Essays
             </h2>
             <ul>
