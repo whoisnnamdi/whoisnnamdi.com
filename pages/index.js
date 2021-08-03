@@ -41,8 +41,12 @@ export async function getStaticProps() {
             await fs.ensureDir(path.dirname(filePath))
 
             fs.open(filePath, "wx", async (err, fd) => {
-                if (err.code === "EEXIST") {
-                    return
+                if (err) {
+                    if (err.code === "EEXIST") {
+                        return
+                    }
+
+                    console.log(err, filePath)
                 } else {
                     const res = await axios({ url: image, responseType: "stream" })
                     res.data.pipe(fs.createWriteStream(filePath))
