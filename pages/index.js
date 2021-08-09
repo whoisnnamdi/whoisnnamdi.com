@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
 import React, { useRef } from 'react'
@@ -84,6 +85,7 @@ export async function getStaticProps() {
 
 export default function Home ({ posts, featuredPosts }) {
     const input = useRef(null)
+    const router = useRouter()
     
     const subscribe = async (e) => {
         e.preventDefault()
@@ -106,6 +108,10 @@ export default function Home ({ posts, featuredPosts }) {
         console.log(response.message)
         input.current.value = ""
         input.current.placeholder = response.message
+
+        if (response.message = "You are now subscribed!") {
+            router.push("/thank-you-subscribe")
+        }
     }
 
     return (
