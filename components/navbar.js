@@ -1,10 +1,12 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { Menu, Transition, Popover } from '@headlessui/react'
 import { Fragment, useRef } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 
 export default function Navbar({ source }) {
     const input = useRef(null)
+    const router = useRouter()
     
     const subscribe = async (e) => {
         e.preventDefault()
@@ -27,6 +29,10 @@ export default function Navbar({ source }) {
         console.log(response.message)
         input.current.value = ""
         input.current.placeholder = response.message
+
+        if (response.message = "You are now subscribed!") {
+            router.push("/thank-you-subscribe")
+        }
     }
     
     return (
