@@ -134,8 +134,8 @@ export default function Home ({ posts, featuredPosts }) {
                 <meta name="twitter:description" content="Thoughts on technology, venture capital, and the economics of both" />
                 <meta name="twitter:url" content="https://whoisnnamdi.com/" />
                 <meta name="twitter:site" content="@whoisnnamdi" />
-                <Analytics />
             </Head>
+            <Analytics />
             <Navbar source="Home"/>
             <div className="mb-8">
                 <div className="flex flex-col sm:flex-row sm:space-x-4 justify-between mb-4 sm:mb-8">
