@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import { Menu, Transition, Popover } from '@headlessui/react'
 import { Fragment, useRef } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
+import * as Fathom from 'fathom-client'
 
 export default function Navbar({ source }) {
     const input = useRef(null)
@@ -31,6 +32,7 @@ export default function Navbar({ source }) {
         input.current.placeholder = response.message
 
         if (response.message = "You are now subscribed!") {
+            Fathom.trackGoal('8O6T9QOR', 0)
             router.push("/thank-you-subscribe")
         }
     }

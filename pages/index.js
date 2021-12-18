@@ -12,6 +12,7 @@ import portrait from '../public/images/portrait-color-compressed.png'
 import fs from 'fs-extra'
 import axios from 'axios'
 import path from 'path'
+import * as Fathom from 'fathom-client'
 
 export async function getStaticProps() {
     const posts = await getPosts()
@@ -110,6 +111,7 @@ export default function Home ({ posts, featuredPosts }) {
         input.current.placeholder = response.message
 
         if (response.message = "You are now subscribed!") {
+            Fathom.trackGoal('8O6T9QOR', 0)
             router.push("/thank-you-subscribe")
         }
     }

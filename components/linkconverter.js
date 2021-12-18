@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
+import * as Fathom from 'fathom-client'
 
 export default function LinkConverter({ content }) { 
     const router = useRouter()
@@ -33,6 +34,18 @@ export default function LinkConverter({ content }) {
                 }
 
                 image.srcset = ""
+            })
+        } catch {
+
+        }
+
+        let forms = document.querySelectorAll("form")
+
+        try {
+            forms.forEach((form) => {
+                form.addEventListener("submit", (e) => {
+                    Fathom.trackGoal('8O6T9QOR', 0)
+                })
             })
         } catch {
 
