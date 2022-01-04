@@ -61,8 +61,8 @@ export default function PostPage ({ post }) {
                 <meta name="twitter:creator" content="@whoisnnamdi" />
                 <meta property="og:image:width" content="1172" />
                 <meta property="og:image:height" content="584" />
-                <Analytics />
             </Head>
+            <Analytics />
             <Navbar source={post.title}/>
             <MathJaxContext hideUntilTypeset="first">
                 <MathJax>

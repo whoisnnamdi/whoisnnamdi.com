@@ -39,8 +39,8 @@ export default function Page ({ posts }) {
                 <meta name="twitter:description" content="Analysis, charts, and equations for nerdy investors (like myself)" />
                 <meta name="twitter:url" content="https://whoisnnamdi.com/investors" />
                 <meta name="twitter:site" content="@whoisnnamdi" />
-                <Analytics />
             </Head>
+            <Analytics />
             <Navbar source={slug}/>
             <SectionPage slug={slug} posts={posts}/>
             <Footer />

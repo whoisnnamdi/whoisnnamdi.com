@@ -8,10 +8,11 @@ import React, { useRef } from 'react'
 import { getPosts, getAll } from './api/ghost_data'
 import PostPreview from '../components/postpreview'
 import Analytics from '../components/analytics'
-import portrait from '../public/images/portrait-color.png'
+import portrait from '../public/images/portrait-color-compressed.png'
 import fs from 'fs-extra'
 import axios from 'axios'
 import path from 'path'
+import * as Fathom from 'fathom-client'
 
 export async function getStaticProps() {
     const posts = await getPosts()
@@ -110,6 +111,7 @@ export default function Home ({ posts, featuredPosts }) {
         input.current.placeholder = response.message
 
         if (response.message = "You are now subscribed!") {
+            Fathom.trackGoal('8O6T9QOR', 0)
             router.push("/thank-you-subscribe")
         }
     }
@@ -134,8 +136,8 @@ export default function Home ({ posts, featuredPosts }) {
                 <meta name="twitter:description" content="Thoughts on technology, venture capital, and the economics of both" />
                 <meta name="twitter:url" content="https://whoisnnamdi.com/" />
                 <meta name="twitter:site" content="@whoisnnamdi" />
-                <Analytics />
             </Head>
+            <Analytics />
             <Navbar source="Home"/>
             <div className="mb-8">
                 <div className="flex flex-col sm:flex-row sm:space-x-4 justify-between mb-4 sm:mb-8">
