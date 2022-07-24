@@ -153,7 +153,7 @@ export default function Home ({ posts, featuredPosts }) {
                             <input 
                                 id="email-input"
                                 name="email"
-                                placeholder="elon@musk.com"
+                                placeholder="Type your email..."
                                 ref={input}
                                 type="email"
                                 required
