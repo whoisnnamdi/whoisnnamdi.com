@@ -73,7 +73,7 @@ export async function getStaticProps() {
     })
 
     const featuredPosts = posts.filter((post) => {
-        return ["covid-hurt-software", "never-enough-developers", "developer-productivity-trends", "software-fat-tailed"].includes(post.slug)
+        return ["dark-matter", "never-enough-developers", "developer-productivity-trends", "software-fat-tailed"].includes(post.slug)
     })
 
     return {
