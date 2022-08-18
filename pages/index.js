@@ -73,7 +73,7 @@ export async function getStaticProps() {
     })
 
     const featuredPosts = posts.filter((post) => {
-        return ["never-enough-developers", "developer-productivity-trends", "software-fat-tailed"].includes(post.slug)
+        return ["covid-hurt-software", "never-enough-developers", "developer-productivity-trends", "software-fat-tailed"].includes(post.slug)
     })
 
     return {
@@ -200,7 +200,7 @@ export default function Home ({ posts, featuredPosts }) {
                 Featured Essays
             </h2>
             <ul>
-                {featuredPosts.slice(0, 3).map((post) => (
+                {featuredPosts.slice(0, 4).map((post) => (
                     <li key={post.id}>
                         <PostPreview post={post}/>
                     </li>
