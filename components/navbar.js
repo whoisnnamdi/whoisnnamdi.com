@@ -1,10 +1,13 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { Menu, Transition, Popover } from '@headlessui/react'
 import { Fragment, useRef } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
+import * as Fathom from 'fathom-client'
 
 export default function Navbar({ source }) {
     const input = useRef(null)
+    const router = useRouter()
     
     const subscribe = async (e) => {
         e.preventDefault()
@@ -27,6 +30,11 @@ export default function Navbar({ source }) {
         console.log(response.message)
         input.current.value = ""
         input.current.placeholder = response.message
+
+        if (response.message = "You are now subscribed!") {
+            Fathom.trackGoal('8O6T9QOR', 0)
+            router.push("/thank-you-subscribe")
+        }
     }
     
     return (
@@ -42,6 +50,11 @@ export default function Navbar({ source }) {
                         About Me
                     </a>
                 </Link>
+                <Link href="/essays">
+                    <a className="px-3 py-2 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                        Essays
+                    </a>
+                </Link>
                 <Link href="/portfolio">
                     <a className="px-3 py-2 rounded-md hover:text-gray-900 hover:bg-gray-50">
                         Portfolio
@@ -51,12 +64,7 @@ export default function Navbar({ source }) {
                     <a className="px-3 py-2 rounded-md hover:text-gray-900 hover:bg-gray-50">
                         Talks
                     </a>
-                </Link>
-                <Link href="/the-developer-productivity-flywheel">
-                    <a className="px-3 py-2 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                        The Developer Productivity Manifesto
-                    </a>
-                </Link>                 
+                </Link>                
             </div>
             <Popover>
                 {({ open }) => (
@@ -83,7 +91,7 @@ export default function Navbar({ source }) {
                 )}
             </Popover>
             <Menu as="div" className="flex flex-col md:hidden relative text-left ml-3">
-                <Menu.Button className="transition duration-500 ease-in-out inline-flex justify-center py-2 px-4 text-white font-semibold bg-gray-900 hover:bg-gray-500 shadow-md rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+                <Menu.Button aria-label="Open Menu" className="transition duration-500 ease-in-out inline-flex justify-center py-2 px-4 text-white font-semibold bg-gray-900 hover:bg-gray-500 shadow-md rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
                     <ChevronDownIcon
                         className="w-5 h-5 py-0.5"
                         aria-hidden="true"
@@ -131,15 +139,6 @@ export default function Navbar({ source }) {
                                 <Link href="/talks">
                                     <a className="block px-3 py-2 rounded-md text-lg font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
                                         Talks
-                                    </a>
-                                </Link>   
-                            )}
-                        </Menu.Item>
-                        <Menu.Item>
-                            {({ active }) => (
-                                <Link href="/the-developer-productivity-flywheel">
-                                    <a className="block px-3 py-2 rounded-md text-lg font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
-                                        The Developer Productivity Manifesto
                                     </a>
                                 </Link>   
                             )}

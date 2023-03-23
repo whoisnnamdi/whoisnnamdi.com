@@ -4,6 +4,7 @@ import { getPosts, getPost, getPages, getPage } from './api/ghost_data'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
 import LinkConverter from '../components/linkconverter'
+import Analytics from '../components/analytics'
 import { MathJax, MathJaxContext } from "better-react-mathjax"
 
 export async function getStaticPaths() {
@@ -61,6 +62,7 @@ export default function PostPage ({ post }) {
                 <meta property="og:image:width" content="1172" />
                 <meta property="og:image:height" content="584" />
             </Head>
+            <Analytics />
             <Navbar source={post.title}/>
             <MathJaxContext hideUntilTypeset="first">
                 <MathJax>
@@ -74,7 +76,8 @@ export default function PostPage ({ post }) {
                                     src={post.feature_image}
                                     alt={post.title}
                                     layout="fill"
-                                    className="imageImage rounded-lg" 
+                                    className="imageImage rounded-lg"
+                                    priority
                                 />
                             </div> :
                             null

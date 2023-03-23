@@ -1,15 +1,22 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
-import React, { useRef, useState } from 'react'
-import { getPosts } from './api/ghost_data'
+import React, { useRef } from 'react'
+import { getPosts, getAll } from './api/ghost_data'
 import PostPreview from '../components/postpreview'
-import portrait from '../public/images/portrait-color.png'
+import Analytics from '../components/analytics'
+import portrait from '../public/images/portrait-color-compressed.png'
+import fs from 'fs-extra'
+import axios from 'axios'
+import path from 'path'
+import * as Fathom from 'fathom-client'
 
 export async function getStaticProps() {
     const posts = await getPosts()
+    const postsPages = await getAll()
 
     posts.map((post) => {
         const options = {
@@ -30,15 +37,56 @@ export async function getStaticProps() {
         post.excerpt = post.excerpt.replace(/\[(.*?)[$^.]/, "")
     })
 
+    const downloadImage = async (image) => {
+        try {
+            const filePath = path.join("public", image.replace(/\bhttps?:\/\/[^)''"\/]+/, ""))
+            await fs.ensureDir(path.dirname(filePath))
+
+            fs.open(filePath, "wx", async (err, fd) => {
+                if (err) {
+                    if (err.code === "EEXIST") {
+                        return
+                    }
+
+                    console.log(err, filePath)
+                } else {
+                    const res = await axios({ url: image, responseType: "stream" })
+                    res.data.pipe(fs.createWriteStream(filePath))
+                }
+            })
+        } catch {
+            console.log("Image download failed: ", image)
+        }
+
+    }
+
+    postsPages.forEach(post => {
+        try {
+            post.html.match(/\bhttps?:[^)''"]+\/content\/images[^)''"]+\.(?:jpg|jpeg|gif|png|svg)/g).forEach(image => {
+                if (!image.includes("600w") && !image.includes("1000w") && !image.includes("1600w")) {
+                    downloadImage(image)
+                }
+            })
+        } catch {
+
+        }
+    })
+
+    const featuredPosts = posts.filter((post) => {
+        return ["dark-matter", "never-enough-developers", "developer-productivity-trends", "software-fat-tailed"].includes(post.slug)
+    })
+
     return {
         props: {
-            posts
+            posts,
+            featuredPosts
         }
     }
 }
 
-export default function Home ({ posts }) {
+export default function Home ({ posts, featuredPosts }) {
     const input = useRef(null)
+    const router = useRouter()
     
     const subscribe = async (e) => {
         e.preventDefault()
@@ -61,6 +109,11 @@ export default function Home ({ posts }) {
         console.log(response.message)
         input.current.value = ""
         input.current.placeholder = response.message
+
+        if (response.message = "You are now subscribed!") {
+            Fathom.trackGoal('8O6T9QOR', 0)
+            router.push("/thank-you-subscribe")
+        }
     }
 
     return (
@@ -84,6 +137,7 @@ export default function Home ({ posts }) {
                 <meta name="twitter:url" content="https://whoisnnamdi.com/" />
                 <meta name="twitter:site" content="@whoisnnamdi" />
             </Head>
+            <Analytics />
             <Navbar source="Home"/>
             <div className="mb-8">
                 <div className="flex flex-col sm:flex-row sm:space-x-4 justify-between mb-4 sm:mb-8">
@@ -99,7 +153,7 @@ export default function Home ({ posts }) {
                             <input 
                                 id="email-input"
                                 name="email"
-                                placeholder="elon@musk.com"
+                                placeholder="Type your email..."
                                 ref={input}
                                 type="email"
                                 required
@@ -113,26 +167,28 @@ export default function Home ({ posts }) {
                         src={portrait}
                         width={346}
                         height={400}
+                        alt="Nnamdi Iregbulem"
                         className="sm:w-1/3 md:w-1/3 lg:w-1/3 rounded-md"
+                        priority
                     />
                 </div>
                 <div className="flex flex-col sm:flex-row justify-between space-y-10 sm:space-x-10 sm:space-y-0">
                     <Link href="/founders">
-                        <a className="flex-1 transition duration-500 ease-in-out transform sm:hover:scale-105 font-normal text-md text-center py-10 px-6 rounded-xl shadow-lg">
+                        <a className="flex-1 transition duration-500 ease-in-out transform sm:hover:scale-105 font-normal text-md text-center py-10 px-6 rounded-xl border border-black border-opacity-10">
                             <p className="text-5xl mb-5">🚀</p>
                             <h2 className="font-bold text-2xl sm:text-2xl mb-2 text-gray-900">Founders</h2>
                             <p className="text-xl md:text-lg lg:text-xl">The theories and realities of building a valuable tech startup</p>
                         </a>
                     </Link>
                     <Link href="/developers">
-                        <a className="flex-1 transition duration-500 ease-in-out transform hover:scale-105 font-normal text-md text-center py-10 px-6 rounded-xl shadow-lg">
+                        <a className="flex-1 transition duration-500 ease-in-out transform hover:scale-105 font-normal text-md text-center py-10 px-6 rounded-xl border border-black border-opacity-10">
                             <p className="text-5xl mb-5">👨‍💻👩‍💻</p>
                             <h2 className="font-bold text-2xl sm:text-2xl mb-2 text-gray-900">Developers</h2>
                             <p className="text-xl md:text-lg lg:text-xl">Software development, tooling, and the careers of software engineers</p>
                         </a>
                     </Link>
                     <Link href="/investors">
-                        <a className="flex-1 transition duration-500 ease-in-out transform hover:scale-105 font-normal text-md text-center py-10 px-6 rounded-xl shadow-lg">
+                        <a className="flex-1 transition duration-500 ease-in-out transform hover:scale-105 font-normal text-md text-center py-10 px-6 rounded-xl border border-black border-opacity-10">
                             <p className="text-5xl mb-5">💸</p>
                             <h2 className="font-bold text-2xl sm:text-2xl mb-2 text-gray-900">Investors</h2>
                             <p className="text-xl md:text-lg lg:text-xl">Analysis, charts, and equations for nerdy investors (like myself)</p>
@@ -140,7 +196,17 @@ export default function Home ({ posts }) {
                     </Link>
                 </div>
             </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center mt-8">
+                Featured Essays
+            </h2>
+            <ul>
+                {featuredPosts.slice(0, 4).map((post) => (
+                    <li key={post.id}>
+                        <PostPreview post={post}/>
+                    </li>
+                ))}
+            </ul>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center mt-8">
                 Latest Essays
             </h2>
             <ul>
