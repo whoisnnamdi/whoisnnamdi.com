@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
+import Image from "next/image"
 import { getPosts, getPost, getPages, getPage } from './api/ghost_data'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
@@ -75,7 +75,10 @@ export default function PostPage ({ post }) {
                                 <Image
                                     src={post.feature_image}
                                     alt={post.title}
-                                    layout="fill"
+                                    width="0"
+                                    height="0"
+                                    sizes="100vw"
+                                    // layout="fill"
                                     className="imageImage rounded-lg"
                                     priority
                                 />
