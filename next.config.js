@@ -19,4 +19,16 @@ module.exports = {
       defaultLocale: "en",
     },
     trailingSlash: true,
+    async rewrites() {
+      return [
+        {
+          "source": "/notes",
+          "destination": "/notes/index.html"
+        },
+        {
+          "source": "/notes/:path*",
+          "destination": "/notes/:path*.html"
+        }
+      ]
+    }
 }

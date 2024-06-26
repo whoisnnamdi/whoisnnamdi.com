@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>🪴 Quartz 4.0</title>
+      <link>https://whoisnnamdi.com/notes</link>
+      <description>Last 10 notes on 🪴 Quartz 4.0</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>Ben Franklin&#039;s Autoencoder</title>
+    <link>https://whoisnnamdi.com/notes/Ben-Franklin's-Autoencoder</link>
+    <guid>https://whoisnnamdi.com/notes/Ben-Franklin's-Autoencoder</guid>
+    <description>Ben Franklin’s Autoencoder Ben Franklin’s method of reading a piece of writing, taking notes on it, and then trying to reproduce the original piece from his notes is identical to an ...</description>
+    <pubDate>Wed, 26 Jun 2024 07:11:59 GMT</pubDate>
+  </item><item>
+    <title>Welcome to Quartz</title>
+    <link>https://whoisnnamdi.com/notes/</link>
+    <guid>https://whoisnnamdi.com/notes/</guid>
+    <description>This is a blank Quartz installation. See the documentation for how to get started.</description>
+    <pubDate>Wed, 26 Jun 2024 06:46:11 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>
