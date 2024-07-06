@@ -40,7 +40,7 @@ module.exports = {
           missing: [
             {
               type: 'file',
-              value: 'notes/:path*.html'
+              key: 'notes/:path*.html'
             }
           ]
         }
