@@ -35,14 +35,8 @@ module.exports = {
       return [
         {
           source: '/notes/:path*',
-          missing: [
-            {
-              type: 'file',
-              value: 'notes/:path*.html',
-            },
-          ],
-          permanent: false,
           destination: '/notes/404.html',
+          permanent: false,
         },
       ]
     }
