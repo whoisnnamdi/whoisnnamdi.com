@@ -30,10 +30,6 @@ module.exports = {
           destination: "/notes/:path*.html"
         },
         {
-          source: "/notes/404.html",
-          destination: "/404"
-        },
-        {
           source: "/notes/:path*",
           destination: "/notes/404.html",
           has: [
