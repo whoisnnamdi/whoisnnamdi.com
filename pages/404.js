@@ -6,9 +6,11 @@ export default function Custom404() {
 
   useEffect(() => {
     if (router.asPath.startsWith('/notes/')) {
-      window.location.href = '/notes/404.html'
+      if (typeof window !== 'undefined') {
+        window.location.href = '/notes/404.html'
+      }
     }
   }, [router.asPath])
 
-  return <h1>404 - Page Not Found</h1>
+  return null
 }

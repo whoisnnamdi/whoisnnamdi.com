@@ -32,11 +32,10 @@ module.exports = {
         {
           source: "/notes/:path*",
           destination: "/notes/404.html",
-          has: [
+          missing: [
             {
-              type: "header",
-              key: "x-nextjs-data",
-              value: "404",
+              type: "file",
+              filePath: "public/notes/:path*.html",
             },
           ],
         }
