@@ -22,22 +22,24 @@ module.exports = {
     async rewrites() {
       return [
         {
-          "source": "/notes",
-          "destination": "/notes/index.html"
+          source: "/notes",
+          destination: "/notes/index.html"
         },
         {
-          "source": "/notes/:path*",
-          "destination": "/notes/:path*.html"
+          source: "/notes/:path*",
+          destination: "/notes/:path*.html"
+        },
+        {
+          source: "/notes/:path*",
+          destination: "/notes/404.html",
+          has: [
+            {
+              type: "header",
+              key: "x-not-found",
+              value: "1"
+            }
+          ]
         }
-      ]
-    },
-    async redirects() {
-      return [
-        {
-          source: '/notes/:path*',
-          destination: '/notes/404.html',
-          permanent: false,
-        },
       ]
     }
 }
