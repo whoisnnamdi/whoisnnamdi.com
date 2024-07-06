@@ -30,5 +30,20 @@ module.exports = {
           "destination": "/notes/:path*.html"
         }
       ]
+    },
+    async redirects() {
+      return [
+        {
+          source: '/notes/:path*',
+          missing: [
+            {
+              type: 'file',
+              value: 'notes/:path*.html',
+            },
+          ],
+          permanent: false,
+          destination: '/notes/404.html',
+        },
+      ]
     }
 }
