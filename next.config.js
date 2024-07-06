@@ -31,13 +31,7 @@ module.exports = {
         },
         {
           source: "/notes/:path*",
-          destination: "/notes/404.html",
-          missing: [
-            {
-              type: "file",
-              filePath: "public/notes/:path*.html",
-            },
-          ],
+          destination: "/notes/404.html"
         }
       ]
     },
