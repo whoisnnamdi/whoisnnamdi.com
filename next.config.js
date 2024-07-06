@@ -28,15 +28,19 @@ module.exports = {
         {
           source: "/notes/:path*",
           destination: "/notes/:path*.html"
-        },
+        }
+      ]
+    },
+    async redirects() {
+      return [
         {
-          source: "/notes/:path*",
-          destination: "/notes/404.html",
-          has: [
+          source: '/notes/:path*',
+          destination: '/notes/404.html',
+          permanent: false,
+          missing: [
             {
-              type: "header",
-              key: "x-not-found",
-              value: "1"
+              type: 'file',
+              value: 'notes/:path*.html'
             }
           ]
         }
