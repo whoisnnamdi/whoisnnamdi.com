@@ -39,8 +39,8 @@ module.exports = {
           permanent: false,
           missing: [
             {
-              type: 'file',
-              key: 'notes/:path*.html'
+              type: 'header',
+              key: 'x-custom-header'
             }
           ]
         }
