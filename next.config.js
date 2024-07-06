@@ -31,19 +31,8 @@ module.exports = {
         }
       ]
     },
+    // The redirects function can be removed or left empty
     async redirects() {
-      return [
-        {
-          source: '/notes/:path*',
-          destination: '/notes/404.html',
-          permanent: false,
-          missing: [
-            {
-              type: 'header',
-              key: 'x-custom-header'
-            }
-          ]
-        }
-      ]
+      return []
     }
 }
