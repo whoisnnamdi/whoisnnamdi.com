@@ -28,6 +28,10 @@ module.exports = {
         {
           source: "/notes/:path*",
           destination: "/notes/:path*.html"
+        },
+        {
+          source: "/notes/404.html",
+          destination: "/404"
         }
       ]
     },
