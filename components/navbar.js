@@ -62,6 +62,13 @@ export default function Navbar({ source }) {
                     
                 </Link>
                 <Link
+                    href="/notes"
+                    className="px-3 py-2 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                    
+                        Notes
+                    
+                </Link>
+                <Link
                     href="/portfolio"
                     className="px-3 py-2 rounded-md hover:text-gray-900 hover:bg-gray-50">
                     
@@ -135,6 +142,17 @@ export default function Navbar({ source }) {
                                     className="block px-3 py-2 rounded-md text-lg font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
                                     
                                         About Me
+                                    
+                                </Link>
+                            )}
+                        </Menu.Item>
+                        <Menu.Item>
+                            {({ active }) => (
+                                <Link
+                                    href="/notes"
+                                    className="block px-3 py-2 rounded-md text-lg font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                                    
+                                        Notes
                                     
                                 </Link>
                             )}
