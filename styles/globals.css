@@ -59,7 +59,7 @@ mjx-container {
 }
 
 .imageContainer div {
-    position: unset !important
+    /* position: unset !important */
 }
 
 .imageImage {

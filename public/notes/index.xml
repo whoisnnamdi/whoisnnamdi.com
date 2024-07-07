@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>Nnamdi&#039;s Notes</title>
+      <link>https://whoisnnamdi.com/notes</link>
+      <description>Last 10 notes on Nnamdi&#039;s Notes</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>Beveridge-Nelson Decomposition</title>
+    <link>https://whoisnnamdi.com/notes/Beveridge-Nelson-Decomposition</link>
+    <guid>https://whoisnnamdi.com/notes/Beveridge-Nelson-Decomposition</guid>
+    <description>Beveridge-Nelson Decomposition The Beveridge-Nelson (BN) Decomposition breaks down a time series, y_t, into a stochastic trend and stationary cycle. The trend, or permanent component, represents the long-run forecast of y_t at time t, after all transitory shocks have died out.</description>
+    <pubDate>Sat, 06 Jul 2024 21:24:16 GMT</pubDate>
+  </item><item>
+    <title>Vector autoregression</title>
+    <link>https://whoisnnamdi.com/notes/Vector-autoregression</link>
+    <guid>https://whoisnnamdi.com/notes/Vector-autoregression</guid>
+    <description>Vector autoregression A structural VAR is simply one where the errors are uncorrelated with one another across the various included time series. Dealing with nonstationarity ”VAR models are usually guided by theory and are dynamic in nature, so you do not have to worry about the nonstationarity.” (Source) “There is an issue of whether the variables in a VAR need to be stationary.</description>
+    <pubDate>Sat, 06 Jul 2024 21:24:16 GMT</pubDate>
+  </item><item>
+    <title>Dynamic factor model</title>
+    <link>https://whoisnnamdi.com/notes/Dynamic-factor-model</link>
+    <guid>https://whoisnnamdi.com/notes/Dynamic-factor-model</guid>
+    <description>Dynamic factor model DFMs are VARs that operate over unobserved factors rather than observed variables. The unobserved factors are derived via PCA. Idiosyncratic deviations from the common component are modeled via autoregressive models.</description>
+    <pubDate>Sat, 06 Jul 2024 21:24:16 GMT</pubDate>
+  </item><item>
+    <title>Forecast Error Variance Decompositions with Local Projections</title>
+    <link>https://whoisnnamdi.com/notes/@gorodnichenkoForecastErrorVariance2020</link>
+    <guid>https://whoisnnamdi.com/notes/@gorodnichenkoForecastErrorVariance2020</guid>
+    <description>Forecast Error Variance Decompositions with Local Projections Yuriy Gorodnichenko, Byoungchan Lee Link Abstract We propose and study properties of an estimator of the forecast ...</description>
+    <pubDate>Sat, 06 Jul 2024 21:24:16 GMT</pubDate>
+  </item><item>
+    <title>Model Selection for Local Projections Instrumental Variable Methods - Empirical Application to Government Spending Multipliers.</title>
+    <link>https://whoisnnamdi.com/notes/@karapanagiotiModelSelectionLocal</link>
+    <guid>https://whoisnnamdi.com/notes/@karapanagiotiModelSelectionLocal</guid>
+    <description>Model Selection for Local Projections Instrumental Variable Methods - Empirical Application to Government Spending Multipliers. Chrysoula Karapanagioti Link Abstract This thesis tackles the problem of model selection for a single equation estimation method named Local Projection with Instrumental variable.</description>
+    <pubDate>Sat, 06 Jul 2024 21:24:16 GMT</pubDate>
+  </item><item>
+    <title>The Adaptive Lasso and Its Oracle Properties</title>
+    <link>https://whoisnnamdi.com/notes/@zouAdaptiveLassoIts2006</link>
+    <guid>https://whoisnnamdi.com/notes/@zouAdaptiveLassoIts2006</guid>
+    <description>The Adaptive Lasso and Its Oracle Properties Hui Zou Abstract The lasso is a popular technique for simultaneous estimation and variable selection. Lasso variable selection has been shown to be consistent under certain conditions.</description>
+    <pubDate>Sat, 06 Jul 2024 21:24:16 GMT</pubDate>
+  </item><item>
+    <title>How Competitive is the Stock Market? Theory, Evidence from Portfolios, and Implications for the Rise of Passive Investing</title>
+    <link>https://whoisnnamdi.com/notes/@haddadHowCompetitiveStock2021</link>
+    <guid>https://whoisnnamdi.com/notes/@haddadHowCompetitiveStock2021</guid>
+    <description>How Competitive is the Stock Market? Theory, Evidence from Portfolios, and Implications for the Rise of Passive Investing Valentin Haddad, Paul Huebner, Erik Loualiche Video Abstract ...</description>
+    <pubDate>Sat, 06 Jul 2024 21:24:16 GMT</pubDate>
+  </item><item>
+    <title>Short and Variable Lags</title>
+    <link>https://whoisnnamdi.com/notes/@budaShortVariableLags2023</link>
+    <guid>https://whoisnnamdi.com/notes/@budaShortVariableLags2023</guid>
+    <description>Short and Variable Lags Gergely Buda, Vasco M. Carvalho, Giancarlo Corsetti, João B. Duarte, Stephen Hansen, Álvaro Ortiz, Tomasa Rodrigo, José V. Rodríguez Mora – 2023 Abstract We study the transmission of monetary policy shocks using daily consumption, corporate sales and employment series.</description>
+    <pubDate>Sat, 06 Jul 2024 21:24:16 GMT</pubDate>
+  </item><item>
+    <title>How the Wealth Was Won: Factor Shares as Market Fundamentals</title>
+    <link>https://whoisnnamdi.com/notes/@greenwaldHowWealthWas</link>
+    <guid>https://whoisnnamdi.com/notes/@greenwaldHowWealthWas</guid>
+    <description>How the Wealth Was Won: Factor Shares as Market Fundamentals Daniel L Greenwald, MIT Sloan, Martin Lettau, Sydney C Ludvigson Link Video Video Abstract Why does the stock market rise ...</description>
+    <pubDate>Sat, 06 Jul 2024 21:24:16 GMT</pubDate>
+  </item><item>
+    <title>Local Projections vs. VARs: Lessons From Thousands of DGPs</title>
+    <link>https://whoisnnamdi.com/notes/@liLocalProjectionsVs2023</link>
+    <guid>https://whoisnnamdi.com/notes/@liLocalProjectionsVs2023</guid>
+    <description>Local Projections vs. VARs: Lessons From Thousands of DGPs Dake Li, Mikkel Plagborg-Møller, Christian K. Wolf – 2023 Never use local projections in small samples unless you have overwhelming concern for bias, in which case you should really use bias-corrected LP a la @herbstBiasLocalProjections.</description>
+    <pubDate>Sat, 06 Jul 2024 21:24:16 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>
