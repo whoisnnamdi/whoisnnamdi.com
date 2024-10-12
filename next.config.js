@@ -19,4 +19,24 @@ module.exports = {
       defaultLocale: "en",
     },
     trailingSlash: true,
+    async rewrites() {
+      return [
+        {
+          source: "/notes",
+          destination: "/notes/index.html"
+        },
+        {
+          source: "/notes/:path*",
+          destination: "/notes/:path*.html"
+        },
+        {
+          source: "/notes/:path*",
+          destination: "/notes/404.html"
+        }
+      ]
+    },
+    // The redirects function can be removed or left empty
+    async redirects() {
+      return []
+    }
 }

@@ -40,30 +40,47 @@ export default function Navbar({ source }) {
     return (
         <div className="flex justify-end mb-5 overflow-hidden">
             <div className="flex-shrink-0 hidden md:block px-1 py-2 md:text-base lg:text-base font-semibold text-gray-700">
-                <Link href="/">
-                    <a className="px-3 py-2 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                <Link
+                    href="/"
+                    className="px-3 py-2 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                    
                         Home
-                    </a>
+                    
                 </Link>
-                <Link href="/about-me">
-                    <a className="px-3 py-2 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                <Link
+                    href="/about-me"
+                    className="px-3 py-2 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                    
                         About Me
-                    </a>
+                    
                 </Link>
-                <Link href="/essays">
-                    <a className="px-3 py-2 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                <Link
+                    href="/essays"
+                    className="px-3 py-2 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                    
                         Essays
-                    </a>
+                    
                 </Link>
-                <Link href="/portfolio">
-                    <a className="px-3 py-2 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                <Link
+                    href="/notes"
+                    className="px-3 py-2 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                    
+                        Notes
+                    
+                </Link>
+                <Link
+                    href="/portfolio"
+                    className="px-3 py-2 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                    
                         Portfolio
-                    </a>
+                    
                 </Link>
-                <Link href="/talks">
-                    <a className="px-3 py-2 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                <Link
+                    href="/talks"
+                    className="px-3 py-2 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                    
                         Talks
-                    </a>
+                    
                 </Link>                
             </div>
             <Popover>
@@ -109,37 +126,56 @@ export default function Navbar({ source }) {
                     <Menu.Items className="mt-4 w-52 right-0 origin-top-right bg-gray-100 rounded-lg shadow-lg">
                         <Menu.Item>
                             {({ active }) => (
-                                <Link href="/">
-                                    <a className="block px-3 py-2 rounded-md text-lg font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                                <Link
+                                    href="/"
+                                    className="block px-3 py-2 rounded-md text-lg font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                                    
                                         Home
-                                    </a>
+                                    
                                 </Link>
                             )}
                         </Menu.Item>
                         <Menu.Item>
                             {({ active }) => (
-                                <Link href="/about-me">
-                                    <a className="block px-3 py-2 rounded-md text-lg font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                                <Link
+                                    href="/about-me"
+                                    className="block px-3 py-2 rounded-md text-lg font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                                    
                                         About Me
-                                    </a>
+                                    
                                 </Link>
                             )}
                         </Menu.Item>
                         <Menu.Item>
                             {({ active }) => (
-                                <Link href="/portfolio">
-                                    <a className="block px-3 py-2 rounded-md text-lg font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                                <Link
+                                    href="/notes"
+                                    className="block px-3 py-2 rounded-md text-lg font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                                    
+                                        Notes
+                                    
+                                </Link>
+                            )}
+                        </Menu.Item>
+                        <Menu.Item>
+                            {({ active }) => (
+                                <Link
+                                    href="/portfolio"
+                                    className="block px-3 py-2 rounded-md text-lg font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                                    
                                         Portfolio
-                                    </a>
+                                    
                                 </Link>
                             )}
                         </Menu.Item>
                         <Menu.Item>
                             {({ active }) => (
-                                <Link href="/talks">
-                                    <a className="block px-3 py-2 rounded-md text-lg font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                                <Link
+                                    href="/talks"
+                                    className="block px-3 py-2 rounded-md text-lg font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                                    
                                         Talks
-                                    </a>
+                                    
                                 </Link>   
                             )}
                         </Menu.Item>
@@ -147,5 +183,5 @@ export default function Navbar({ source }) {
                 </Transition>
             </Menu>
         </div>
-    )
+    );
 }

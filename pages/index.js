@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Navbar from '../components/navbar'
@@ -173,26 +173,32 @@ export default function Home ({ posts, featuredPosts }) {
                     />
                 </div>
                 <div className="flex flex-col sm:flex-row justify-between space-y-10 sm:space-x-10 sm:space-y-0">
-                    <Link href="/founders">
-                        <a className="flex-1 transition duration-500 ease-in-out transform sm:hover:scale-105 font-normal text-md text-center py-10 px-6 rounded-xl border border-black border-opacity-10">
-                            <p className="text-5xl mb-5">🚀</p>
-                            <h2 className="font-bold text-2xl sm:text-2xl mb-2 text-gray-900">Founders</h2>
-                            <p className="text-xl md:text-lg lg:text-xl">The theories and realities of building a valuable tech startup</p>
-                        </a>
+                    <Link
+                        href="/founders"
+                        className="flex-1 transition duration-500 ease-in-out transform sm:hover:scale-105 font-normal text-md text-center py-10 px-6 rounded-xl border border-black border-opacity-10">
+
+                        <p className="text-5xl mb-5">🚀</p>
+                        <h2 className="font-bold text-2xl sm:text-2xl mb-2 text-gray-900">Founders</h2>
+                        <p className="text-xl md:text-lg lg:text-xl">The theories and realities of building a valuable tech startup</p>
+
                     </Link>
-                    <Link href="/developers">
-                        <a className="flex-1 transition duration-500 ease-in-out transform hover:scale-105 font-normal text-md text-center py-10 px-6 rounded-xl border border-black border-opacity-10">
-                            <p className="text-5xl mb-5">👨‍💻👩‍💻</p>
-                            <h2 className="font-bold text-2xl sm:text-2xl mb-2 text-gray-900">Developers</h2>
-                            <p className="text-xl md:text-lg lg:text-xl">Software development, tooling, and the careers of software engineers</p>
-                        </a>
+                    <Link
+                        href="/developers"
+                        className="flex-1 transition duration-500 ease-in-out transform hover:scale-105 font-normal text-md text-center py-10 px-6 rounded-xl border border-black border-opacity-10">
+
+                        <p className="text-5xl mb-5">👨‍💻👩‍💻</p>
+                        <h2 className="font-bold text-2xl sm:text-2xl mb-2 text-gray-900">Developers</h2>
+                        <p className="text-xl md:text-lg lg:text-xl">Software development, tooling, and the careers of software engineers</p>
+
                     </Link>
-                    <Link href="/investors">
-                        <a className="flex-1 transition duration-500 ease-in-out transform hover:scale-105 font-normal text-md text-center py-10 px-6 rounded-xl border border-black border-opacity-10">
-                            <p className="text-5xl mb-5">💸</p>
-                            <h2 className="font-bold text-2xl sm:text-2xl mb-2 text-gray-900">Investors</h2>
-                            <p className="text-xl md:text-lg lg:text-xl">Analysis, charts, and equations for nerdy investors (like myself)</p>
-                        </a>
+                    <Link
+                        href="/investors"
+                        className="flex-1 transition duration-500 ease-in-out transform hover:scale-105 font-normal text-md text-center py-10 px-6 rounded-xl border border-black border-opacity-10">
+
+                        <p className="text-5xl mb-5">💸</p>
+                        <h2 className="font-bold text-2xl sm:text-2xl mb-2 text-gray-900">Investors</h2>
+                        <p className="text-xl md:text-lg lg:text-xl">Analysis, charts, and equations for nerdy investors (like myself)</p>
+
                     </Link>
                 </div>
             </div>
