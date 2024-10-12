@@ -5,7 +5,7 @@ mailchimp.setConfig({
     server: process.env.MAILCHIMP_API_SERVER
 })
 
-module.exports = async (req, res) => {
+export default async (req, res) => {
     if (req.method === "GET") {
         const response = await mailchimp.ping.get()
 
@@ -28,9 +28,10 @@ module.exports = async (req, res) => {
 
             res.status(200).json({ message: "You are now subscribed!" })
         } catch (error) {
-            if (error.response.body.title == "Member Exists") {
+            console.log('Mailchimp subscription error:', error);
+            if (error.response && error.response.body && error.response.body.title == "Member Exists") {
                 res.status(400).json({ message: "You're already subscribed!" })
-            } else if (error.response.body.title == "Invalid Resource") {
+            } else if (error.response && error.response.body && error.response.body.title == "Invalid Resource") {
                 res.status(400).json({ message: "Seems like a spam email?" })
             } else {
                 res.status(400).json({ message: "Something went wrong." })
