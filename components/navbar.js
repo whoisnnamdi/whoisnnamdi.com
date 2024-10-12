@@ -3,38 +3,16 @@ import { useRouter } from 'next/router'
 import { Menu, Transition, Popover } from '@headlessui/react'
 import { Fragment, useRef } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
-import * as Fathom from 'fathom-client'
+import { useSubscribe } from './subscribe'
 
 export default function Navbar({ source }) {
     const input = useRef(null)
     const router = useRouter()
+    const subscribe = useSubscribe()
     
-    const subscribe = async (e) => {
+    const handleSubscribe = async (e) => {
         e.preventDefault()
-
-        const res = await fetch('/api/subscribe', {
-            body: JSON.stringify({
-                email: input.current.value,
-                merge: {
-                    'SOURCE': "Navbar: " + source
-                }
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            method: 'POST'
-        })
-
-        const response = await res.json()
-
-        console.log(response.message)
-        input.current.value = ""
-        input.current.placeholder = response.message
-
-        if (response.message === "You are now subscribed!") {
-            Fathom.trackGoal('8O6T9QOR', 0)
-            router.push("/thank-you-subscribe")
-        }
+        await subscribe(input.current.value, "Navbar: " + source, input)
     }
     
     return (
@@ -90,7 +68,7 @@ export default function Navbar({ source }) {
                             Subscribe
                         </Popover.Button>
                         <Popover.Panel className="w-64 sm:w-96">
-                            <form onSubmit={subscribe} className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-3 justify-between">
+                            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-3 justify-between">
                                 <input 
                                     id="email-input"
                                     name="email"
