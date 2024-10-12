@@ -110,7 +110,7 @@ export default function Home ({ posts, featuredPosts }) {
         input.current.value = ""
         input.current.placeholder = response.message
 
-        if (response.message = "You are now subscribed!") {
+        if (response.message === "You are now subscribed!") {
             Fathom.trackGoal('8O6T9QOR', 0)
             router.push("/thank-you-subscribe")
         }
