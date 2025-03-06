@@ -30,7 +30,7 @@ const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
             </description>
             <link>https://whoisnnamdi.com</link>
             <lastBuildDate>${new Intl.DateTimeFormat('en-GB', options).format(new Date()) + " GMT"}</lastBuildDate>
-            <atom:link href="https://whoisnnamdi.com/static/rss.xml" rel="self" type="application/rss+xml"/>
+            <atom:link href="https://whoisnnamdi.com/rss" rel="self" type="application/rss+xml"/>
             ${posts
                 .map((post) => {
                     return `<item>
