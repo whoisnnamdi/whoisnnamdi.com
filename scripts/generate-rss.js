@@ -30,7 +30,7 @@ const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
             </description>
             <link>https://whoisnnamdi.com</link>
             <lastBuildDate>${new Intl.DateTimeFormat('en-GB', options).format(new Date()) + " GMT"}</lastBuildDate>
-            <atom:link href="https://whoisnnamdi.com/rss/" rel="self" type="application/rss+xml"/>
+            <atom:link href="https://whoisnnamdi.com/static/rss.xml" rel="self" type="application/rss+xml"/>
             ${posts
                 .map((post) => {
                     return `<item>
@@ -75,16 +75,16 @@ async function generateRSS() {
     try {
         console.log('Generating RSS feed...');
         
-        // Ensure the directory exists
-        const rssDir = path.join(process.cwd(), 'public', 'rss');
-        fs.mkdirSync(rssDir, { recursive: true });
+        // Ensure the static directory exists
+        const staticDir = path.join(process.cwd(), 'public', 'static');
+        fs.mkdirSync(staticDir, { recursive: true });
         
         // Generate the RSS feed
         const posts = await getPosts();
         const rssContent = createRSS(posts);
         
         // Write the file
-        const filePath = path.join(rssDir, 'feed.xml');
+        const filePath = path.join(staticDir, 'rss.xml');
         fs.writeFileSync(filePath, rssContent);
         
         console.log(`RSS feed generated at ${filePath}`);

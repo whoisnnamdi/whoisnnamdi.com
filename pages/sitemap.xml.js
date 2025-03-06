@@ -4,9 +4,9 @@ export default function Sitemap() {
 }
 
 export async function getServerSideProps({ res }) {
-    // Redirect to the static sitemap
+    // Redirect to the static sitemap in the static directory
     res.statusCode = 301
-    res.setHeader('Location', '/sitemap.xml')
+    res.setHeader('Location', '/static/sitemap.xml')
     res.end()
     
     return {

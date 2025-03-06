@@ -4,9 +4,9 @@ export default function RSS() {
 }
 
 export async function getServerSideProps({ res }) {
-    // Redirect to the static RSS feed
+    // Redirect to the static RSS feed in the static directory
     res.statusCode = 301
-    res.setHeader('Location', '/rss/feed.xml')
+    res.setHeader('Location', '/static/rss.xml')
     res.end()
     
     return {
