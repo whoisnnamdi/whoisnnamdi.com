@@ -69,13 +69,13 @@ const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
     </rss>
 `
 
-// This function generates the RSS feed at build time
+// We'll use getStaticProps to generate the RSS at build time
 export async function getStaticProps() {
     try {
         const posts = await getPosts()
         const rss = createRSS(posts)
         
-        // Only write the file during build time, not in production server runtime
+        // Generate the RSS feed at build time
         if (process.env.NODE_ENV === 'development' || process.env.VERCEL_ENV === 'preview' || process.env.VERCEL_ENV === 'production') {
             try {
                 // Write the RSS feed to the public directory so it's statically served
@@ -97,51 +97,67 @@ export async function getStaticProps() {
         }
         
         return {
-            props: { rss },
-            // Optional: Set the revalidation period to rebuild the RSS feed
-            revalidate: 86400 // Rebuild once per day (in seconds)
+            // Return the RSS content as props
+            props: { 
+                rssContent: rss 
+            },
+            // Rebuild once per day
+            revalidate: 86400
         }
     } catch (error) {
         console.error('Error generating RSS feed:', error)
         return {
-            props: { rss: '' }, // Return empty RSS on error
+            props: { rssContent: '' },
             revalidate: 3600 // Try again more frequently on error
         }
     }
 }
 
-// This component returns the RSS feed directly
-export default function RSS({ rss }) {
-    // This causes Next.js to serve the component with the right content type
-    if (typeof window === 'undefined') {
-        // We're on the server, let's set the content type with getServerSideProps
+// Component that sets headers and returns XML content
+export default function RSS({ rssContent }) {
+    // If we're on the client side, don't render anything
+    if (typeof window !== 'undefined') {
+        return null
     }
     
-    // On client-side, return null (this should never be executed as we're handling RSS at build time)
+    // Return a div that will never be rendered
+    // The actual content is delivered by getInitialProps
     return null
 }
 
-// This ensures the content type is set correctly
-export async function getServerSideProps({ res }) {
-    // Set content type to XML
-    res.setHeader('Content-Type', 'text/xml')
-    
-    // Try to serve the static file
-    try {
-        const rssPath = path.join(process.cwd(), 'public', 'rss', 'index.xml')
-        const rssContent = fs.readFileSync(rssPath, 'utf8')
-        res.write(rssContent)
-        res.end()
-    } catch (error) {
-        // If the static file doesn't exist, generate it on-the-fly
-        const posts = await getPosts()
-        const rssContent = createRSS(posts)
-        res.write(rssContent)
-        res.end()
+// Use getInitialProps for header setting
+RSS.getInitialProps = async ({ res }) => {
+    if (res) {
+        // Set XML content type header
+        res.setHeader('Content-Type', 'text/xml')
+        
+        try {
+            // Try to read the static file first
+            const rssPath = path.join(process.cwd(), 'public', 'rss', 'index.xml')
+            if (fs.existsSync(rssPath)) {
+                const staticContent = fs.readFileSync(rssPath, 'utf8')
+                res.write(staticContent)
+                res.end()
+                return {}
+            }
+        } catch (error) {
+            console.error('Error reading static RSS file:', error)
+        }
+        
+        // If we don't have the props yet, generate content
+        if (!res.writableEnded) {
+            try {
+                const posts = await getPosts()
+                const content = createRSS(posts)
+                res.write(content)
+                res.end()
+            } catch (error) {
+                console.error('Error generating RSS content:', error)
+                res.statusCode = 500
+                res.end('Error generating RSS feed')
+            }
+        }
     }
     
-    // Return nothing as we've already handled the response
-    return {
-        props: {},
-    }
+    return {}
 }
