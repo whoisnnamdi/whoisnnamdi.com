@@ -1,6 +1,4 @@
 import { getPosts } from './api/ghost_data'
-import fs from 'fs'
-import path from 'path'
 
 const options = {
     year: 'numeric',
@@ -69,16 +67,20 @@ const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
     </rss>
 `
 
-// We'll use getStaticProps to generate the RSS at build time
+// Generate the RSS feed during the build process
 export async function getStaticProps() {
     try {
         const posts = await getPosts()
         const rss = createRSS(posts)
         
-        // Generate the RSS feed at build time
+        // Write the RSS feed to a file during the build process
         if (process.env.NODE_ENV === 'development' || process.env.VERCEL_ENV === 'preview' || process.env.VERCEL_ENV === 'production') {
             try {
-                // Write the RSS feed to the public directory so it's statically served
+                // Using the node 'fs' module needs to be in a server context
+                // This is safe in getStaticProps as it only runs on the server
+                const fs = require('fs')
+                const path = require('path')
+                
                 const publicDir = path.join(process.cwd(), 'public')
                 const rssDir = path.join(publicDir, 'rss')
                 
@@ -97,12 +99,10 @@ export async function getStaticProps() {
         }
         
         return {
-            // Return the RSS content as props
             props: { 
                 rssContent: rss 
             },
-            // Rebuild once per day
-            revalidate: 86400
+            revalidate: 86400 // Rebuild once per day
         }
     } catch (error) {
         console.error('Error generating RSS feed:', error)
@@ -113,26 +113,29 @@ export async function getStaticProps() {
     }
 }
 
-// Component that sets headers and returns XML content
+// This function handles both the rendering and API response
 export default function RSS({ rssContent }) {
-    // If we're on the client side, don't render anything
+    // Client-side - return nothing
     if (typeof window !== 'undefined') {
         return null
     }
     
-    // Return a div that will never be rendered
-    // The actual content is delivered by getInitialProps
+    // This will never actually render as we're handling the response in getInitialProps
     return null
 }
 
-// Use getInitialProps for header setting
-RSS.getInitialProps = async ({ res }) => {
+// Use getInitialProps to set headers and return XML content
+RSS.getInitialProps = async ({ res, req }) => {
     if (res) {
-        // Set XML content type header
+        // Set the XML content type
         res.setHeader('Content-Type', 'text/xml')
         
+        // Try to serve from the static file first
         try {
-            // Try to read the static file first
+            // Safe to use fs here as this only runs on the server
+            const fs = require('fs')
+            const path = require('path')
+            
             const rssPath = path.join(process.cwd(), 'public', 'rss', 'index.xml')
             if (fs.existsSync(rssPath)) {
                 const staticContent = fs.readFileSync(rssPath, 'utf8')
@@ -144,7 +147,7 @@ RSS.getInitialProps = async ({ res }) => {
             console.error('Error reading static RSS file:', error)
         }
         
-        // If we don't have the props yet, generate content
+        // Fallback to dynamic generation
         if (!res.writableEnded) {
             try {
                 const posts = await getPosts()
