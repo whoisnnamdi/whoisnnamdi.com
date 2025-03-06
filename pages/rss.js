@@ -67,100 +67,32 @@ const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
     </rss>
 `
 
-// Generate the RSS feed during the build process
-export async function getStaticProps() {
-    try {
-        const posts = await getPosts()
-        const rss = createRSS(posts)
-        
-        // Write the RSS feed to a file during the build process
-        if (process.env.NODE_ENV === 'development' || process.env.VERCEL_ENV === 'preview' || process.env.VERCEL_ENV === 'production') {
-            try {
-                // Using the node 'fs' module needs to be in a server context
-                // This is safe in getStaticProps as it only runs on the server
-                const fs = require('fs')
-                const path = require('path')
-                
-                const publicDir = path.join(process.cwd(), 'public')
-                const rssDir = path.join(publicDir, 'rss')
-                
-                // Create the directory if it doesn't exist
-                if (!fs.existsSync(rssDir)) {
-                    fs.mkdirSync(rssDir, { recursive: true })
-                }
-                
-                // Write the RSS feed to a file
-                fs.writeFileSync(path.join(rssDir, 'index.xml'), rss)
-                console.log('RSS feed generated successfully')
-            } catch (err) {
-                // Don't fail build if we can't write the file
-                console.error('Error writing RSS feed to file:', err)
-            }
-        }
-        
-        return {
-            props: { 
-                rssContent: rss 
-            },
-            revalidate: 86400 // Rebuild once per day
-        }
-    } catch (error) {
-        console.error('Error generating RSS feed:', error)
-        return {
-            props: { rssContent: '' },
-            revalidate: 3600 // Try again more frequently on error
-        }
-    }
-}
-
-// This function handles both the rendering and API response
-export default function RSS({ rssContent }) {
-    // Client-side - return nothing
-    if (typeof window !== 'undefined') {
-        return null
-    }
-    
-    // This will never actually render as we're handling the response in getInitialProps
+// This function just returns a empty component
+export default function RSS() {
     return null
 }
 
-// Use getInitialProps to set headers and return XML content
-RSS.getInitialProps = async ({ res, req }) => {
-    if (res) {
-        // Set the XML content type
-        res.setHeader('Content-Type', 'text/xml')
+// Use getServerSideProps to handle the request
+export async function getServerSideProps({ res }) {
+    // Set the content type to XML
+    res.setHeader('Content-Type', 'text/xml')
+    
+    try {
+        // Generate the RSS feed
+        const posts = await getPosts()
+        const rssContent = createRSS(posts)
         
-        // Try to serve from the static file first
-        try {
-            // Safe to use fs here as this only runs on the server
-            const fs = require('fs')
-            const path = require('path')
-            
-            const rssPath = path.join(process.cwd(), 'public', 'rss', 'index.xml')
-            if (fs.existsSync(rssPath)) {
-                const staticContent = fs.readFileSync(rssPath, 'utf8')
-                res.write(staticContent)
-                res.end()
-                return {}
-            }
-        } catch (error) {
-            console.error('Error reading static RSS file:', error)
-        }
-        
-        // Fallback to dynamic generation
-        if (!res.writableEnded) {
-            try {
-                const posts = await getPosts()
-                const content = createRSS(posts)
-                res.write(content)
-                res.end()
-            } catch (error) {
-                console.error('Error generating RSS content:', error)
-                res.statusCode = 500
-                res.end('Error generating RSS feed')
-            }
-        }
+        // Write the response directly
+        res.write(rssContent)
+        res.end()
+    } catch (error) {
+        console.error('Error generating RSS feed', error)
+        res.statusCode = 500
+        res.end('Error generating RSS feed')
     }
     
-    return {}
+    // Return empty props (this won't be used since we've already ended the response)
+    return {
+        props: {},
+    }
 }
