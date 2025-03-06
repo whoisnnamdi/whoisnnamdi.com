@@ -1,4 +1,6 @@
 import { getPosts } from './api/ghost_data'
+import fs from 'fs'
+import path from 'path'
 
 const options = {
     year: 'numeric',
@@ -67,18 +69,32 @@ const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
     </rss>
 `
 
-export async function getServerSideProps({ res }) {
-    const postsPages = await getPosts()
-
-    res.setHeader("Content-Type", "text/xml")
-    res.write(createRSS(postsPages))
-    res.end()
-
+// This function generates the RSS feed at build time
+export async function getStaticProps() {
+    const posts = await getPosts()
+    const rss = createRSS(posts)
+    
+    // Write the RSS feed to the public directory so it's statically served
+    const publicDir = path.join(process.cwd(), 'public')
+    const rssDir = path.join(publicDir, 'rss')
+    
+    // Create the directory if it doesn't exist
+    if (!fs.existsSync(rssDir)) {
+        fs.mkdirSync(rssDir, { recursive: true })
+    }
+    
+    // Write the RSS feed to a file
+    fs.writeFileSync(path.join(rssDir, 'index.xml'), rss)
+    
     return {
-        props: {}
+        props: {},
+        // Optional: Set the revalidation period to rebuild the RSS feed
+        // Remove or set to false if you want to rebuild only on new deployments
+        revalidate: 86400 // Rebuild once per day (in seconds)
     }
 }
 
+// This component never renders - it only exists for Next.js routing
 export default function RSS() {
-    return
+    return null
 }

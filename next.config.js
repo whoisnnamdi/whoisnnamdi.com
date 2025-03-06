@@ -32,6 +32,14 @@ module.exports = {
         {
           source: "/notes/:path*",
           destination: "/notes/404.html"
+        },
+        {
+          source: "/rss",
+          destination: "/rss/index.xml"
+        },
+        {
+          source: "/en/rss",
+          destination: "/rss/index.xml"
         }
       ]
     },
