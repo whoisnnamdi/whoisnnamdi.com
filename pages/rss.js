@@ -71,30 +71,77 @@ const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
 
 // This function generates the RSS feed at build time
 export async function getStaticProps() {
-    const posts = await getPosts()
-    const rss = createRSS(posts)
-    
-    // Write the RSS feed to the public directory so it's statically served
-    const publicDir = path.join(process.cwd(), 'public')
-    const rssDir = path.join(publicDir, 'rss')
-    
-    // Create the directory if it doesn't exist
-    if (!fs.existsSync(rssDir)) {
-        fs.mkdirSync(rssDir, { recursive: true })
-    }
-    
-    // Write the RSS feed to a file
-    fs.writeFileSync(path.join(rssDir, 'index.xml'), rss)
-    
-    return {
-        props: {},
-        // Optional: Set the revalidation period to rebuild the RSS feed
-        // Remove or set to false if you want to rebuild only on new deployments
-        revalidate: 86400 // Rebuild once per day (in seconds)
+    try {
+        const posts = await getPosts()
+        const rss = createRSS(posts)
+        
+        // Only write the file during build time, not in production server runtime
+        if (process.env.NODE_ENV === 'development' || process.env.VERCEL_ENV === 'preview' || process.env.VERCEL_ENV === 'production') {
+            try {
+                // Write the RSS feed to the public directory so it's statically served
+                const publicDir = path.join(process.cwd(), 'public')
+                const rssDir = path.join(publicDir, 'rss')
+                
+                // Create the directory if it doesn't exist
+                if (!fs.existsSync(rssDir)) {
+                    fs.mkdirSync(rssDir, { recursive: true })
+                }
+                
+                // Write the RSS feed to a file
+                fs.writeFileSync(path.join(rssDir, 'index.xml'), rss)
+                console.log('RSS feed generated successfully')
+            } catch (err) {
+                // Don't fail build if we can't write the file
+                console.error('Error writing RSS feed to file:', err)
+            }
+        }
+        
+        return {
+            props: { rss },
+            // Optional: Set the revalidation period to rebuild the RSS feed
+            revalidate: 86400 // Rebuild once per day (in seconds)
+        }
+    } catch (error) {
+        console.error('Error generating RSS feed:', error)
+        return {
+            props: { rss: '' }, // Return empty RSS on error
+            revalidate: 3600 // Try again more frequently on error
+        }
     }
 }
 
-// This component never renders - it only exists for Next.js routing
-export default function RSS() {
+// This component returns the RSS feed directly
+export default function RSS({ rss }) {
+    // This causes Next.js to serve the component with the right content type
+    if (typeof window === 'undefined') {
+        // We're on the server, let's set the content type with getServerSideProps
+    }
+    
+    // On client-side, return null (this should never be executed as we're handling RSS at build time)
     return null
+}
+
+// This ensures the content type is set correctly
+export async function getServerSideProps({ res }) {
+    // Set content type to XML
+    res.setHeader('Content-Type', 'text/xml')
+    
+    // Try to serve the static file
+    try {
+        const rssPath = path.join(process.cwd(), 'public', 'rss', 'index.xml')
+        const rssContent = fs.readFileSync(rssPath, 'utf8')
+        res.write(rssContent)
+        res.end()
+    } catch (error) {
+        // If the static file doesn't exist, generate it on-the-fly
+        const posts = await getPosts()
+        const rssContent = createRSS(posts)
+        res.write(rssContent)
+        res.end()
+    }
+    
+    // Return nothing as we've already handled the response
+    return {
+        props: {},
+    }
 }
