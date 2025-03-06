@@ -2,7 +2,7 @@
 require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
-const { getPosts } = require('../pages/api/ghost_data');
+const { getPosts } = require('./ghost-api');
 
 const options = {
     year: 'numeric',

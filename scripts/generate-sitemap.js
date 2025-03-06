@@ -2,7 +2,7 @@
 require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
-const { getAll } = require('../pages/api/ghost_data');
+const { getAll } = require('./ghost-api');
 
 const others = [
     "founders",
