@@ -40,6 +40,10 @@ module.exports = {
         {
           source: "/en/rss",
           destination: "/rss/index.xml"
+        },
+        {
+          source: "/content/images/:path*",
+          destination: "https://nnamdi.net/content/images/:path*"
         }
       ]
     },
