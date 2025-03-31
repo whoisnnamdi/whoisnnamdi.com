@@ -30,7 +30,9 @@ export default function LinkConverter({ content }) {
         try {
             images.forEach((image) => {
                 if (image.src.includes("/content/images")) {
-                    image.src = image.src.replace(/\bhttps?:\/\/[^)''"\/]+/, "")
+                    // Instead of stripping the domain, ensure it's set to nnamdi.net
+                    // This ensures Next.js can optimize it properly using the domains config
+                    image.src = image.src.replace(/\bhttps?:\/\/[^)''"\/]+/, "https://nnamdi.net")
                 }
 
                 image.srcset = ""
