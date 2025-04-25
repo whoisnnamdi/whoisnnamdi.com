@@ -179,7 +179,7 @@ export default function Home ({ posts, featuredPosts }) {
                 </div>
             </div>
             <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center mt-8">
-                Featured Essays
+                Featured Essay
             </h2>
             <ul>
                 {posts.slice(0, 1).map((post) => (
@@ -187,7 +187,7 @@ export default function Home ({ posts, featuredPosts }) {
                         <PostPreview post={post}/>
                     </li>
                 ))}
-                {featuredPosts.slice(0, 4).map((post) => (
+                {featuredPosts.slice(0, 1).map((post) => (
                     <li key={post.id}>
                         <PostPreview post={post}/>
                     </li>
