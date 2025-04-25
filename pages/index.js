@@ -182,11 +182,6 @@ export default function Home ({ posts, featuredPosts }) {
                 Featured Essay
             </h2>
             <ul>
-                {posts.slice(0, 1).map((post) => (
-                    <li key={post.id}>
-                        <PostPreview post={post}/>
-                    </li>
-                ))}
                 {featuredPosts.slice(0, 1).map((post) => (
                     <li key={post.id}>
                         <PostPreview post={post}/>
