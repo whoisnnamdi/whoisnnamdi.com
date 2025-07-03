@@ -6,6 +6,11 @@ const api = new GhostContentAPI({
     version: process.env.GHOST_API_VERSION
 })
 
+// Utility function to filter out specific pages by slug
+function filterPages(pages, slugsToExclude = ['newsletter']) {
+    return pages ? pages.filter(page => !slugsToExclude.includes(page.slug)) : pages
+}
+
 export async function getPosts() {
     return await api.posts
         .browse({
@@ -28,13 +33,15 @@ export async function getPost(postSlug) {
 }
 
 export async function getPages() {
-    return await api.pages
+    const pages = await api.pages
         .browse({
             limit: 'all'
         })
         .catch((err) => {
             console.error(err)
         })
+    
+    return filterPages(pages)
 }
 
 export async function getPage(pageSlug) {
@@ -65,5 +72,5 @@ export async function getAll() {
         console.error(err)
     })
 
-    return await posts.concat(pages)
+    return await posts.concat(filterPages(pages))
 }
