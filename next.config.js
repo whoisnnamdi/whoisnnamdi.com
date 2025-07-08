@@ -35,11 +35,36 @@ module.exports = {
         },
         {
           source: "/rss",
-          destination: "/rss/index.xml"
+          destination: "/static/rss.xml"
+        },
+        {
+          source: "/rss.xml",
+          destination: "/static/rss.xml"
+        },
+        {
+          source: "/feed",
+          destination: "/static/rss.xml"
         },
         {
           source: "/en/rss",
-          destination: "/rss/index.xml"
+          destination: "/static/rss.xml"
+        }
+      ]
+    },
+    async headers() {
+      return [
+        {
+          source: "/static/rss.xml",
+          headers: [
+            {
+              key: "Cache-Control",
+              value: "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400"
+            },
+            {
+              key: "Content-Type",
+              value: "application/rss+xml"
+            }
+          ]
         }
       ]
     },
