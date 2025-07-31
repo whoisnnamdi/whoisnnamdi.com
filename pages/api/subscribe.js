@@ -16,6 +16,23 @@ export default async (req, res) => {
         if (!email) {
             return res.status(201).json({ error: "Email is required" })
         }
+
+        // Anti-spam: Check for suspicious sources
+        const source = merge?.SOURCE || '';
+        const isSpamSource = source.toLowerCase().includes('newsletter') || !source.trim();
+        
+        if (isSpamSource) {
+            // Log blocked spam attempt
+            console.log('Blocked spam signup attempt:', {
+                email,
+                source,
+                timestamp: new Date().toISOString(),
+                ip: req.headers['x-forwarded-for'] || req.connection.remoteAddress
+            });
+            
+            // Return success response to avoid tipping off bots
+            return res.status(200).json({ message: "You are now subscribed!" });
+        }
         
         try {
             await mailchimp.lists.addListMember(process.env.MAILCHIMP_AUDIENCE_ID, {
