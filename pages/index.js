@@ -85,7 +85,7 @@ export async function getStaticProps() {
 
 export default function Home ({ posts, featuredPosts }) {
     const input = useRef(null)
-    const subscribe = useSubscribe()
+    const { subscribe, isBot, detectionComplete } = useSubscribe()
     
     const handleSubscribe = async (e) => {
         e.preventDefault()

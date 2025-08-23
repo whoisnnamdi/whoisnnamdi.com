@@ -1,24 +1,14 @@
 import * as Fathom from 'fathom-client'
 import { useRouter } from 'next/router'
+import { useSecureSubscribe } from './botdetection'
 
 export const useSubscribe = () => {
   const router = useRouter()
+  const { subscribe: secureSubscribe, isBot, detectionComplete } = useSecureSubscribe()
 
   const subscribe = async (email, source, inputRef) => {
-    const res = await fetch('/api/subscribe', {
-      body: JSON.stringify({
-        email: email,
-        merge: {
-          'SOURCE': source
-        }
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      method: 'POST'
-    })
-
-    const response = await res.json()
+    // Use secure subscribe with bot detection
+    const response = await secureSubscribe(email, source, inputRef)
 
     console.log(response.message)
     if (inputRef.current) {
@@ -26,7 +16,8 @@ export const useSubscribe = () => {
       inputRef.current.placeholder = response.message
     }
 
-    if (response.message === "You are now subscribed!") {
+    // Only track goal and redirect if not a bot and actually successful
+    if (response.message === "You are now subscribed!" && !isBot) {
       Fathom.trackGoal('8O6T9QOR', 0)
       router.push("/thank-you-subscribe")
     }
@@ -34,5 +25,8 @@ export const useSubscribe = () => {
     return response
   }
 
-  return subscribe
+  return { subscribe, isBot, detectionComplete }
 }
+
+// Legacy export for backward compatibility
+export default useSubscribe
