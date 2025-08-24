@@ -10,6 +10,10 @@ const protectedRoutes = [
         path: '/api/subscribe',
         method: 'POST',
     },
+    {
+        path: '/', // Protect homepage only
+        method: 'GET',
+    },
 ];
 
 export default function App({ Component, pageProps }) {
