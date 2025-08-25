@@ -11,12 +11,14 @@ export async function middleware(request) {
         const verification = await checkBotId()
         
         if (verification.isBot) {
-            console.log('Bot detected on homepage:', {
+            const botDetails = {
                 url: request.nextUrl.toString(),
                 userAgent: request.headers.get('user-agent'),
                 timestamp: new Date().toISOString(),
                 ip: request.headers.get('x-forwarded-for') || request.ip
-            })
+            }
+            
+            console.log('Bot detected on homepage:', botDetails)
             
             // Return a minimal HTML response for bots to avoid wasting resources
             return new NextResponse(
@@ -29,6 +31,12 @@ export async function middleware(request) {
 <body>
     <h1>Welcome</h1>
     <p>This is a website.</p>
+    <hr>
+    <h2>Detection Details</h2>
+    <p><strong>URL:</strong> ${botDetails.url}</p>
+    <p><strong>User Agent:</strong> ${botDetails.userAgent}</p>
+    <p><strong>Timestamp:</strong> ${botDetails.timestamp}</p>
+    <p><strong>IP:</strong> ${botDetails.ip}</p>
 </body>
 </html>`,
                 {
