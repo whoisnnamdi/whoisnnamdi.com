@@ -1,4 +1,5 @@
 import mailchimp from '@mailchimp/mailchimp_marketing'
+import { checkBotId } from 'botid/server'
 
 mailchimp.setConfig({
     apiKey: process.env.MAILCHIMP_API_KEY,
@@ -11,6 +12,20 @@ export default async (req, res) => {
 
         res.status(200).json(response)
     } else if (req.method === "POST") {
+        // Check for bot detection first
+        const verification = await checkBotId()
+        
+        if (verification.isBot) {
+            console.log('Bot detected attempting to subscribe:', {
+                email: req.body.email,
+                timestamp: new Date().toISOString(),
+                ip: req.headers['x-forwarded-for'] || req.connection.remoteAddress
+            });
+            
+            // Return success response to avoid tipping off bots
+            return res.status(200).json({ message: "You are now subscribed!" });
+        }
+
         const { email, merge } = req.body
 
         if (!email) {

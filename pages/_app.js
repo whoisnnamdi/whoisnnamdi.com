@@ -2,6 +2,23 @@ import '../styles/globals.css'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import * as Fathom from 'fathom-client'
+import Head from 'next/head'
+import { BotIdClient } from 'botid/client'
+
+const protectedRoutes = [
+    {
+        path: '/api/subscribe',
+        method: 'POST',
+    },
+    {
+        path: '/', // Protect homepage only
+        method: 'GET',
+    },
+    {
+        path: '/en',
+        method: 'POST',
+    },
+];
 
 export default function App({ Component, pageProps }) {
     const router = useRouter()
@@ -23,5 +40,12 @@ export default function App({ Component, pageProps }) {
         }
     }, [])
 
-    return <Component {...pageProps} />;
+    return (
+        <>
+            <Head>
+                <BotIdClient protect={protectedRoutes} />
+            </Head>
+            <Component {...pageProps} />
+        </>
+    );
 }

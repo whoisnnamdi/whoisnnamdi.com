@@ -1,4 +1,6 @@
-module.exports = {
+import { withBotId } from 'botid/next/config';
+
+const nextConfig = {
     images: {
       domains: ['whoisnnamdi.com', 
                 '138.68.29.23',
@@ -73,3 +75,5 @@ module.exports = {
       return []
     }
 }
+
+export default withBotId(nextConfig);
