@@ -14,6 +14,10 @@ const protectedRoutes = [
         path: '/', // Protect homepage only
         method: 'GET',
     },
+    {
+        path: '/en',
+        method: 'POST',
+    },
 ];
 
 export default function App({ Component, pageProps }) {
