@@ -68,3 +68,8 @@ mjx-container {
     position: relative !important;
     height: unset !important;
 }
+
+/* Talks page heading spacing tweaks */
+.talks-prose h2 {
+    @apply mt-4;
+}
