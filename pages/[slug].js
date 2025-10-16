@@ -9,7 +9,7 @@ import { MathJax, MathJaxContext } from "better-react-mathjax"
 
 export async function getStaticPaths() {
     const posts = await getPosts()
-    const pages = await getPages()
+    const pages = (await getPages()).filter((p) => p.slug !== 'talks')
     const paths = posts.concat(pages).map((post) => ({
         params: { slug: post.slug }
     }))
