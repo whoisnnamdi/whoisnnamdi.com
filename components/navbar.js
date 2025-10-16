@@ -64,7 +64,7 @@ export default function Navbar({ source }) {
             <Popover>
                 {({ open }) => (
                     <div className="">
-                        <Popover.Button className={`${open ? "hidden" : "transition duration-500 ease-in-out rounded-md py-2 px-4 text-white font-semibold bg-blue-500 shadow-md hover:bg-blue-400 focus:outline-none"}`}>
+                        <Popover.Button className={`${open ? "hidden" : "transition duration-500 ease-in-out rounded-md py-2 px-4 text-white font-semibold bg-blue-600 shadow-md hover:bg-blue-500 focus:outline-none"}`}>
                             Subscribe
                         </Popover.Button>
                         <Popover.Panel className="w-64 sm:w-96">
