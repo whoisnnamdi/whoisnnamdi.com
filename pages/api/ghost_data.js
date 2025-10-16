@@ -35,7 +35,8 @@ export async function getPost(postSlug) {
 export async function getPages() {
     const pages = await api.pages
         .browse({
-            limit: 'all'
+            limit: 'all',
+            include: 'tags, authors'
         })
         .catch((err) => {
             console.error(err)
@@ -66,7 +67,8 @@ export async function getAll() {
 
     const pages = await api.pages
     .browse({
-        limit: 'all'
+        limit: 'all',
+        include: 'tags, authors'
     })
     .catch((err) => {
         console.error(err)
