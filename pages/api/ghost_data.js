@@ -7,7 +7,7 @@ const api = new GhostContentAPI({
 })
 
 // Utility function to filter out specific pages by slug
-function filterPages(pages, slugsToExclude = ['newsletter']) {
+function filterPages(pages, slugsToExclude = ['newsletter', 'portfolio']) {
     return pages ? pages.filter(page => !slugsToExclude.includes(page.slug)) : pages
 }
 
