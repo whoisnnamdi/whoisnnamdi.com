@@ -152,7 +152,7 @@ export default function Portfolio({ logos, meta }) {
 
             <main className="mt-12">
                 <header className="space-y-6">
-                    <h1 className="text-4xl font-bold text-gray-900 leading-tight">Backing technical founders building enduring companies</h1>
+                    <h1 className="text-4xl font-bold text-gray-900 leading-tight">Backing founders building enduring companies</h1>
                     <p className="text-lg text-gray-700 leading-relaxed">
                         I partner closely with entrepreneurs reimagining how the world works — from developer platforms and applied AI
                         to the infrastructure that supports them. Below is a sample of the teams I&apos;ve been fortunate to back.
