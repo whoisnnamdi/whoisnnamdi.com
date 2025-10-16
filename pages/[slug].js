@@ -64,31 +64,33 @@ export default function PostPage ({ post }) {
             </Head>
             <Analytics />
             <Navbar source={post.title}/>
-            <MathJaxContext hideUntilTypeset="first">
-                <MathJax>
-                    <h1 className={`text-4xl font-extrabold ${post.slug === 'talks' ? 'mb-4' : 'mb-6'} text-gray-900`}>
-                        {post.title}
-                    </h1>
-                    <div className={`prose md:prose-md lg:prose-lg max-w-4xl sm:mx-auto ${post.slug === 'talks' ? 'talks-prose' : ''}`}>
-                        {post.feature_image ?
-                            <div className="imageContainer">
-                                <Image
-                                    src={post.feature_image}
-                                    alt={post.title}
-                                    width="0"
-                                    height="0"
-                                    sizes="100vw"
-                                    // layout="fill"
-                                    className="imageImage rounded-lg"
-                                    priority
-                                />
-                            </div> :
-                            null
-                        }
-                        <LinkConverter content={post.html} />
-                    </div>
-                </MathJax>
-            </MathJaxContext>
+            <main className="mt-12">
+                <MathJaxContext hideUntilTypeset="first">
+                    <MathJax>
+                        <h1 className={`text-4xl font-bold ${post.slug === 'talks' ? 'mb-4' : 'mb-6'} text-gray-900`}>
+                            {post.title}
+                        </h1>
+                        <div className={`prose md:prose-md lg:prose-lg max-w-4xl sm:mx-auto ${post.slug === 'talks' ? 'talks-prose' : ''}`}>
+                            {post.feature_image ?
+                                <div className="imageContainer">
+                                    <Image
+                                        src={post.feature_image}
+                                        alt={post.title}
+                                        width="0"
+                                        height="0"
+                                        sizes="100vw"
+                                        // layout="fill"
+                                        className="imageImage rounded-lg"
+                                        priority
+                                    />
+                                </div> :
+                                null
+                            }
+                            <LinkConverter content={post.html} />
+                        </div>
+                    </MathJax>
+                </MathJaxContext>
+            </main>
             <Footer />
         </div>
     )

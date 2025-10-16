@@ -46,7 +46,7 @@ export default function Page ({ posts }) {
             </Head>
             <Analytics />
             <Navbar source={slug}/>
-            <div>
+            <div className="mt-12">
                 <h1 className="text-4xl font-bold text-gray-900 mb-8">
                     All Essays
                 </h1>

@@ -4,7 +4,7 @@ import PostPreview from './postpreview'
 
 export default function SectionPage ({ posts, slug }) {
     return (
-        <div>
+        <div className="mt-12">
             <h1 className="text-4xl font-bold text-gray-900 mb-8">
                 Essays for {slug}
             </h1>
