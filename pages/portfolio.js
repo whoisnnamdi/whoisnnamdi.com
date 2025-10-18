@@ -178,7 +178,7 @@ export default function Portfolio({ logos, meta }) {
 
                 <section className="mt-16">
                     <div className="space-y-3">
-                        <h2 className="text-2xl font-semibold text-gray-900">Selected companies</h2>
+                        <h2 className="text-2xl font-semibold text-gray-900">Selected investments</h2>
                     </div>
 
                     <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
