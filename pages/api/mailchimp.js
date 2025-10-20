@@ -14,6 +14,6 @@ export default async function ping(req, res) {
 
         return res.status(201).json({ error: '' })
     } catch (err) {
-        return res.status(500).json({ error: error.message || error.toString() })
+        return res.status(500).json({ error: err.message || err.toString() })
     }
 }
