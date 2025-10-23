@@ -101,3 +101,4 @@ if (require.main === module) {
 }
 
 module.exports = generateRSS;
+module.exports.createRSS = createRSS;

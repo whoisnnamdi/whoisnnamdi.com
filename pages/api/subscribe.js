@@ -27,7 +27,7 @@ export default async (req, res) => {
                 email,
                 source,
                 timestamp: new Date().toISOString(),
-                ip: req.headers['x-forwarded-for'] || req.connection.remoteAddress
+                ip: req.headers['x-forwarded-for'] || req.connection?.remoteAddress || req.socket?.remoteAddress || 'unknown'
             });
             
             // Return success response to avoid tipping off bots
