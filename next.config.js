@@ -22,16 +22,12 @@ module.exports = {
     async rewrites() {
       return [
         {
-          source: "/notes",
+          source: "/notes/",
           destination: "/notes/index.html"
         },
         {
-          source: "/notes/:path*",
+          source: "/notes/:path*/",
           destination: "/notes/:path*.html"
-        },
-        {
-          source: "/notes/:path*",
-          destination: "/notes/404.html"
         },
         {
           source: "/rss",
