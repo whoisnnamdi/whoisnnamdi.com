@@ -41,26 +41,38 @@ function resolveNotesIndexHtml(requestedPath) {
         return idx
     }
 
-    // Decode the slug part after /notes/
+    // Decode the slug part after /notes/ (strip trailing slash)
     const slugEncoded = safeRequested.replace(/^\/notes\/?/, '').replace(/\/$/, '')
     const slug = decodeURIComponent(slugEncoded)
+
+    // SECURITY: Guard against traversal and path separators after decoding
+    // Disallow any path separators or parent directory segments
+    if (slug.includes('..') || slug.includes('/') || slug.includes('\\')) {
+        return null
+    }
 
     // 2) Trailing-slash pages like /notes/foo/ map to /public/notes/foo.html
     const htmlFileCandidate = path.join(notesRoot, `${slug}.html`)
     if (fs.existsSync(htmlFileCandidate)) {
-        return htmlFileCandidate
+        const normalizedHtml = path.normalize(htmlFileCandidate)
+        if (normalizedHtml.startsWith(notesRoot)) return normalizedHtml
+        return null
     }
 
     // 3) Directory index fallback: /notes/foo/ -> /public/notes/foo/index.html
     const dirIndexCandidate = path.join(notesRoot, slug, 'index.html')
     if (fs.existsSync(dirIndexCandidate)) {
-        return dirIndexCandidate
+        const normalizedDirIdx = path.normalize(dirIndexCandidate)
+        if (normalizedDirIdx.startsWith(notesRoot)) return normalizedDirIdx
+        return null
     }
 
     // 4) Last resort: treat as normalized dir + index.html (maintains previous behavior)
     const targetDir = normalized
     const indexHtmlPath = path.join(targetDir, 'index.html')
-    return indexHtmlPath
+    const normalizedIdx = path.normalize(indexHtmlPath)
+    if (normalizedIdx.startsWith(notesRoot)) return normalizedIdx
+    return null
 }
 
 function injectBeforeHeadClose(html, snippet) {
