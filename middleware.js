@@ -4,13 +4,12 @@ export function middleware(request) {
   const url = request.nextUrl.clone()
   const { pathname } = url
 
-  // Only handle /notes routes that lack a trailing slash
   if (!pathname.startsWith('/notes')) {
     return NextResponse.next()
   }
 
-  // Leave asset/file requests (contain a dot) and trailing slash paths alone
-  if (pathname.endsWith('/') || pathname.includes('.')) {
+  // If it's a file under /notes (has a dot), do nothing
+  if (pathname.includes('.')) {
     return NextResponse.next()
   }
 
@@ -20,8 +19,16 @@ export function middleware(request) {
   } else {
     url.pathname = `${pathname}/`
   }
+  // If the path did not have a trailing slash, redirect to the slash version
+  if (!pathname.endsWith('/')) {
+    return NextResponse.redirect(url, 308)
+  }
 
-  return NextResponse.redirect(url, 308)
+  // For directory-like HTML under /notes (ending with slash), rewrite to API proxy for injection
+  const rewriteUrl = request.nextUrl.clone()
+  rewriteUrl.pathname = '/api/notes-proxy'
+  rewriteUrl.search = `?path=${encodeURIComponent(pathname)}`
+  return NextResponse.rewrite(rewriteUrl)
 }
 
 export const config = {
