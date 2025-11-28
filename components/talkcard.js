@@ -1,40 +1,40 @@
 import Link from 'next/link'
 
-// Renders either an internal post (with slug) or an external link (with href)
 export default function TalkCard({ item }) {
   const isInternal = !!item.slug
+
   const content = (
     <>
-      {item.feature_image ? (
-        <img
-          src={item.feature_image}
-          alt={item.title}
-          className="w-full h-auto"
-        />
-      ) : null}
+      {item.feature_image && (
+        <div className="relative aspect-video overflow-hidden">
+          <img
+            src={item.feature_image}
+            alt={item.title}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      )}
       <div className="p-4">
-        <h3 className="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900">
+        <h3 className="font-serif text-lg mb-2 group-hover:text-coral transition-colors duration-150">
           {item.title}
         </h3>
-        {item.excerpt ? (
-          <p className="text-gray-600 text-base mb-3">{item.excerpt}</p>
-        ) : null}
-        {item.dateFormatted ? (
-          <span className="inline-block text-sm font-semibold text-white bg-blue-500 rounded-full px-2 py-1">
+        {item.excerpt && (
+          <p className="text-text-secondary text-sm mb-3 line-clamp-2">{item.excerpt}</p>
+        )}
+        {item.dateFormatted && (
+          <span className="font-mono text-xs text-cyan">
             {item.dateFormatted}
           </span>
-        ) : null}
+        )}
       </div>
     </>
   )
 
+  const className = "block group rounded-xl border border-border bg-surface overflow-hidden hover:border-coral/30 transition-colors duration-150"
+
   if (isInternal) {
     return (
-      <Link
-        href="[slug]"
-        as={`/${item.slug}/`}
-        className="block group rounded-xl border border-black border-opacity-10 overflow-hidden bg-white"
-      >
+      <Link href="[slug]" as={`/${item.slug}/`} className={className}>
         {content}
       </Link>
     )
@@ -45,7 +45,7 @@ export default function TalkCard({ item }) {
       href={item.href}
       target="_blank"
       rel="noopener noreferrer"
-      className="block group rounded-xl border border-black border-opacity-10 overflow-hidden bg-white"
+      className={className}
     >
       {content}
     </a>

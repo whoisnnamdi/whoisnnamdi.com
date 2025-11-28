@@ -27,14 +27,28 @@ export async function getStaticProps({ params }) {
     }
 
     const post = await getter(params.slug)
-    //const post = await getPost(params.slug)
+
+    // Format date
+    const options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    }
+    post.dateFormatted = new Intl.DateTimeFormat('default', options).format(
+        new Date(post.published_at)
+    )
+
+    // Estimate reading time
+    const wordsPerMinute = 200
+    const wordCount = post.html.replace(/<[^>]+>/g, '').split(/\s+/).length
+    post.readingTime = Math.ceil(wordCount / wordsPerMinute)
 
     return { props: { post: post } }
 }
 
 export default function PostPage ({ post }) {
     return (
-        <div className="max-w-4xl sm:mx-auto px-6 mt-8 mb-10 lg:px-0">
+        <div className="max-w-3xl px-6 mx-auto lg:px-0">
             <Head>
                 <meta charSet="utf-8" />
                 <title>{post.title}</title>
@@ -64,33 +78,46 @@ export default function PostPage ({ post }) {
             </Head>
             <Analytics />
             <Navbar source={post.title}/>
-            <main className="mt-12">
+
+            <article className="mt-8 mb-16">
                 <MathJaxContext hideUntilTypeset="first">
                     <MathJax>
-                        <h1 className={`text-4xl font-bold ${post.slug === 'talks' ? 'mb-4' : 'mb-6'} text-gray-900`}>
-                            {post.title}
-                        </h1>
-                        <div className={`prose md:prose-md lg:prose-lg max-w-4xl sm:mx-auto ${post.slug === 'talks' ? 'talks-prose' : ''}`}>
-                            {post.feature_image ?
-                                <div className="imageContainer">
+                        {/* Header */}
+                        <header className="mb-8">
+                            <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight mb-4">
+                                {post.title}
+                            </h1>
+                            <div className="flex items-center gap-3 text-sm">
+                                <span className="font-mono text-cyan">{post.dateFormatted}</span>
+                                <span className="text-text-tertiary">·</span>
+                                <span className="text-text-secondary">{post.readingTime} min read</span>
+                            </div>
+                        </header>
+
+                        {/* Feature Image */}
+                        {post.feature_image && (
+                            <div className="mb-8 -mx-6 md:mx-0">
+                                <div className="relative aspect-video md:rounded-xl overflow-hidden">
                                     <Image
                                         src={post.feature_image}
                                         alt={post.title}
-                                        width="0"
-                                        height="0"
-                                        sizes="100vw"
-                                        // layout="fill"
-                                        className="imageImage rounded-lg"
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, 768px"
+                                        className="object-cover"
                                         priority
                                     />
-                                </div> :
-                                null
-                            }
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Content */}
+                        <div className={`prose prose-lg max-w-none ${post.slug === 'talks' ? 'talks-prose' : ''}`}>
                             <LinkConverter content={post.html} />
                         </div>
                     </MathJax>
                 </MathJaxContext>
-            </main>
+            </article>
+
             <Footer />
         </div>
     )

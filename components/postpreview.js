@@ -1,37 +1,63 @@
 import Link from 'next/link'
 import Image from "next/legacy/image"
 
-export default function PostPreview ({ post }) {
-    return (
-        <div className="">
+export default function PostPreview ({ post, featured = false }) {
+    if (featured) {
+        // Featured card with image
+        return (
             <Link
                 href="[slug]"
                 as={`/${post.slug}/`}
-                className="flex flex-col sm:flex-row sm:max-h-64 justify-between rounded-xl transition duration-500 ease-in-out transform hover:opacity-80 mb-4 border border-black border-opacity-10">
-
-                <div className="relative block w-full h-44 sm:w-1/2 sm:h-56 my-auto">
-                    <Image
-                        src={post.feature_image}
-                        alt={post.title}
-                        layout="fill"
-                        sizes="320px"
-                        className="flex-1 sm:w-1/2 rounded-t-xl sm:rounded-l-xl sm:rounded-r-none" 
-                    />
+                className="group block rounded-xl overflow-hidden border border-border bg-surface hover:border-coral/30 transition-colors duration-150"
+            >
+                <div className="flex flex-col md:flex-row">
+                    <div className="relative w-full md:w-2/5 h-48 md:h-56">
+                        <Image
+                            src={post.feature_image}
+                            alt={post.title}
+                            layout="fill"
+                            objectFit="cover"
+                            sizes="(max-width: 768px) 100vw, 40vw"
+                        />
+                    </div>
+                    <div className="flex flex-col justify-center p-6 md:p-8 md:w-3/5">
+                        <h3 className="font-serif text-xl md:text-2xl mb-3 group-hover:text-coral transition-colors duration-150">
+                            {post.title}
+                        </h3>
+                        <p
+                            className="text-text-secondary text-base mb-4 line-clamp-2"
+                            dangerouslySetInnerHTML={{ __html: post.excerpt }}
+                        />
+                        <p className="font-mono text-sm text-cyan">
+                            {post.dateFormatted}
+                        </p>
+                    </div>
                 </div>
-                <div className="flex flex-col items-start place-content-center flex-1 px-3 py-4 sm:px-8 sm:w-1/2 content-center">
-                    <h3 className="font-bold text-xl text-gray-700 mb-4">
+            </Link>
+        )
+    }
+
+    // Compact list item
+    return (
+        <Link
+            href="[slug]"
+            as={`/${post.slug}/`}
+            className="group block py-4 border-b border-border last:border-b-0 hover:border-coral/30 transition-colors duration-150"
+        >
+            <div className="flex items-start justify-between gap-4">
+                <div className="flex-1 min-w-0">
+                    <h3 className="font-serif text-lg md:text-xl mb-1 group-hover:text-coral transition-colors duration-150 truncate">
                         {post.title}
                     </h3>
-                    <div 
-                        className="text-lg text-gray-500 mb-4"
+                    <p
+                        className="text-text-secondary text-sm md:text-base line-clamp-1 hidden sm:block"
                         dangerouslySetInnerHTML={{ __html: post.excerpt }}
                     />
-                    <p className="py-1 px-2 inline font-bold rounded-full text-sm text-white bg-blue-500">
-                        {post.dateFormatted}
-                    </p>
                 </div>
-
-            </Link>
-        </div>
-    );
+                <p className="font-mono text-sm text-cyan flex-shrink-0">
+                    {post.dateFormatted}
+                </p>
+            </div>
+        </Link>
+    )
 }

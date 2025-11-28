@@ -46,21 +46,21 @@ export default function Portfolio({ logos, meta }) {
 
     const stats = [
         {
-            label: 'Investment focus',
+            label: 'Focus',
             value: 'Technical tooling and infrastructure'
         },
         {
-            label: 'Stage range',
+            label: 'Stage',
             value: 'Pre-seed through Series B'
         },
         {
             label: 'Geography',
-            value: 'Primarily North America, selectively global'
+            value: 'Primarily North America'
         }
     ]
 
     return (
-        <div className="max-w-4xl sm:mx-auto px-6 mt-8 mb-10 lg:px-0">
+        <div className="max-w-3xl px-6 mx-auto lg:px-0">
             <Head>
                 <meta charSet="utf-8" />
                 <title>{meta.title}</title>
@@ -83,59 +83,57 @@ export default function Portfolio({ logos, meta }) {
             <Analytics />
             <Navbar source="portfolio" />
 
-            <main className="mt-12">
-                <header className="space-y-6">
-                    <h1 className="text-4xl font-bold text-gray-900 leading-tight">Backing founders building enduring companies</h1>
-                    <p className="text-lg text-gray-700 leading-relaxed">
-                        I partner closely with entrepreneurs reimagining how the world works — from developer platforms and applied AI
-                        to the infrastructure that supports them. Below is a sample of the teams I&apos;ve been fortunate to back.
+            <main>
+                <header className="mb-12">
+                    <h1 className="font-serif text-3xl md:text-4xl mb-4">
+                        <span className="border-b-2 border-coral pb-1">Portfolio</span>
+                    </h1>
+                    <p className="text-lg text-text-secondary leading-relaxed mb-6">
+                        I partner with founders reimagining how the world works — from developer platforms and applied AI
+                        to the infrastructure that supports them.
                     </p>
-                    <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                        <Link
-                            href="mailto:nnamdi@lsvp.com"
-                            className="inline-flex items-center justify-center rounded-md bg-blue-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition duration-200 hover:bg-blue-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
-                        >
-                            Get in touch
-                        </Link>
-                    </div>
+                    <Link
+                        href="mailto:nnamdi@lsvp.com"
+                        className="inline-flex items-center rounded-lg bg-coral px-5 py-2.5 text-sm font-medium text-white hover:opacity-90 transition-opacity"
+                    >
+                        Get in touch
+                    </Link>
                 </header>
 
-                <section className="mt-12 grid gap-4 sm:grid-cols-3">
+                <section className="grid gap-4 sm:grid-cols-3 mb-12">
                     {stats.map((stat) => (
-                        <div key={stat.label} className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                            <p className="text-xs font-semibold uppercase tracking-widest text-gray-500">{stat.label}</p>
-                            <p className="mt-2 text-base font-semibold text-gray-900">{stat.value}</p>
+                        <div key={stat.label} className="rounded-xl border border-border bg-surface p-4">
+                            <p className="text-xs font-mono uppercase tracking-wider text-cyan mb-2">{stat.label}</p>
+                            <p className="text-sm font-medium">{stat.value}</p>
                         </div>
                     ))}
                 </section>
 
-                <section className="mt-16">
-                    <div className="space-y-3">
-                        <h2 className="text-2xl font-semibold text-gray-900">Selected investments</h2>
-                    </div>
+                <section className="mb-12">
+                    <h2 className="font-serif text-2xl mb-6">Selected Investments</h2>
 
-                    <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                         {logos.length === 0 && (
-                            <p className="col-span-full text-center text-base text-gray-600">
+                            <p className="col-span-full text-center text-text-secondary">
                                 Check back soon — portfolio updates are on the way.
                             </p>
                         )}
                         {logos.map((logo) => {
                             const card = (
-                                <div className="flex h-40 flex-col items-center justify-center rounded-lg border border-gray-200 bg-white px-6 py-4 text-center transition duration-200 hover:shadow-md">
-                                    <div className="relative flex h-20 w-full items-center justify-center">
+                                <div className="flex h-32 flex-col items-center justify-center rounded-xl border border-border bg-surface p-4 text-center hover:border-coral/30 transition-colors duration-150">
+                                    <div className="relative flex h-16 w-full items-center justify-center">
                                         <Image
                                             src={logo.src}
                                             alt={logo.alt}
-                                            width={220}
-                                            height={120}
+                                            width={160}
+                                            height={80}
                                             objectFit="contain"
-                                            className="max-h-16 w-auto"
+                                            className="max-h-12 w-auto"
                                             unoptimized
                                         />
                                     </div>
                                     {logo.displayName && (
-                                        <p className="mt-3 text-sm font-medium text-gray-700">{logo.displayName}</p>
+                                        <p className="mt-2 text-xs text-text-secondary">{logo.displayName}</p>
                                     )}
                                 </div>
                             )
@@ -147,7 +145,6 @@ export default function Portfolio({ logos, meta }) {
                                         href={logo.href}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
                                     >
                                         {card}
                                     </Link>
@@ -155,7 +152,7 @@ export default function Portfolio({ logos, meta }) {
                             }
 
                             return (
-                                <div key={logo.src} className="focus:outline-none">
+                                <div key={logo.src}>
                                     {card}
                                 </div>
                             )
@@ -163,25 +160,21 @@ export default function Portfolio({ logos, meta }) {
                     </div>
                 </section>
 
-                <section className="mt-16 rounded-lg border border-gray-200 bg-blue-50 p-6">
-                    <h3 className="text-xl font-semibold text-gray-900">Building something ambitious?</h3>
-                    <p className="mt-2 text-base text-gray-700">
-                        I love meeting founders at the earliest stages. Share what you&apos;re working on and let&apos;s explore how I can help — from underwriting your first rounds to scaling a breakout company.
+                <section className="rounded-xl border border-border bg-surface p-6 mb-16">
+                    <h3 className="font-serif text-xl mb-2">Building something ambitious?</h3>
+                    <p className="text-text-secondary mb-4">
+                        I love meeting founders at the earliest stages. Share what you&apos;re working on and let&apos;s explore how I can help.
                     </p>
-                    <div className="mt-4 flex flex-col gap-3 sm:flex-row">
-                        <Link
-                            href="mailto:nnamdi@lsvp.com"
-                            className="inline-flex items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-semibold text-white transition duration-200 hover:bg-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 focus-visible:ring-offset-blue-50"
-                        >
-                            Send an email
-                        </Link>
-                    </div>
+                    <Link
+                        href="mailto:nnamdi@lsvp.com"
+                        className="inline-flex items-center text-sm text-coral hover:opacity-80 transition-opacity"
+                    >
+                        Send an email →
+                    </Link>
                 </section>
             </main>
 
-            <footer className="mt-12">
-                <Footer />
-            </footer>
+            <Footer />
         </div>
     )
 }

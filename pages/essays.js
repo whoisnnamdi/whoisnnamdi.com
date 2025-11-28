@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Navbar from '../components/navbar'
 import { getPosts } from './api/ghost_data'
-import SectionPage from '../components/sectionpage'
 import Footer from '../components/footer'
 import Analytics from '../components/analytics'
 import postFormat from '../components/postformat'
@@ -22,11 +21,11 @@ export default function Page ({ posts }) {
     const pageTitle = "Essays — Nnamdi Iregbulem"
     const pageDesc = "All essays by Nnamdi Iregbulem"
     const pageURL = "https://whoisnnamdi.com/essays"
-    
+
     return (
-        <div className="max-w-4xl sm:mx-auto px-6 mt-8 mb-10 lg:px-0">
+        <div className="max-w-3xl px-6 mx-auto lg:px-0">
             <Head>
-            <meta charSet="utf-8" />
+                <meta charSet="utf-8" />
                 <title>{pageTitle}</title>
                 <meta name="description" content={pageDesc} />
                 <link rel="canonical" href={pageURL} />
@@ -46,18 +45,20 @@ export default function Page ({ posts }) {
             </Head>
             <Analytics />
             <Navbar source={slug}/>
-            <div className="mt-12">
-                <h1 className="text-4xl font-bold text-gray-900 mb-8">
-                    All Essays
+
+            <section className="mb-16">
+                <h1 className="font-serif text-3xl md:text-4xl mb-8">
+                    <span className="border-b-2 border-coral pb-1">All Essays</span>
                 </h1>
-                <ul>
+                <ul className="space-y-4">
                     {posts.map((post) => (
                         <li key={post.id}>
                             <PostPreview post={post}/>
                         </li>
                     ))}
                 </ul>
-            </div>
+            </section>
+
             <Footer />
         </div>
     )

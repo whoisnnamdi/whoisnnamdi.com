@@ -1,63 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Light mode (default) */
+:root {
+    --bg-primary: #f8f9fa;
+    --bg-surface: #ffffff;
+    --bg-elevated: #f1f3f5;
+    --text-primary: #1a1f2e;
+    --text-secondary: #64748b;
+    --text-tertiary: #94a3b8;
+    --accent-coral: #e05560;
+    --accent-cyan: #0891b2;
+    --border: rgba(0, 0, 0, 0.08);
+
+    color-scheme: light;
+}
+
+/* Dark mode */
+.dark {
+    --bg-primary: #1a1f2e;
+    --bg-surface: #242938;
+    --bg-elevated: #2d3344;
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+    --text-tertiary: #64748b;
+    --accent-coral: #f07178;
+    --accent-cyan: #62d6e8;
+    --border: rgba(255, 255, 255, 0.08);
+
+    color-scheme: dark;
+}
+
+/* Base styles */
+html {
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 200ms ease, color 200ms ease;
+}
+
+/* Selection */
+::selection {
+    background-color: var(--accent-coral);
+    color: white;
+}
+
+/* Focus styles */
+:focus-visible {
+    outline: 2px solid var(--accent-coral);
+    outline-offset: 2px;
+}
+
+/* Prose content */
 .prose img {
-    @apply mx-auto
+    @apply mx-auto rounded-lg;
 }
 
 .prose figcaption {
-    @apply text-center
+    @apply text-center text-text-secondary text-sm mt-2;
 }
 
 .prose iframe {
-    @apply mx-auto max-w-full
+    @apply mx-auto max-w-full rounded-lg;
 }
 
 .prose blockquote p:first-of-type::before {
-    content: none
+    content: none;
 }
 
 .prose blockquote p:last-of-type::after {
-    content: none
+    content: none;
 }
 
-.twitter-tweet  {
-    @apply mx-auto
+.twitter-tweet {
+    @apply mx-auto;
 }
 
+/* Subscribe form in posts */
 .subscribe-form {
-    @apply mx-auto w-full mb-8 bg-blue-600 bg-opacity-90 rounded-xl pt-10 pb-10 px-10 shadow-xl
+    @apply mx-auto w-full my-12 rounded-xl py-10 px-8;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border);
 }
 
 .prose .subscribe-form-title {
-    @apply text-2xl sm:text-3xl lg:text-3xl font-bold text-center text-white mt-0
+    @apply text-2xl sm:text-3xl font-serif mt-0 mb-4;
+    color: var(--text-primary);
 }
 
 .prose .subscribe-form p {
-    @apply text-base sm:text-xl lg:text-2xl
+    @apply text-base sm:text-lg mb-6;
+    color: var(--text-secondary);
 }
 
 .subscribe-form form {
-    @apply flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center
-}
-
-.subscribe-form p {
-    @apply text-lg sm:text-xl text-center font-semibold text-gray-100
+    @apply flex flex-col sm:flex-row gap-3;
 }
 
 .subscribe-form input {
-    @apply text-gray-500 flex-grow transition duration-500 hover:bg-gray-100 w-full md:w-60 lg:w-64 rounded-md px-4 py-2 focus:ring-blue-500 focus:outline-none
+    @apply flex-grow rounded-lg px-4 py-3 text-base transition-all duration-150;
+    background-color: var(--bg-elevated);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+}
+
+.subscribe-form input:focus {
+    @apply outline-none;
+    border-color: var(--accent-coral);
+}
+
+.subscribe-form input::placeholder {
+    color: var(--text-tertiary);
 }
 
 .subscribe-form button {
-    @apply transition duration-500 ease-in-out sm:w-40 rounded-md py-2 px-2 text-white font-semibold bg-blue-500 shadow-md hover:bg-blue-400 focus:outline-none
+    @apply rounded-lg py-3 px-6 font-medium transition-opacity duration-150;
+    background-color: var(--accent-coral);
+    color: white;
 }
 
+.subscribe-form button:hover {
+    @apply opacity-90;
+}
+
+/* MathJax */
 mjx-container {
-    @apply overflow-auto overflow-y-hidden
+    @apply overflow-auto overflow-y-hidden;
 }
 
+/* Image containers */
 .imageContainer div {
     /* position: unset !important */
 }
@@ -69,7 +148,31 @@ mjx-container {
     height: unset !important;
 }
 
-/* Talks page heading spacing tweaks */
+/* Talks page heading spacing */
 .talks-prose h2 {
     @apply mt-4;
+}
+
+/* Link hover effect */
+a {
+    transition: opacity 150ms ease;
+}
+
+/* Scrollbar styling for dark mode */
+.dark ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: var(--bg-elevated);
+    border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: var(--text-tertiary);
 }
