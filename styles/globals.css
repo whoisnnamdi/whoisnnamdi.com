@@ -59,9 +59,6 @@ mjx-container {
 }
 
 /* Center display math blocks ($$...$$) - MathJax 3 */
-.prose p > mjx-container,
-.prose > mjx-container,
-.prose mjx-container[jax="CHTML"][display="true"],
 mjx-container[display="true"] {
     display: block !important;
     text-align: center !important;
@@ -70,8 +67,8 @@ mjx-container[display="true"] {
     width: 100%;
 }
 
-/* Standalone paragraph with only math */
-.prose p:has(> mjx-container:only-child) {
+/* Standalone paragraph with only display math */
+.prose p:has(> mjx-container[display="true"]:only-child) {
     text-align: center;
 }
 
