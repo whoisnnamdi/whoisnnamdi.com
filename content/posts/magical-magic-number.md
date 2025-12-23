@@ -113,11 +113,11 @@ If you still don't believe me, think about this proof of concept. Does COGS (Cos
 
 What we choose to spend on S&M is dependent on the revenue we **expect** to earn. For example, if you know your S&M is highly effective at driving revenue growth, that is likely to encourage you to invest more in S&M. Conversely, if S&M is not very effective at driving revenue, you will likely spend less than you might otherwise. In that subtle way, revenue (or more accurately in this case, expected revenue) influences S&M spend.
 
-You may not have ever considered this, but it shouldn't be too surprising. There's a reason you rarely see companies spending, say, 500% of revenue on S&M. Companies typically limit their S&M spend to some reasonable level relative to current revenue. Therefore, revenue in some way influences S&M spend. Economists would say that S&M is **[endogenously determined](https://en.wikipedia.org/wiki/Endogeneity_%28econometrics%29)** — it's not some number we pull out of thin air. Our expectations for how valuable it will be and how much revenue we have in the first place determine how much we invest in S&M. Further, our business plans and objectives ("hitting $XM in ARR by year end") influences our S&M spending decisions.
+You may not have ever considered this, but it shouldn't be too surprising. There's a reason you rarely see companies spending, say, 500% of revenue on S&M. Companies typically limit their S&M spend to some reasonable level relative to current revenue. Therefore, revenue in some way influences S&M spend. Economists would say that S&M is **[endogenously determined](https://en.wikipedia.org/wiki/Endogeneity_%28econometrics%29)** — it's not some number we pull out of thin air. Our expectations for how valuable it will be and how much revenue we have in the first place determine how much we invest in S&M. Further, our business plans and objectives ("hitting \$XM in ARR by year end") influences our S&M spending decisions.
 
 This phenomenon — where A causes B and B also causes A — is called **simultaneity** in statistics and econometrics. More colloquially, you might know this as **reverse causation**.
 
-Reverse causation poses a serious problem to our attempts to forecast new revenue from sales and marketing expenditure. Because magic number estimates the relationship between S&M and revenue from observational data rather than some kind of controlled experiment, we don't know the degree to which one causes the other or the reverse. If a business has a magic number of 1, that could mean that $1 of S&M causes $1 of New ARR, or it could mean that businesses that **expect** to add $1 in New ARR choose to limit their S&M to roughly $1.
+Reverse causation poses a serious problem to our attempts to forecast new revenue from sales and marketing expenditure. Because magic number estimates the relationship between S&M and revenue from observational data rather than some kind of controlled experiment, we don't know the degree to which one causes the other or the reverse. If a business has a magic number of 1, that could mean that \$1 of S&M causes \$1 of New ARR, or it could mean that businesses that **expect** to add \$1 in New ARR choose to limit their S&M to roughly \$1.
 
 The answer is somewhere in the middle, and yet magic number assumes the former. Not good.
 
@@ -161,17 +161,17 @@ First we'll calculate the impact of an increase in S&M (relative to what it othe
 
 ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fwhoisnnamdi%2FBYNBFHio-T.png?alt=media&token=bb38640a-7eae-4478-b4ab-a8914c006c11)
 
-A $1M increase in S&M this quarter generates $0.38 more New ARR that same quarter, $0.39 the next quarter, and so on. Cumulatively, over four quarters this adds up to about **$2** of additional New ARR vs. if S&M spend hadn't increased.
+A \$1M increase in S&M this quarter generates \$0.38 more New ARR that same quarter, \$0.39 the next quarter, and so on. Cumulatively, over four quarters this adds up to about **\$2** of additional New ARR vs. if S&M spend hadn't increased.
 
 Now if this was the entire story we'd say that the true magic number reaches two after four quarters and perhaps continues to increase after that. OK, so perhaps magic number as typically calculated doesn't measure the immediate impact of S&M spending, but it gets there eventually, right?
 
-**But it's not the whole story.** We've cheated a bit here by only counting the initial $1 bump in S&M spend. But if we increase spending today, spending tomorrow will also be higher. Part of the effect on New ARR we measured above is due to higher spend in the current quarter, but part of it is also driven by higher spend next quarter (and the quarter after that, and so on).
+**But it's not the whole story.** We've cheated a bit here by only counting the initial \$1 bump in S&M spend. But if we increase spending today, spending tomorrow will also be higher. Part of the effect on New ARR we measured above is due to higher spend in the current quarter, but part of it is also driven by higher spend next quarter (and the quarter after that, and so on).
 
 To account for this, we must calculate the effect of S&M this quarter on S&M **next** quarter **AND** the quarters thereafter and include the cumulative effect in the denominator of our magic number calculation:
 
 ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fwhoisnnamdi%2FYAnS6FgR3i.png?alt=media&token=c114258a-743d-4c16-b80f-a8924bb3fb7b)
 
-The chart above shows the impact of S&M on **itself** into the future. A $1 increase this quarter leads to the next quarter being $0.70 higher than it would have otherwise been, $0.86 the quarter after that, and so on. Cumulatively, we spend about $3.5M more after four quarters.
+The chart above shows the impact of S&M on **itself** into the future. A \$1 increase this quarter leads to the next quarter being \$0.70 higher than it would have otherwise been, \$0.86 the quarter after that, and so on. Cumulatively, we spend about \$3.5M more after four quarters.
 
 Now we can compare the cumulative effect on New ARR to the cumulative increase in S&M to get a proper measure of the "true" magic number:
 
@@ -179,7 +179,7 @@ Now we can compare the cumulative effect on New ARR to the cumulative increase i
 
 The true magic number is estimated to be only **0.6** after four quarters, this is less than a **third** of the average magic number in this dataset of 2.1. So not only is the true magic number much lower than the typical calculation, it takes many quarters to reach this much lower cumulative impact. Importantly — **we don't get nearly the bang-for-buck that the traditional magic number implies.**
 
-To make this real — a forecast that New ARR will be $2.1 higher next quarter based on a $1 increase in S&M this quarter will be off by **80%** (per the first chart, New ARR one quarter out is only $0.39 higher) and cumulatively (including the first and second quarter impact) will be off by **78%** (based on 0.46 cumulative magic number at Q2).
+To make this real — a forecast that New ARR will be \$2.1 higher next quarter based on a \$1 increase in S&M this quarter will be off by **80%** (per the first chart, New ARR one quarter out is only \$0.39 higher) and cumulatively (including the first and second quarter impact) will be off by **78%** (based on 0.46 cumulative magic number at Q2).
 
 ## Magic isn't real
 
