@@ -43,8 +43,8 @@ Developer productivity is the best way to achieve this. This essay explains why.
 The Developer Productivity Manifesto has three parts, this is part 1:
 
 -   ****Part 1: The Developer Productivity Flywheel (you are here)****
--   [Part 2: More (Developers) Isn’t Always More](https://nnamdi.net/more-developers-isnt-always-more/)
--   [Part 3: Leaving Software on the Table](https://nnamdi.net/leaving-software-on-the-table/)
+-   [Part 2: More (Developers) Isn’t Always More](https://whoisnnamdi.com/more-developers-isnt-always-more/)
+-   [Part 3: Leaving Software on the Table](https://whoisnnamdi.com/leaving-software-on-the-table/)
 
 ### Receive my next long-form post
 
@@ -203,6 +203,6 @@ However, there is “[no silver bullet](https://www.cgl.ucsf.edu/Outreach/pc204/
 
 Instead, we must attack the problem from __every available angle__ if we are to succeed.
 
-Ready for more? Here's [Part 2](https://nnamdi.net/more-developers-isnt-always-more/).
+Ready for more? Here's [Part 2](https://whoisnnamdi.com/more-developers-isnt-always-more/).
 
-****Follow me on**** [****Twitter****](https://twitter.com/whoisnnamdi)****, subscribe to my monthly essays**** [****here****](https://nnamdi.net/)****, and reach out to me directly via nnamdi@lsvp.com****
+****Follow me on**** [****Twitter****](https://twitter.com/whoisnnamdi)****, subscribe to my monthly essays**** [****here****](https://whoisnnamdi.com/)****, and reach out to me directly via nnamdi@lsvp.com****

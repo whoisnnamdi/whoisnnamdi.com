@@ -276,7 +276,7 @@ twitter_image: ""
 
 ## What I Learned Analyzing the Earnings of 11,037 Software Developers
 
--   [Write-up](https://nnamdi.net/highest-paid-software-developer/)
+-   [Write-up](https://whoisnnamdi.com/highest-paid-software-developer/)
 -   [Slides](https://docs.google.com/presentation/d/14v-eLdpu2il8AMXU2a8rC4Nc4qaB2OyKTt6dALDhgJA/edit?usp=sharing)
 
 [![chart](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515731112-years_coding.png)](https://docs.google.com/presentation/d/14v-eLdpu2il8AMXU2a8rC4Nc4qaB2OyKTt6dALDhgJA/edit?usp=sharing)

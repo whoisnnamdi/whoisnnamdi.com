@@ -27,17 +27,17 @@ Developer productivity is undergoing a tectonic shift. New software development 
 To dissect these trends, my good friend and colleague, [Clio Smurro](https://www.linkedin.com/in/clio-smurro-31967b9/), and I interviewed founders and executives at next-generation software and infrastructure startups pushing the developer productivity frontier to get their thoughts and insights. They shared their views on:
 
 -   **major industry trends (you are here)**,
--   [top strategic priorities](https://nnamdi.net/developer-productivity-strategic-priorities/), and
--   [biggest challenges and pain points](https://nnamdi.net/developer-productivity-challenges/)
+-   [top strategic priorities](https://whoisnnamdi.com/developer-productivity-strategic-priorities/), and
+-   [biggest challenges and pain points](https://whoisnnamdi.com/developer-productivity-challenges/)
 
 In this first chapter, we share our findings on the important trends shaping developer productivity, including:
 
--   Trend #1: [Developers have the power... and the purse](https://nnamdi.net/developer-productivity-trends/#trend-1-developers-have-the-power-and-the-purse)
--   Trend #2: [Application security is "shifting left"](https://nnamdi.net/developer-productivity-trends/#trend-2-application-security-is-shifting-left)
--   Trend #3: [The distributed cloud is having its COVID moment](https://nnamdi.net/developer-productivity-trends/#trend-3-the-distributed-cloud-is-having-its-covid-moment)
--   Trend #4: [Remote software development is here to stay](https://nnamdi.net/developer-productivity-trends/#trend-4-remote-software-development-is-here-to-stay)
--   Trend #5: [The growth of Python, Spark, and Big Data](https://nnamdi.net/developer-productivity-trends/#trend-5-the-growth-of-python-spark-and-big-data)
--   Trend #6: [Transfer learning from DevOps to data science and data engineering](https://nnamdi.net/developer-productivity-trends/#trend-6-transfer-learning-from-devops-to-data-science-and-data-engineering)
+-   Trend #1: [Developers have the power... and the purse](https://whoisnnamdi.com/developer-productivity-trends/#trend-1-developers-have-the-power-and-the-purse)
+-   Trend #2: [Application security is "shifting left"](https://whoisnnamdi.com/developer-productivity-trends/#trend-2-application-security-is-shifting-left)
+-   Trend #3: [The distributed cloud is having its COVID moment](https://whoisnnamdi.com/developer-productivity-trends/#trend-3-the-distributed-cloud-is-having-its-covid-moment)
+-   Trend #4: [Remote software development is here to stay](https://whoisnnamdi.com/developer-productivity-trends/#trend-4-remote-software-development-is-here-to-stay)
+-   Trend #5: [The growth of Python, Spark, and Big Data](https://whoisnnamdi.com/developer-productivity-trends/#trend-5-the-growth-of-python-spark-and-big-data)
+-   Trend #6: [Transfer learning from DevOps to data science and data engineering](https://whoisnnamdi.com/developer-productivity-trends/#trend-6-transfer-learning-from-devops-to-data-science-and-data-engineering)
 
 Want to be notified when we publish part two of our findings? Subscribe below, and we'll also send you a nicely formatted PDF of our research!
 
@@ -153,7 +153,7 @@ If it is true that at least some teams and organizations can be nearly as produc
 
 > "The shift to working remote is happening... It's month three of the new normal, and I think **there will be long-term changes as a result of this**." — Executive, Developer Tools Startup
 
-Software developers who enjoy this new style of work may have other reasons to rejoice too. [As I've previously written about](https://nnamdi.net/remote-software-developers-earn-more/), developers who work remotely earn up to 22% more than developers who don't. Of course, as with many aspects of a _forced_ transition to remote work, it's not clear whether this result applies when organizations had no choice about the move.
+Software developers who enjoy this new style of work may have other reasons to rejoice too. [As I've previously written about](https://whoisnnamdi.com/remote-software-developers-earn-more/), developers who work remotely earn up to 22% more than developers who don't. Of course, as with many aspects of a _forced_ transition to remote work, it's not clear whether this result applies when organizations had no choice about the move.
 
 ## Trend #5: The growth of Python, Spark, and Big Data
 

@@ -59,7 +59,7 @@ Subscribe
 
 ## A degree is only one of many factors
 
-**Point two** is where things get interesting. As I’ve discussed in [prior analyses](https://nnamdi.net/remote-software-developers-earn-more/), _correlation is not causation_. But that’s not very interesting. What’s interesting is exactly how much correlation is in fact causation vs. not. It turns out, college degrees do raise incomes but not as much as simple correlations like above would suggest.
+**Point two** is where things get interesting. As I’ve discussed in [prior analyses](https://whoisnnamdi.com/remote-software-developers-earn-more/), _correlation is not causation_. But that’s not very interesting. What’s interesting is exactly how much correlation is in fact causation vs. not. It turns out, college degrees do raise incomes but not as much as simple correlations like above would suggest.
 
 I’ll spend some time on this point, as it’s the most important one to grasp.
 
@@ -77,7 +77,7 @@ The authors of the previously cited analysis explore this idea and conclude:
 
 > Failing to account for parents’ education **overinflated** the college and post-graduate income and wealth premiums… Clearly, **parents’ education and financial acumen** were important variables previously omitted in estimations of the college and post-graduate premiums… Part of the effect of college would be **transmitting the effect of parents’ education**. (Emphasis mine)
 
-Said more colorfully, rather than simply being a “leveler,” college is increasingly the vehicle through which the _already advantaged_ **express** and **[compound](https://nnamdi.net/you-dont-understand-compound-growth/)** their advantages. Mathematically, this accounts for some of the correlation I identified earlier, leaving less to be explained by true “causality” or, as the authors put it, “the true college premium.”
+Said more colorfully, rather than simply being a “leveler,” college is increasingly the vehicle through which the _already advantaged_ **express** and **[compound](https://whoisnnamdi.com/you-dont-understand-compound-growth/)** their advantages. Mathematically, this accounts for some of the correlation I identified earlier, leaving less to be explained by true “causality” or, as the authors put it, “the true college premium.”
 
 So how do we identify this “true” premium? There are multiple methods, but the most straightforward is to run a large regression of income on college attendance, controlling for all the appropriate variables that may correlate with college attendance or income. This is harder than it sounds, both because the choice of controls is subjective and because those variables might not be available to you.
 

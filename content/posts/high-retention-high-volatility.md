@@ -48,7 +48,7 @@ This sensitivity to interest rates increases with the tenure of the bond. In oth
 
 In finance, this concept is called [**duration**](https://www.blackrock.com/us/individual/education/understanding-duration). Duration measures the sensitivity of the value of a bond to a change in interest rates, which is tied to the lifetime of the bond. Bonds with longer tenure or back-loaded cash flows are more sensitive to changes in interest rates.
 
-Due to the [multiplicative nature](https://nnamdi.net/you-dont-understand-compound-growth/) of discounting, the present value of far-away payments is more sensitive to a change in interest rates than the value of soon-to-come payments.
+Due to the [multiplicative nature](https://whoisnnamdi.com/you-dont-understand-compound-growth/) of discounting, the present value of far-away payments is more sensitive to a change in interest rates than the value of soon-to-come payments.
 
 This is exactly the situation companies with high retention face.
 
@@ -65,7 +65,7 @@ This is exactly the situation companies with high retention face.
 
 **With higher retention, more and more of the value of an acquired customer comes from its later years of life.**
 
-Again, the present value of these later years is more sensitive to changes in the discount rate applied to the cash flows, due to the [compounding of discounting](https://nnamdi.net/you-dont-understand-compound-growth/).
+Again, the present value of these later years is more sensitive to changes in the discount rate applied to the cash flows, due to the [compounding of discounting](https://whoisnnamdi.com/you-dont-understand-compound-growth/).
 
 Since all companies are on some level simply a collection of various customer cohorts with variable and fixed costs layered on, the summed value of the individual cohorts determines the overall company's valuation.
 

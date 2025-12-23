@@ -26,9 +26,9 @@ Developer productivity is undergoing a tectonic shift. New software development 
 
 To better understand the strategic landscape, my good friend and colleague, [Clio Smurro](https://www.linkedin.com/in/clio-smurro-31967b9/), and I interviewed founders and executives at next-generation software and infrastructure startups pushing the developer productivity frontier to get their thoughts and insights. They shared their views on:
 
--   [major industry trends](https://nnamdi.net/developer-productivity-trends/),
+-   [major industry trends](https://whoisnnamdi.com/developer-productivity-trends/),
 -   **top strategic priorities (you are here)**, and
--   [biggest challenges and pain points](https://nnamdi.net/developer-productivity-challenges/)
+-   [biggest challenges and pain points](https://whoisnnamdi.com/developer-productivity-challenges/)
 
 In this second chapter, we share our findings on the **top strategic priorities** of developer productivity startups, including:
 

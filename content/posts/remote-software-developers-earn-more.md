@@ -20,7 +20,7 @@ twitter_description: ""
 twitter_image: "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512193250-WorkRemote-5.jpg"
 ---
 
-_This post is an excerpt from my [2020 software developer pay analysis](https://nnamdi.net/highest-paid-software-engineers-2020/). Read the rest of the analysis [here](https://nnamdi.net/highest-paid-software-engineers-2020/)._
+_This post is an excerpt from my [2020 software developer pay analysis](https://whoisnnamdi.com/highest-paid-software-engineers-2020/). Read the rest of the analysis [here](https://whoisnnamdi.com/highest-paid-software-engineers-2020/)._
 
 Organizations around the world have pivoted to remote work to shield themselves against the [novel coronavirus / COVID-19](https://www.cdc.gov/coronavirus/2019-ncov/index.html) threat.
 
@@ -34,7 +34,7 @@ One piece of good news among all the dread—remote work could lead to higher ta
 
 Fully-remote software developers earn **21.9%** more than developers who never or rarely work remote.
 
-Even once I [control](https://en.wikipedia.org/wiki/Controlling_for_a_variable) for various observable factors (including `age`, `experience`, `hours worked`, `size of employer`, `programming languages`, and [more](https://nnamdi.net/highest-paid-software-engineers-2020/)), fully-remote software developers earn **9.4%** more than developers who never or only rarely work remotely.
+Even once I [control](https://en.wikipedia.org/wiki/Controlling_for_a_variable) for various observable factors (including `age`, `experience`, `hours worked`, `size of employer`, `programming languages`, and [more](https://whoisnnamdi.com/highest-paid-software-engineers-2020/)), fully-remote software developers earn **9.4%** more than developers who never or only rarely work remotely.
 
 Further, the remote work pay advantage increases proportionately with the time spent working remotely. Therefore, fully-remote developers earn more than
 

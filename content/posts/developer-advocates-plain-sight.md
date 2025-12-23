@@ -22,9 +22,9 @@ twitter_image: "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/17665122
 
 [Developer relations](https://www.marythengvall.com/blog/2019/5/22/what-is-developer-relations-and-why-should-you-care) (DevRel) is one of the toughest hires to make in early stage, developer-centric startups.
 
-In [Four Challenges Facing Developer Productivity Startups](https://nnamdi.net/developer-productivity-challenges/) I identified scaling developer relations as one of the key challenges facing developer productivity startups today:
+In [Four Challenges Facing Developer Productivity Startups](https://whoisnnamdi.com/developer-productivity-challenges/) I identified scaling developer relations as one of the key challenges facing developer productivity startups today:
 
-> ... even if you're fully onboard with the idea of developer relations, doing it well is tough. To start, developer advocates are hard to come by. There just aren't many DevRel folks out there. The function is still relatively new, and career pipelines into the role have yet to fully materialize — [Four Challenges Facing Developer Productivity Startups](https://nnamdi.net/developer-productivity-challenges/#scalingdeveloperrelations)
+> ... even if you're fully onboard with the idea of developer relations, doing it well is tough. To start, developer advocates are hard to come by. There just aren't many DevRel folks out there. The function is still relatively new, and career pipelines into the role have yet to fully materialize — [Four Challenges Facing Developer Productivity Startups](https://whoisnnamdi.com/developer-productivity-challenges/#scalingdeveloperrelations)
 
 To some extent this is a supply and demand issue — many more startups want to bring on developer advocates than there are available developer advocates.
 

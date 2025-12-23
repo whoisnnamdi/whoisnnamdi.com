@@ -20,7 +20,7 @@ twitter_image: "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/17665121
 
 **Human capital is our greatest asset.**
 
-Like financial capital, [the all-powerful force of compound growth](https://nnamdi.net/you-dont-understand-compound-growth/) means that a small difference in the rate of skill acquisition over time can lead to massive differences in career outcomes.
+Like financial capital, [the all-powerful force of compound growth](https://whoisnnamdi.com/you-dont-understand-compound-growth/) means that a small difference in the rate of skill acquisition over time can lead to massive differences in career outcomes.
 
 Choosing which skills to hone is therefore one of the most important keys to professional growth and success in any arena.
 
@@ -167,7 +167,7 @@ The moral of the story - **think critically about where to invest your time**.
 
 To be clear - it’s not the end of the world if you pick the “wrong” language. In fact, there really aren’t any wrong choices here, even the "dogs". **Use the best tool for the job.** However, it certainly helps to avoid the transition costs inherent in trying to reposition oneself or play catch up later on.
 
-If anything, don’t try to reposition yourself _per se_, but rather, seek to enhance your overall value and breadth of capabilities by acquiring at least intermediate mastery in several different languages. Again, similar to spoken languages, people who can converse in multiple valuable languages often gain disproportionate value from their learning efforts, which tend to [compound on one another](https://nnamdi.net/you-dont-understand-compound-growth/), especially when learning the basic features which form the building blocks of many dialects.
+If anything, don’t try to reposition yourself _per se_, but rather, seek to enhance your overall value and breadth of capabilities by acquiring at least intermediate mastery in several different languages. Again, similar to spoken languages, people who can converse in multiple valuable languages often gain disproportionate value from their learning efforts, which tend to [compound on one another](https://whoisnnamdi.com/you-dont-understand-compound-growth/), especially when learning the basic features which form the building blocks of many dialects.
 
 Remember, this mental model, though imperfect, is arguably flexible enough to accommodate many skills, _not just programming_.
 

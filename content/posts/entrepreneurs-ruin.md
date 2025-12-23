@@ -120,7 +120,7 @@ Hence, **“Entrepreneur's Ruin”** is the natural bias among business leaders 
 It's the tendency to see business as:
 
 -   **“_one and done_”** rather than
--   **“_one times one times one..._”** [compounding](https://nnamdi.net/you-dont-understand-compound-growth/) ad infinitum
+-   **“_one times one times one..._”** [compounding](https://whoisnnamdi.com/you-dont-understand-compound-growth/) ad infinitum
 
 In this multiplicative world, a single zero wipes you out. Prior success is irrelevant. A priori probability or “confidence” of success is also irrelevant.
 

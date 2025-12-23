@@ -94,7 +94,7 @@ _You'd be wrong._ The skills for software engineering jobs change rapidly throug
 
 > This means that experienced STEM workers seeking employment in 2019 are often required to possess skills that **were not required** when they entered the labor market in 2007 or earlier.
 
-Software engineers **never** escape the skill-change vortex, even many years into their careers. Experienced engineers must learn and adopt technologies that didn't even exist when they started out. Developers must constantly retool themselves, even well after their [formal education](https://nnamdi.net/college-degrees-software-engineers/) ends.
+Software engineers **never** escape the skill-change vortex, even many years into their careers. Experienced engineers must learn and adopt technologies that didn't even exist when they started out. Developers must constantly retool themselves, even well after their [formal education](https://whoisnnamdi.com/college-degrees-software-engineers/) ends.
 
 ## [Nothing's changed but my change](https://youtu.be/m1ERvlxgCD8?t=166)
 
@@ -168,7 +168,7 @@ Specific skills in software development quickly become dated. Programming langua
 
 The hits don't stop there. Ironically, **the quickest learners are also the quickest dropouts**.
 
-To understand why, think back to the model we just outlined. Quick learners accumulate human capital faster than their slower peers, which means they have the most to lose when certain skills or abilities fall out of favor. In fact, **the return to being a fast learner is _higher_ in jobs with _low_ rates of skill change** because the learnings can [compound](https://nnamdi.net/you-dont-understand-compound-growth/) over time instead of dwindle in relevance.
+To understand why, think back to the model we just outlined. Quick learners accumulate human capital faster than their slower peers, which means they have the most to lose when certain skills or abilities fall out of favor. In fact, **the return to being a fast learner is _higher_ in jobs with _low_ rates of skill change** because the learnings can [compound](https://whoisnnamdi.com/you-dont-understand-compound-growth/) over time instead of dwindle in relevance.
 
 > High-ability workers are faster learners, in all jobs. However, **the relative return to ability is higher in careers that change less, because learning gains accumulate.**
 

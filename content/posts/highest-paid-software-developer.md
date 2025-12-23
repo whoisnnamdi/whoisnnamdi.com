@@ -20,7 +20,7 @@ twitter_description: ""
 twitter_image: "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512164914-luke-porter-107784-unsplash.jpg"
 ---
 
-_**Note: You can find this analysis updated for 2020 [here](https://nnamdi.net/highest-paid-software-engineers-2020/).**_
+_**Note: You can find this analysis updated for 2020 [here](https://whoisnnamdi.com/highest-paid-software-engineers-2020/).**_
 
 Dev fell in love with code at a young age.
 
@@ -68,7 +68,7 @@ However, the publicly available analysis of this important issue is quite poor.
 
 ## The problem with most pay analyses
 
-[As covered in my last post](https://nnamdi.net/the-growth-share-matrix-of-software-development/), Stack Overflow conducts an annual survey of software developers, asking about various aspects of their careers, like income, job title, etc.
+[As covered in my last post](https://whoisnnamdi.com/the-growth-share-matrix-of-software-development/), Stack Overflow conducts an annual survey of software developers, asking about various aspects of their careers, like income, job title, etc.
 
 One disappointing feature of most pay analyses is that they show the data without controlling for any other variables. Avoiding any math more complex than simple averages, **the typical analyses of pay have no way to understand a multivariate world**.
 
@@ -110,7 +110,7 @@ For more detail on the methodology, please see the appendix at the end.
 
 ![](/content/images/2019/01/age.png)
 
-Initially, age increases earnings. That said, the annualized [compound](https://nnamdi.net/you-dont-understand-compound-growth/) gain is quite meager—about 0.2% through 45-54 years of age—with most of that happening before a developer turns 25.
+Initially, age increases earnings. That said, the annualized [compound](https://whoisnnamdi.com/you-dont-understand-compound-growth/) gain is quite meager—about 0.2% through 45-54 years of age—with most of that happening before a developer turns 25.
 
 More interesting is how the impact of age declines and turns negative (relative to a developer of 18-24 years of age) as a developer approaches 65:
 

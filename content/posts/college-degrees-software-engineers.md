@@ -20,7 +20,7 @@ twitter_description: ""
 twitter_image: "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512200903-EdLevel_header-3.png"
 ---
 
-_This post is an excerpt from my [2020 software developer pay analysis](https://nnamdi.net/highest-paid-software-engineers-2020/). Read the rest of the analysis [here](https://nnamdi.net/highest-paid-software-engineers-2020/)._
+_This post is an excerpt from my [2020 software developer pay analysis](https://whoisnnamdi.com/highest-paid-software-engineers-2020/). Read the rest of the analysis [here](https://whoisnnamdi.com/highest-paid-software-engineers-2020/)._
 
 Coding bootcamps say [the traditional model of education is broken](https://lambdaschool.com/about) and that anyone can become a software developer with the proper effort.
 
@@ -34,7 +34,7 @@ Regardless of your views, these claims ignore an important question: let’s say
 
 Developers with college degrees earn **7.5%** more than developers with no college education.
 
-As in [previous analyses](https://nnamdi.net/age-race-gender-software-engineering-pay/), I additionally control for various observable factors like `age`, `experience`, `hours worked`, `size of employer`, `programming languages` [and more](https://nnamdi.net/highest-paid-software-engineers-2020/). Interestingly, accounting for these factors doesn’t change the college wage premium.
+As in [previous analyses](https://whoisnnamdi.com/age-race-gender-software-engineering-pay/), I additionally control for various observable factors like `age`, `experience`, `hours worked`, `size of employer`, `programming languages` [and more](https://whoisnnamdi.com/highest-paid-software-engineers-2020/). Interestingly, accounting for these factors doesn’t change the college wage premium.
 
 Advanced degrees carry greater benefits — master’s degree holders earn **13.3%** more than college degree holders, while those with doctoral degrees (i.e. PhDs) earn **20.5%** more. These numbers decrease meaningfully though once I add in the controls I mentioned above, falling to **4.1%** and **7.8%** respectively.
 

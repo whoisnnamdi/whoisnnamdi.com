@@ -20,7 +20,7 @@ twitter_description: ""
 twitter_image: "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512190908-Ethnicity-10.jpg"
 ---
 
-_This is part 1 of my 2020 analysis of software developer earnings. You can find the rest of the results and methodology [here](https://nnamdi.net/highest-paid-software-engineers-2020)._
+_This is part 1 of my 2020 analysis of software developer earnings. You can find the rest of the results and methodology [here](https://whoisnnamdi.com/highest-paid-software-engineers-2020)._
 
 Age. Race. Gender. Sexual orientation.
 
@@ -38,7 +38,7 @@ In this first part of my 2020 analysis of software engineering pay, I explore ho
 -   `Gay and lesbian` engineers earn more than `straight` engineers after adjusting for observable factors
 -   `Parents` earn significantly more that `non-parents`, but this is explained by other factors
 
-If you haven’t already, please check out the [methodology behind the analysis](https://nnamdi.net/highest-paid-software-engineers-2020), otherwise the numbers below might be difficult to interpret.
+If you haven’t already, please check out the [methodology behind the analysis](https://whoisnnamdi.com/highest-paid-software-engineers-2020), otherwise the numbers below might be difficult to interpret.
 
 ### Receive a report with the full results
 
@@ -78,7 +78,7 @@ Additionally important variables include `self-rated competence`, having `influe
 
 ### Minorities are both the highest and lowest-paid software developers
 
-As in [last year’s analysis](https://nnamdi.net/highest-paid-software-developer/), the largest pay gaps are between minority groups, which make up both the highest and lowest-paid developers.
+As in [last year’s analysis](https://whoisnnamdi.com/highest-paid-software-developer/), the largest pay gaps are between minority groups, which make up both the highest and lowest-paid developers.
 
 `East` and `South Asians` see the most statistically significant pay premiums relative to white developers with or without controls in the regression. In the case of `East Asians`, their pay premium _increases_ after controlling for various factors.
 
@@ -204,4 +204,4 @@ Analogous statistical caveats abound.
 
 That said, the data suggest the software development industry is well on its way to pay parity across the important dimensions of age, race, gender, and sexuality.
 
-_Thanks for reading part 1 of my 2020 analysis of software developer pay. You can find the rest of the analysis and methodology [here](https://nnamdi.net/highest-paid-software-engineers-2020)._
+_Thanks for reading part 1 of my 2020 analysis of software developer pay. You can find the rest of the analysis and methodology [here](https://whoisnnamdi.com/highest-paid-software-engineers-2020)._

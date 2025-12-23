@@ -44,7 +44,7 @@ The extreme, non-negative variation around the average produces a right or posit
 
 Sufficiently skewed distributions are "[fat-tailed](https://en.wikipedia.org/wiki/Fat-tailed_distribution)." Large customer contracts will determine the properties of the distribution, like its mean or variance. Similarly, large customers will account for an enormous proportion of overall revenue. In other words, software monetization is a [power law](http://reactionwheel.net/2015/06/power-laws-in-venture.html).
 
-In a [previous essay](https://nnamdi.net/vcs-index-invest/), I introduced the notion of \\(\\alpha\\), or alpha, the shape or tail parameter, which characterizes the "fat-tailedness" of a power law distribution. The smaller \\(\\alpha\\), the more skewed the distribution, the fatter the tails, with \\(\\alpha < 2\\) indicating extreme skew and fat-tailedness. For software monetization, the fatter the tail, the more common and impactful are those "whale" customers.
+In a [previous essay](https://whoisnnamdi.com/vcs-index-invest/), I introduced the notion of \\(\\alpha\\), or alpha, the shape or tail parameter, which characterizes the "fat-tailedness" of a power law distribution. The smaller \\(\\alpha\\), the more skewed the distribution, the fatter the tails, with \\(\\alpha < 2\\) indicating extreme skew and fat-tailedness. For software monetization, the fatter the tail, the more common and impactful are those "whale" customers.
 
 Evidence for skewed monetization is tough to come by without access to a company's commercial contracts. However, we can infer the fat-tailedness from the SEC filings of public software companies with a simple trick.
 
@@ -126,7 +126,7 @@ It's easy to see these results and think "Yes, sure, customer concentration is a
 
 ### Why don't software companies index invest?
 
-First, as I discussed previously in [Why Don't VCs Index Invest](https://nnamdi.net/vcs-index-invest/), when facing a sufficiently fat-tailed distribution of returns, it doesn't make sense to be picky or overly concentrated in one's investments. Index investing is the optimal allocation strategy.
+First, as I discussed previously in [Why Don't VCs Index Invest](https://whoisnnamdi.com/vcs-index-invest/), when facing a sufficiently fat-tailed distribution of returns, it doesn't make sense to be picky or overly concentrated in one's investments. Index investing is the optimal allocation strategy.
 
 Here, returns are synonymous with revenue and investment is synonymous with customer acquisition costs, or CAC. If the distribution of revenue is fat-tailed, vendors should be trying to insert their software into as many customers as possible, as cheaply as possible. Don't try to land large upfront, as this requires investing in a heavy and expensive enterprise sales motion that may not yield results. Instead, spend small and land small, with each customer contract acting as a potential "lottery ticket" that may unlock a much larger contract later on, similar to an early-stage startup investment.
 
@@ -137,7 +137,7 @@ There's some merit to this analogy between venture capital and software go-to-ma
 
 ### Whale hunting
 
-Second, as I allude to in the [aforementioned essay](https://nnamdi.net/vcs-index-invest/), finite samples of a positively skewed, fat-tailed distribution tend to underestimate the average, or mean, of the distribution. Large values are rare, so small samples will tend to miss them. Unless you have an extremely large dataset, the "true" mean is typically larger than the mean you measure from the data. So the calculated sample mean tends to increase as the sample size grows, reflecting those large, infrequent outcomes.
+Second, as I allude to in the [aforementioned essay](https://whoisnnamdi.com/vcs-index-invest/), finite samples of a positively skewed, fat-tailed distribution tend to underestimate the average, or mean, of the distribution. Large values are rare, so small samples will tend to miss them. Unless you have an extremely large dataset, the "true" mean is typically larger than the mean you measure from the data. So the calculated sample mean tends to increase as the sample size grows, reflecting those large, infrequent outcomes.
 
 Said more precisely:
 
@@ -187,11 +187,11 @@ _That number is conservative_ — it assumes that we've already acquired every c
 
 Combined, the above insights form a mathematical justification for "[land and expand](https://saasx.com/2018/09/13/how-to-execute-a-saas-land-and-expand-strategy/)"-style go-to-market strategies.
 
-Here, land and expand is effectively an [indexing strategy](https://nnamdi.net/vcs-index-invest/) — land at as many organizations with as little investment as possible. Every once in a while you'll land a Google, a Facebook, or an Amazon (both figuratively and literally) which will drive a disproportionate share of revenue.
+Here, land and expand is effectively an [indexing strategy](https://whoisnnamdi.com/vcs-index-invest/) — land at as many organizations with as little investment as possible. Every once in a while you'll land a Google, a Facebook, or an Amazon (both figuratively and literally) which will drive a disproportionate share of revenue.
 
 Even if those customers start off small, any given customer could potentially become quite large.
 
-Further, it can make sense to overspend somewhat on establishing those small beachheads, as they likely underestimate the true average contract value. For this reason, common metrics for evaluating the efficiency of software sales like the "[magic number](https://nnamdi.net/magical-magic-number/)" may underestimate the efficiency of land and expand models, especially during the land phase.
+Further, it can make sense to overspend somewhat on establishing those small beachheads, as they likely underestimate the true average contract value. For this reason, common metrics for evaluating the efficiency of software sales like the "[magic number](https://whoisnnamdi.com/magical-magic-number/)" may underestimate the efficiency of land and expand models, especially during the land phase.
 
 > If we suspect right-skewness, the true mean is more likely to be underestimated by measurement of past realizations, and the total potential is likewise poorly gauged. — [The Fourth Quadrant: A Map of the Limits of Statistics](http://www.edge.org/conversation/nassim_nicholas_taleb-the-fourth-quadrant-a-map-of-the-limits-of-statistics)
 
@@ -211,6 +211,6 @@ Here's a preview of the topics:
 -   [Why "Weighted ACV" beats the traditional ACV metric](https://whoisnnamdi.com/weighted-acv/)
 -   Why investors consistently undervalue enterprise software and overvalue consumer startups
 -   Why open source is built by individuals rather than communities
--   [Why product-market fit gets harder to achieve the longer you search for it](https://nnamdi.net/product-market-fit-is-lindy/)
+-   [Why product-market fit gets harder to achieve the longer you search for it](https://whoisnnamdi.com/product-market-fit-is-lindy/)
 
 I've been thinking about some of these essays for the better part of a year, so I'm excited to _finally_ share these ideas.

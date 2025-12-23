@@ -32,7 +32,7 @@ This guide explains why.
 
 Developer compensation is a critical piece of technology's economic impact. Awareness of this data makes you a better informed citizen of the industry.
 
-**I am dedicated to enhancing the careers of software developers and the functioning of the organizations that employ them.** Compiling this report [every year](https://nnamdi.net/highest-paid-software-developer/) is one way I do this.
+**I am dedicated to enhancing the careers of software developers and the functioning of the organizations that employ them.** Compiling this report [every year](https://whoisnnamdi.com/highest-paid-software-developer/) is one way I do this.
 
 If you’re a…
 
@@ -64,7 +64,7 @@ Send Report ⚡
 
 ### The data
 
-As with [last year’s analysis](https://nnamdi.net/highest-paid-software-developer/), the data in this report is based on a subset of [Stack Overflow’s annual developer survey](https://insights.stackoverflow.com/survey/2019). They have run this survey for a while now and each year graciously open source the responses in an easy work with CSV file.
+As with [last year’s analysis](https://whoisnnamdi.com/highest-paid-software-developer/), the data in this report is based on a subset of [Stack Overflow’s annual developer survey](https://insights.stackoverflow.com/survey/2019). They have run this survey for a while now and each year graciously open source the responses in an easy work with CSV file.
 
 The survey is global, but here I focus on 10,355 U.S. based individuals employed as software engineers on either a part-time, full-time, or independent basis.
 
@@ -122,7 +122,7 @@ This year’s new and improved analysis comes with the following enhancements:
 
 I am also releasing a developer earnings calculator (coming soon). Answer a few questions, and the calculator will output a pay estimate and confidence range based on the same data in this analysis.
 
-Check out [last year’s report](https://nnamdi.net/highest-paid-software-developer/) to see how the numbers changed year-over-year.
+Check out [last year’s report](https://whoisnnamdi.com/highest-paid-software-developer/) to see how the numbers changed year-over-year.
 
 ## Knowledge (of money) is power
 

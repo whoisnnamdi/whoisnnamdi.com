@@ -74,7 +74,7 @@ When MacInnis says performance is lognormal, or skewed, with respect to product-
 
 ## A/B testing with fat tails
 
-In [Why Don't VCs Index Invest](https://nnamdi.net/vcs-index-invest/), I make the point that, when facing sufficiently fat-tailed distributions, it makes sense to spread your bets widely, avoiding concentration or dependence on any one investment or opportunity. Instead "index invest," placing small bets in everything reasonable without overthinking it too much.
+In [Why Don't VCs Index Invest](https://whoisnnamdi.com/vcs-index-invest/), I make the point that, when facing sufficiently fat-tailed distributions, it makes sense to spread your bets widely, avoiding concentration or dependence on any one investment or opportunity. Instead "index invest," placing small bets in everything reasonable without overthinking it too much.
 
 This extends to all domains where fat-tails reign. [A fascinating paper](https://eduardomazevedo.github.io/papers/azevedo-et-al-ab.pdf) by researchers at Microsoft, HomeAway, Wharton, and Columbia University applies this logic to the domain of internet search engines and reaches similar conclusions.
 

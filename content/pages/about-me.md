@@ -24,13 +24,13 @@ To increase total software output by supporting entrepreneurs building technical
 
 ## My most popular essays:
 
--   [Why We Will Never Have Enough Software Developers](https://nnamdi.net/never-enough-developers/) (Popular on Reddit)
--   [Enterprise Software Monetization is Fat-Tailed](https://nnamdi.net/software-fat-tailed/)
+-   [Why We Will Never Have Enough Software Developers](https://whoisnnamdi.com/never-enough-developers/) (Popular on Reddit)
+-   [Enterprise Software Monetization is Fat-Tailed](https://whoisnnamdi.com/software-fat-tailed/)
 -   [Companies Rarely Grow Into Their Valuations](https://whoisnnamdi.com/grow-valuation/)
 -   [The Developer Productivity Manifesto](https://whoisnnamdi.com/the-developer-productivity-flywheel/)
--   [Remote Software Developers Earn 22% More Than Non-Remote Developers](https://nnamdi.net/remote-software-developers-earn-more/) (#1 on Hacker News)
--   [High Retention = High Volatility](https://nnamdi.net/high-retention-high-volatility/)
--   [You Don't Understand Compound Growth](https://nnamdi.net/you-dont-understand-compound-growth/)
+-   [Remote Software Developers Earn 22% More Than Non-Remote Developers](https://whoisnnamdi.com/remote-software-developers-earn-more/) (#1 on Hacker News)
+-   [High Retention = High Volatility](https://whoisnnamdi.com/high-retention-high-volatility/)
+-   [You Don't Understand Compound Growth](https://whoisnnamdi.com/you-dont-understand-compound-growth/)
 
 * * *
 
@@ -40,7 +40,7 @@ I'm a geek at heart.
 
 I've been fascinated by technology for as long as I can remember. I spent countless hours as a teenager building computers (currently rocking a 7700K 8700K / 7800 980 Ti 1080 Ti 3090 combo), coding up websites (R.I.P. PHP), and finding ways to game Google search (SEO is not what it used to be though). These days I spend just as many hours doing statistical analysis in Python, toying with neural networks (highly recommend Stanford's deep learning-based NLP class [CS 224N](http://web.stanford.edu/class/cs224n/) and computer vision class [CS 231N](http://cs231n.stanford.edu/)), experimenting with open source software, and advising startups on product and growth initiatives.
 
-I love applying rigorous analytical frameworks and mental models to tough problems at the center of technology, business, and life. In the last few years I've been exploring [developer productivity tools](https://nnamdi.net/developer-productivity-trends/), application infrastructure, and machine learning in the enterprise.
+I love applying rigorous analytical frameworks and mental models to tough problems at the center of technology, business, and life. In the last few years I've been exploring [developer productivity tools](https://whoisnnamdi.com/developer-productivity-trends/), application infrastructure, and machine learning in the enterprise.
 
 I'm a [Partner](https://lsvp.com/team/nnamdi-iregbulem/) at [Lightspeed Venture Partners](https://lsvp.com), where I work with [companies](https://whoisnnamdi.com/portfolio/) like [Redpanda](https://redpanda.com/), [Materialize](https://materialize.com/), and others. I spent four formative years investing in growth-stage technology businesses at [ICONIQ Capital](http://iconiqcapital.com/), where I sourced and co-led investments in leading B2B software and internet companies like [GitLab](https://about.gitlab.com/), [Epic Games (Fortnite)](https://www.epicgames.com), [ezCater](https://www.ezcater.com/), and [Brightwheel](https://mybrightwheel.com/) and and additionally invested in others like [Age of Learning](https://www.ageoflearning.com/), [Alteryx (AYX)](https://www.alteryx.com/), [Fastly (FSLY)](https://www.fastly.com/), [Relativity](https://www.relativity.com/), [SurveyMonkey (SVMK)](https://www.surveymonkey.com/), and [Uber (UBER)](https://www.uber.com/). My first gig out of school was Technology, Media, and Telecommunications investment banking at [J.P. Morgan](https://www.jpmorgan.com/).
 

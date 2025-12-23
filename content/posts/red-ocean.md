@@ -74,7 +74,7 @@ The ridesharing market spawned out of the emergence of these new services — ne
 
 What funded this [Cambrian explosion](https://en.wikipedia.org/wiki/Cambrian_explosion) of ridesharing? **Venture capital.**
 
-Capital is a key competitive advantage due to its ability to fund continuous price subsidies. These artificially deflated prices both undercut [capital-constrained](https://nnamdi.net/entrepreneurs-ruin/) competitors and drive consumer usage.
+Capital is a key competitive advantage due to its ability to fund continuous price subsidies. These artificially deflated prices both undercut [capital-constrained](https://whoisnnamdi.com/entrepreneurs-ruin/) competitors and drive consumer usage.
 
 Prices down, volume up.
 

@@ -24,7 +24,7 @@ twitter_image: "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/17665122
 
 In software development, more (developers) isn’t always more.
 
-In [part 1](https://nnamdi.net/the-developer-productivity-flywheel/) of “The Developer Productivity Manifesto,” I argued that developer productivity, measured in terms of new software, falls over time as low-hanging fruit is picked and new ideas become harder to find.
+In [part 1](https://whoisnnamdi.com/the-developer-productivity-flywheel/) of “The Developer Productivity Manifesto,” I argued that developer productivity, measured in terms of new software, falls over time as low-hanging fruit is picked and new ideas become harder to find.
 
 An understandable response would be — why not just throw more engineers at the problem?
 
@@ -32,9 +32,9 @@ If you’ve ever worked in software development, you know adding more cooks to t
 
 The Developer Productivity Manifesto has three parts, this is part 2:
 
--   [Part 1: The Developer Productivity Flywheel](https://nnamdi.net/the-developer-productivity-flywheel/)
+-   [Part 1: The Developer Productivity Flywheel](https://whoisnnamdi.com/the-developer-productivity-flywheel/)
 -   ****Part 2: More (Developers) Isn’t Always More (you are here)****
--   [Part 3: Leaving Software on the Table](https://nnamdi.net/leaving-software-on-the-table/)
+-   [Part 3: Leaving Software on the Table](https://whoisnnamdi.com/leaving-software-on-the-table/)
 
 ### Receive my next long-form post
 
@@ -94,7 +94,7 @@ Executives believe that insufficient developer talent is one of the biggest thre
 
 ![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515839905-image-20210405115744208.png)
 
-As I discuss in a previous essay, [Why We Will Never Have Enough Software Developers](https://nnamdi.net/never-enough-developers/), changes in the underlying technologies of modern software development whittle away the accumulated human capital of software developers:
+As I discuss in a previous essay, [Why We Will Never Have Enough Software Developers](https://whoisnnamdi.com/never-enough-developers/), changes in the underlying technologies of modern software development whittle away the accumulated human capital of software developers:
 
 > __****Specific skills in software development quickly become dated.**** Programming languages and development frameworks go out of style. Hadoop is hot one year, and it’s old news the next. Like a fast, expensive car that quickly loses value as it’s driven around town, the skills and human capital of software engineers fall apart without constant, expensive maintenance__
 
@@ -165,6 +165,6 @@ Maintenance matters but so does fundamental innovation. As software projects gro
 
 Industry-wide we are, unfortunately, out of balance. In my next and final piece, I’ll explore exactly how much software we’re “leaving on the table” as a result.
 
-Ready for more? Here's [Part 3](https://nnamdi.net/leaving-software-on-the-table/).
+Ready for more? Here's [Part 3](https://whoisnnamdi.com/leaving-software-on-the-table/).
 
-****Follow me on**** [****Twitter****](https://twitter.com/whoisnnamdi)****, subscribe to my monthly essays**** [****here****](https://nnamdi.net/)****, and reach out to me directly via nnamdi@lsvp.com****
+****Follow me on**** [****Twitter****](https://twitter.com/whoisnnamdi)****, subscribe to my monthly essays**** [****here****](https://whoisnnamdi.com/)****, and reach out to me directly via nnamdi@lsvp.com****

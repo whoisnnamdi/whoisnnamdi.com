@@ -159,7 +159,7 @@ Since the AngelList data comes from deals that successfully completed, you could
 
 ### You must see the deal to do the deal
 
-You can't hit a target you can't see, and [you can't do a deal you can't see either](https://nnamdi.net/people-matching/).
+You can't hit a target you can't see, and [you can't do a deal you can't see either](https://whoisnnamdi.com/people-matching/).
 
 The AngelList recommendation assumes the investor could invest in any deal they want. If you don't have access to all the deals, this logic breaks down.
 
@@ -169,7 +169,7 @@ This is why so many VCs spend so much time burnishing their public and private r
 
 ### You must also win
 
-Let's say you set the right threshold and see all the deals that meet it. You still then must [win the deal](https://nnamdi.net/people-matching/), which is far from guaranteed.
+Let's say you set the right threshold and see all the deals that meet it. You still then must [win the deal](https://whoisnnamdi.com/people-matching/), which is far from guaranteed.
 
 Further, the greater extent to which a deal exceeds any given threshold, the more competitive the deal will be. Assuming there's signal there and not simply noise, your portfolio will probabilistically skew lower quality simply due to losing out on those winners, even though you recognized them as such.
 

@@ -30,13 +30,13 @@ Mountains of technical debt and poor development practices burden and bog down d
 
 The Developer Productivity Manifesto has three parts, this is part 3:
 
--   [Part 1: The Developer Productivity Flywheel](https://nnamdi.net/the-developer-productivity-flywheel/)
--   [Part 2: More (Developers) Isn’t Always More](https://nnamdi.net/more-developers-isnt-always-more/)
+-   [Part 1: The Developer Productivity Flywheel](https://whoisnnamdi.com/the-developer-productivity-flywheel/)
+-   [Part 2: More (Developers) Isn’t Always More](https://whoisnnamdi.com/more-developers-isnt-always-more/)
 -   ****Part 3: Leaving Software on the Table (you are here)****
 
-In part 1, I talked about falling developer productivity and how spinning [the developer productivity flywheel](https://nnamdi.net/the-developer-productivity-flywheel/) can counteract this trend.
+In part 1, I talked about falling developer productivity and how spinning [the developer productivity flywheel](https://whoisnnamdi.com/the-developer-productivity-flywheel/) can counteract this trend.
 
-In part 2, I argued that [more developers won’t solve all our software engineering problems.](https://nnamdi.net/more-developers-isnt-always-more/)
+In part 2, I argued that [more developers won’t solve all our software engineering problems.](https://whoisnnamdi.com/more-developers-isnt-always-more/)
 
 I’ve thrown around a lot of equations, literary references, and even some memes. In this third and final piece, I’ll talk dollars and cents, quantifying the impact of lost developer productivity and how much software we’re “leaving on the table” as a result.
 
@@ -50,7 +50,7 @@ Subscribe
 
 ## (Technical) debt to (developer) GDP
 
-In [part 2](https://nnamdi.net/more-developers-isnt-always-more/), I made the case that software maintenance is not sufficiently value generating to cover engineering salary expenses. In other words, ****busy work doesn’t work****:
+In [part 2](https://whoisnnamdi.com/more-developers-isnt-always-more/), I made the case that software maintenance is not sufficiently value generating to cover engineering salary expenses. In other words, ****busy work doesn’t work****:
 
 > __According to one analysis, an engineer engaged in purely non-innovative activity ****destroys**** nearly $600K in employer market value. On the other hand, the average engineer, working on a combination of maintenance and innovation activities, ****adds**** $855K in market value to their employer.__
 
@@ -117,14 +117,14 @@ Said another way, ****current software output is only about 100% / 173% = 58% of
 
 That’s ****$670B**** of software we’re leaving on the table.
 
-This calculation is admittedly simplistic. One could argue that we’d need fewer developers if they were more productive. I push back on that — there’s so much we’ve yet to build, and more developers working more productively would unlock entirely new opportunities that we haven’t had the capacity to explore or can’t even yet imagine. This would further spur developer hiring and employment, another [flywheel](https://nnamdi.net/the-developer-productivity-flywheel/).
+This calculation is admittedly simplistic. One could argue that we’d need fewer developers if they were more productive. I push back on that — there’s so much we’ve yet to build, and more developers working more productively would unlock entirely new opportunities that we haven’t had the capacity to explore or can’t even yet imagine. This would further spur developer hiring and employment, another [flywheel](https://whoisnnamdi.com/the-developer-productivity-flywheel/).
 
 ## We can do better
 
-In this series I’ve made the case that by investing in [__technical tools for technical people__](https://nnamdi.net/about-me/), we can reverse the trend of declining developer productivity, spin the productivity flywheel in the right direction, and see massive gains in software output as a result.
+In this series I’ve made the case that by investing in [__technical tools for technical people__](https://whoisnnamdi.com/about-me/), we can reverse the trend of declining developer productivity, spin the productivity flywheel in the right direction, and see massive gains in software output as a result.
 
 As I’ve hopefully made clear, we can do A LOT better of a job maximizing developer productivity. I hope you’ll join me in my mission to do exactly that.
 
 __Thanks so much for reading this — I hope it resonated with you. If it did, please share that feedback!__
 
-****Follow me on**** [****Twitter****](https://twitter.com/whoisnnamdi)****, subscribe to my monthly essays**** [****here****](https://nnamdi.net/)****, and reach out to me directly via nnamdi@lsvp.com****
+****Follow me on**** [****Twitter****](https://twitter.com/whoisnnamdi)****, subscribe to my monthly essays**** [****here****](https://whoisnnamdi.com/)****, and reach out to me directly via nnamdi@lsvp.com****
