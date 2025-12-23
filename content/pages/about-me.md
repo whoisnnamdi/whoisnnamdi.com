@@ -16,8 +16,6 @@ twitter_description: ""
 twitter_image: ""
 ---
 
-![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515745572-headshot_500_cropped.jpeg)
-
 ## My mission:
 
 To increase total software output by supporting entrepreneurs building technical tools for technical people
