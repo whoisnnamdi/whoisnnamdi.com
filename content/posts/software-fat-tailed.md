@@ -44,7 +44,7 @@ The extreme, non-negative variation around the average produces a right or posit
 
 Sufficiently skewed distributions are "[fat-tailed](https://en.wikipedia.org/wiki/Fat-tailed_distribution)." Large customer contracts will determine the properties of the distribution, like its mean or variance. Similarly, large customers will account for an enormous proportion of overall revenue. In other words, software monetization is a [power law](http://reactionwheel.net/2015/06/power-laws-in-venture.html).
 
-In a [previous essay](https://whoisnnamdi.com/vcs-index-invest/), I introduced the notion of \\(\\alpha\\), or alpha, the shape or tail parameter, which characterizes the "fat-tailedness" of a power law distribution. The smaller \\(\\alpha\\), the more skewed the distribution, the fatter the tails, with \\(\\alpha < 2\\) indicating extreme skew and fat-tailedness. For software monetization, the fatter the tail, the more common and impactful are those "whale" customers.
+In a [previous essay](https://whoisnnamdi.com/vcs-index-invest/), I introduced the notion of $\alpha$, or alpha, the shape or tail parameter, which characterizes the "fat-tailedness" of a power law distribution. The smaller $\alpha$, the more skewed the distribution, the fatter the tails, with $\alpha < 2$ indicating extreme skew and fat-tailedness. For software monetization, the fatter the tail, the more common and impactful are those "whale" customers.
 
 Evidence for skewed monetization is tough to come by without access to a company's commercial contracts. However, we can infer the fat-tailedness from the SEC filings of public software companies with a simple trick.
 
@@ -59,27 +59,27 @@ Evidence for skewed monetization is tough to come by without access to a company
 
 ## The math
 
-The trick? A [formula](https://www.youtube.com/watch?v=XhTHG3QmVwM) exists that calculates the concentration in the top percentiles of a power law distribution based on the \\(\\alpha\\) of the distribution:  
+The trick? A [formula](https://www.youtube.com/watch?v=XhTHG3QmVwM) exists that calculates the concentration in the top percentiles of a power law distribution based on the $\alpha$ of the distribution:  
   
 $$  
 \text{s} = p^{\frac{\alpha-1}{\alpha}}  
 $$  
-where \\(s\\) is the share of the total and \\(p\\) is the percentile.
+where $s$ is the share of the total and $p$ is the percentile.
 
-Plug in the \\(\\alpha\\) and the percentile \\(p\\) you are interested in to get the share of the total that the top-p% of customers represent.
+Plug in the $\alpha$ and the percentile $p$ you are interested in to get the share of the total that the top-p% of customers represent.
 
-Invert the formula to yield the \\(\\alpha\\) of a power law distribution given a certain percentile and share:  
+Invert the formula to yield the $\alpha$ of a power law distribution given a certain percentile and share:  
 $$  
 \alpha = \frac{\log{p}}{\log{p}-\log{\text{s}}}  
 $$  
-This means we can infer \\(\\alpha\\)​ and therefore how fat-tailed the revenue distribution is if we know the share of revenue represented by the largest customers of a given software vendor.
+This means we can infer $\alpha$​ and therefore how fat-tailed the revenue distribution is if we know the share of revenue represented by the largest customers of a given software vendor.
 
-We can estimate the shape of the customer distribution by plugging \\(\\alpha\\) back into the first equation along with some other percentile X in order to estimate the share of revenue earned from the top-X% of customers, which we can repeat for other percentiles. For example, the relationship between \\(\\alpha\\) and the revenue concentrated in the top-20% of customer looks like this:
+We can estimate the shape of the customer distribution by plugging $\alpha$ back into the first equation along with some other percentile X in order to estimate the share of revenue earned from the top-X% of customers, which we can repeat for other percentiles. For example, the relationship between $\alpha$ and the revenue concentrated in the top-20% of customer looks like this:
 
 ![img](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515807452-qNmFsndFgJ.png)
 *Source: David Salazar*
 
-An \\(\\alpha = 1.16\\) yields the classic [Pareto 80/20 distribution](https://www.investopedia.com/terms/1/80-20-rule.asp), where 20% of customers account for 80% of revenue.
+An $\alpha = 1.16$ yields the classic [Pareto 80/20 distribution](https://www.investopedia.com/terms/1/80-20-rule.asp), where 20% of customers account for 80% of revenue.
 
 Before we proceed, know that this method only works if we assume upfront that the distribution is in fact power law distributed, at least in the tails. We never proved this, so don't interpolate/extrapolate too far with this method.
 
@@ -96,7 +96,7 @@ Here's an example from [Slack's S-1](https://www.sec.gov/Archives/edgar/data/176
 ![image-20200905234041096](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515794480-image-20200905234041096.png)
 *Source: Slack's S-1*
 
-From this sort of disclosure we can calculate the \\(\\alpha\\) and fat-tailedness of customer monetization for public software vendors via the procedure outlined above, plugging in the share of total revenue and total customers represented by these large customers. [I've done the hard work for you](https://docs.google.com/spreadsheets/d/163g-Tn9AdjF4bb4v7j8VidqeqMJvAHvb7EHUR2ctYsk/edit?usp=sharing) for a subset of public software companies:
+From this sort of disclosure we can calculate the $\alpha$ and fat-tailedness of customer monetization for public software vendors via the procedure outlined above, plugging in the share of total revenue and total customers represented by these large customers. [I've done the hard work for you](https://docs.google.com/spreadsheets/d/163g-Tn9AdjF4bb4v7j8VidqeqMJvAHvb7EHUR2ctYsk/edit?usp=sharing) for a subset of public software companies:
 
 ![image-20200905234326829](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515796073-image-20200905234326829.png)
 *Source*
@@ -131,7 +131,7 @@ First, as I discussed previously in [Why Don't VCs Index Invest](https://whoisnn
 
 Here, returns are synonymous with revenue and investment is synonymous with customer acquisition costs, or CAC. If the distribution of revenue is fat-tailed, vendors should be trying to insert their software into as many customers as possible, as cheaply as possible. Don't try to land large upfront, as this requires investing in a heavy and expensive enterprise sales motion that may not yield results. Instead, spend small and land small, with each customer contract acting as a potential "lottery ticket" that may unlock a much larger contract later on, similar to an early-stage startup investment.
 
-There's some merit to this analogy between venture capital and software go-to-market strategies. One only has to look at estimates of \\(\\alpha\\) for venture capital investments to see that we are dealing with similar phenomena here (ignore the orange footnotes):
+There's some merit to this analogy between venture capital and software go-to-market strategies. One only has to look at estimates of $\alpha$ for venture capital investments to see that we are dealing with similar phenomena here (ignore the orange footnotes):
 
 ![img](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515818071-zxdn9Kwr6j.png)
 *Source: Reaction Wheel*
@@ -144,7 +144,7 @@ Said more precisely:
 
 > An additional difficulty in the numerical estimation of moments—and, therefore, of risk—is due to the very slow convergence of estimated values to the exact values of the process, even if the associated moments are finite. This “slow Law of Large Numbers” is caused by the large weight of rare events (black swans), which take a lot of data to show up, and prevent a proper estimation of the moments of such processes through the moments of a sample. — [Fat tails and black swans: Exact results for multiplicative processes with resets](https://aip.scitation.org/doi/10.1063/1.5141837)
 
-Further, the largest value you are likely to see in a sample of power law distribution (the expected value of the maximum value) is proportional to the sample size \\(n\\) and inversely proportional to \\(\\alpha\\):  
+Further, the largest value you are likely to see in a sample of power law distribution (the expected value of the maximum value) is proportional to the sample size $n$ and inversely proportional to $\alpha$:  
 $$  
 \mathbb{E} \[x\_{max}\] \sim n^{1/(\alpha-1)}  
 $$  
@@ -166,7 +166,7 @@ More _is_ more, or specifically, more customers is more monetization, for the sa
 
 It's natural to ask — "**how much does current monetization underestimate potential monetization?**"
 
-[Nassim Taleb](https://arxiv.org/abs/2001.10488) has already done the math for us. Imagine that true average monetization is the sum of the monetization of customers smaller than the largest customer we've acquired thus far, which he calls \\(K\\), and the contribution of potential customers larger than our largest:  
+[Nassim Taleb](https://arxiv.org/abs/2001.10488) has already done the math for us. Imagine that true average monetization is the sum of the monetization of customers smaller than the largest customer we've acquired thus far, which he calls $K$, and the contribution of potential customers larger than our largest:  
 $$  
 \text{true mean} = \text{mean of existing customers}\_{<K} + \text{contribution of potential customers}\_{>K}  
 $$  
@@ -175,12 +175,12 @@ In the chart below, the shaded region represents larger customers yet to be acqu
 ![image-20200909125015490](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515798673-image-20200909125015490.png)
 *Source: Statistical Consequences of Fat Tails*
 
-What proportion of the total does this extra bit represent? That depends both on \\(\\alpha\\), or how fat-tailed the distribution is, and on the sample size. The smaller \\(\\alpha\\) and the smaller our sample, the more we underestimate the true mean:
+What proportion of the total does this extra bit represent? That depends both on $\alpha$, or how fat-tailed the distribution is, and on the sample size. The smaller $\alpha$ and the smaller our sample, the more we underestimate the true mean:
 
 ![image-20200909124000940](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515797904-image-20200909124000940.png)
 *Source: Statistical Consequences of Fat Tails*
 
-So for an enterprise software company with \\(\\alpha = 1.3\\), which is typical in my data set, and 1000 customers, these not yet acquired customers will account for 20% of the true mean. This means the **true monetization is about 1 / 0.8 = 25% higher than current monetization**.
+So for an enterprise software company with $\alpha = 1.3$, which is typical in my data set, and 1000 customers, these not yet acquired customers will account for 20% of the true mean. This means the **true monetization is about 1 / 0.8 = 25% higher than current monetization**.
 
 _That number is conservative_ — it assumes that we've already acquired every customer up to a certain size, thereby maximizing monetization of customers equal to or below that size. We haven't really done this though, so even current monetization underestimates how well we could monetize, even without acquiring larger customers. Factor that in, and the degree to which we underestimate true monetization only increases.
 
