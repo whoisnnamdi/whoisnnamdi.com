@@ -90,14 +90,6 @@ export default function Portfolio({ logos, meta }) {
                         I partner closely with entrepreneurs reimagining how the world works — from developer platforms and applied AI
                         to the infrastructure that supports them. Below is a sample of the teams I&apos;ve been fortunate to back.
                     </p>
-                    <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                        <Link
-                            href="mailto:nnamdi@lsvp.com"
-                            className="inline-flex items-center justify-center rounded-md bg-blue-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition duration-200 hover:bg-blue-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
-                        >
-                            Get in touch
-                        </Link>
-                    </div>
                 </header>
 
                 <section className="mt-12 grid gap-4 sm:grid-cols-3">
