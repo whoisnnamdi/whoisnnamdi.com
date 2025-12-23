@@ -1,0 +1,254 @@
+[
+  {
+    "id": "talk-1",
+    "title": "Inside the Black Box: The Urgency of AI Interpretability",
+    "excerpt": "",
+    "href": "https://www.youtube.com/watch?v=azoBSxpkv7Y",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512386671-gensf.png"
+  },
+  {
+    "id": "talk-2",
+    "title": "Benedikt Stroebl: With Imperfect Verifiers, Scale Fails",
+    "excerpt": "",
+    "href": "https://www.youtube.com/watch?v=Id7ebjEqAW8",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512389824-benedikt.png"
+  },
+  {
+    "id": "talk-3",
+    "title": "Satish Chandra: Google's AI Coding Agents That Fix Bugs Automatically",
+    "excerpt": "",
+    "href": "https://www.youtube.com/watch?v=jMzHuLzmpog",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512394040-SCR-20250708-keig.png"
+  },
+  {
+    "id": "talk-4",
+    "title": "Jonas Hübotter: 1000 Expert Models, 100x Faster, For Free",
+    "excerpt": "",
+    "href": "https://www.youtube.com/watch?v=NVd_FmEDzis",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512396199-SCR-20250708-kdmv.png"
+  },
+  {
+    "id": "talk-5",
+    "title": "Daniel Kang: AI Hackers Are Coming Sooner Than You Think",
+    "excerpt": "",
+    "href": "https://www.youtube.com/watch?v=5U_c_IHWK6I",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512398592-SCR-20250708-kcrg.png"
+  },
+  {
+    "id": "talk-6",
+    "title": "Andy Zhou: Language Agent Tree Search &amp; Autonomous Red Teaming",
+    "excerpt": "",
+    "href": "https://www.linkedin.com/in/andy-zhou-679376206/",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512401213-image-4.png"
+  },
+  {
+    "id": "talk-7",
+    "title": "Charlie Snell: Optimally Scaling Test-Time Compute &amp; Predicting Emergence",
+    "excerpt": "",
+    "href": "https://www.youtube.com/watch?v=4xT_6NtC3oo",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512403770-image.png"
+  },
+  {
+    "id": "talk-8",
+    "title": "Developer Productivity, Real-Time Data Infrastructure, and The Fat-Tailed Nature of Enterprise Software – Datacast",
+    "excerpt": "",
+    "href": "http://datacast.substack.com/",
+    "feature_image": ""
+  },
+  {
+    "id": "talk-9",
+    "title": "Seed-stage Valuation Insights - Fund/Build/Scale",
+    "excerpt": "",
+    "href": "https://podcasts.apple.com/us/podcast/seed-stage-valuation-insights-from-lightspeeds-nnamdi/id1719488387?i=1000680395270",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512406243-image-1.png"
+  },
+  {
+    "id": "talk-10",
+    "title": "Lightspeed’s Nnamdi Iregbulem: Boosting Total Software Output",
+    "excerpt": "",
+    "href": "https://lsvp.com/?ref=terra-nova",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512409228-image.png"
+  },
+  {
+    "id": "talk-11",
+    "title": "SaaS Metrics 2.0 – A Field Guide to the Metrics that Matter Today",
+    "excerpt": "",
+    "href": "https://saasnorth.com/events/breakout-11/",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512415350-image.png"
+  },
+  {
+    "id": "talk-12",
+    "title": "Streaming Data and the Modern Real-Time Data Stack – The Modern Data Show",
+    "excerpt": "",
+    "href": "https://www.moderndatastack.xyz/podcast/s01-e05-streaming-data-and-the-modern-real-time-data-stack-lightspeed-ventures-74te",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512419987-image.png"
+  },
+  {
+    "id": "talk-13",
+    "title": "The Developer Productivity Manifesto with Nnamdi Iregbulem",
+    "excerpt": "",
+    "href": "https://podcasts.apple.com/us/podcast/the-developer-productivity-manifesto-with/id1539945251?i=1000581913746",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512424200-image-1.png"
+  },
+  {
+    "id": "talk-14",
+    "title": "The Next Trillion Dollar Market - 5 Lessons from Selling to Millions of Developers",
+    "excerpt": "",
+    "href": "https://www.tractionconf.io/agenda",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512429187-Nnamdi-I-Traction.png"
+  },
+  {
+    "id": "talk-15",
+    "title": "The Developer Productivity Manifesto | Dev Innovation Summit",
+    "excerpt": "",
+    "href": "https://embed.emamo.com/event/worldfestival-2022/s/the-developer-productivity-manifesto-NPYkva",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512434489-image.png"
+  },
+  {
+    "id": "talk-16",
+    "title": "Breaking Changes Podcast | Postman",
+    "excerpt": "",
+    "href": "https://www.youtube.com/watch?v=_8oZYEtjNWQ",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512437347-image-1.png"
+  },
+  {
+    "id": "talk-17",
+    "title": "The Full Ratchet: Venture Capital Demystified",
+    "excerpt": "",
+    "href": "https://fullratchet.net/337-navigating-macro-headwinds-balancing-growth-v-profitability-and-how-to-get-in-front-of-the-top-1-of-founders-nnamdi-iregbulem/",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512440228-image.png"
+  },
+  {
+    "id": "talk-18",
+    "title": "The Scaling Developer Success Podcast",
+    "excerpt": "",
+    "href": "https://open.spotify.com/episode/0EmEAuxMxb41hSx7P4nAOU?si=xBjhBnMNQse-DbtISdGzow",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512442782-image-3.png"
+  },
+  {
+    "id": "talk-19",
+    "title": "Aligning DevRel with Your Business Stakeholders",
+    "excerpt": "",
+    "href": "https://deepdives.devrelcon.dev/workshops/aligning-devrel-with-your-business-stakeholders/",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512446967-image-1.png"
+  },
+  {
+    "id": "talk-20",
+    "title": "What is Weighted ACV? – Metric Stack",
+    "excerpt": "",
+    "href": "https://www.youtube.com/watch?v=b3gBxsdCyw0",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512450943-12---Nnamdi-Iregbulem.png"
+  },
+  {
+    "id": "talk-21",
+    "title": "How The Modern Data Stack Is Going Real-Time",
+    "excerpt": "",
+    "href": "https://news.crunchbase.com/news/real-time-modern-data-stack/",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512453775-image.png"
+  },
+  {
+    "id": "talk-22",
+    "title": "What VCs miss about SaaS revenue",
+    "excerpt": "",
+    "href": "https://www.protocol.com/enterprise/lightspeed-vc-saas-revenue",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512456027-image.png"
+  },
+  {
+    "id": "talk-23",
+    "title": "Build vs Buy | DataOps Unleashed 2022",
+    "excerpt": "",
+    "href": "https://dataopsunleashed.com/2022-2/buildvsbuy/",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512459795-image.png"
+  },
+  {
+    "id": "talk-24",
+    "title": "Weighted ACV | MetricHQ",
+    "excerpt": "",
+    "href": "https://www.klipfolio.com/metrics/saas/weighted-acv",
+    "feature_image": ""
+  },
+  {
+    "id": "talk-25",
+    "title": "The Developer Productivity Manifesto (GitLab Commit 2021)",
+    "excerpt": "",
+    "href": "https://gitlabcommitvirtual2021.com/",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512463738-Nnamdi-Iregbulem.png"
+  },
+  {
+    "id": "talk-26",
+    "title": "Pitching Your Enterprise Software Startup with Lightspeed’s Nnamdi Iregbulem",
+    "excerpt": "",
+    "href": "https://foundersnetwork.com/blog/pitching-your-enterprise-software-startup-with-lightspeeds-nnamdi-iregbulem/",
+    "feature_image": ""
+  },
+  {
+    "id": "talk-27",
+    "title": "The Developer Productivity Manifesto (INDUSTRY Virtual 2021)",
+    "excerpt": "",
+    "href": "https://www.industryconference.com/virtual",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512467253-image.png"
+  },
+  {
+    "id": "talk-28",
+    "title": "Venture Games Podcast by Chris Quaidoo",
+    "excerpt": "",
+    "href": "https://open.spotify.com/episode/2p9OMbLE4RRDvCFrq2wldm?si=UiFhbhiARjSeJE_FcHBnlw",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512470287-image.png"
+  },
+  {
+    "id": "talk-29",
+    "title": "Views by Pol Fañanás &amp; Gerard Garcia",
+    "excerpt": "",
+    "href": "https://views.substack.com/p/nnamdiiregbulem",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512472176-image.png"
+  },
+  {
+    "id": "talk-30",
+    "title": "Igbopedia Podcast",
+    "excerpt": "",
+    "href": "https://open.spotify.com/episode/4gl2cUBR4MdWFzKYaHgb3D",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512474846-119985712_667820227170903_4758538190186304063_n.jpg"
+  },
+  {
+    "id": "talk-31",
+    "title": "The State of Black Software Development",
+    "excerpt": "",
+    "href": "https://www.youtube.com/embed/C8juMZGuSvk?feature=oembed",
+    "feature_image": ""
+  },
+  {
+    "id": "talk-32",
+    "title": "What I Learned Analyzing the Earnings of 11,037 Software Developers",
+    "excerpt": "",
+    "href": "https://nnamdi.net/highest-paid-software-developer/",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512476416-years_coding.png"
+  },
+  {
+    "id": "talk-33",
+    "title": "Video",
+    "excerpt": "",
+    "href": "https://www.youtube.com/watch?v=sr1n4Swgk8k",
+    "feature_image": ""
+  },
+  {
+    "id": "talk-34",
+    "title": "Video",
+    "excerpt": "",
+    "href": "https://youtube.com/watch?v=O94U-N26dbU",
+    "feature_image": ""
+  },
+  {
+    "id": "talk-35",
+    "title": "Video",
+    "excerpt": "",
+    "href": "https://www.youtube.com/watch?v=_Q7i0ZKeTz8",
+    "feature_image": ""
+  },
+  {
+    "id": "talk-36",
+    "title": "Video",
+    "excerpt": "",
+    "href": "https://www.youtube.com/watch?v=C8juMZGuSvk",
+    "feature_image": ""
+  }
+]

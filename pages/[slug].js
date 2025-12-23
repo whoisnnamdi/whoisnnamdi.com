@@ -1,11 +1,22 @@
 import Head from 'next/head'
 import Image from "next/image"
-import { getPosts, getPost, getPages, getPage } from './api/ghost_data'
+import { getPosts, getPost, getPages, getPage } from '../lib/content'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
 import LinkConverter from '../components/linkconverter'
 import Analytics from '../components/analytics'
 import { MathJax, MathJaxContext } from "better-react-mathjax"
+
+const mathJaxConfig = {
+    chtml: {
+        displayAlign: 'center',
+        displayIndent: '0'
+    },
+    tex: {
+        displayMath: [['$$', '$$']],
+        inlineMath: [['$', '$']]
+    }
+}
 
 export async function getStaticPaths() {
     const posts = await getPosts()
@@ -65,7 +76,7 @@ export default function PostPage ({ post }) {
             <Analytics />
             <Navbar source={post.title}/>
             <main className="mt-12">
-                <MathJaxContext hideUntilTypeset="first">
+                <MathJaxContext config={mathJaxConfig} hideUntilTypeset="first">
                     <MathJax>
                         <h1 className={`text-4xl font-bold ${post.slug === 'talks' ? 'mb-4' : 'mb-6'} text-gray-900`}>
                             {post.title}

@@ -47,7 +47,7 @@
 }
 
 .subscribe-form input {
-    @apply text-gray-500 flex-grow transition duration-500 hover:bg-gray-100 w-full md:w-60 lg:w-64 rounded-md px-4 py-2 focus:ring-blue-500 focus:outline-none
+    @apply text-gray-500 transition duration-500 hover:bg-gray-100 w-full sm:w-72 rounded-md px-4 py-2 focus:ring-blue-500 focus:outline-none
 }
 
 .subscribe-form button {
@@ -56,6 +56,23 @@
 
 mjx-container {
     @apply overflow-auto overflow-y-hidden
+}
+
+/* Center display math blocks ($$...$$) - MathJax 3 */
+.prose p > mjx-container,
+.prose > mjx-container,
+.prose mjx-container[jax="CHTML"][display="true"],
+mjx-container[display="true"] {
+    display: block !important;
+    text-align: center !important;
+    text-align: -webkit-center !important;
+    margin: 1.5rem auto !important;
+    width: 100%;
+}
+
+/* Standalone paragraph with only math */
+.prose p:has(> mjx-container:only-child) {
+    text-align: center;
 }
 
 .imageContainer div {

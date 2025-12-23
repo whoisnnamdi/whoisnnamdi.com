@@ -4,8 +4,7 @@ import Link from 'next/link'
 import Analytics from '../components/analytics'
 import Footer from '../components/footer'
 import Navbar from '../components/navbar'
-import { getPage } from './api/ghost_data'
-import { extractPortfolioLogos } from '../lib/portfolio'
+import { getPage, getPortfolioData } from '../lib/content'
 
 const DEFAULT_META = {
     description: 'Partnerships with technical founders building enduring software and infrastructure companies.',
@@ -16,15 +15,16 @@ const DEFAULT_META = {
 }
 
 export async function getStaticProps() {
-    let portfolioPage
+    // Read logos from JSON data file
+    const logos = getPortfolioData()
 
+    // Get page metadata
+    let portfolioPage
     try {
         portfolioPage = await getPage('portfolio')
     } catch (error) {
-        console.error('Unable to fetch Ghost portfolio page', error)
+        console.error('Unable to fetch portfolio page', error)
     }
-
-    const logos = extractPortfolioLogos(portfolioPage?.html)
 
     const meta = {
         description: portfolioPage?.meta_description || DEFAULT_META.description,

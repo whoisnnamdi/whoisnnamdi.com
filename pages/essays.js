@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Navbar from '../components/navbar'
-import { getPosts } from './api/ghost_data'
+import { getPosts } from '../lib/content'
 import SectionPage from '../components/sectionpage'
 import Footer from '../components/footer'
 import Analytics from '../components/analytics'
