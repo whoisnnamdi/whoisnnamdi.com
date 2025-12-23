@@ -11,16 +11,42 @@ const CONTENT_DIR = path.join(process.cwd(), 'content')
 const POSTS_DIR = path.join(CONTENT_DIR, 'posts')
 const PAGES_DIR = path.join(CONTENT_DIR, 'pages')
 
+// Markdown renderer (lazy loaded)
+let renderMarkdown = null
+
+async function getRenderer() {
+  if (!renderMarkdown) {
+    const { remark } = await import('remark')
+    const remarkParse = (await import('remark-parse')).default
+    const remarkMath = (await import('remark-math')).default
+    const remarkRehype = (await import('remark-rehype')).default
+    const rehypeMathjax = (await import('rehype-mathjax')).default
+    const rehypeHighlight = (await import('rehype-highlight')).default
+    const rehypeStringify = (await import('rehype-stringify')).default
+
+    renderMarkdown = async (content) => {
+      if (!content) return ''
+      const result = await remark()
+        .use(remarkParse)
+        .use(remarkMath)
+        .use(remarkRehype, { allowDangerousHtml: true })
+        .use(rehypeMathjax)
+        .use(rehypeHighlight, { detect: true })
+        .use(rehypeStringify, { allowDangerousHtml: true })
+        .process(content)
+      return result.toString()
+    }
+  }
+  return renderMarkdown
+}
+
 /**
  * Read a markdown file and parse frontmatter
  */
 function readMarkdownFile(filePath) {
   const fileContents = fs.readFileSync(filePath, 'utf8')
   const { data, content } = matter(fileContents)
-  // For build scripts, we return raw content (not rendered HTML)
-  // The HTML will be the markdown content for RSS
-  // Use slug as id if not present (for RSS guid)
-  return { ...data, id: data.id || data.slug, html: content, content }
+  return { ...data, id: data.id || data.slug, content }
 }
 
 /**
@@ -35,11 +61,16 @@ function getMarkdownFiles(dir) {
  * Get all posts, sorted by published_at descending
  */
 async function getPosts() {
+  const render = await getRenderer()
   const files = getMarkdownFiles(POSTS_DIR)
-  const posts = files.map(file => {
-    const filePath = path.join(POSTS_DIR, file)
-    return readMarkdownFile(filePath)
-  })
+  const posts = await Promise.all(
+    files.map(async file => {
+      const filePath = path.join(POSTS_DIR, file)
+      const post = readMarkdownFile(filePath)
+      const html = await render(post.content)
+      return { ...post, html }
+    })
+  )
 
   // Sort by published_at descending
   return posts.sort((a, b) => {
@@ -53,11 +84,16 @@ async function getPosts() {
  * Get all pages
  */
 async function getPages(slugsToExclude = ['newsletter', 'portfolio']) {
+  const render = await getRenderer()
   const files = getMarkdownFiles(PAGES_DIR)
-  const pages = files.map(file => {
-    const filePath = path.join(PAGES_DIR, file)
-    return readMarkdownFile(filePath)
-  })
+  const pages = await Promise.all(
+    files.map(async file => {
+      const filePath = path.join(PAGES_DIR, file)
+      const page = readMarkdownFile(filePath)
+      const html = await render(page.content)
+      return { ...page, html }
+    })
+  )
 
   return pages.filter(page => !slugsToExclude.includes(page.slug))
 }
