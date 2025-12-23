@@ -16,7 +16,7 @@ twitter_description: ""
 twitter_image: ""
 ---
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515745572-headshot_500_cropped.jpeg)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515745572-headshot_500_cropped.jpeg)
 
 ## My mission:
 
@@ -54,8 +54,11 @@ I was selected for [Forbes 30 Under 30 Venture Capital](https://www.forbes.com/p
 
 Connect with me on [LinkedIn](https://www.linkedin.com/in/nnamdiiregbulem/) or [Twitter](https://twitter.com/whoisnnamdi).
 
-### Sign-up to receive my latest essays
-
- 
-
-Go ⚡
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
