@@ -48,13 +48,14 @@ In a [previous essay](https://whoisnnamdi.com/vcs-index-invest/), I introduced t
 
 Evidence for skewed monetization is tough to come by without access to a company's commercial contracts. However, we can infer the fat-tailedness from the SEC filings of public software companies with a simple trick.
 
-### Receive my next long-form post
-
-Thoughtful analysis of the business and economics of tech
-
- 
-
-Subscribe
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
 
 ## The math
 
@@ -214,3 +215,12 @@ Here's a preview of the topics:
 -   [Why product-market fit gets harder to achieve the longer you search for it](https://whoisnnamdi.com/product-market-fit-is-lindy/)
 
 I've been thinking about some of these essays for the better part of a year, so I'm excited to _finally_ share these ideas.
+
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>

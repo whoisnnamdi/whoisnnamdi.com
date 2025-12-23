@@ -30,7 +30,16 @@ Ever since partnering with Vectorized, we at [Lightspeed](https://lsvp.com/) kne
 
 Today, I want to expand on this and talk a bit more about the exciting developments coming down the pipe at Vectorized.
 
-Here’s the big idea: rather than ship data to code, which is expensive and latency-prone, why not ship code to the data?
+Here's the big idea: rather than ship data to code, which is expensive and latency-prone, why not ship code to the data?
+
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
 
 ## The keystone problem in streaming
 
@@ -130,3 +139,12 @@ Curious to learn more after this quick introduction? [Alex Gallego](https://twit
 > [#redpanda](https://twitter.com/hashtag/redpanda?src=hash&ref_src=twsrc%5Etfw) [#kafka](https://twitter.com/hashtag/kafka?src=hash&ref_src=twsrc%5Etfw) [#KafkaSummit](https://twitter.com/hashtag/KafkaSummit?src=hash&ref_src=twsrc%5Etfw) [https://t.co/NiL2SNHrvq](https://t.co/NiL2SNHrvq)
 > 
 > — 🕺💃🤟 Alexander Gallego (@emaxerrno) [September 15, 2021](https://twitter.com/emaxerrno/status/1438214386124873728?ref_src=twsrc%5Etfw)
+
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>

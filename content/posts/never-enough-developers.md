@@ -39,13 +39,14 @@ Engineers often leave engineering for non-STEM management roles. Graduation into
 
 This phenomenon, which I'll call "**developer dropout**," is a real problem. What's behind it?
 
-### Receive my next long-form post
-
-Thoughtful analysis of the business and economics of tech
-
- 
-
-Subscribe
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
 
 ## Out with the old skills, in with the new skills
 
@@ -208,10 +209,11 @@ To conclude, I emphasize: **highly skilled people prefer highly stable careers i
 
 _Thanks to [David Deming](https://scholar.harvard.edu/ddeming/home), [Kadeem Noray](https://scholar.harvard.edu/kadeem/home), the authors of [the study](https://academic.oup.com/qje/article/135/4/1965/5858010) from which much of this essay is derived._
 
-### Receive my next long-form post
-
-Thoughtful analysis of the business and economics of tech
-
- 
-
-Subscribe
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>

@@ -49,13 +49,14 @@ Unfortunately, this is where most mainstream analysis of higher education ends.
 
 Let’s go further.
 
-### Receive my next long-form post
-
-Thoughtful analysis of the business and economics of tech
-
- 
-
-Subscribe
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
 
 ## A degree is only one of many factors
 
@@ -113,13 +114,14 @@ So for example, the median American born in the 1960s owed debt equal to **34%**
 
 That debt levies a pernicious tax on the debt holder in the form of regular interest payments and often leaves them with negative net worth until the debt can be sufficiently paid down.
 
-### Receive my next long-form post
-
-Thoughtful analysis of the business and economics of tech
-
- 
-
-Subscribe
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
 
 ## The grand finale
 

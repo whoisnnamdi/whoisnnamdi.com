@@ -42,13 +42,14 @@ Product-market fit, like the elusive "cure" for cancer, is not a fixed destinati
 
 Product-market fit _escapes_ from you.
 
-### Receive my next long-form post
-
-Thoughtful analysis of the business and economics of tech
-
- 
-
-Subscribe
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
 
 ## Product-market fit isn't normal
 
@@ -157,10 +158,11 @@ To be clear — the chase does not _cause_ product-market fit to never be achiev
 
 More viscerally, if the trail through the forest seems much longer than it should be, **you're probably lost**. Breath, regroup, and try something different.
 
-### Receive my next long-form post
-
-Thoughtful analysis of the business and economics of tech
-
- 
-
-Subscribe
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>

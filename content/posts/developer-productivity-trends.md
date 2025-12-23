@@ -41,11 +41,14 @@ In this first chapter, we share our findings on the important trends shaping dev
 
 Want to be notified when we publish part two of our findings? Subscribe below, and we'll also send you a nicely formatted PDF of our research!
 
-### Receive a report with the full results
-
-  
-
-Send Report ⚡
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
 
 ## Trend #1: Developers have the power... and the purse
 
@@ -220,3 +223,12 @@ Developers are increasingly considered one of the most important constituencies 
 As the scarce input of the software production function, software engineers don't come cheap, and it's therefore critical to maximize their productivity and output. As software grows only more powerful, valuable, and essential, anything that makes software engineers more productive will be similarly potent and relevant.
 
 Be informed of our next publication in this series, the **top strategic priorities of developer productivity companies**, by entering your email below:
+
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>

@@ -46,13 +46,14 @@ Here's why:
 
 I'll walk through each in turn.
 
-### Receive my next long-form post
-
-Thoughtful analysis of the business and economics of tech
-
- 
-
-Subscribe
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
 
 ## Omitted / confounding variables
 
@@ -202,3 +203,12 @@ So what can we use as an alternative?
 I've always liked the easy heuristic of **New ARR vs. cash burned**. This ignores specific expense line items and gives companies credit for "all-in" capital efficiency, which is arguably what matters most anyway. It avoids the perils of attributing revenue growth to particular initiatives, like sales and marketing or research and development. Of course, we still have an omitted variable problem (burning cash is not the only way to drive revenue growth), but it's much less severe.
 
 _3,000 words later, I hope I've convinced you that magic number doesn't tell you much about sales efficiency or productivity. If you've found a better metric, I'd love to hear about it. Feel free to shoot me a note at [first.last@gmail.com](mailto:first.last@gmail.com)_
+
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>

@@ -31,13 +31,16 @@ However, many entrepreneurs and investors initially saw a blue ocean in the earl
 
 As a young investor, I balked at this characterization. While I agreed on the long-run impact of these next-generation transportation networks, I thought this view was dead wrong in the short-term.
 
-Here’s why.
+Here's why.
 
-### Receive my next thought in your inbox
-
- 
-
-Go ⚡
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
 
 ## Demand-driven market growth
 
@@ -142,4 +145,13 @@ That the two ridesharing leaders continue to operate unprofitably at scale only 
 
 This is a cautionary tale for entrepreneurs and investors clamoring to capitalize on the latest “wave”.
 
-Sometimes, the right kind of rose-tinted glasses isn’t such a bad thing.
+Sometimes, the right kind of rose-tinted glasses isn't such a bad thing.
+
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>

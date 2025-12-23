@@ -33,7 +33,16 @@ But it’s also important to address that second point — how Redpanda creates 
 
 At Lightspeed, it’s our core belief that there’s a potentially massive market expansion opportunity for real-time, streaming data systems. Opening up this opportunity will require thinking much bigger about what a streaming engine can be and do.
 
-That’s where Redpanda comes in.
+That's where Redpanda comes in.
+
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
 
 ## Spinning up without spinning your wheels
 
@@ -178,4 +187,13 @@ Redpanda meets developers where they are and then enables them to go even furthe
 ![Diagram of the Redpanda compatibility ecosystem](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516319629-66a3d55edc368c41e27704d1_66873620cc1c1391aec633b1_blog-gaming-img2.png)
 *Diagram of the Redpanda compatibility ecosystem*
 
-It’s why we were so excited to lead their recent [$100M Series C financing](https://medium.com/lightspeed-venture-partners/why-lightspeed-is-leading-redpandas-100-million-series-c-553ffe38d6e). The real-time revolution has only just begun, and Redpanda is leading the charge.
+It's why we were so excited to lead their recent [$100M Series C financing](https://medium.com/lightspeed-venture-partners/why-lightspeed-is-leading-redpandas-100-million-series-c-553ffe38d6e). The real-time revolution has only just begun, and Redpanda is leading the charge.
+
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>

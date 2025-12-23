@@ -30,6 +30,15 @@ twitter_image: "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/17665122
 -   **Source:** [https://openreview.net/forum?id=YicbFdNTTy](https://openreview.net/forum?id=YicbFdNTTy)
 -   **Compression:** 8 pages (original ex. references and appendix) -> 3.75 pages (this article)
 
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
+
 ## **Summary**
 
 "[An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://openreview.net/forum?id=YicbFdNTT)" introduces the Visual Transformer, an architecture which leverages mostly standard Transformer components from the original NLP-focused "[Attention is All You Need](https://arxiv.org/abs/1706.03762)" paper but instead applies them to computer vision, specifically image recognition. Images are transformed into sequences of image patches representing "tokens," similar to word tokens in NLP. The model is trained in supervised fashion on image classification using these patch sequences as input.
@@ -141,3 +150,12 @@ The paper is currently under double-blind review for conference submission at IC
 Second, as some folks on Twitter have noted, using these 16x16 patches as input to the model is likely suboptimal. It's at best a first step and the strong performance of the hybrid version of the model (which uses intermediate ResNet representations as input) suggests as much.
 
 As noted before, convolutions seems to help most in low-data / compute regimes, helping the model perform better with less training time for all but the largest model and dataset. Future research may reveal better ways to represent the input image while still avoiding the use of convolutions. If I had to guess, as in NLP, self-supervised pre-training will be key.
+
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>

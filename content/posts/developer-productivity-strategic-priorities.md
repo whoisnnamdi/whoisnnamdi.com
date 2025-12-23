@@ -38,11 +38,14 @@ In this second chapter, we share our findings on the **top strategic priorities*
 
 Want to be notified when we publish part three of our findings? Subscribe below, and we'll also send you a nicely formatted PDF of our research!
 
-### Receive a report with the full results
-
-  
-
-Send Report ⚡
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
 
 ## Priority #1: Product-(go-to-)market fit
 
@@ -151,3 +154,12 @@ This strategic evolution comes in three broad phases:
 Successful execution of this three part plan lays a strong foundation for developer productivity companies to thrive and survive in the face of strategic threats (the public cloud casts a long shadow) or economic disruption.
 
 Be informed of our next and final publication in this series, the **biggest challenges and pain points of developer productivity companies**, by entering your email below:
+
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>

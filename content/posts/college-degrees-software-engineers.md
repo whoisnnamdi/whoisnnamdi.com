@@ -36,13 +36,16 @@ Developers with college degrees earn **7.5%** more than developers with no colle
 
 As in [previous analyses](https://whoisnnamdi.com/age-race-gender-software-engineering-pay/), I additionally control for various observable factors like `age`, `experience`, `hours worked`, `size of employer`, `programming languages` [and more](https://whoisnnamdi.com/highest-paid-software-engineers-2020/). Interestingly, accounting for these factors doesn’t change the college wage premium.
 
-Advanced degrees carry greater benefits — master’s degree holders earn **13.3%** more than college degree holders, while those with doctoral degrees (i.e. PhDs) earn **20.5%** more. These numbers decrease meaningfully though once I add in the controls I mentioned above, falling to **4.1%** and **7.8%** respectively.
+Advanced degrees carry greater benefits — master's degree holders earn **13.3%** more than college degree holders, while those with doctoral degrees (i.e. PhDs) earn **20.5%** more. These numbers decrease meaningfully though once I add in the controls I mentioned above, falling to **4.1%** and **7.8%** respectively.
 
-### Receive a report with the full results
-
- 
-
-Send Report ⚡
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
 
 ## Is this a big deal?
 
@@ -70,4 +73,13 @@ If bootcamps and other alternative forms of education can successfully train and
 
 I think the jury is still out. [Recent media reports](https://www.theinformation.com/articles/lambda-schools-growing-pains-big-buzz-student-complaints) have not been kind to coding bootcamps like Lambda. Then again, anecdotes may not represent the full story. For now, only the schools themselves have the data to prove their own efficacy.
 
-That said, we can finally put some numbers behind the claim that college degrees don’t matter for software engineers. They matter, but not much, assuming you can get hired as a developer. Once in the seat, your degree matters much less than other factors, like on the job performance, competence, etc.
+That said, we can finally put some numbers behind the claim that college degrees don't matter for software engineers. They matter, but not much, assuming you can get hired as a developer. Once in the seat, your degree matters much less than other factors, like on the job performance, competence, etc.
+
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>

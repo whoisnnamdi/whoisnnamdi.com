@@ -39,11 +39,14 @@ In this third and final chapter, we share our findings on the **top challenges a
 
 Subscribe below to receive a nicely formatted PDF of our research!
 
-### Receive a report with the full results
-
-  
-
-Send Report ⚡
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
 
 ## Defining and planning for success
 
@@ -208,3 +211,12 @@ It was amazing to speak to so many developer productivity founders and operators
 We hope you've enjoyed this series on developer productivity. We'd love to continue the conversation. If you are a developer productivity founder or operator who's resonated with any of these findings, let's chat!
 
 [Clio Smurro](https://www.linkedin.com/in/clio-smurro-31967b9/) & [Nnamdi Iregbulem](https://www.linkedin.com/in/nnamdiiregbulem/)
+
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>

@@ -30,13 +30,14 @@ The truth is much more ironic.
 
 Robinhood traders get fleeced not by HFTs front-running milliseconds before their order hits but **by other retail investors, days earlier.**
 
-### Receive my next long-form post
-
-Thoughtful analysis of the business and economics of tech
-
- 
-
-Subscribe
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
 
 ## The party ended \*five\* days ago
 
@@ -83,3 +84,12 @@ I think it's great that Robinhood exists. I love that individuals have more ways
 **But access isn't everything.** We all have "access" to Las Vegas, but that doesn't make it a path to wealth creation. Likewise, if Robinhood traders use the app to merely gamble on 50/50 bets that a particular stock will go up or down, little wealth or value creation will result.
 
 Despite the app's name, Robinhood users for the most part redistribute among themselves the breadcrumbs left by the rest of the market.
+
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>

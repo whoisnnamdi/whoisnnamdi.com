@@ -43,11 +43,14 @@ If you’re a…
 
 ... then this guide is for you.
 
-### Receive a report with the full results
-
- 
-
-Send Report ⚡
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
 
 ## Table of contents
 
@@ -87,13 +90,7 @@ Though we’d love to know both X and Y, it is Y that corresponds better to our 
 
 Identifying Y requires additional data on characteristics that may correlate with earnings.
 
-### Receive a report with the full results
-
- 
-
-Send Report ⚡
-
-### We can’t explain everything
+### We can't explain everything
 
 Using the above methodology, I’ll use the following terms in this report:
 
@@ -136,3 +133,12 @@ By the end of this analysis, you will:
 -   Develop an appreciation for how various factors intermingle and interact
 
 I hope this 2020 guide to software engineering pay is valuable to you. The many hours spent conducting and assembling this analysis were certainly valuable to me!
+
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>

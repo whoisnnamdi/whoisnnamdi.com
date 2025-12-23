@@ -44,25 +44,30 @@ But simple awareness of a fundraise does not do much for you as a VC. These days
 
 Even if you know a deal is going down, there’s no guarantee you will be able to insert yourself into the consideration set of potential partners. I’ve had entrepreneurs directly deny to me they were fundraising when they in fact were, only to admit it after the fundraise announced shortly thereafter.
 
-The concept of an “[anti-portfolio](https://www.fool.com/investing/general/2014/02/20/whats-in-your-anti-portfolio.aspx)” proves that even if you see a deal you can still drop the ball.
+The concept of an "[anti-portfolio](https://www.fool.com/investing/general/2014/02/20/whats-in-your-anti-portfolio.aspx)" proves that even if you see a deal you can still drop the ball.
 
-Many VCs “saw” the Facebook deal. Many VCs “saw” the Google deal. And yet they missed the most explosive growth companies the world has ever seen.
+Many VCs "saw" the Facebook deal. Many VCs "saw" the Google deal. And yet they missed the most explosive growth companies the world has ever seen.
 
-**“Seeing” is necessary but not sufficient.**
+**"Seeing" is necessary but not sufficient.**
 
-> VC's have always relied on the strength of their networks for dealflow.  
->   
-> As an increasing number of founders come from more diverse backgrounds, VC's will have to change to stay relevant.  
->   
+> VC's have always relied on the strength of their networks for dealflow.
+>
+> As an increasing number of founders come from more diverse backgrounds, VC's will have to change to stay relevant.
+>
 > More diverse partnerships, more openness towards cold emails, less pattern matching.
-> 
+>
 > — Boris Wertz (@bwertz) [August 20, 2019](https://twitter.com/bwertz/status/1163885146048569344?ref_src=twsrc%5Etfw)
 
-I don’t mean to deny or discount the value of deal flow. Deal flow is a valuable resource, but it’s exactly that — a resource. A resource must be extracted, enriched, and processed. Converting that resource into useful energy requires investment and effort. Otherwise, it remains inert.
+I don't mean to deny or discount the value of deal flow. Deal flow is a valuable resource, but it's exactly that — a resource. A resource must be extracted, enriched, and processed. Converting that resource into useful energy requires investment and effort. Otherwise, it remains inert.
 
-### Receive my next thought in your inbox
-
-Go ⚡
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
 
 ## 🧠 Signal in the noise
 
@@ -180,4 +185,13 @@ There’s some moral justice in this. I’ve always been irked by the very diffe
 -   One is expected to fail, the other is expected to at least breakeven
 -   One is a beggar, the other is a chooser
 
-This is out of balance. Entrepreneurs hustle, **why shouldn’t VCs?**
+This is out of balance. Entrepreneurs hustle, **why shouldn't VCs?**
+
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>

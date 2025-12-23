@@ -96,11 +96,16 @@ I break down the results by survey question, with a chart displaying the control
 
 The results represent a subset of approximately 11,000 U.S-based developers from the Stack Overflow survey.
 
-If you’d like a nicely formatted report with the full set of results, enter your email below and you’ll receive an email with a download link when ready.
+If you'd like a nicely formatted report with the full set of results, enter your email below and you'll receive an email with a download link when ready.
 
-### Receive a report with the full results
-
-Send Report
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
 
 For more detail on the methodology, please see the appendix at the end.
 
@@ -564,3 +569,12 @@ To avoid this, I leverage a powerful machine learning technique, Double Selectio
 Long story short, Double Selection makes us much more confident that the results represent the accurate effects.
 
 _This post has been published on [www.productschool.com](http://www.productschool.com) communities_
+
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>

@@ -54,6 +54,15 @@ Through some examples, I hope to demonstrate that compound growth 1) implies con
 
 But before we get to business, let's talk about - bacteria.
 
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
+
 ## Bacteria and Bricklayers
 
 ![Bacteria](https://upload.wikimedia.org/wikipedia/commons/3/32/EscherichiaColi_NIAID.jpg)
@@ -287,5 +296,14 @@ Likewise, investors must diligently sift through the noise to find the few bacte
 **Scale invariant growth** is the key to building a large, meaningful business.
 
 Go find it.
+
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
 
 MathJax.Hub.Queue(\["Typeset",MathJax.Hub\]);

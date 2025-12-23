@@ -97,9 +97,14 @@ One striking feature that immediately jumps out - very few languages saw a net d
 
 Let’s spin through each quadrant and discuss some of the highlights.
 
- #mc\_embed\_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
-
-Receive more long-form posts on the business of tech 
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
 
 ## Stars
 
@@ -133,9 +138,14 @@ _**Swift**_ - The popularity of Swift derives directly from the underlying popul
 
 **Takeaway** - These languages really pay the bills. If you are already proficient in any of the above languages, great, leverage that saved time to pick up some skills in the rising stars. If you do not know these languages well today, evaluate how practical / necessary they are for the specific set of projects you want to work on now or in the near future.
 
- #mc\_embed\_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
-
-Receive more long-form posts on the business of tech 
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
 
 ## Question marks
 

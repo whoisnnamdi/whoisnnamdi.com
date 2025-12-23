@@ -44,13 +44,14 @@ Let’s stay on this theme of news coverage and look at this another way. Take t
 
 Coronavirus reigns supreme. Focus on the column “_(2) % of EMV Articles with Infectious Disease Terms_”, where you can see the ramp in volatility coverage mentioning the coronavirus. **91% of volatility-related news articles in March 2020 mentioned the coronavirus**. This compares to peak news share of 5% for the Bird Flu of 1997-1998, 8% for SARS, 4% for Swine Flu / H1N1, and 11% for Ebola and MERS.
 
-### Receive my next long-form post
-
-Thoughtful analysis of the business and economics of tech
-
- 
-
-Subscribe
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
 
 ## Can we trade on this?
 
@@ -89,3 +90,12 @@ Meanwhile, a [paper out of the NY Fed](https://www.newyorkfed.org/medialibrary/m
 ![](/content/images/2020/04/gWelVoIq73.png)
 
 People often blame the severity of the Great Depression on [misguided policies of the Federal Reserve](https://www.hoover.org/research/feds-depression-and-birth-new-deal), but this is a man-made recession like nothing we've ever seen.
+
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>

@@ -38,13 +38,16 @@ In this first part of my 2020 analysis of software engineering pay, I explore ho
 -   `Gay and lesbian` engineers earn more than `straight` engineers after adjusting for observable factors
 -   `Parents` earn significantly more that `non-parents`, but this is explained by other factors
 
-If you haven’t already, please check out the [methodology behind the analysis](https://whoisnnamdi.com/highest-paid-software-engineers-2020), otherwise the numbers below might be difficult to interpret.
+If you haven't already, please check out the [methodology behind the analysis](https://whoisnnamdi.com/highest-paid-software-engineers-2020), otherwise the numbers below might be difficult to interpret.
 
-### Receive a report with the full results
-
- 
-
-Send Report ⚡
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
 
 ## Age
 
@@ -146,12 +149,6 @@ In line with other research, `women` are also less confident about their own pro
 
 Experience and confidence collectively explain **8.1%** of the gender pay gap among software engineers, leaving only a 1.9% gap, including the 1.4 percentage point difference that we cannot explain.
 
-### Receive a report with the full results
-
- 
-
-Send Report ⚡
-
 ## Sexual orientation
 
 [![Sexuality](https://plot.ly/~whoisnnamdi/65.png?share_key=t51SFgyvKOWIwEl2u1Ld6N)](https://plot.ly/~whoisnnamdi/65/?share_key=t51SFgyvKOWIwEl2u1Ld6N "Sexuality")
@@ -205,3 +202,12 @@ Analogous statistical caveats abound.
 That said, the data suggest the software development industry is well on its way to pay parity across the important dimensions of age, race, gender, and sexuality.
 
 _Thanks for reading part 1 of my 2020 analysis of software developer pay. You can find the rest of the analysis and methodology [here](https://whoisnnamdi.com/highest-paid-software-engineers-2020)._
+
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>

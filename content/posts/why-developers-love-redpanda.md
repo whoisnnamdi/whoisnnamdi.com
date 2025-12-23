@@ -32,13 +32,14 @@ Vectorized is maniacally focused on the developer experience. As a result, it �
 
 In this post, I want to highlight three key aspects of the Redpanda developer experience — ****simplicity****, ****accessibility****, and ****performance**** — and discuss why we think Vectorized’s emphasis on usability will unlock real-time streaming for the great majority of developers, who are underserved by existing solutions. You’ll also hear it straight from members of the community, who I’ve quoted throughout.
 
-### Receive my next long-form post
-
-Thoughtful analysis of the business and economics of tech
-
- 
-
-Subscribe
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
 
 # Simple is beautiful
 
@@ -151,3 +152,12 @@ Here’s how one engineer put it:
 We at Lightspeed couldn’t agree more.
 
 __Want to learn more, connect with the Vectorized team, and meet other Redpanda users? Join the__ [__Slack community__](https://vectorized.io/slack)__, check out the__ [__repo__](https://github.com/vectorizedio/redpanda)__, and sign up for early access to__ [__Vectorized Cloud__](https://vectorized.io/cloud)__.__
+
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>

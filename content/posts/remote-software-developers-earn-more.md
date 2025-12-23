@@ -48,13 +48,16 @@ In other words, **half or more of the benefit comes from being able to work remo
 
 This is an impressive result.
 
-While I can’t be sure this is [causal](https://towardsdatascience.com/causal-vs-statistical-inference-3f2c3e617220), the **large apparent effects** (even after controlling for other variables) paired with the **clear upward trend** as remote work increases gives me confidence there is something real here.
+While I can't be sure this is [causal](https://towardsdatascience.com/causal-vs-statistical-inference-3f2c3e617220), the **large apparent effects** (even after controlling for other variables) paired with the **clear upward trend** as remote work increases gives me confidence there is something real here.
 
-### Receive a report with the full results
-
- 
-
-Send Report ⚡
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
 
 ## Wait but why?
 
@@ -88,4 +91,13 @@ Would this hold in a world where remote work is more the norm than the exception
 
 Does this apply to non-software developers? Again, can’t say.
 
-But it’s an interesting result nonetheless, and one that deserves further investigation as more knowledge workers shift their work online and away from the corporate office—[virus](https://www.cdc.gov/coronavirus/2019-ncov/index.html) or no virus.
+But it's an interesting result nonetheless, and one that deserves further investigation as more knowledge workers shift their work online and away from the corporate office—[virus](https://www.cdc.gov/coronavirus/2019-ncov/index.html) or no virus.
+
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>

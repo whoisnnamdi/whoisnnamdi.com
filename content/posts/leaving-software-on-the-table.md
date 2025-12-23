@@ -38,15 +38,16 @@ In part 1, I talked about falling developer productivity and how spinning [the d
 
 In part 2, I argued that [more developers won’t solve all our software engineering problems.](https://whoisnnamdi.com/more-developers-isnt-always-more/)
 
-I’ve thrown around a lot of equations, literary references, and even some memes. In this third and final piece, I’ll talk dollars and cents, quantifying the impact of lost developer productivity and how much software we’re “leaving on the table” as a result.
+I’ve thrown around a lot of equations, literary references, and even some memes. In this third and final piece, I'll talk dollars and cents, quantifying the impact of lost developer productivity and how much software we're "leaving on the table" as a result.
 
-### Receive my next long-form post
-
-Thoughtful analysis of the business and economics of tech
-
- 
-
-Subscribe
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
 
 ## (Technical) debt to (developer) GDP
 
@@ -128,3 +129,12 @@ As I’ve hopefully made clear, we can do A LOT better of a job maximizing devel
 __Thanks so much for reading this — I hope it resonated with you. If it did, please share that feedback!__
 
 ****Follow me on**** [****Twitter****](https://twitter.com/whoisnnamdi)****, subscribe to my monthly essays**** [****here****](https://whoisnnamdi.com/)****, and reach out to me directly via nnamdi@lsvp.com****
+
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>

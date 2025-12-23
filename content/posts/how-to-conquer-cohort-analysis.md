@@ -48,9 +48,14 @@ In this post I'll explain these results, breakdown the KM estimator in simple te
 
 The bottom-line: **if you are an operator or investor who wants to properly measure customer cohort retention, Kaplan-Meier is the way to do it.**
 
-### Receive my next post in your inbox
-
-Subscribe
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
 
 ## Two inevitabilities: Death and Churn
 
@@ -139,4 +144,13 @@ While I won’t cover it here, you can also calculate [p-values, confidence inte
 
 **Kaplan-Meier is a powerful tool for anyone who spends time analyzing customer cohort data.** KM has been battle-tested in rigorous clinical trials—if anything it’s surprising it hasn’t caught on more among technology operators and investors.
 
-If you’re a product manager, growth hacker, marketer, data scientist, investor, or anyone else who understands the deep importance of customer retention analysis, the Kaplan-Meier estimator should be a valuable weapon in your analytics arsenal.
+If you're a product manager, growth hacker, marketer, data scientist, investor, or anyone else who understands the deep importance of customer retention analysis, the Kaplan-Meier estimator should be a valuable weapon in your analytics arsenal.
+
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>

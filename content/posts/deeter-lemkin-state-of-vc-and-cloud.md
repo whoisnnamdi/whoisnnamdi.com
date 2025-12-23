@@ -39,15 +39,18 @@ You can find:
 
 Enjoy!
 
-### Receive my next thought in your inbox
-
- 
-
-Go ⚡
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
 
 * * *
 
-## What’s happening in venture today
+## What's happening in venture today
 
 ### Things are not “business as usual”, even for VCs who have capital to deploy
 
@@ -113,13 +116,7 @@ _Careful though_—in 2008 several debt providers withdrew venture lines they ha
 
 This is less of risk with the tier one debt providers, but be careful with others.
 
-### Receive my next thought in your inbox
-
- 
-
-Go ⚡
-
-## The “new normal” for VCs and founders
+## The "new normal" for VCs and founders
 
 ### Not all is lost
 
@@ -202,3 +199,12 @@ The more core your product is to your customer’s systems, the more resilient y
 That said, prepare for some economic hit, no matter what industry you are in. Things can change very fast—companies that were reporting no impact last week are now seeing **30-40%** declines in new business.
 
 **Get ahead of this**—figure out what your leading indicators are for potential problems. Poor customer health, will ultimately lead to churn, which will lead to revenue and business impact.
+
+<div class="subscribe-form">
+<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
+<p>Thoughtful analysis of the business and economics of tech</p>
+<form action="/api/subscribe" method="POST">
+<input type="email" name="email" placeholder="Enter your email" required />
+<button type="submit">Go ⚡</button>
+</form>
+</div>
