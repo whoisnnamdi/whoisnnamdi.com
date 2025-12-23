@@ -1,4 +1,4 @@
-jest.mock('../pages/api/ghost_data', () => ({
+jest.mock('../lib/content', () => ({
   __esModule: true,
   getPosts: jest.fn(),
   getPost: jest.fn(),
@@ -6,7 +6,7 @@ jest.mock('../pages/api/ghost_data', () => ({
   getPage: jest.fn(),
 }))
 
-const ghost = require('../pages/api/ghost_data')
+const content = require('../lib/content')
 const page = require('../pages/[slug].js')
 
 describe('[slug] data functions', () => {
@@ -15,11 +15,11 @@ describe('[slug] data functions', () => {
   })
 
   test('getStaticPaths combines posts and pages, excluding talks', async () => {
-    ghost.getPosts.mockResolvedValueOnce([
+    content.getPosts.mockResolvedValueOnce([
       { slug: 'post-a' },
       { slug: 'post-b' },
     ])
-    ghost.getPages.mockResolvedValueOnce([
+    content.getPages.mockResolvedValueOnce([
       { slug: 'about' },
       { slug: 'talks' },
     ])
@@ -32,20 +32,20 @@ describe('[slug] data functions', () => {
   })
 
   test('getStaticProps uses getPost when slug is a post', async () => {
-    ghost.getPosts.mockResolvedValueOnce([{ slug: 'my-post' }])
-    ghost.getPost.mockResolvedValueOnce({ id: '1', slug: 'my-post' })
+    content.getPosts.mockResolvedValueOnce([{ slug: 'my-post' }])
+    content.getPost.mockResolvedValueOnce({ id: '1', slug: 'my-post' })
 
     const res = await page.getStaticProps({ params: { slug: 'my-post' } })
-    expect(ghost.getPost).toHaveBeenCalledWith('my-post')
+    expect(content.getPost).toHaveBeenCalledWith('my-post')
     expect(res.props.post).toMatchObject({ slug: 'my-post' })
   })
 
   test('getStaticProps uses getPage when slug is not a post', async () => {
-    ghost.getPosts.mockResolvedValueOnce([{ slug: 'other-post' }])
-    ghost.getPage.mockResolvedValueOnce({ id: '2', slug: 'about-me' })
+    content.getPosts.mockResolvedValueOnce([{ slug: 'other-post' }])
+    content.getPage.mockResolvedValueOnce({ id: '2', slug: 'about-me' })
 
     const res = await page.getStaticProps({ params: { slug: 'about-me' } })
-    expect(ghost.getPage).toHaveBeenCalledWith('about-me')
+    expect(content.getPage).toHaveBeenCalledWith('about-me')
     expect(res.props.post).toMatchObject({ slug: 'about-me' })
   })
 })
