@@ -43,7 +43,7 @@ export default function TalksPage({ talks, pageHtml }) {
       <div className="mb-10">
         <h1 className="text-4xl font-bold text-gray-900 mb-3">Talks</h1>
         <p className="text-lg text-gray-700 leading-relaxed">
-          I speak with founders, engineers, and investors about building developer platforms, AI, and the economics of software.
+          I speak with founders, engineers, and investors about developer platforms, AI, and the economics of software.
         </p>
       </div>
 
