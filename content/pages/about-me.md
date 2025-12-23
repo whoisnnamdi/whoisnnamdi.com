@@ -16,7 +16,7 @@ twitter_description: ""
 twitter_image: ""
 ---
 
-![](/https://nnamdi.net/content/images/2019/12/headshot_500_cropped.jpeg)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515745572-headshot_500_cropped.jpeg)
 
 ## My mission:
 

@@ -40,7 +40,7 @@ For example, a late-stage software company with $50M+ in ARR and ~2,000 customer
 
 The extreme, non-negative variation around the average produces a right or positively skewed monetization distribution:
 
-![image-20200824082909012](/https://nnamdi.net/content/images/2020/10/image-20200824082909012.png)
+![image-20200824082909012](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515792704-image-20200824082909012.png)
 
 Sufficiently skewed distributions are "[fat-tailed](https://en.wikipedia.org/wiki/Fat-tailed_distribution)." Large customer contracts will determine the properties of the distribution, like its mean or variance. Similarly, large customers will account for an enormous proportion of overall revenue. In other words, software monetization is a [power law](http://reactionwheel.net/2015/06/power-laws-in-venture.html).
 
@@ -75,7 +75,7 @@ This means we can infer \\(\\alpha\\)​ and therefore how fat-tailed the revenu
 
 We can estimate the shape of the customer distribution by plugging \\(\\alpha\\) back into the first equation along with some other percentile X in order to estimate the share of revenue earned from the top-X% of customers, which we can repeat for other percentiles. For example, the relationship between \\(\\alpha\\) and the revenue concentrated in the top-20% of customer looks like this:
 
-![img](/https://nnamdi.net/content/images/2020/10/qNmFsndFgJ.png)
+![img](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515807452-qNmFsndFgJ.png)
 *Source: David Salazar*
 
 An \\(\\alpha = 1.16\\) yields the classic [Pareto 80/20 distribution](https://www.investopedia.com/terms/1/80-20-rule.asp), where 20% of customers account for 80% of revenue.
@@ -92,23 +92,23 @@ Commonly, companies will state that "no customer represents more than X% of reve
 
 Here's an example from [Slack's S-1](https://www.sec.gov/Archives/edgar/data/1764925/000162828019004786/slacks-1.htm):
 
-![image-20200905234041096](/https://nnamdi.net/content/images/2020/10/image-20200905234041096.png)
+![image-20200905234041096](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515794480-image-20200905234041096.png)
 *Source: Slack's S-1*
 
 From this sort of disclosure we can calculate the \\(\\alpha\\) and fat-tailedness of customer monetization for public software vendors via the procedure outlined above, plugging in the share of total revenue and total customers represented by these large customers. [I've done the hard work for you](https://docs.google.com/spreadsheets/d/163g-Tn9AdjF4bb4v7j8VidqeqMJvAHvb7EHUR2ctYsk/edit?usp=sharing) for a subset of public software companies:
 
-![image-20200905234326829](/https://nnamdi.net/content/images/2020/10/image-20200905234326829.png)
+![image-20200905234326829](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515796073-image-20200905234326829.png)
 *Source*
 
 **The alphas are universally below 2**, implying a high level of skew.
 
 A more visual representation of the alphas (with the average in black):
 
-![alpha](/https://nnamdi.net/content/images/2020/10/alpha.png)
+![alpha](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515782656-alpha.png)
 
 The implied top-20% and top-1% revenue concentration are quite large for most companies (blue = top 20%, red = top 1%):
 
-![share](/https://nnamdi.net/content/images/2020/10/share.png)
+![share](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515809416-share.png)
 
 So, **the top 20% typically represent ~70% of revenue**, while **the top 1% represent ~40%**. Not quite Pareto 80/20, but pretty close! Interestingly, many companies tied to infrastructure in some way like Datadog, Fastly, and Twilio do have 80/20 monetization distributions, at least in some years.
 
@@ -132,7 +132,7 @@ Here, returns are synonymous with revenue and investment is synonymous with cust
 
 There's some merit to this analogy between venture capital and software go-to-market strategies. One only has to look at estimates of \\(\\alpha\\) for venture capital investments to see that we are dealing with similar phenomena here (ignore the orange footnotes):
 
-![img](/https://nnamdi.net/content/images/2020/10/zxdn9Kwr6j.png)
+![img](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515818071-zxdn9Kwr6j.png)
 *Source: Reaction Wheel*
 
 ### Whale hunting
@@ -149,12 +149,12 @@ $$
 $$  
 In plain English — your [personal best](https://en.wikipedia.org/wiki/Personal_record) can only get better with more attempts. In the realm of venture, that looks like this:
 
-![image-20200907200713719](/https://nnamdi.net/content/images/2020/10/image-20200907200713719.png)
+![image-20200907200713719](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515797149-image-20200907200713719.png)
 *Source: Reaction Wheel*
 
 This is why returns in venture capital tend to increase with portfolio size:
 
-![H5qNMNZPFO](/https://nnamdi.net/content/images/2020/10/H5qNMNZPFO.png)
+![H5qNMNZPFO](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515786685-H5qNMNZPFO.png)
 *Source: AngelList*
 
 In the context of software monetization, the "true distribution" is the set of **all** potential customers while the "sample" is the set of _current_ customers. Each customer is like a draw from a random variable representing all potential customers, just like a venture capital investment is like a random draw from a fat-tailed distribution of potential returns.
@@ -171,12 +171,12 @@ $$
 $$  
 In the chart below, the shaded region represents larger customers yet to be acquired:
 
-![image-20200909125015490](/https://nnamdi.net/content/images/2020/10/image-20200909125015490.png)
+![image-20200909125015490](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515798673-image-20200909125015490.png)
 *Source: Statistical Consequences of Fat Tails*
 
 What proportion of the total does this extra bit represent? That depends both on \\(\\alpha\\), or how fat-tailed the distribution is, and on the sample size. The smaller \\(\\alpha\\) and the smaller our sample, the more we underestimate the true mean:
 
-![image-20200909124000940](/https://nnamdi.net/content/images/2020/10/image-20200909124000940.png)
+![image-20200909124000940](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515797904-image-20200909124000940.png)
 *Source: Statistical Consequences of Fat Tails*
 
 So for an enterprise software company with \\(\\alpha = 1.3\\), which is typical in my data set, and 1000 customers, these not yet acquired customers will account for 20% of the true mean. This means the **true monetization is about 1 / 0.8 = 25% higher than current monetization**.

@@ -44,14 +44,14 @@ In this essay, I break apart the Rule of 40, fix it, and put it back together ag
 ## Laying down the rules
 
 After flying high for some time, software valuation multiples have come back down to Earth (Note: LTM multiples used throughout this article):  
-![rev_mul](https://nnamdi.net/content/images/2022/03/rev_mul.png)
+![rev_mul](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515950447-rev_mul.png)
 
 While there are [all sorts](https://whoisnnamdi.com/grow-valuation/) of [explanations](https://whoisnnamdi.com/high-retention-high-volatility/) for the recent tech correction, the [Rule of 40](https://feld.com/archives/2015/02/rule-40-healthy-saas-company/) concerns itself not so much with the ebbs and flows of software valuations but rather their determinants at _a single point-in-time_. It provides a simple rule of thumb for evaluating the performance of software companies and estimating their likely valuation multiples:
 
 $$\text{Rule of 40} = \text{Growth} + \text{Profitability}$$
 
 The Rule of 40 states that the sum of annual revenue growth and profitability (either EBITDA or free cash flow margin) should equal 40 or more for the best performing companies, as in the following slide from [Battery Ventures' Software 2021 deck](https://www.scribd.com/document/497410287/Battery-Ventures-Software-2021-Report):  
-![Pasted-image-20220222124207](https://nnamdi.net/content/images/2022/03/Pasted-image-20220222124207.png)
+![Pasted-image-20220222124207](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515945809-Pasted-image-20220222124207.png)
 
 In general though, the "40" isn't particularly important. Higher is better; that's it.
 
@@ -92,7 +92,7 @@ Thus, naively comparing Snowflake and other companies with smaller markets in th
 Let's implement each of these fixes one-by-one to see how they influence the results.
 
 Here's the impact of revenue growth and free cash flow margin on valuation multiples with each of the three fixes implemented sequentially:  
-![regs](https://nnamdi.net/content/images/2022/03/regs.png)
+![regs](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515948728-regs.png)
 
 **First**, let's split up growth and margin to see how they separately impact valuations. To start, we pick a random date, June 30th 2021:
 
@@ -118,7 +118,7 @@ Still, we've much more rigorously confirmed that growth and margin have similar 
 ## How the rules have changed
 
 Here's how the market value of growth and profitability have evolved over time:  
-![fe](https://nnamdi.net/content/images/2022/03/fe.png)
+![fe](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515944248-fe.png)
 
 We can see a number of interesting features:
 
@@ -128,7 +128,7 @@ We can see a number of interesting features:
 -   The value of growth fell in early 2021, recovered somewhat, and crashed even more spectacularly later in the year, **returning growth to its pre-pandemic value**
 
 We can also plot the "spread" between the value of growth vs. margin, an interesting chart in its own right:  
-![spread](https://nnamdi.net/content/images/2022/03/spread.png)
+![spread](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515952013-spread.png)
 
 -   Growth and margin start off fairly close, with a slight market preference toward margin
 -   After a brief period of uncertainty, the value of software growth relative to profitability roars back, peaking at a ~1% premium at the end of 2020

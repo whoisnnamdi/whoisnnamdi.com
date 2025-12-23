@@ -43,7 +43,7 @@ It's called the Venture Activity Index, or "VAI". Let me walk you through how I 
 
 To measure the venture cycle, we need a notion of "trend" – the thing around which the venture market is fluctuating. If we plot funding growth on a logarithmic scale across each stage of venture investment, a clear linear trend emerges. (Note: linear trends in logarithms implies constant percentage growth over time):
 
-![detrend](https://nnamdi.net/content/images/2023/07/detrend.png)
+![detrend](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516216166-detrend.png)
 
 I could have come up with a fancier notion of trend, but I'll proceed with the linear one as it's nice and simple.
 
@@ -53,7 +53,7 @@ One quick note: I could have focused instead on the number of investments rather
 
 Next, let's remove that trend and focus on the gyrations around it:
 
-![cycles](https://nnamdi.net/content/images/2023/07/cycles.png)
+![cycles](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516213000-cycles.png)
 
 -   The cycles were only moderately correlated across stages before 2020. The average cross-stage correlation hovered around ~0.25 pre-2020.
 -   However, since 2020, they've moved in lockstep, following one common cycle up and then down.
@@ -62,7 +62,7 @@ This is typical in economic data: in volatile times, different parts of the mark
 
 Overall, the correlations are around ~0.65 for the whole period, with the seed stage being the most dissimilar to the other stages of investment:
 
-![correl](https://nnamdi.net/content/images/2023/07/correl.png)
+![correl](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516210617-correl.png)
 
 The amplitudes of the cycles, however, differ across stages, both historically and more recently:
 
@@ -72,7 +72,7 @@ The amplitudes of the cycles, however, differ across stages, both historically a
 
 In other words, booms and busts are substantially larger at the later stages:
 
-![volatility](https://nnamdi.net/content/images/2023/07/volatility.png)
+![volatility](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516224959-volatility.png)
 
 And in case you're wondering, this was true before 2020 as well. It's not just a recent phenomenon: the late-stage market has always required a bit of a strong stomach.
 
@@ -82,7 +82,7 @@ Now let's throw it all together. Again, in the spirit of simplicity and robustne
 
 I present to you… the Venture Activity Index (VAI):
 
-![vai_plot](https://nnamdi.net/content/images/2023/07/vai_plot.png)
+![vai_plot](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516222284-vai_plot.png)
 
 The last three years of the VAI are the obvious anomaly:
 
@@ -97,7 +97,7 @@ Again, I want to emphasize this is a measure of the venture business _cycle_, no
 
 Due to its cyclic nature, the VAI forecasts future changes in venture activity. When it's high, future venture activity slows. When it's low, venture activity accelerates in the next few quarters. This is true across stages, though it's most accurate for the later stages:
 
-![vai_forecast](https://nnamdi.net/content/images/2023/07/vai_forecast.png)
+![vai_forecast](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516219221-vai_forecast.png)
 
 Overall, a 10% increase in the VAI forecasts anywhere from a 6.5% decline in seed stage venture funding over the next year to a 21.5% decrease at the Series D+ stage (and vice versa for a decrease in the VAI).
 

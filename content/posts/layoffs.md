@@ -64,7 +64,7 @@ On the other hand, "flows" are rates of change of a particular stock. For exampl
 A single stock can have multiple associated flows, and the sum total of these flows determines how the stock changes over time.
 
 In the labor market, workers flow between employment and unemployment (stocks) at various rates (flows):  
-![SCR-20220831-4nv](https://nnamdi.net/content/images/2022/08/SCR-20220831-4nv.png)
+![SCR-20220831-4nv](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516048820-SCR-20220831-4nv.png)
 
 In equilibrium, the various stocks of a closed system are stable. However, if the individual flows change, the related stocks change too:
 
@@ -76,17 +76,17 @@ In this way, variation in job separation and job finding "explain" changes in un
 ## As the labor market cools, hiring freezes
 
 We commonly associate unemployment with layoffs. During recessions, we imagine heartless employers suddenly laying off droves of workers:  
-![CleanShot-2022-08-18-at-12.54.17@2x](https://nnamdi.net/content/images/2022/08/CleanShot-2022-08-18-at-12.54.17@2x.png)
+![CleanShot-2022-08-18-at-12.54.17@2x](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516022285-CleanShot-2022-08-18-at-12.54.17%402x.png)
 
 While this story feels intuitive, the data doesn't bear this out.
 
 The below chart plots the U.S. "employment exit rate" (a euphemism for layoffs or voluntary quitting that ends in unemployment) along with the unemployment rate itself. Think about the exit rate as the share of all employed workers who leave employment each quarter:  
-![exit-1](https://nnamdi.net/content/images/2022/08/exit-1.png)
+![exit-1](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516032584-exit-1.png)
 
 Employment exits jiggle up and down at a much higher frequency than unemployment, and the timing of those short term fluctuations doesn't align well with granular movements in unemployment. Over longer periods though, they do seem loosely connected.
 
 Now let's look at the other piece of the puzzle. Here, I've swapped out employment exit for the "job finding rate," i.e. the proportion of unemployed workers who find a job each quarter:  
-![job](https://nnamdi.net/content/images/2022/08/job.png)
+![job](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516037607-job.png)
 
 **The lines perfectly mirror each other.**
 
@@ -112,7 +112,7 @@ Here's how we can estimate this:
 -   Similar logic applies in the opposite scenario (allowing A to fluctuate while holding B constant)
 
 This table quantifies the relative contributions of job entry and exit rates to overall unemployment variability by calculating counterfactual scenarios in which either variable is held constant while the other is allowed to fluctuate. The first row holds job separation constant and the second holds job finding constant ([Source](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1014798)):  
-![Pasted-image-20220814173836](https://nnamdi.net/content/images/2022/08/Pasted-image-20220814173836.png)
+![Pasted-image-20220814173836](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516047178-Pasted-image-20220814173836.png)
 
 The result?
 
@@ -172,7 +172,7 @@ It's the hiring freeze of course!
 -   Meanwhile, you cut the hiring plan from 100 to zero
 
 In effect, you "fired" or "laid off" 100 _future_ employees while only laying off 20 _current_ ones:  
-![SCR-20220831-4vs](https://nnamdi.net/content/images/2022/08/SCR-20220831-4vs.png)
+![SCR-20220831-4vs](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516050372-SCR-20220831-4vs.png)
 
 As one founder friend whose recent layoff was leaked on social media told me:
 

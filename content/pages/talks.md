@@ -22,7 +22,7 @@ twitter_image: ""
 
 -   [Video](https://www.youtube.com/watch?v=azoBSxpkv7Y)
 
-![](/https://nnamdi.net/content/images/2025/10/gensf.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516345490-gensf.png)
 
 ## Benedikt Stroebl: With Imperfect Verifiers, Scale Fails
 
@@ -30,7 +30,7 @@ twitter_image: ""
 
 -   [Video](https://www.youtube.com/watch?v=Id7ebjEqAW8)
 
-![](/https://nnamdi.net/content/images/2025/10/benedikt.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516339527-benedikt.png)
 
 ## Satish Chandra: Google's AI Coding Agents That Fix Bugs Automatically
 
@@ -38,7 +38,7 @@ twitter_image: ""
 
 -   [Video](https://www.youtube.com/watch?v=jMzHuLzmpog)
 
-![](/https://nnamdi.net/content/images/2025/07/SCR-20250708-keig.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516336440-SCR-20250708-keig.png)
 
 ## Jonas Hübotter: 1000 Expert Models, 100x Faster, For Free
 
@@ -46,7 +46,7 @@ twitter_image: ""
 
 -   [Video](https://www.youtube.com/watch?v=NVd_FmEDzis)
 
-![](/https://nnamdi.net/content/images/2025/07/SCR-20250708-kdmv.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516332776-SCR-20250708-kdmv.png)
 
 ## Daniel Kang: AI Hackers Are Coming Sooner Than You Think
 
@@ -54,7 +54,7 @@ twitter_image: ""
 
 -   [Video](https://www.youtube.com/watch?v=5U_c_IHWK6I)
 
-![](/https://nnamdi.net/content/images/2025/07/SCR-20250708-kcrg.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516329613-SCR-20250708-kcrg.png)
 
 ## Andy Zhou: Language Agent Tree Search & Autonomous Red Teaming
 
@@ -62,7 +62,7 @@ twitter_image: ""
 
 -   [Video](https://www.youtube.com/watch?v=sr1n4Swgk8k)
 
-![](/https://nnamdi.net/content/images/2025/04/image-4.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516324017-image-4.png)
 
 ## Charlie Snell: Optimally Scaling Test-Time Compute & Predicting Emergence
 
@@ -70,7 +70,7 @@ twitter_image: ""
 
 -   [Video](https://www.youtube.com/watch?v=4xT_6NtC3oo)
 
-![](/https://nnamdi.net/content/images/2025/04/image.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516327425-image.png)
 
 ## Developer Productivity, Real-Time Data Infrastructure, and The Fat-Tailed Nature of Enterprise Software – Datacast
 
@@ -93,7 +93,7 @@ twitter_image: ""
 
 -   [Podcast](https://podcasts.apple.com/us/podcast/seed-stage-valuation-insights-from-lightspeeds-nnamdi/id1719488387?i=1000680395270)
 
-![](/https://nnamdi.net/content/images/2025/04/image-1.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516321170-image-1.png)
 
 ## Lightspeed’s Nnamdi Iregbulem: Boosting Total Software Output
 
@@ -101,7 +101,7 @@ twitter_image: ""
 
 -   [Interview](https://www.terranova.co/nnamdi-iregbulem-lightspeed-venture-partners-boosting-software-productivity/)
 
-![](/https://nnamdi.net/content/images/2023/03/image.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516158586-image.png)
 
 ## SaaS Metrics 2.0 – A Field Guide to the Metrics that Matter Today
 
@@ -109,7 +109,7 @@ twitter_image: ""
 
 -   [Event page](https://saasnorth.com/events/breakout-11/)
 
-![](/https://nnamdi.net/content/images/2022/12/image.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516100481-image.png)
 
 ## Streaming Data and the Modern Real-Time Data Stack – The Modern Data Show
 
@@ -117,7 +117,7 @@ twitter_image: ""
 
 -   [Podcast](https://www.moderndatastack.xyz/podcast/s01-e05-streaming-data-and-the-modern-real-time-data-stack-lightspeed-ventures-74te)
 
-![](/https://nnamdi.net/content/images/2022/10/image.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516069627-image.png)
 
 ## The Developer Productivity Manifesto with Nnamdi Iregbulem
 
@@ -125,7 +125,7 @@ twitter_image: ""
 
 -   [Podcast](https://podcasts.apple.com/us/podcast/the-developer-productivity-manifesto-with/id1539945251?i=1000581913746)
 
-![](/https://nnamdi.net/content/images/2022/10/image-1.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516064487-image-1.png)
 
 ## The Next Trillion Dollar Market - 5 Lessons from Selling to Millions of Developers
 
@@ -134,7 +134,7 @@ twitter_image: ""
 -   [Event page](https://www.tractionconf.io/agenda)
 -   [Video](https://youtube.com/watch?v=O94U-N26dbU)
 
-![](/https://nnamdi.net/content/images/2022/08/Nnamdi-I-Traction.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516042987-Nnamdi-I-Traction.png)
 
 ## The Developer Productivity Manifesto | Dev Innovation Summit
 
@@ -142,7 +142,7 @@ twitter_image: ""
 
 -   [Event page](https://embed.emamo.com/event/worldfestival-2022/s/the-developer-productivity-manifesto-NPYkva)
 
-![](/https://nnamdi.net/content/images/2022/08/image.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516035119-image.png)
 
 ## Breaking Changes Podcast | Postman
 
@@ -151,7 +151,7 @@ twitter_image: ""
 -   [Podcast](https://www.youtube.com/watch?v=_8oZYEtjNWQ)
 -   [Recap](https://blog.postman.com/breaking-changes-with-lightspeed-venture-partners-nnamdi-iregbulem-real-time-api-infrastructure-investments/)
 
-![](/https://nnamdi.net/content/images/2022/06/image-1.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515986378-image-1.png)
 
 ## The Full Ratchet: Venture Capital Demystified
 
@@ -159,7 +159,7 @@ twitter_image: ""
 
 -   [Podcast](https://fullratchet.net/337-navigating-macro-headwinds-balancing-growth-v-profitability-and-how-to-get-in-front-of-the-top-1-of-founders-nnamdi-iregbulem/)
 
-![](/https://nnamdi.net/content/images/2022/06/image.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515989603-image.png)
 
 ## The Scaling Developer Success Podcast
 
@@ -167,7 +167,7 @@ twitter_image: ""
 
 -   [Spotify](https://open.spotify.com/episode/0EmEAuxMxb41hSx7P4nAOU?si=xBjhBnMNQse-DbtISdGzow)
 
-![](/https://nnamdi.net/content/images/2022/05/image-3.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515977539-image-3.png)
 
 ## Aligning DevRel with Your Business Stakeholders
 
@@ -175,7 +175,7 @@ twitter_image: ""
 
 -   [Event page](https://deepdives.devrelcon.dev/workshops/aligning-devrel-with-your-business-stakeholders/)
 
-![](/https://nnamdi.net/content/images/2022/05/image-1.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515973785-image-1.png)
 
 ## What is Weighted ACV? – Metric Stack
 
@@ -184,7 +184,7 @@ twitter_image: ""
 -   [Podcast](https://www.youtube.com/watch?v=b3gBxsdCyw0)
 -   [Summary](https://www.klipfolio.com/blog/what-is-weighted-acv)
 
-![](/https://nnamdi.net/content/images/2022/04/12---Nnamdi-Iregbulem.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515956134-12---Nnamdi-Iregbulem.png)
 
 ## How The Modern Data Stack Is Going Real-Time
 
@@ -192,7 +192,7 @@ twitter_image: ""
 
 -   [Guest Blog](https://news.crunchbase.com/news/real-time-modern-data-stack/)
 
-![](/https://nnamdi.net/content/images/2022/05/image.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515979596-image.png)
 
 ## What VCs miss about SaaS revenue
 
@@ -200,7 +200,7 @@ twitter_image: ""
 
 -   [Interview](https://www.protocol.com/enterprise/lightspeed-vc-saas-revenue)
 
-![](/https://nnamdi.net/content/images/2022/04/image.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515961525-image.png)
 
 ## Build vs Buy | DataOps Unleashed 2022
 
@@ -208,7 +208,7 @@ twitter_image: ""
 
 -   [Video](https://dataopsunleashed.com/2022-2/buildvsbuy/)
 
-![](/https://nnamdi.net/content/images/2022/02/image.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515932682-image.png)
 
 ## Weighted ACV | MetricHQ
 
@@ -224,7 +224,7 @@ twitter_image: ""
 -   [Slides](https://docs.google.com/presentation/d/1i0ttzn6u7pgZ0Y8DUhmSFinyfjgjLqJoSUn4BO63ad8/edit?usp=sharing)
 -   [Video](https://www.youtube.com/watch?v=_Q7i0ZKeTz8)
 
-![](/https://nnamdi.net/content/images/2021/08/Nnamdi-Iregbulem.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515864379-Nnamdi-Iregbulem.png)
 
 ## Pitching Your Enterprise Software Startup with Lightspeed’s Nnamdi Iregbulem
 
@@ -238,7 +238,7 @@ twitter_image: ""
 
 -   [Event page](https://www.industryconference.com/virtual)
 
-![](/https://nnamdi.net/content/images/2021/05/image.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515849047-image.png)
 
 ## Venture Games Podcast by Chris Quaidoo
 
@@ -246,13 +246,13 @@ twitter_image: ""
 
 -   [Podcast](https://open.spotify.com/episode/2p9OMbLE4RRDvCFrq2wldm?si=UiFhbhiARjSeJE_FcHBnlw)
 
-![](/https://nnamdi.net/content/images/2021/03/image.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515827032-image.png)
 
 ## Views by Pol Fañanás & Gerard Garcia
 
 -   [Interview](https://views.substack.com/p/nnamdiiregbulem)
 
-![](/https://nnamdi.net/content/images/2020/12/image.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515824233-image.png)
 
 ## Igbopedia Podcast
 
@@ -261,7 +261,7 @@ twitter_image: ""
 -   [Podcast](https://open.spotify.com/episode/4gl2cUBR4MdWFzKYaHgb3D)
 -   [Igbopedia Instagram](https://www.instagram.com/p/CFd4Gx6JvWf/)
 
-![](/https://nnamdi.net/content/images/2020/11/119985712_667820227170903_4758538190186304063_n.jpg)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515819679-119985712_667820227170903_4758538190186304063_n.jpg)
 
 ## The State of Black Software Development
 
@@ -279,4 +279,4 @@ twitter_image: ""
 -   [Write-up](https://nnamdi.net/highest-paid-software-developer/)
 -   [Slides](https://docs.google.com/presentation/d/14v-eLdpu2il8AMXU2a8rC4Nc4qaB2OyKTt6dALDhgJA/edit?usp=sharing)
 
-[![chart](https://nnamdi.net/content/images/2019/01/years_coding.png)](https://docs.google.com/presentation/d/14v-eLdpu2il8AMXU2a8rC4Nc4qaB2OyKTt6dALDhgJA/edit?usp=sharing)
+[![chart](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515731112-years_coding.png)](https://docs.google.com/presentation/d/14v-eLdpu2il8AMXU2a8rC4Nc4qaB2OyKTt6dALDhgJA/edit?usp=sharing)

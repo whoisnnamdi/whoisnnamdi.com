@@ -101,7 +101,7 @@ For fine-tuning, a different procedure is used for generation and classification
 
 The MARGE model ends up with 963M parameters, more than most of its comparison set of "the strongest available multi-lingual pre-trained models" ([mBERT](https://arxiv.org/abs/1810.04805?source=post_page), [XLM](https://arxiv.org/abs/1901.07291), [XLM-R](https://arxiv.org/abs/1911.02116), [MMTE](https://arxiv.org/abs/1909.00437), [mBART](https://arxiv.org/abs/2001.08210)), but is trained on fewer languages and a medium-sized dataset and a medium amount of GPU pre-training days:
 
-![image-20200927144908141](/https://nnamdi.net/content/images/2020/09/image-20200927144908141.png)
+![image-20200927144908141](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515773255-image-20200927144908141.png)
 
 ## Experiments and results
 
@@ -111,29 +111,29 @@ The papers show the wide applicability of MARGE and its paraphrasing pre-trainin
 
 The authors demonstrate the models strong translation performance across a number of language pairs and within both zero-shot and fine-tuned settings, achieving 35.8 BLEU in the case of unsupervised translation from German into English on the [WMT19 dataset](http://www.statmt.org/wmt19/), the highest score ever achieved by a system trained with no bitext (as in iterative back-translation). Performance does vary significantly by language:
 
-![image-20200927144848658](/https://nnamdi.net/content/images/2020/09/image-20200927144848658.png)
+![image-20200927144848658](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515771521-image-20200927144848658.png)
 
 Supervised translation with labeled bitext improves performance further, achieving competitive results against mBART:
 
-![image-20200927145026936](/https://nnamdi.net/content/images/2020/09/image-20200927145026936.png)
+![image-20200927145026936](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515775340-image-20200927145026936.png)
 
 ### Cross-lingual Sentence Retrieval
 
 It would make sense that a model trained retrieve similar documents, sometimes in a different language, would perform well on a sentence retrieval task. Confirming this intuition, MARGE outperforms other unsupervised models by almost 10 points on the [BUCC2018 benchmark](https://comparable.limsi.fr/bucc2018/bucc2018-task.html), though the embeddings are tuned somewhat on BUCC development data:
 
-![image-20200927144959013](/https://nnamdi.net/content/images/2020/09/image-20200927144959013.png)
+![image-20200927144959013](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515774293-image-20200927144959013.png)
 
 ### Summarization
 
 The authors evaluate the model's performance on monolingual sequence-to-sequence generation via text summarization tasks sourced from the [MLSum](https://arxiv.org/abs/2004.14900) dataset. Performance is compared across multiple languages, and the extractive oracle performance level is shown for comparison-sake. What's impressive here is that MARGE's summaries are inherent abstractive - the model is generating summaries in its own words, not simply extracting words from the input text - and yet it manage to outperform an extractive mBERT model on a fundamentally extractive performance metric ([ROUGE-L](https://en.wikipedia.org/wiki/ROUGE_\(metric\))). This is not trivial to do:
 
-![image-20200927145105128](/https://nnamdi.net/content/images/2020/09/image-20200927145105128.png)
+![image-20200927145105128](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515776930-image-20200927145105128.png)
 
 ### Question answering and paraphrasing
 
 The [MLQA dataset](https://arxiv.org/abs/1910.07475) is used to test MARGE's performance on question answering. MARGE what over or underperforms XLM-R depending on the language, on average underperforming by a small margin (as measured by F1 score). Paraphrasing is tested on the [PAWS-X paraphrase detection dataset](https://arxiv.org/abs/1908.11828), where the model is trained on English and zero-shot transfer is tested on other languages. MARGE demonstrates SOTA performance relative to XLM-R:
 
-![image-20200927145133850](/https://nnamdi.net/content/images/2020/09/image-20200927145133850.png)
+![image-20200927145133850](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515778248-image-20200927145133850.png)
 
 ## Conclusion
 

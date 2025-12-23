@@ -46,7 +46,7 @@ We must do better.
 
 ## Something’s in the water
 
-![training-data-contamination](https://nnamdi.net/content/images/2024/05/training-data-contamination.jpeg)
+![training-data-contamination](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516274212-training-data-contamination.jpeg)
 
 The first dirty secret of AI benchmarks is quite literally, dirty: **training data contamination**.
 
@@ -98,7 +98,7 @@ There’s a balance we must strike. To the degree the test actually tests what y
 
 ## Closed source benchmarks
 
-![closed-source-benchmarks](https://nnamdi.net/content/images/2024/05/closed-source-benchmarks.jpeg)
+![closed-source-benchmarks](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516265094-closed-source-benchmarks.jpeg)
 
 [I’m a big fan of open source](https://whoisnnamdi.com/portfolio/) when it comes to software. I’m a big fan of closed source when it comes to standardized testing.
 
@@ -124,7 +124,7 @@ No exam is perfect — as we know, standardized tests have their flaws. But we�
 
 It’s why I was so excited to lead [Patronus AI’s](https://www.patronus.ai/) [seed round](https://lsvp.com/stories/building-with-patronus-ai-automated-ai-evaluation/) last year, and it’s why I’m even more pumped now that they’ve raised a [$17M Series A](https://www.patronus.ai/blog/announcing-our-17-million-series-a).
 
-![patronus-series-a](https://nnamdi.net/content/images/2024/05/patronus-series-a.jpeg)
+![patronus-series-a](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516270273-patronus-series-a.jpeg)
 
 <div class="subscribe-form">
 <h3 class="subscribe-form-title">Receive my new long-form essays</h3>

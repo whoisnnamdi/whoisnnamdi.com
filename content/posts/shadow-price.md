@@ -43,7 +43,7 @@ What does it all mean?
 
 Valuations and capital invested in venture have both grown substantially since 2010:
 
-![val_cap](https://nnamdi.net/content/images/2023/06/val_cap.png)
+![val_cap](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516205819-val_cap.png)
 
 Interestingly, they trend together. As one rises, the other does too. Same in the other direction.
 
@@ -51,7 +51,7 @@ It's not a perfect relationship, but there's clearly something tying them togeth
 
 In fact, you can predict average valuations from the capital invested each quarter. The below chart plots actual valuations over time against what we'd predict based on capital deployment – a simple regression of valuations on funding:
 
-![val_pred](https://nnamdi.net/content/images/2023/06/val_pred.png)
+![val_pred](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516208909-val_pred.png)
 
 **Capital invested predicts the average valuation of deals done each quarter.**
 
@@ -95,7 +95,7 @@ In other words, even after collapsing, valuations are still too high relative to
 
 We can visualize this growing "error" – the percentage difference between actual and predicted valuations – shown below. Above the zero line means valuations are too high, below means valuations are too low:
 
-![coint_res](https://nnamdi.net/content/images/2023/06/coint_res.png)
+![coint_res](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516200524-coint_res.png)
 
 **Current valuations are ~60% too high relative to the volume of capital being deployed.** There just aren't enough dollars sloshing around to support these prices, at least based on the 10 years of venture history prior to the go-go days of 2021.
 
@@ -119,7 +119,7 @@ That's straightforward enough – just run a regression of valuation and funding
 
 Turns out, valuations correct past deviations (left chart), funding does not (right chart):
 
-![err_corr](https://nnamdi.net/content/images/2023/06/err_corr.png)
+![err_corr](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516203476-err_corr.png)
 
 When valuations and funding volume drift apart, it's valuations that come running back:
 

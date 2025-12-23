@@ -88,7 +88,7 @@ Simply run a regression of future revenue on current over/underperformance! The 
 
 The chart below plots revenue growth over four quarters against revenue growth today for 35 public software companies, demeaned by the respective average rate for each company. Positive values mean revenue came in higher than normal, and vice versa:
 
-![future](https://nnamdi.net/content/images/2022/09/future.png)
+![future](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516057505-future.png)
 
 **Future and current revenue over/underperformance are positively related.** The coefficient is 1.16, implying **a $1 beat today forecasts a $1.16 beat four quarters from now.** The exact reverse is true of a miss – a dollar of missed revenue this quarter lowers our expected revenue in four quarters by $1.16.
 
@@ -98,7 +98,7 @@ One quick aside since I know what certain folks are thinking here: I am not mere
 
 So far, the short-termists seem to be winning. But one year is not a long-time – perhaps mean reversion takes longer? Let's check by extending the analysis to eight and twelve quarters out. That's too crowded for a single scatterplot, so I'll summarize the results and only show the coefficients at each horizon:
 
-![forever-3](https://nnamdi.net/content/images/2022/09/forever-3.png)
+![forever-3](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516054696-forever-3.png)
 
 If anything, the case for short-termism only gets stronger. The two-year revenue forecast shifts by $1.25 for a $1 beat/miss today. The three-year forecast changes by $1.43.
 
@@ -108,7 +108,7 @@ Now, dollars are a nice unit of account, but they're admittedly hard to contextu
 
 Let's do the same analysis with percentages instead. What impact does a 1% beat/miss have on future revenue, also in percentage terms?
 
-![persists](https://nnamdi.net/content/images/2022/09/persists.png)
+![persists](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516061204-persists.png)
 
 Persistence persists, but this tells a slightly different story. Revenue three years from now is still 0.85% higher/lower than it would have otherwise been.
 
@@ -128,7 +128,7 @@ In that light, these results are expected. If a change in revenue today didn't p
 
 For some intuition, look at those [cohort revenue charts](https://thetaclv.com/resource/c3/) that have become so popular among public software companies (at least among those with good retention dynamics to show off):
 
-![Pasted-image-20220910172026](https://nnamdi.net/content/images/2022/09/Pasted-image-20220910172026.png)
+![Pasted-image-20220910172026](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516059837-Pasted-image-20220910172026.png)
 
 Missing a quarter means losing a slice of the cohort stack. Assuming positive net dollar retention, that slice would have grown over time; the opportunity cost of weak performance grows over time.
 

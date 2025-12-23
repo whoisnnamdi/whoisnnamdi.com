@@ -54,7 +54,7 @@ $$\text{ACV} = \frac{\text{Total Annual Contract Value}}{\text{Total Customers}}
 ACV tells you something about the typical _customer_. Products with small ACVs tend to serve smaller, more fickle customers with a high probability of churning, like small businesses and startups. High ACV products address the needs of larger companies with more mission critical use cases, leading to less churn.
 
 However, while ACV tells you something about how the typical customer might behave, it doesn't tell you much about how the typical _dollar of revenue_ behaves. If 70% of the revenue comes from 20% of the customers, then for the purposes of analyzing revenues at a point in time, it's really only that subset of customers that matter. Such [extreme concentration](https://whoisnnamdi.com/software-fat-tailed/#the-evidence) is not unusual for public software companies:  
-![Pasted image 20211113192246](https://nnamdi.net/content/images/2020/10/share.png)
+![Pasted image 20211113192246](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515809416-share.png)
 
 > The implied top-20% and top-1% revenue concentration are quite large for most companies (blue = top 20%, red = top 1%)
 > 
@@ -76,7 +76,7 @@ Rather than the exception, high concentration is the _norm_ in certain verticals
 Unfortunately, the standard ACV metric is incomparable across companies with vastly different customer concentration. A company with many small or "free tier" customers will have an artificially low ACV metric, even if contract sizes are reasonably high among its paying customers. You can't naively compare such a skewed company to another business where every customer is small.
 
 This is why you see public software companies with tons of bottom up but low-paying usage report ACV or other customer metrics including only the customers larger than some nominal spending level, like $5,000 (screenshot from the [GitLab S-1](https://sec.report/Document/0001628280-21-019932/gitlab-sx1a2.htm)):  
-![Pasted-image-20211114131342](https://nnamdi.net/content/images/2022/01/Pasted-image-20211114131342.png)
+![Pasted-image-20211114131342](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515929823-Pasted-image-20211114131342.png)
 
 Using arbitrary thresholds is a clunky way of dealing with this problem, as companies can pick any value they want. **ACV calculations with different thresholds are effectively incomparable.**
 

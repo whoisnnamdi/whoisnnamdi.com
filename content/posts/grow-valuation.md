@@ -66,7 +66,7 @@ Regardless of the specific cause, valuation multiples eventually [mean-revert](h
 
 Let's start with _subjective expectations_. When [researchers](https://onlinelibrary.wiley.com/doi/10.1111/jofi.13016) decompose variation in price-earnings (PE) ratios into changing expectations about cash flows, discount rates (e.g. expected returns), and future PE ratios using the Campbell-Shiller Decomposition, they find fluctuating cash flow expectations (CF in the table below) explain more than 90% of all movement in valuations ratios, while expected returns (DR) explain little:
 
-![Pasted-image-20211105145313](https://nnamdi.net/content/images/2021/11/Pasted-image-20211105145313.png)
+![Pasted-image-20211105145313](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515915596-Pasted-image-20211105145313.png)
 
 > “In the 2003 to 2015 sample, **one-year subjective earnings growth expectations account for virtually all (94%) price-earnings ratio movements.**”  
 > ...  
@@ -74,7 +74,7 @@ Let's start with _subjective expectations_. When [researchers](https://onlinelib
 
 [Another paper](https://www.ssrn.com/abstract=3740792) breaks down the expected returns vs growth dynamic between different classes of market participants, finding that sell-side analysts, institutional investors, and corporate CFOs all use growth expectations to explain fluctuating valuations (\\(g\_t\\) in the table below) rather than expected returns (\\(\\mu\_t\\)):
 
-![Pasted-image-20211105145501](https://nnamdi.net/content/images/2021/11/Pasted-image-20211105145501.png)
+![Pasted-image-20211105145501](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515917528-Pasted-image-20211105145501.png)
 
 > “**both Wall Street and Main Street believe... the expected cash flow process is the main economic force driving asset price variations**”  
 > ...  
@@ -90,7 +90,7 @@ Investors see valuations move and ascribe these gyrations to changing expectatio
 
 Now we turn to _objective reality_. The chart below plots expected (solid blue) and realized (dotted green) 1-year earnings growth of the S&P 500 over the last 40 years. Expected earnings growth consistently exceeds actual growth, implying investors tend to overestimate earnings growth. Notice as well how expected earnings growth tend to show "upside volatility", whereas actual earnings show more downside volatility.
 
-![Pasted-image-20211031150624](https://nnamdi.net/content/images/2021/11/Pasted-image-20211031150624.png)
+![Pasted-image-20211031150624](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515912609-Pasted-image-20211031150624.png)
 
 > “**Earnings growth expectations typically fail to predict the change in earnings during busts**, but they do tend to predict recoveries and track future earnings growth reasonably well during normal times.” — [Subjective Cash Flow and Discount Rate Expectations](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3841696)
 
@@ -98,7 +98,7 @@ Investors rarely predict poor earnings growth in advance. They often correctly p
 
 When financial researchers do look-backs, they find that **high valuation multiples precede low returns**. In fact, they literally _predict_ lower returns. Per finance legend [John Cochrane](https://www.johnhcochrane.com/)'s [2011 Presidential Address at the American Finance Association](https://www.youtube.com/watch?v=ZDsOiftolUI) (apologies for the pixelated 360p screenshot, YouTube was less generous back then):
 
-![Pasted-image-20211105153730](https://nnamdi.net/content/images/2021/11/Pasted-image-20211105153730.png)
+![Pasted-image-20211105153730](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515919830-Pasted-image-20211105153730.png)
 
 > "These regressions are telling us that **all variation in price-dividend ratios, all of that volatility, corresponds to variations in expected returns.** None of it corresponds to variation in expected dividend growth and none to rational bubbles or prices that are ever higher."  
 > ...  
@@ -108,7 +108,7 @@ High valuation multiples correspond to lower returns, and vice versa. After peri
 
 Despite this sobering reality, **investors are extremely stubborn about future return expectations**, even in the face of rising prices. Undeterred by nose-bleed valuations, they continue to expect roughly the same return in all periods, leading actual returns (dotted green) to be much more volatile than expected returns (solid blue), which look nearly constant in comparison (right-hand chart):
 
-![Pasted-image-20211031153941](https://nnamdi.net/content/images/2021/11/Pasted-image-20211031153941.png)
+![Pasted-image-20211031153941](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515914266-Pasted-image-20211031153941.png)
 
 Equity investors always expect the same rate of return, regardless of how high or low valuations multiples are today, which doesn't make a ton of sense.
 
@@ -122,7 +122,7 @@ This data only covers public equity investors. It'd be fair to point out that gr
 
 That said, I find it hard to believe the future for startups could brighten so dramatically, practically overnight:
 
-![Pasted-image-20211013191138](https://nnamdi.net/content/images/2021/11/Pasted-image-20211013191138.png)
+![Pasted-image-20211013191138](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515911164-Pasted-image-20211013191138.png)
 
 If anything, the high variability of startup growth may be a cognitive trap, seducing us to think that herculean growth alone can shoulder weighty valuations.
 

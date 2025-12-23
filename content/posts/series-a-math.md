@@ -72,7 +72,7 @@ $$\text{Fundraising Success} = \text{Traction} + \text{Monetization}$$
 
 There's a threshold, a sort of activation energy, required to successfully raise a round at the early-stage. Hit this bar and you're in the clear. Miss it, and you're not:
 
-![1](https://nnamdi.net/content/images/2022/06/1.png)
+![1](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515981778-1.png)
 
 Let's make up some numbers.
 
@@ -104,7 +104,7 @@ The multiplicative model has an important implication however – it disproporti
 
 To successfully fundraise, low monetization requires extraordinary traction, and vice versa:
 
-![2](https://nnamdi.net/content/images/2022/06/2.png)
+![2](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515982782-2.png)
 
 Here's an analogy – a stock that drops by 50% (OK, maybe more reality than analogy) must rise by much more than 50% to reach its original price level, since returns are multiplicative (50% x 150% is only 75%). Likewise, **low monetization requires more than proportionally higher traction** to make up for it.
 
@@ -120,7 +120,7 @@ Many founders think investors will evaluate them with the linear, additive model
 
 This clash of reality vs. expectations creates a "[no man's land](https://en.wikipedia.org/wiki/No_man%27s_land)" between the additive and multiplicative perspectives: founders think they'll be fine when they go out to fundraise, only to be rudely mugged by the valley reality:
 
-![3](https://nnamdi.net/content/images/2022/06/3.png)
+![3](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515984294-3.png)
 
 I've noticed many startups in the space between the linear and convex curves attempting to raise Series A rounds lately. **This invariably goes badly.** The founders are surprised by the lack of investor interest and end up taking much longer to raise their round, at a lower valuation than expected.
 

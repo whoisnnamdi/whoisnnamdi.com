@@ -39,7 +39,7 @@ I want to explore this vast darkness.
 
 ## Who knew there was such skew?
 
-![avg](https://nnamdi.net/content/images/2022/07/avg.png)  
+![avg](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515993502-avg.png)  
 _Note: this analysis only includes public software companies that traded continuously from January 2020 to May 2022. Companies that went public or got acquired during that period are excluded._
 
 It's been said before, and it's worth repeating: **averages don't tell the whole story.**
@@ -56,7 +56,7 @@ A single line at best summarizes the data and invariably misses important detail
 
 Let's zoom in:
 
-![muldist](https://nnamdi.net/content/images/2022/07/muldist.png)
+![muldist](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516002387-muldist.png)
 
 Like [software monetization](https://whoisnnamdi.com/software-fat-tailed/), software valuations are [fat-tailed](https://en.wikipedia.org/wiki/Fat-tailed_distribution):
 
@@ -67,7 +67,7 @@ This tail skews the distribution of multiples and increases the variance between
 
 That variance changes over time, rising and falling:
 
-![mulvar](https://nnamdi.net/content/images/2022/07/mulvar.png)
+![mulvar](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516003551-mulvar.png)
 
 _Note: for statistical reasons I won't explain here, the remainder of this essay will refer to log-transformed software multiples instead of their raw values._
 
@@ -75,7 +75,7 @@ I'd love to explain this dynamic.
 
 It's at this point that any good software investor turns to ol' reliable: regressions of valuation multiples on revenue growth and profitability:
 
-![gm](https://nnamdi.net/content/images/2022/07/gm.png)
+![gm](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515998258-gm.png)
 
 We see a similar, if subdued, pattern in the variance that can be explained by financial performance. But notice how much variance our standard regression leaves on the table, unexplained.
 
@@ -83,11 +83,11 @@ Growth and profitability do not perfectly predict valuations.
 
 I call this unexplained variance, the "dark matter" of software valuations:
 
-![varexp](https://nnamdi.net/content/images/2022/07/varexp.png)
+![varexp](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516016023-varexp.png)
 
 Growth and profitability never explain much more than half of the variation in multiples:
 
-![pvarexp](https://nnamdi.net/content/images/2022/07/pvarexp.png)
+![pvarexp](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516007392-pvarexp.png)
 
 What's hiding down in the deep, dark depths of the software universe?
 
@@ -101,7 +101,7 @@ Let's remove their effect and focus now on the remaining, residual, variance in 
 
 Here's how it looks:
 
-![resdist](https://nnamdi.net/content/images/2022/07/resdist.png)
+![resdist](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516010310-resdist.png)
 
 The fat tail is less severe but still persists, even after accounting for financial performance.
 
@@ -109,7 +109,7 @@ Many companies hover near zero, which is to say their valuations are perfectly p
 
 This gap between expectations and reality is quite persistent. Over/undervaluation _does not_ meaningfully mean-revert, even over multiple years:
 
-![resplot](https://nnamdi.net/content/images/2022/07/resplot.png)
+![resplot](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516014439-resplot.png)
 
 -   A 50% overvalued company in January 2020 by May 2022 still traded **~40% above** the valuation implied by its growth and profitability
 -   A 50% undervalued company continued to sag **~35% below** its predicted valuation by the end of this period
@@ -121,7 +121,7 @@ Some did see major revisions:
 
 In addition to individual companies, the overall distribution of unexplained "valuation inequality" held in place the past few years, with some fluctuations:
 
-![percplot](https://nnamdi.net/content/images/2022/07/percplot.png)
+![percplot](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516005849-percplot.png)
 
 -   Investors value the 90th percentile company **~75% more** than you'd expected from its growth and profitability
 -   Meanwhile, they peg the 10th percentile company **~50% lower** than you'd predict.
@@ -129,7 +129,7 @@ In addition to individual companies, the overall distribution of unexplained "va
 
 Remember, _we've already accounted for revenue growth and cash flow_, yet we still see massive variability:
 
-![resgm](https://nnamdi.net/content/images/2022/07/resgm.png)
+![resgm](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516011874-resgm.png)
 
 -   On the revenue side, among companies growing ~50% annually we see valuation gaps as large as **~70%** (i.e., same growth, yet one company is worth 70% more).
 -   It's even worse for software companies growing closer to 20% year-over-year, where the gaps are even bigger: the most valuable company is worth **~2.5 times** the least valuable.
@@ -151,7 +151,7 @@ A full explanation of PCA is beyond the scope of this essay. Just know that, lik
 
 When I run PCA, here's what I find:
 
-![fac](https://nnamdi.net/content/images/2022/07/fac.png)
+![fac](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515995345-fac.png)
 
 PCA spits out two latent "factors" that highly explain our up-till-now unexplained valuation puzzle.
 
@@ -161,7 +161,7 @@ After staring at "Factor 1" for a while, it hit me – the line looks eerily sim
 
 Folks, we have a winner:
 
-![gdpfac](https://nnamdi.net/content/images/2022/07/gdpfac.png)
+![gdpfac](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515996847-gdpfac.png)
 
 Beautiful.
 
@@ -177,7 +177,7 @@ I had less success figuring out the second factor. If you have any ideas, please
 
 With PCA, it's customary to plot the data against the first two factors, with the X and Y axes representing each company's correlation with the factor:
 
-![load](https://nnamdi.net/content/images/2022/07/load.png)
+![load](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515999882-load.png)
 
 -   Companies on the right side correlative _positively_ with the GDP factor, suggesting they've benefitted disproportionately from the COVID bounce-back
 -   Conversely, stocks hovering to the left had _less_ to gain from the rebound
@@ -195,7 +195,7 @@ Now let's come full circle and incorporate the GDP factor into our previous regr
 
 Here's what we get:
 
-![varexp2](https://nnamdi.net/content/images/2022/07/varexp2.png)
+![varexp2](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516018361-varexp2.png)
 
 The GDP factor helps explain some of the mysterious "dark matter" but not always the same amount:
 
@@ -206,7 +206,7 @@ The GDP factor helps explain some of the mysterious "dark matter" but not always
 
 Here's how it looks in [R-squared](https://www.investopedia.com/terms/r/r-squared.asp) terms:
 
-![pvarexpfac](https://nnamdi.net/content/images/2022/07/pvarexpfac.png)
+![pvarexpfac](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516009000-pvarexpfac.png)
 
 Still a lot of dark matter out there, but we've made great progress:
 

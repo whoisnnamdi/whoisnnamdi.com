@@ -70,7 +70,7 @@ Unfortunately, JVM expertise is in low supply outside of the Java/Scala develope
 
 Developers want streaming, but they don’t necessarily want to become Java (assuming they weren’t already familiar) or distributed systems experts. There is meaningful pent-up demand among developers for a non-JVM based streaming architecture to power modern real-time applications. Sizing this up, the Python and JavaScript communities alone could be an order of magnitude greater than the existing Kafka/Java population:
 
-![](/https://nnamdi.net/content/images/2021/05/No_JVM__Redpanda_vectorized_img.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515851679-No_JVM__Redpanda_vectorized_img.png)
 
 Written in C++, Redpanda needs no JVM and thus users need no JVM knowledge or expertise. This finally moves streaming technology away from Java, a big deal given how many data infrastructure technologies have been built around Java or the JVM over the years:
 
@@ -82,7 +82,7 @@ Real-time event streaming technologies are not always accessible to the typical 
 
 # Kafka compatibility
 
-![](/https://nnamdi.net/content/images/2021/05/0_rzLnKt-j8CZ6Ezd6.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515833048-0_rzLnKt-j8CZ6Ezd6.png)
 
 Too often, when new technology comes around it bifurcates the existing community in an attempt to grow adoption. This leaves individual developers and teams in the ensuing crossfire.
 
@@ -96,7 +96,7 @@ Further, Kafka API compatibility means that Redpanda users can continue to lever
 
 # WebAssembly
 
-![](/https://nnamdi.net/content/images/2021/05/The_future_of_streaming_Redpanda_vectorized_img.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515854093-The_future_of_streaming_Redpanda_vectorized_img.png)
 
 [WebAssembly](https://webassembly.org/), or WASM, is one of the most exciting up-and-coming technologies in software development today. WebAssembly lets developers write code in any major language, translate that code to the compact WASM format, and run it on the web with the high performance of a native application.
 
@@ -118,7 +118,7 @@ To better understand this, let’s talk cores and tails.
 
 # Hold my Coors, I mean, cores
 
-![](/https://nnamdi.net/content/images/2021/05/Hold_my_core_Redpanda_vectorized_img.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515837355-Hold_my_core_Redpanda_vectorized_img.png)
 
 Hardware is moving target, continuously evolving and improving. The last 15 years have been no exception. The underlying hardware targeted by streaming and message queue systems has changed meaningfully since the advent of real-time systems, opening up new opportunities for performance enhancements that take advantage of new physical resources.
 
@@ -132,7 +132,7 @@ Unfortunately, performance issues often “hide” in the tails of the latency d
 
 Because Vectorized built a new storage engine from scratch that removes much of the overhead in Kafka and can fully saturate the underlying device, Redpanda operates with stable tail latencies. This means architects get predictable performance in their applications and fewer unexpected spikes in latency.
 
-![](/https://nnamdi.net/content/images/2021/05/End-to-End_Latency_Percentiles_Redpanda_vectorized_img.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515835504-End-to-End_Latency_Percentiles_Redpanda_vectorized_img.png)
 
 This sort of reliability is difficult to achieve in JVM-based systems like Kafka. With a C++-based architecture and CPU-level optimizations, Redpanda achieves 19x better tail latency.
 

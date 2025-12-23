@@ -45,7 +45,7 @@ Let's focus on three examples to see what I mean: Zoom, Cloudflare, and Splunk.
 
 The solid lines below represent the ([log-transformed](https://people.duke.edu/~rnau/411log.htm)) quarterly revenue of each company. The dashed line represents a constant-growth linear trend based on their two-year _pre-COVID_ revenue trajectory. Since the scale is in logs, straight lines imply _constant quarter-over-quarter growth_:
 
-![trends](https://nnamdi.net/content/images/2022/08/trends.png)
+![trends](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516052426-trends.png)
 
 We see some interesting behavior as we cross the dashed line, which represents Q4 2019, the last quarter before COVID struck:
 
@@ -59,20 +59,20 @@ These symptoms run the gamut from manic to lethargic. Clearly, COVID was not a t
 
 We can repeat the above analysis for all public software companies with enough data to establish a two-year pre-COVID trend. Given the different revenue scales, for visualization purposes let's normalize by dividing each company's actual performance by its extrapolated trend. This gives us the relative revenue performance of each vs. trend:
 
-![deviation](https://nnamdi.net/content/images/2022/08/deviation.png)
+![deviation](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516025435-deviation.png)
 
 Each line represents performance vs. trend for one of fifty different public software companies.
 
 With this we can begin to see the rich variety of post-COVID outcomes. Let's highlight our three case studies once more:
 
-![equal](https://nnamdi.net/content/images/2022/08/equal.png)
+![equal](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516029909-equal.png)
 
 -   Notice how dramatic and unrepresentative Zoom is among all software companies. **Zoom peaks at ~150% above trend** before gliding back down to Earth
 -   On the other hand, Splunk comes out as one of the worst performers, among others like Alteryx and Benefitfocus
 
 There's a lot going on here, making it difficult to get a sense of the underlying distribution. Let's flip the axes and look at it a different way:
 
-![dispersion](https://nnamdi.net/content/images/2022/08/dispersion.png)
+![dispersion](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516027374-dispersion.png)
 
 The above chart plots histograms of performance relative to trend across public software companies from Q1 2020 onward:
 
@@ -84,7 +84,7 @@ Notice the skew: **a handful of winners among a majority of losers.**
 
 Another way to look at the data is to calculate the proportion of software companies that climbed above their pre-COVID trend over time:
 
-![aversion](https://nnamdi.net/content/images/2022/08/aversion.png)
+![aversion](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516019765-aversion.png)
 
 -   Initially, only a quarter of software vendors were above trend
 -   One year out, one-third of companies have returned to trend
@@ -98,7 +98,7 @@ A key point I want to drive home: mean reversion is a strong force, but **COVID 
 
 Finally, let's summarize those performance distributions by their means and medians:
 
-![mm-1](https://nnamdi.net/content/images/2022/08/mm-1.png)
+![mm-1](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516039839-mm-1.png)
 
 This is what I've been building up to – **COVID materially impaired the typical software company, knocking it off trend**:
 

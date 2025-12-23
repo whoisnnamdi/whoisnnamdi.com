@@ -53,7 +53,7 @@ It's Jay Powell's world. We're just living in it.
 
 The Federal Reserve's zero interest rate policy (ZIRP) has come to an end:
 
-![int_rate](https://nnamdi.net/content/images/2023/05/int_rate.png)
+![int_rate](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516178670-int_rate.png)
 
 It's no secret interest rates affect tech valuations:
 
@@ -63,10 +63,10 @@ So the corporate finance logic goes, companies are worth the [present value](htt
 
 As much as investors like to ignore it, there's an obvious connection between valuations and interest rates:
 
-![Pasted-image-20230321221512](https://nnamdi.net/content/images/2023/05/Pasted-image-20230321221512.png)  
+![Pasted-image-20230321221512](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516192967-Pasted-image-20230321221512.png)  
 Source: [Redpoint Ventures](https://docs.google.com/presentation/d/1Hyn4FWHSNRrWJeddi0BMEQIMlmXy2SNj50T8jJcrKbw/edit#slide=id.g11953bc14ff_2_116)
 
-![Pasted-image-20230413194408](https://nnamdi.net/content/images/2023/05/Pasted-image-20230413194408.png)  
+![Pasted-image-20230413194408](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516196109-Pasted-image-20230413194408.png)  
 Source: [Bessemer Venture Partners](https://www.bvp.com/atlas/state-of-the-cloud-2023)
 
 These charts reference publicly traded companies. However, I've never seen anyone quantify the sensitivity of _private_ tech valuations. In other words, "if interest rates fall by X percentage points, venture valuations rise by Y%," and vice versa:
@@ -77,7 +77,7 @@ These charts reference publicly traded companies. However, I've never seen anyon
 
 Meanwhile, interest rates could affect more than just valuations. Recall [a few essays ago](https://whoisnnamdi.com/its-valuations/) I introduced the following framework for thinking about the individual "components" of a dollar of venture capital funding – deals, valuation, and dilution:
 
-![decomposition_excalidraw](https://nnamdi.net/content/images/2023/05/decomposition_excalidraw.png)
+![decomposition_excalidraw](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516162014-decomposition_excalidraw.png)
 
 Interest rates could affect all these variables, and we should want to know how:
 
@@ -91,7 +91,7 @@ A quick note before we proceed. It turns out, the Federal Reserve is mostly pred
 
 For example, if the one-year Treasury rate declines by 0.5%, the market may have only expected a 0.25% decline based on current economic conditions, leaving 0.25% unexpected:
 
-![int_rate_excalidraw](https://nnamdi.net/content/images/2023/05/int_rate_excalidraw.png)
+![int_rate_excalidraw](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516176997-int_rate_excalidraw.png)
 
 OK – that's the most complicated concept you need to understand. With that out of the way, let's jump to the results.
 
@@ -104,7 +104,7 @@ The following charts trace the effect of a 0.25 percentage point or 25 basis poi
 
 The effects are quite strong, especially on deal flow and valuations:
 
-![lp_1](https://nnamdi.net/content/images/2023/05/lp_1.png)
+![lp_1](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516181469-lp_1.png)
 
 -   Deal activity rises for six quarters before receding back down to zero after ten quarters. Peak impact is substantial – **about 10% more deals are getting done six quarters out**
 -   Valuations take longer to peak but the size of the effect is more extreme; **seven quarters out valuations are up ~25%**, falling back to their original level after three years
@@ -122,7 +122,7 @@ This has pros and cons:
 
 Let's drive that point home by visualizing the same analysis but for an increase in interest rates rather than a decrease:
 
-![lp_1n](https://nnamdi.net/content/images/2023/05/lp_1n.png)
+![lp_1n](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516184651-lp_1n.png)
 
 Rising rates squeeze the life out of venture capital. Per the logic I outlined in my [last essay](https://whoisnnamdi.com/not-enough-startups/), we know this reflects reduced investor demand, since quantities and prices drift together:
 
@@ -130,13 +130,13 @@ Rising rates squeeze the life out of venture capital. Per the logic I outlined i
 
 The (multiplicative) aggregation of these individual sub-effects yields the overall effect on venture funding:
 
-![lp_2](https://nnamdi.net/content/images/2023/05/lp_2.png)
+![lp_2](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516187735-lp_2.png)
 
 -   Funding builds up for almost two years, peaks at nearly 30% above baseline, then falls back to zero by about 11 quarters out.
 
 With rising rates, funding falls just over 20%:
 
-![lp_2n](https://nnamdi.net/content/images/2023/05/lp_2n.png)
+![lp_2n](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516190086-lp_2n.png)
 
 Perhaps it's obvious, but these are extremely large effects!
 
@@ -152,7 +152,7 @@ With our previous estimates, we can run a backwards-looking "attribution analysi
 
 First up: deal activity. In red I plot an index of the overall growth in venture deal activity since early 2014, averaged across funding stages, and in blue I plot the portion attributable to unexpected interest rate shocks:
 
-![hd_deals](https://nnamdi.net/content/images/2023/05/hd_deals.png)
+![hd_deals](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516167290-hd_deals.png)
 
 -   **Interest rates explain nearly the entire explosion of venture deal activity over the last few years.**
 
@@ -160,7 +160,7 @@ Of all the charts, this is the one I probably spent the most time staring at and
 
 Let's do the same for valuations (notice the bigger scale here):
 
-![hd_valuation](https://nnamdi.net/content/images/2023/05/hd_valuation.png)
+![hd_valuation](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516175139-hd_valuation.png)
 
 -   The higher rates of the 2018 era pushed down valuations, but the effect reversed as rates fell heading into 2020. **Interest rates on their own doubled valuations.**
 -   However, the valuation inflation was so extreme that interest rates can't explain it all, implying more had to be going on.
@@ -171,14 +171,14 @@ Let's do the same for valuations (notice the bigger scale here):
 
 Here's dilution:
 
-![hd_dilution](https://nnamdi.net/content/images/2023/05/hd_dilution.png)
+![hd_dilution](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516171162-hd_dilution.png)
 
 -   Dilution is noisier, complicating interpretation. The way to read this chart is that interest rates increased dilution through 2019 but afterward exerted downward pressure on dilution.
 -   From 2019 through 2022, interest rates drove dilution down 20%, which is exactly how much they declined in total, therefore **accounting for nearly all of the fall.**
 
 Putting it all together, here's what our little attribution methodology has to say about the effect of interest rates on overall VC funding:
 
-![hd_capital](https://nnamdi.net/content/images/2023/05/hd_capital.png)
+![hd_capital](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516164359-hd_capital.png)
 
 -   From 2014 through the top of the market in 2021, **interest rates accounted for a 200% (!!!) expansion in venture funding.**
 -   As with valuations, the run up in venture funding was too extreme to be completely explained by interest rates.

@@ -40,7 +40,7 @@ In this way, preferred equity exists in a constant state of [**quantum superposi
 
 ## Schrödinger's balance sheet
 
-![Schrodingers_cat](https://nnamdi.net/content/images/2022/02/Schrodingers_cat.svg)
+![Schrodingers_cat](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515940895-Schrodingers_cat.svg)
 
 [Erwin Schrödinger](https://en.wikipedia.org/wiki/Erwin_Schr%C3%B6dinger) was a renowned physicist and one of the first to study the strange world of quantum theory. Among us mortals, he is most known for his famous thought experiment, eponymously called "[Schrödinger's cat](https://en.wikipedia.org/wiki/Schr%C3%B6dinger%27s_cat)." In it, he posited that a cat sitting in a box along with a flask of poison could be considered to be both dead \*and\* alive until we open the box to find out if the flask has shattered, killing the poor kitty.
 
@@ -69,7 +69,7 @@ Preferred equity is more valuable to investors than common equity, so they're wi
 In this way, startups become **synthetically levered**. No debt appears on the balance sheet, yet the returns of the common equity (really anyone below the most senior preferred stock) get juiced by the lower cost of capital achieved via preferred equity.
 
 The value of preferred stock can be inferred from its cost, i.e. its premium relative to common equity. The preferred equity premium is rarely laid out explicitly, but researchers at Stanford and the University of British Columbia estimate that these days [**preferred equity is 50% more valuable than common equity**](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3725240) and was even more valuable in the past:  
-![Pasted-image-20211201152745](https://nnamdi.net/content/images/2022/02/Pasted-image-20211201152745.png)
+![Pasted-image-20211201152745](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515934225-Pasted-image-20211201152745.png)
 
 > This paper develops the first option pricing model of venture capital-backed companies and their security values that incorporates the dilutive future financing rounds prevalent in the industry. Applying our model to 19,000 companies raising 37,000 rounds shows that preferred contractual features make **the most recently issued preferred shares worth on average 56% more than common shares** – [A Valuation Model of Venture Capital-Backed Companies with Multiple Financing Rounds](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3725240)
 
@@ -171,7 +171,7 @@ So far so good. The preferred approach gives you $30M more to put to work in the
 This may offer a clue into why the hedge funds of the world have moved so swiftly into venture. As sophisticated, multi-asset investors, they are quite used to lower-returning, low-risk credit investing combined with potentially high-returning, high-risk derivatives. Rather than "fish out of water", as they are often portrayed by traditional venture investors, could they in fact be quite shrewd [(tiger)sharks](https://randle.substack.com/p/playing-different-games)?
 
 The rabbit hole goes further. Define "overvaluation" as the premium at which preferred stock is valued relative to common equity. Analysis shows **overvaluation predicts poor exit outcomes**, measured in terms of (1) exit value and (2) the probability of going public or being bought out (note: [low R^2 implies exit outcomes are difficult to predict](https://blog.minitab.com/en/adventures-in-statistics-2/regression-analysis-how-do-i-interpret-r-squared-and-assess-the-goodness-of-fit), not that the relationships aren't statistically significant):  
-![Pasted-image-20220206175842](https://nnamdi.net/content/images/2022/02/Pasted-image-20220206175842.png)
+![Pasted-image-20220206175842](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515938441-Pasted-image-20220206175842.png)
 
 > … **overvaluation predicts low exit outcomes**… The extent of this overstatement predicts poor subsequent performance – [A Valuation Model of Venture Capital-Backed Companies with Multiple Financing Rounds](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3725240)
 
@@ -197,7 +197,7 @@ Let's return to financial crises. The capital stack of a company is very similar
 Likewise, when a startup's valuation falls too low, the value comes out of the common shareholders; they get squeezed first. This is most severe in a down round where [anti-dilution provisions](https://www.dlapiperaccelerate.com/knowledge/2017/what-is-anti-dilution-and-why-does-it-matter-to-me-as-a-company-founder.html) come into play. This is the Silicon Valley version of a good ol' Wall Street bailout: **the debt (preferred) holders get saved, and the equity holders get wrecked.**
 
 What tends to happen when homeowners go underwater? We know this from history – [they abandon the home](https://www.abi.org/newsroom/chart-of-the-day/serious-delinquency-rates-on-single-family-mortgages-decreased-slightly-in):  
-![Pasted-image-20220130120610](https://nnamdi.net/content/images/2022/02/Pasted-image-20220130120610.png)
+![Pasted-image-20220130120610](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515936563-Pasted-image-20220130120610.png)
 
 Now I ask: **what might founders and employees do once they are underwater on the preferred equity they've raised?**
 

@@ -18,66 +18,66 @@ twitter_image: ""
 
 ## Current:
 
-![](/https://nnamdi.net/content/images/2025/10/ExaLogo.jpg)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516344003-ExaLogo.jpg)
 
-![](/https://nnamdi.net/content/images/2024/08/logo-horizontal-copy-1.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516277675-logo-horizontal-copy-1.png)
 
-![](/https://nnamdi.net/content/images/2023/10/image.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516226480-image.png)
 
-![](/https://nnamdi.net/content/images/2022/05/Redpanda_horizontal.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515980657-Redpanda_horizontal.png)
 
-![](/https://nnamdi.net/content/images/2021/04/image.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515828636-image.png)
 
-![](/https://nnamdi.net/content/images/2020/09/materialize-1.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515779085-materialize-1.png)
 
-![](/https://nnamdi.net/content/images/2025/10/Observo_AI_Logo-1.jpg)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516348737-Observo_AI_Logo-1.jpg)
 
-![](/https://nnamdi.net/content/images/2025/10/PolarSignalsLogo.jpg)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516350208-PolarSignalsLogo.jpg)
 
-![](/https://nnamdi.net/content/images/2022/03/Ponder_LogoWordmark_H1_Color.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515947432-Ponder_LogoWordmark_H1_Color.png)
 
-![](/https://nnamdi.net/content/images/2022/01/matillion_logo.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515927644-matillion_logo.png)
 
-![](/https://nnamdi.net/content/images/2022/03/VoltronData_Logo-green_vertical-copy-2-2048x1032-1.jpeg)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515953420-VoltronData_Logo-green_vertical-copy-2-2048x1032-1.jpeg)
 
-![](/https://nnamdi.net/content/images/2024/05/image.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516268436-image.png)
 
-![](/https://nnamdi.net/content/images/2022/03/astro-full-logo.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515942367-astro-full-logo.png)
 
-![](/https://nnamdi.net/content/images/2023/02/image-1.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516154917-image-1.png)
 
-![](/https://nnamdi.net/content/images/2024/05/image-6.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516266969-image-6.png)
 
-![](/https://nnamdi.net/content/images/2024/07/image.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516276903-image.png)
 
-![](/https://nnamdi.net/content/images/2025/10/NuanceLabs.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516347080-NuanceLabs.png)
 
-![](/https://nnamdi.net/content/images/2025/10/contextual-ai-wordmark-gray.jpg)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516342869-contextual-ai-wordmark-gray.jpg)
 
 ## Previous: Enterprise / Software
 
-![](/https://nnamdi.net/content/images/2020/09/gitlab.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515768814-gitlab.png)
 
-![](/https://nnamdi.net/content/images/2021/07/fastly.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515857005-fastly.png)
 
-![](/https://nnamdi.net/content/images/2020/09/alteryx.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515763550-alteryx.png)
 
-![](/https://nnamdi.net/content/images/2021/07/surveymonkey.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515860804-surveymonkey.png)
 
-![](/https://nnamdi.net/content/images/2021/07/relativity.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515859225-relativity.png)
 
-![](/https://nnamdi.net/content/images/2020/09/brightwheel.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515765645-brightwheel.png)
 
-![](/https://nnamdi.net/content/images/2020/09/heptagon-1.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515770196-heptagon-1.png)
 
-![](/https://nnamdi.net/content/images/2020/09/viv.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515779840-viv.png)
 
 ## Previous: Consumer / Internet
 
-![](/https://nnamdi.net/content/images/2020/09/epicgames-2.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515766710-epicgames-2.png)
 
-![](/https://nnamdi.net/content/images/2020/09/ageoflearning-1.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515762409-ageoflearning-1.png)
 
-![](/https://nnamdi.net/content/images/2020/09/ezcater-2.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515767482-ezcater-2.png)
 
-![](/https://nnamdi.net/content/images/2021/07/uber.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515861861-uber.png)

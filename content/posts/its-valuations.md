@@ -50,7 +50,7 @@ First, a quick math refresher:
 
 That gives us three components – deals, valuations, and dilution:
 
-![SCR-20221031-wdu](https://nnamdi.net/content/images/2022/11/SCR-20221031-wdu.png)
+![SCR-20221031-wdu](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516088875-SCR-20221031-wdu.png)
 
 This framework is simple but powerful.
 
@@ -69,7 +69,7 @@ Importantly, I'll plot the cumulative _log growth_:
 
 Let's start with growth in funding volume by stage:
 
-![capital](https://nnamdi.net/content/images/2022/11/capital.png)
+![capital](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516074995-capital.png)
 
 -   Across stages, annual venture funding grew by 2.5 to 3 log points, with CAGRs ranging from 23-27% CAGR (again, just divide the log growth by 11)
 -   The earliest (Seed) and latest (Series D+) stages grew fastest
@@ -78,7 +78,7 @@ Next, let's dive into each of the components.
 
 Deal counts have ballooned across all stages, but the Seed stage stands out:
 
-![deals](https://nnamdi.net/content/images/2022/11/deals.png)
+![deals](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516078152-deals.png)
 
 -   Seed deals grew the most by far over this period, 2.1 log points or 19% on an annual basis
 -   On the other hand, Series C deals and later only grew ~0.75 log points, a 7% CAGR
@@ -92,7 +92,7 @@ We'll revisit this.
 
 Next up, valuations:
 
-![valuations](https://nnamdi.net/content/images/2022/11/valuations.png)
+![valuations](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516096526-valuations.png)
 
 -   Unlike deal counts, which grew the most at the early stage, valuations grew the most _at the later stages_
 -   Series C valuations grew at a ~20% CAGR, while Series D+ grew at ~24%
@@ -101,7 +101,7 @@ Next up, valuations:
 
 Lastly, let's look at dilution. Note again these numbers are in log points (_not_ percentage points):
 
-![dilution](https://nnamdi.net/content/images/2022/11/dilution.png)
+![dilution](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516085567-dilution.png)
 
 -   Dilution has fallen in every stage since 2010
 -   Dilution at the Series A and C has fallen the most, while dilution at the Series B has fallen the least
@@ -115,7 +115,7 @@ And now, the main event.
 
 For every financing stage, let's aggregate the change in deals, valuations, and dilution to explain the cumulative growth of funding:
 
-![decomp_g](https://nnamdi.net/content/images/2022/11/decomp_g.png)
+![decomp_g](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516081314-decomp_g.png)
 
 -   At the Seed stage, most funding growth came from more deals getting done. Valuations rose too, but deal count explains most of the overall funding growth
 
@@ -132,7 +132,7 @@ Just to be safe, we can avoid privileging any particular year as the starting po
 
 Do this, and the conclusion is the same – year-to-year variation in valuations accounts for most of the variance in funding volume over time at the later stages:
 
-![decomp_v](https://nnamdi.net/content/images/2022/11/decomp_v.png)
+![decomp_v](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516082906-decomp_v.png)
 
 -   At the seed stage, two-thirds of funding variance over time is accounted for by deal volume and one-third by valuations
 -   At Series A and B, 65-70% of funding variance is explained by valuations
@@ -149,7 +149,7 @@ In this sense, the valuation inflation we've seen "comes from" the incredible gr
 
 Here's another trick – if we go back to our decomposition and divide both sides by valuation, we get the following:
 
-![SCR-20221031-wg9](https://nnamdi.net/content/images/2022/11/SCR-20221031-wg9.png)
+![SCR-20221031-wg9](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516092529-SCR-20221031-wg9.png)
 
 In other words, we can adjust funding volume by the average valuation at which these financings occurred to get a "valuation-adjusted" funding metric. This is analogous to how economists "deflate" nominal GDP by inflation (e.g. [CPI](https://www.bls.gov/cpi/) or similar) to arrive at "real" GDP.
 
@@ -159,7 +159,7 @@ This lets us measure "real" growth in venture funding rather than dollar-based g
 
 Compare this "real" funding metric to the "nominal" one I showed earlier:
 
-![adj](https://nnamdi.net/content/images/2022/11/adj.png)
+![adj](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516072685-adj.png)
 
 Wow.
 

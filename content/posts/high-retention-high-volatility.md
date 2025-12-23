@@ -77,19 +77,19 @@ Hence, the better your retention, the more sensitive and volatile your valuation
 -   Let’s assume this expansion or contraction continues for 10 years, after which the revenue collected flattens out
 -   Lastly, we assume some discount rate or cost of capital, which we will use to discount the value of those payments back to the present
 
-![](/https://nnamdi.net/content/images/2019/10/DraggedImage-1.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515732895-DraggedImage-1.png)
 
 Now we ask the question: assuming a base discount rate of 10%, how would an increase to 15% or 20% impact the present value of the cohort’s revenue stream?
 
 The answer is quite dramatic:
 
-![](/https://nnamdi.net/content/images/2019/10/DraggedImage-2.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515734295-DraggedImage-2.png)
 
 **For a company with strong net retention of 130% (-30% revenue churn), an increase in discount rate from 10 to 15% cuts the company’s valuation in half.**
 
 Notice how a company with 30% annual revenue churn only sees a 10% impact from a similar change in discount rate. This reflects the non-linear impact of the discount rate with respect to retention described earlier:
 
-![](/https://nnamdi.net/content/images/2019/10/DraggedImage-3.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515735596-DraggedImage-3.png)
 
 ## Theory → Reality
 
@@ -97,7 +97,7 @@ Many SaaS companies have gone public this year with strong net retention metrics
 
 In recent months, however, these same companies have seen their valuations tank, often without any meaningful changes in operational performance.
 
-![](/https://nnamdi.net/content/images/2019/10/image.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515741313-image.png)
 *Source: Jon Ma @ Public Comps*
 
 While some point to this as an example of the “[WeWork Effect](https://theconversation.com/fallout-from-weworks-failed-ipo-shows-the-folly-of-excessive-valuations-125014)”, these business are so fundamentally different in both business models and business performance that WeWork’s troubles cannot possibly explain these haircuts.
@@ -106,19 +106,19 @@ Let’s go a level deeper. If lower churn leads to higher volatility we should b
 
 I assembled the following set of SaaS stocks, finding their latest revenue growth and net retention data, along with the price decline they saw from 9/21 to 10/21.
 
-![](/https://nnamdi.net/content/images/2019/10/DraggedImage-4.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515736888-DraggedImage-4.png)
 
 If the theory is true, we should see companies with higher net revenue retention declined further in the recent valuation pullback.
 
 That’s exactly what we see:
 
-![](/https://nnamdi.net/content/images/2019/10/DraggedImage-5.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515739047-DraggedImage-5.png)
 
 **Higher revenue retention, bigger valuation cut.** On average, 10% higher retention lead to an additional 3.4% decline in price. The relationship is statistically significant at p < 0.05 (in case you were wondering), and the "low" R-squared of 0.36 simply means you can't explain all of the variation in or predict the level of price change using only this single variable, despite the strong relationship. Given public stock movements are notoriously difficult to predict, this is not surprising.
 
 And for good measure, if we decompose overall growth and examine the component reflecting only the addition of new customers (1 + overall growth - net retention), we see little correlation with the recent movement in SaaS stocks:
 
-![](/https://nnamdi.net/content/images/2019/11/image-1.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515743781-image-1.png)
 
 ## It’s all about retention
 

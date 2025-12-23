@@ -26,7 +26,7 @@ Second, most streaming data systems don’t integrate well into the rest of the 
 
 We’ve talked before about [why developers love](https://medium.com/lightspeed-venture-partners/why-developers-love-redpanda-30bf2f3b8231) Redpanda’s core developer experience, which is leaps and bounds above what’s come before in the streaming space. With [native Raft](https://thenewstack.io/raft-native-the-foundation-for-streaming-datas-best-future/), no JVM, and full Kafka compatibility, Redpanda enables developers to do their best work, reducing unnecessary complexity and toil while doing it all at the [highest throughput, lowest latency](https://redpanda.com/blog/redpanda-vs-kafka-performance-benchmark), and, importantly, [lowest cost](https://redpanda.com/platform-tco).
 
-![Comparison of infrastructure and admin costs between Redpanda and Kafka](/https://nnamdi.net/content/images/2025/03/6687382f21aa7598bd65ede7_blog-lightspeed-img1-1.png)
+![Comparison of infrastructure and admin costs between Redpanda and Kafka](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516317236-6687382f21aa7598bd65ede7_blog-lightspeed-img1-1.png)
 *Comparison of infrastructure and admin costs between Redpanda and Kafka*
 
 But it’s also important to address that second point — how Redpanda creates a holistic developer experience that services all aspects of the modern developer’s workflow, from deployment to monitoring and Day 2 operations to long-term storage. These remain unresolved, “open loops” that have prevented a broader audience of developers and organizations from taking advantage of real-time capabilities.
@@ -51,7 +51,7 @@ Here’s how Redpanda makes deployment a breeze.
 
 The core of the Redpanda deployment model is the way its nodes are architected. Redpanda nodes are [fully-contained processes](https://redpanda.com/blog/single-binary-architecture) that ship with everything needed in a modern streaming system, including an HTTP proxy, a Raft-based consensus mechanism, and a schema registry. Every node runs the same, single binary, leading to significant operational simplification along with a more efficient overall operating model.
 
-![Close up of a self-contained Redpanda node ](/https://nnamdi.net/content/images/2025/03/6687382d569120c8751b8575_blog-lightspeed-img2.png)
+![Close up of a self-contained Redpanda node ](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516309674-6687382d569120c8751b8575_blog-lightspeed-img2.png)
 *Close up of a self-contained Redpanda node*
 
 It’s hard to overstate how game-changing this is. Due to this architecture, running a single Redpanda cluster doesn’t require operating a massive fleet of varying services. This is a massive boon for developer productivity and also enables Redpanda to go where previous streaming systems have struggled, including [edge / IoT deployments](https://redpanda.com/blog/real-time-security-iot-customer-story) and CI/CD pipelines with tight performance requirements and resource constraints.
@@ -66,7 +66,7 @@ Redpanda’s cloud turns the table on traditional cloud infrastructure. While th
 
 Redpanda does this by cleanly splitting the control and the data plane. The data plane stays within the customer’s cloud account, while the control plane stays on Redpanda’s side. This creates an incredibly slick and elegant setup, with proper separation of concerns between Redpanda’s and the customer’s cloud environment. With BYOC, organizations get all the benefits of the cloud while retaining [data sovereignty](https://redpanda.com/blog/kafka-redpanda-future) and maintaining privacy.
 
-![Diagram of how BYOC keeps the customer cloud separate for data sovereignty and privacy](/https://nnamdi.net/content/images/2025/03/6687382d907eec59adc13e52_blog-lightspeed-img3.png)
+![Diagram of how BYOC keeps the customer cloud separate for data sovereignty and privacy](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516315111-6687382d907eec59adc13e52_blog-lightspeed-img3.png)
 *Diagram of how BYOC keeps the customer cloud separate for data sovereignty and privacy*
 
 Redpanda takes care of everything you’d expect in a modern, competent cloud service, like provisioning, monitoring, and maintenance, while sensitive data and credentials never leave the customer environment. Rolling upgrades that the customer can control ensure zero application downtime. For obvious reasons, BYOC has become an incredibly popular deployment paradigm among Redpanda users.
@@ -99,7 +99,7 @@ This just won’t do. While many developers swear by their terminals, many would
 -   Ability to easily change consumer group offsets
 -   Management of schema registry, connectors, and Kafka Connect clusters
 
-![Preview of how Redpanda Console serves as a dev-friendly pane of glass.](/https://nnamdi.net/content/images/2025/03/6687382d251781c480c13fdc_blog-lightspeed-img4.gif)
+![Preview of how Redpanda Console serves as a dev-friendly pane of glass.](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516302764-6687382d251781c480c13fdc_blog-lightspeed-img4.gif)
 *Preview of how Redpanda Console serves as a dev-friendly pane of glass.*
 
 But the most impressive thing about Redpanda Console is that it’s not merely a “dashboard” with a slew of charts and numbers — it goes so much further than that.
@@ -108,7 +108,7 @@ Redpanda Console gives developers data observability superpowers they aren’t u
 
 The console also simplifies and strengthens access control. The console presents an easy interface for configuring access control lists (ACLs), setting up fine-grained role-based access control (RBAC), and reviewing comprehensive audit logs. It also integrates tightly with all the identity providers you’d expect, like GitHub, Okta, and Google, enabling Single Sign On (SSO) access.
 
-![Screenshot of the Kafka Access Control interface in Redpanda Console.](/https://nnamdi.net/content/images/2025/03/6687382d569120c8751b8579_blog-lightspeed-img5.png)
+![Screenshot of the Kafka Access Control interface in Redpanda Console.](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516312496-6687382d569120c8751b8579_blog-lightspeed-img5.png)
 *Screenshot of the Kafka Access Control interface in Redpanda Console.*
 
 > “Redpanda Console delivers a tremendous improvement in the productivity, effectiveness and quality of life of developers and operators who work with Redpanda or Kafka” - [Redpanda Console: Putting the “fun” back into Kafka](https://redpanda.com/blog/kafka-ui-redpanda-console)
@@ -149,7 +149,7 @@ In addition to unlimited data retention, Redpanda’s cloud-first architecture e
 
 Redpanda accomplishes this with its [Shadowing Indexing](https://redpanda.com/blog/tiered-storage-architecture-shadow-indexing-deep-dive) architecture, which was built from scratch to support cloud-native [Tiered Storage](https://docs.redpanda.com/docs/manage/tiered-storage/), enabling Redpanda to seamlessly move data between brokers and reliable, cheap cloud stores like Amazon S3 or Google Cloud Storage (GCS). Users can access their data using the same Redpanda/Kafka APIs they’re used to, while getting infinite data retention and scalability for free.
 
-![Diagram of how Redpanda’s Tiered Storage works with Amazon S3.](/https://nnamdi.net/content/images/2025/03/6687382d1dd2b64747bcf80f_blog-lightspeed-img6.png)
+![Diagram of how Redpanda’s Tiered Storage works with Amazon S3.](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516298557-6687382d1dd2b64747bcf80f_blog-lightspeed-img6.png)
 *Diagram of how Redpanda’s Tiered Storage works with Amazon S3.*
 
 The upshot of all this innovation is amazing ease of use and performance at an incredibly low cost.
@@ -175,7 +175,7 @@ Developers will once again own their data. All enabled by Redpanda.
 
 Redpanda meets developers where they are and then enables them to go even further. That reach will push Redpanda to places no streaming system has gone before, driving a level of mission-criticality beyond most other developer infrastructure. The ease of use and incredible flexibility of Redpanda will generate developer love and appreciation for the product. And, with infinite retention and a strong commitment to data sovereignty, Redpanda’s “data gravity” will only grow.
 
-![Diagram of the Redpanda compatibility ecosystem](/https://nnamdi.net/content/images/2025/03/66a3d55edc368c41e27704d1_66873620cc1c1391aec633b1_blog-gaming-img2.png)
+![Diagram of the Redpanda compatibility ecosystem](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516319629-66a3d55edc368c41e27704d1_66873620cc1c1391aec633b1_blog-gaming-img2.png)
 *Diagram of the Redpanda compatibility ecosystem*
 
 It’s why we were so excited to lead their recent [$100M Series C financing](https://medium.com/lightspeed-venture-partners/why-lightspeed-is-leading-redpandas-100-million-series-c-553ffe38d6e). The real-time revolution has only just begun, and Redpanda is leading the charge.

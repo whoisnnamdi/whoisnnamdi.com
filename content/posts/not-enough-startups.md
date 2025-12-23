@@ -44,14 +44,14 @@ Here's a hint: we don't have nearly enough startups.
 
 Measured in either financing activity or equity valuations, the venture-backed startup ecosystem has grown _a lot_:
 
-![deals_valuation](https://nnamdi.net/content/images/2023/01/deals_valuation.png)
+![deals_valuation](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516136315-deals_valuation.png)
 
 There's a common narrative out there that the bonanza in venture-backed startups over the last decade reflects growing entrepreneurialism, the ease of starting a company, etc.
 
 I question this story.
 
 Only Seed rounds grew significantly faster than real GDP over the last decade. Series A's also outpaced GDP but not by much. The rest are on or even below trend, especially after the recent slowdown:  
-![deals_gdp](https://nnamdi.net/content/images/2023/01/deals_gdp.png)  
+![deals_gdp](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516128451-deals_gdp.png)  
 _Note: Q4 2022 US GDP not yet available as of publication_
 
 The long-run trend of real GDP reflects supply-side factors, i.e. the fundamental productive capacity of the economy. The similar trends at the later stages imply the "fundamental productive capacity" of the venture ecosystem, i.e. its ability to generate real, meaningful businesses, is growing no faster than the rest of the economy.
@@ -77,13 +77,13 @@ We should resolve this ambiguity:
 First, let's quickly review Economics 101.
 
 Here's the classic supply and demand chart. Supply and demand together determine equilibrium prices (Y-axis) and quantities (X-axis). Importantly, demand is downward sloping (you want more stuff the cheaper it is) and supply is upward sloping (you produce more stuff when you can sell it for more):  
-![supply_demand](https://nnamdi.net/content/images/2023/01/supply_demand.png)
+![supply_demand](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516150460-supply_demand.png)
 
 In this model, two forces can move markets. Demand can shift (for reasons that don't have to do with prices themselves), which causes prices and quantities to move in the **same** direction (up when demand increases, down when demand decreases):  
-![supply_demand2](https://nnamdi.net/content/images/2023/01/supply_demand2.png)
+![supply_demand2](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516151557-supply_demand2.png)
 
 Or, supply can change (again, for reasons other than price), in which case prices and quantities move in **opposite** directions (price move _against_ supply, quantities move _with_ supply):  
-![supply_demand3](https://nnamdi.net/content/images/2023/01/supply_demand3.png)
+![supply_demand3](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516153177-supply_demand3.png)
 
 In simple terms, when everyone wants the same thing and wants it _really badly_, the price tends to go up and more of that item gets bought and sold. When everyone wants to produce and sell the same thing and wants to do so _really badly_, they compete against one another, driving prices down to accommodate the increased activity.
 
@@ -92,7 +92,7 @@ In venture terms, when investor demand for startups rises, valuations increase a
 ## VC is trendy
 
 Venture deals and valuations have both grown over time, so it's all demand-driven right?  
-![deals_valuation2](https://nnamdi.net/content/images/2023/01/deals_valuation2.png)
+![deals_valuation2](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516139825-deals_valuation2.png)
 
 Not so fast.
 
@@ -101,7 +101,7 @@ While it's tempting to end the analysis here, for reasons I'll skip over, you ca
 The key is to "de-trend" the data first. We need to remove the long-run trend and then compare _deviations_ from that trend.
 
 Ignoring the details, here's what that looks like (data normalized and smoothed slightly to remove noise):  
-![deals_valuation3](https://nnamdi.net/content/images/2023/01/deals_valuation3.png)
+![deals_valuation3](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516142441-deals_valuation3.png)
 
 _Lo' and behold:_ deal flow and valuations fluctuate together around their respective trends.
 
@@ -122,7 +122,7 @@ Across growth and later stages, deal flow and valuations are unambiguously posit
 -   **Demand clearly wins it** – late stage supply is badly constrained, so investor demand is the prime mover. Their manic and depressive episodes move the market accordingly
 
 Some of these relationships have shifted over time, so let's visualize that with rolling three-year correlations for each stage:  
-![deals_valuation4](https://nnamdi.net/content/images/2023/01/deals_valuation4.png)
+![deals_valuation4](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516145429-deals_valuation4.png)
 
 This is my qualitative narrative in quantitative terms:
 
@@ -158,7 +158,7 @@ Let's stretch our simple supply and demand model to the absolute extreme:
 -   We can then cumulate the respective contributions of demand and supply to the growth of the venture ecosystem over time
 
 Here's what that looks like for venture deal flow since early 2010. Demand is red, supply is blue, sugar is sweet, and so are you:  
-![deals_supply](https://nnamdi.net/content/images/2023/01/deals_supply.png)
+![deals_supply](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516130818-deals_supply.png)
 
 That's a lot of red out there:
 
@@ -168,7 +168,7 @@ That's a lot of red out there:
 
 Et tu, valuations?
 
-![deals_supply2](https://nnamdi.net/content/images/2023/01/deals_supply2.png)
+![deals_supply2](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516133188-deals_supply2.png)
 
 The story isn't much different for valuations, except perhaps with some signs flipped:
 
@@ -199,7 +199,7 @@ I'll repeat what I said earlier – **we'll all be much better off if more peopl
 There was a time where the notion of handing millions of dollars to an extremely young company sounded crazy, and anyone willing to do so extracted a significant ownership stake for taking on that risk. Founders got diluted, badly.
 
 We're well past that now. [Dilution has fallen in every stage since 2010:](https://whoisnnamdi.com/its-valuations/)  
-![dilution](https://nnamdi.net/content/images/2023/01/dilution.png)
+![dilution](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516148372-dilution.png)
 
 We have more startups, but:
 

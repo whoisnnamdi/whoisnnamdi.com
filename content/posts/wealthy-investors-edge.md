@@ -26,13 +26,13 @@ Something nefarious, or something else?
 
 Wealth and financial returns are positively correlated. Here's a plot of average annualized portfolio returns against ([log](https://en.wikipedia.org/wiki/Logarithm)) wealth, coming from a [study](https://conference.nber.org/conf_papers/f155140/f155140.pdf) using data from [Addepar](https://addepar.com/), a wealth management technology company:
 
-![Pasted-image-20210725110126](https://nnamdi.net/content/images/2021/08/Pasted-image-20210725110126.png)
+![Pasted-image-20210725110126](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515868702-Pasted-image-20210725110126.png)
 
 There's a strong positive relationship between wealth and financial returns. To translate the range on the x-axis into something a bit more meaningful, you can think of the left side as representing investors with less than $3 million in assets and the right side representing investors with more than $100M in wealth.
 
 Here are the exact returns at various levels of wealth:
 
-![Pasted-image-20210725105724](https://nnamdi.net/content/images/2021/08/Pasted-image-20210725105724.png)
+![Pasted-image-20210725105724](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515867369-Pasted-image-20210725105724.png)
 
 Comparing the <$3M group to the >$300M group, **the richest investors earn roughly 2 percentage points more on their investment portfolios annually**, a sizable advantage.
 
@@ -51,7 +51,7 @@ Richer investors could be allocating their capital to different asset classes th
 
 Is it true that asset allocations differ meaningfully across wealth groups? **Yes**:
 
-![Pasted-image-20210815202907](https://nnamdi.net/content/images/2021/08/Pasted-image-20210815202907.png)
+![Pasted-image-20210815202907](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515880211-Pasted-image-20210815202907.png)
 
 Richer investors put more of their money to work in [alternative investments](https://money.usnews.com/investing/investing-101/articles/a-beginners-guide-to-alternative-investments) (venture capital, private equity, hedge funds, etc.), private companies (owned directly, not via venture capital or private equity funds), and housing.
 
@@ -61,13 +61,13 @@ To test for this, the authors calculated the expected returns of various wealth 
 
 When they do this, they find that the expected returns are not divergent enough to explain the rich investor advantage:
 
-![Pasted-image-20210725110742](https://nnamdi.net/content/images/2021/08/Pasted-image-20210725110742.png)
+![Pasted-image-20210725110742](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515871024-Pasted-image-20210725110742.png)
 
 Using this approach, the gap between investors with less than $3M in assets and those with $100M+ is only **0.35 percentage points**, whereas the difference in raw returns was a full _2 percentage points_. **So asset mix does not even come close to explaining the differences.**
 
 We can also look at returns across wealth levels within each asset class. The table below shows the results of a regression of realized returns of individual investors on various wealth buckets, repeated for different asset classes. Interpret the numbers as the annualized returns of that group relative to the returns of investors with less than $3M in assets. For now, focus on panel A at the top:
 
-![Pasted-image-20210725110838](https://nnamdi.net/content/images/2021/08/Pasted-image-20210725110838.png)
+![Pasted-image-20210725110838](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515874297-Pasted-image-20210725110838.png)
 
 **Richer investors earn significantly higher returns in public equities, alternatives, and privately held companies.** The only major category they don't dominate is fixed income, which perhaps makes some sense given the spread of returns at the individual bonds tends to be much more compressed that other assets.
 
@@ -83,7 +83,7 @@ The [Sharpe Ratio](https://www.investopedia.com/terms/s/sharperatio.asp) quantif
 
 When the researchers do this, the relationship between wealth and returns completely breaks down:
 
-![Pasted-image-20210725110133](https://nnamdi.net/content/images/2021/08/Pasted-image-20210725110133.png)
+![Pasted-image-20210725110133](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515869711-Pasted-image-20210725110133.png)
 
 The Sharpe Ratios of wealthier investor portfolios are no better than those of less wealthy investors:
 
@@ -93,11 +93,11 @@ So wealthy investors earn more but those earnings are explained by more risk-tak
 
 Remember, this risk-taking is happening within asset classes rather merely than across, so this result implies that the rich are investing in riskier individual assets (e.g. companies) within each category. For example, the wealthiest investors hold a much larger share of their public equity portfolio in individual stocks (vs. ETFs or mutual funds) relative to other investors, leading to more volatile portfolios:
 
-![Pasted-image-20210815223154](https://nnamdi.net/content/images/2021/08/Pasted-image-20210815223154.png)
+![Pasted-image-20210815223154](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515883495-Pasted-image-20210815223154.png)
 
 High net worth investors also tend to invest in smaller, higher growth companies, naturally riskier. Interestingly, this behavior generates a lower market "beta" for rich investors in the [CAPM model](https://www.investopedia.com/terms/c/capm.asp), as their portfolios correlate less well with the overall equity market than do those of less wealthy investors, who have betas close to 1:
 
-![Pasted-image-20210815224634](https://nnamdi.net/content/images/2021/08/Pasted-image-20210815224634.png)
+![Pasted-image-20210815224634](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515885454-Pasted-image-20210815224634.png)
 
 > “Higher-wealth households load more heavily on the SMB factor, reflecting an **increased focus on small-cap companies**. High net worth portfolios also load more negatively on the HML factor, meaning that they have **more exposure to growth companies** than lower wealth investors.”
 
@@ -105,19 +105,19 @@ High net worth investors also tend to invest in smaller, higher growth companies
 
 There's one more wrinkle though. Here's that last table again, showing returns across wealth groups and asset classes. This time focus on panel B, which focuses on risk-adjusted returns:
 
-![Pasted-image-20210725110838-1](https://nnamdi.net/content/images/2021/08/Pasted-image-20210725110838-1.png)
+![Pasted-image-20210725110838-1](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515872633-Pasted-image-20210725110838-1.png)
 
 **For public equities and privately-held companies, controlling for risk largely eliminates / accounts for the return premium earned by wealth investors.** However, accounting for risk doesn't totally do the trick for alternative investments, where richer investors do better even taking risk into account. In fact, less wealthy investors do _so_ badly in alternatives that the average investor with less than $3M in assets only earned an annualized return of 1.75%, which is not much higher than the risk-free rate during the same period of 1.33%, despite taking on significant risk.
 
 We can dive a layer deeper by examining the returns across subgroups within alternatives, primarily hedge funds, venture capital and private equity, and real estate. **Richer investors earn higher raw and risk-adjusted returns in hedge funds and VC/PE** but do no better in real estate, where they actually earn _lower_ risk-adjusted returns:
 
-![Pasted-image-20210725113425](https://nnamdi.net/content/images/2021/08/Pasted-image-20210725113425.png)
+![Pasted-image-20210725113425](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515878456-Pasted-image-20210725113425.png)
 
 **The least wealthy earn less than 1% annually on their hedge fund, venture capital, and private equity investments**, which is stunning.
 
 It's hard to pinpoint the exact drivers of the alternative investments advantage of the richest investors. What we do know is that the alternative investment portfolios of the richest investors differ quite substantially from those of less wealthy investors:
 
-![Pasted-image-20210815213652](https://nnamdi.net/content/images/2021/08/Pasted-image-20210815213652.png)
+![Pasted-image-20210815213652](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515881547-Pasted-image-20210815213652.png)
 
 For example, investors in the sub-$3M group have only two alternative investments on average, while the $100M+ group has **35**. On that basis alone we would expect the better diversification to generate lower volatility for the richest investors and potentially even higher returns based on my argument in "[Why Don't VCs Index Invest?](https://whoisnnamdi.com/vcs-index-invest/)" (citing [Abe Othman](https://angel.co/blog/venture-returns)):
 
@@ -143,7 +143,7 @@ For example, the authors find that [fund-of-funds](https://www.investopedia.com/
 
 One highly suggestive piece of evidence comes from the returns of investors whose funds are managed by a single family office (SFO), which is an investment firm setup solely to manage the wealth and investments of a single family or person. **Portfolios managed by family offices earn significantly higher returns** than portfolios of investors in the same wealth bracket who do not have a family office. Not only that, the return differential across wealth groups disappears when we look only at portfolios managed by family offices:
 
-![Pasted-image-20210725112023](https://nnamdi.net/content/images/2021/08/Pasted-image-20210725112023.png)
+![Pasted-image-20210725112023](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515876555-Pasted-image-20210725112023.png)
 
 Depending on the asset class, among portfolios managed by family offices, investors with less than $3M in assets earn **more** than investors with over $100M in assets:
 

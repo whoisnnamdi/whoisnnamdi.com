@@ -47,7 +47,7 @@ Seed valuations aren’t valuations.
 
 This really stood out when constructing my [Venture Activity Index](https://whoisnnamdi.com/venture-activity-index/) – the volatility of the late stage is much higher than the early stage, which is true even if you exclude the pandemic era:
 
-![vol](https://nnamdi.net/content/images/2024/10/vol.png)
+![vol](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516295993-vol.png)
 
 This is strange. If seed stage investments are as speculative as they’re purported to be, we'd expect wild valuation fluctuations over time. Late-stage valuations should be more stable, since they have an existing business model, revenues, and potentially even cash flows (hard to believe, I know).
 
@@ -71,7 +71,7 @@ In the standard corporate finance logic, early stage companies should be the mos
 
 What I found was fascinating. Here's the impact of a surprise 1% increase in the one-year Treasury yield across seed, Series A / B, and Series C / D, along with a measure of uncertainty around these estimates, going twelve quarters out:
 
-![sv-1](https://nnamdi.net/content/images/2024/10/sv-1.png)
+![sv-1](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516293593-sv-1.png)
 
 -   **Interest rates have no effect on seed valuations.** Not only is the impact zero, it’s _precisely zero_. There isn't a ton of uncertainty around these estimates.
 -   For Series A / B, we start to see some effect, maxing out at a 16% decline seven quarters after impact before recovering.
@@ -87,7 +87,7 @@ When the big tech (“FANG”, the “Magnificent 7, etc) valuations move around
 
 And that’s what we see — _except_ for seed companies:
 
-![nv-1](https://nnamdi.net/content/images/2024/10/nv-1.png)
+![nv-1](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516284943-nv-1.png)
 
 When the Nasdaq rises 1%:
 
@@ -102,7 +102,7 @@ It’s clear that seed valuations are not really valuations in the traditional s
 
 It struck me that seed valuations were incredibly _sticky_ (an early working title for this essay was "Why are Seed Valuations so Sticky?”). Seed valuations neither rise nor fall dramatically far from trend, whereas other stages see much strong gyrations:
 
-![sticky](https://nnamdi.net/content/images/2024/10/sticky.png)
+![sticky](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516289461-sticky.png)
 
 This "stickiness" is unique to seed valuations and doesn't mirror the behavior of free-floating financial assets, which are typically much more volatile and difficult to forecast.
 
@@ -112,7 +112,7 @@ Then it hit me – wages. [Wages are often said to be “sticky”](https://www.
 
 The simplest thing to do is plot compensation against seed stage valuations. I found a wage series called the “Employment Cost Index” (ECI) that measures compensation growth over time, and I pulled out a [version](https://fred.stlouisfed.org/series/CIU2015400000000I) of this that’s specific to “professional, scientific, and technical services,” which I take to be a good proxy for tech workers:
 
-![cbs-1](https://nnamdi.net/content/images/2024/10/cbs-1.png)
+![cbs-1](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516279505-cbs-1.png)
 
 -   The first thing that stands out is the obvious difference in growth rates. Seed stage valuations have risen much faster than wages for the typical tech worker. **For every 1% increase in tech worker wages, seed stage valuations grow 4-5%.**
 -   We can predict seed stage valuations from the wage data. I regress seed valuations on the ECI using pre-2020 data. The fit is tight pre-2020 (which is frankly easy since they’re both roughly straight lines).

@@ -45,7 +45,7 @@ The answer? **About three years.**
 
 Private valuations rose dramatically over the last decade. But so did the Nasdaq:
 
-![nasdaq_valuation](https://nnamdi.net/content/images/2022/12/nasdaq_valuation.png)
+![nasdaq_valuation](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516114872-nasdaq_valuation.png)
 
 It's remarkable how well the two track one another.
 
@@ -58,7 +58,7 @@ One feature immediately stands out – private valuations are much more volatile
 
 If we throw each one on its own axis, the relationship is even more obvious:
 
-![nasdaq_valuation2](https://nnamdi.net/content/images/2022/12/nasdaq_valuation2.png)
+![nasdaq_valuation2](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516118040-nasdaq_valuation2.png)
 
 Across stages, private valuations move one-for-one with public valuations.
 
@@ -68,11 +68,11 @@ Across stages, private valuations move one-for-one with public valuations.
 
 We can replicate the same analysis for private venture activity. The relationship is not as tight:
 
-![nasdaq_deals](https://nnamdi.net/content/images/2022/12/nasdaq_deals.png)
+![nasdaq_deals](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516103145-nasdaq_deals.png)
 
 Deal activity is more or less related to public tech valuations, depending on stage. Here too we see much more volatility in the private realm than the public, again, for understandable reasons.
 
-![nasdaq_deals2](https://nnamdi.net/content/images/2022/12/nasdaq_deals2.png)
+![nasdaq_deals2](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516105657-nasdaq_deals2.png)
 
 In general the slopes here are flatter than for valuations:
 
@@ -101,7 +101,7 @@ Hope you're still with me. Let's run those regressions and see what we get.
 
 We'll focus on downward movements in the Nasdaq. This is how a 1% decline in the Nasdaq affects private valuations and deal flow over future quarters:
 
-![valuations_deals-1](https://nnamdi.net/content/images/2022/12/valuations_deals-1.png)
+![valuations_deals-1](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516125140-valuations_deals-1.png)
 
 Private valuations gradually decline after a drop in the Nasdaq:
 
@@ -118,7 +118,7 @@ Movements in the Nasdaq reliably forecast venture deal activity too, which drops
 
 This masks a lot of underlying variance between the different segments of the venture ecosystem. Starting with valuations, let's explore how the shape of the recovery varies by stage:
 
-![nasdaq_valuation3-2](https://nnamdi.net/content/images/2022/12/nasdaq_valuation3-2.png)
+![nasdaq_valuation3-2](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516120390-nasdaq_valuation3-2.png)
 
 **Valuation dynamics depend on stage:** Early stage valuations drop 1-1.5% for every 1% decline in the Nasdaq, while growth and late stage valuations decline 2-2.25%.
 
@@ -131,7 +131,7 @@ With some back-of-the-envelope math, we can estimate both the magnitude and the 
 
 In fact, the correction is already well underway:
 
-![nasdaq_valuation4](https://nnamdi.net/content/images/2022/12/nasdaq_valuation4.png)
+![nasdaq_valuation4](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516122830-nasdaq_valuation4.png)
 
 As predicted, late stage valuations drop much more than the Nasdaq, while early stage valuations move roughly in line. Prices have fallen faster than my forecast, but the magnitudes are on point.
 
@@ -144,7 +144,7 @@ Timing the bottom based on my regression here is a bit tricky, as the market beg
 
 Again, let's focus on a 1% decline in the Nasdaq:
 
-![nasdaq_deals3](https://nnamdi.net/content/images/2022/12/nasdaq_deals3.png)
+![nasdaq_deals3](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516109041-nasdaq_deals3.png)
 
 Financings follow an interesting "sine wave" recovery in the aftermath of a plunge in the Nasdaq. Again we see more severe impact in the later stages: The quarterly volume of Seeds and As drops by 0.75-1% for each 1% decline in the Nasdaq. Late stage deals sink 2%.
 
@@ -154,7 +154,7 @@ Pulling out that scribbled envelope again, these numbers suggest **early stage d
 
 Again, the data bears this out:
 
-![nasdaq_deals4](https://nnamdi.net/content/images/2022/12/nasdaq_deals4.png)
+![nasdaq_deals4](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516112463-nasdaq_deals4.png)
 
 Remember, the venture deals should only take about a year to hit their low, so activity should stabilize in or around Q1 2023, notably ahead of valuations.
 

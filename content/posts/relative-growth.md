@@ -55,7 +55,7 @@ Obsessing too much over relative growth injects a number of "bugs" into our thin
 
 ## No sense, this makes
 
-![Pasted-image-20210906134123](https://nnamdi.net/content/images/2021/09/Pasted-image-20210906134123.png)
+![Pasted-image-20210906134123](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515898670-Pasted-image-20210906134123.png)
 
 The first problem with the concept of relative growth is that it warps our language in nonsensical ways.
 
@@ -69,11 +69,11 @@ For example, let's say revenue went from $5M to $10M to $15M, which corresponds 
 
 Think back to your high school physics class. Imagine we have an object, say a car, traveling in some direction. That car has a position, x, and a velocity, v. In business terms, imagine the level of revenue (or whatever metric) is the position of that car and it's absolute growth maps to the velocity.
 
-![drawing-2021-09-22-17.21.13.excalidraw](https://nnamdi.net/content/images/2021/09/drawing-2021-09-22-17.21.13.excalidraw.png)
+![drawing-2021-09-22-17.21.13.excalidraw](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515888065-drawing-2021-09-22-17.21.13.excalidraw.png)
 
 As long as that car keeps moving at the same velocity, we would say it neither accelerates nor decelerates. In startup land however, a business growing at constant absolute growth is said to to somehow be _decelerating_ because its relative growth is declining.
 
-![drawing-2021-09-22-17.30.35.excalidraw](https://nnamdi.net/content/images/2021/09/drawing-2021-09-22-17.30.35.excalidraw.png)
+![drawing-2021-09-22-17.30.35.excalidraw](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515889241-drawing-2021-09-22-17.30.35.excalidraw.png)
 
 This is super strange.
 
@@ -85,7 +85,7 @@ We talk as if a reduction in relative growth implies something fundamentally cha
 
 ## As Yoda said, "Grow absolutely. There is no relative"
 
-![Pasted-image-20210906134610](https://nnamdi.net/content/images/2021/09/Pasted-image-20210906134610.png)
+![Pasted-image-20210906134610](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515903306-Pasted-image-20210906134610.png)
 
 The second problem with relative growth is that it misleads us about what businesses fundamentally do.
 
@@ -115,7 +115,7 @@ Said differently, you can't eat _percentage points_ of growth, you can only eat 
 
 ## Rational expectations
 
-![Pasted-image-20210906133733](https://nnamdi.net/content/images/2021/09/Pasted-image-20210906133733.png)
+![Pasted-image-20210906133733](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515895144-Pasted-image-20210906133733.png)
 
 It's cliche to point out that [humans don't understand compound, exponential growth](https://whoisnnamdi.com/you-dont-understand-compound-growth/). In startups we have the opposite problem — people are so familiar with the concept that they apply it everywhere, in situations where exponential growth isn't likely or even plausible.
 
@@ -143,7 +143,7 @@ The investor mentality is in part driven by their relationship with the business
 
 ## Deal in absolutes
 
-![Pasted-image-20210906133514](https://nnamdi.net/content/images/2021/09/Pasted-image-20210906133514.png)
+![Pasted-image-20210906133514](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515892084-Pasted-image-20210906133514.png)
 
 To close, I want to make sure I'm not misunderstood in my diatribe against relative growth.
 

@@ -22,7 +22,7 @@ twitter_image: "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/17665122
 
 It's cold out there in Series A land:
 
-![deals_a](https://nnamdi.net/content/images/2024/01/deals_a.png)
+![deals_a](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516228412-deals_a.png)
 
 A common explanation for the Series A winter is raised expectations – investors are demanding to see better metrics and traction. Most companies don't meet this new, higher bar, hence fewer deals get done.
 
@@ -45,11 +45,11 @@ The bigger picture? In addition to raising their expectations for Series A, inve
 
 Valuations for both Seed and Series A stage companies rose dramatically over the last decade or so of venture:
 
-![valuations](https://nnamdi.net/content/images/2024/01/valuations.png)
+![valuations](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516255175-valuations.png)
 
 The appreciation in Series A valuations seems extreme relative to that of Seed deals. Of course, the scales here are different, so we'd do better to baseline these to the same starting point and track the growth over time:
 
-![valuations_growth](https://nnamdi.net/content/images/2024/01/valuations_growth.png)
+![valuations_growth](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516252211-valuations_growth.png)
 
 While the two grew roughly in line for the first few years, Series A valuations began to accelerate around 2017. That acceleration sustained itself until the recent fall off in venture valuations.
 
@@ -57,7 +57,7 @@ Notably, both Seed and Series A valuations are recovering. That's a small point 
 
 Here's where the expectations story starts to lose its luster. Below I plot the valuation gap or "premium" for Series A relative to Seed, along with a flexible trend line to remove noise:
 
-![premiums_a](https://nnamdi.net/content/images/2024/01/premiums_a.png)
+![premiums_a](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516241688-premiums_a.png)
 
 -   From 2010 to 2014, the two grew roughly in line, with Series As being priced 200% higher or 3x Seed rounds
 -   Then, Series A valuations accelerate relative to Seeds to a 325% premium or 4.25x multiple
@@ -68,7 +68,7 @@ If investor expectations told the full story, Series A valuations relative to Se
 
 It's been quite the rollercoaster ride. Notably, this rollercoaster is unique to Series A / Seed. We don't see remotely the same behavior in the premium between later rounds:
 
-![premiums](https://nnamdi.net/content/images/2024/01/premiums.png)
+![premiums](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516248852-premiums.png)
 
 The premium for Series B vs. A and the premium for Series C vs. B are both much more stable over time, with little trend once you remove the noise. The Series C / B premium saw a slight bump during the exuberant 2021 days, but that was short lived:
 
@@ -86,7 +86,7 @@ What is different about graduating from Seed to Series A than going from Series 
 There are many potential explanations, but the one that jumps out to me is some notion of **product-market fit (PMF) and business de-risking.** Series A companies tend to have much better PMF than Seed companies, in a way that's distinct from Series B relative to Series A, and so on.
 
 Think about it like higher education – a college degree is a signal of one's skills to the labor market. [Employers value them accordingly.](https://www.clevelandfed.org/publications/economic-commentary/2012/ec-201210-the-college-wage-premium) Further, a college degree means more relative to not having one than having a graduate degree means relative to having only an undergraduate education. Again, employers value them accordingly:  
-![Pasted-image-20231227144822](https://nnamdi.net/content/images/2024/01/Pasted-image-20231227144822.png)
+![Pasted-image-20231227144822](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516239360-Pasted-image-20231227144822.png)
 
 While the probability of a company achieving PMF is certainly not 100% at the time of Series A (many companies raise Series A before that), it's definitely much higher at the A round than at the Seed round, since it's effectively 0% at that point.
 
@@ -112,7 +112,7 @@ First, as I've argued elsewhere, the growth and development of the venture ecosy
 
 Second, the ratio of Series A to Seed transactions has been reasonably stable since about 2014. It's declining somewhat (Seed rounds are growing slightly faster than Series As) but not nearly as rapidly or vigorously as relative prices have moved. In fact, it's remarkably consistent, even through the ups and downs of the last few years:
 
-![premiums_deals](https://nnamdi.net/content/images/2024/01/premiums_deals.png)
+![premiums_deals](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516246775-premiums_deals.png)
 
 -   Seed activity (the denominator) exploded through 2014, bringing down the ratio (A long time ago, Series As were more common than Seeds)
 -   The Series A vs Seed ratio stabilized thereafter, only slightly falling over the years
@@ -127,11 +127,11 @@ Ok, so we have a plausible story for everything that happened up until the 2021 
 
 Speaking of data – everything we've looked at thus far is from the perspective of the overall market. But individual companies and founders don't experience the aggregate, they live their own particular trajectory, raising subsequent rounds spaced apart rather than at the same time. A founder looking to raise Series A cares about how the market looks 18-24 months _after_ they raise their Seed:
 
-![Pasted-image-20231024140149](https://nnamdi.net/content/images/2024/01/Pasted-image-20231024140149.png)
+![Pasted-image-20231024140149](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516230546-Pasted-image-20231024140149.png)
 
 Let's take the founder perspective and compare Series A deal activity to Seed activity 21 months prior, a reasonable (median) estimate for the time it takes to raise that next round. Think about it as a rough proxy for the Seed to Series A "graduation" or "survival" rate. Not every Series A was preceded by a Seed financing, so this is more of an upper bound for the graduation rate:
 
-![premiums_deals_a](https://nnamdi.net/content/images/2024/01/premiums_deals_a.png)
+![premiums_deals_a](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516244384-premiums_deals_a.png)
 
 -   From 2014-2020 it's a very similar picture to what we looked at before, a stable "graduation rate"
 -   Conditions improve substantially in 2020, i.e. more Seed companies survive to the next round
@@ -145,7 +145,7 @@ This simple analysis doesn't accurately identify the "level" of the graduation r
 
 > Back in 2020, approximately 23% of Seed-stage startups made it to Series-A within two years. Fast forward to 2022, and the market looks different. Over the past 20 months since the start of 2022, the graduation rates have decreased to 5%. – [A Deep Dive into Q3 2023's Funding Landscape](https://jamesin.substack.com/p/a-deep-dive-into-q3-2023s-funding)
 
-![Pasted-image-20231030084014](https://nnamdi.net/content/images/2024/01/Pasted-image-20231030084014.png)
+![Pasted-image-20231030084014](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516234706-Pasted-image-20231030084014.png)
 
 > The percentage of companies who make it from seed to Series A within two years fell by a lot for the 2021 seed cohort.
 > 
@@ -153,7 +153,7 @@ This simple analysis doesn't accurately identify the "level" of the graduation r
 > 
 > Only 17.6% of companies who raised their seed in 2021 have "graduated" to the next round. – [Peter Walker on LinkedIn](https://www.linkedin.com/posts/peterjameswalker_cartadata-seed-seriesa-activity-7128075191611523072-twip/)
 
-![Pasted-image-20231108101945](https://nnamdi.net/content/images/2024/01/Pasted-image-20231108101945.png)
+![Pasted-image-20231108101945](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516237147-Pasted-image-20231108101945.png)
 
 How does my theory explain this data? Put simply, **venture investors re-assessed their beliefs about Series A companies.** They no longer see Series A as a substantial indicator of product-market fit, given so much risk still remains. That's why their relative price has fallen off.
 

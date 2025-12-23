@@ -66,12 +66,12 @@ It's quite natural to apply the notion of discount rates to the value of financi
 Discount rates apply to human capital too.
 
 If you don't believe me, check out the following chart. It plots the unemployment rate over time along with the _inverse_ of the detrended (i.e. accounting for the size of the U.S. economy) S&P 500 index (so down is up and vice versa). Notice the tight relationship between the two:  
-![Pasted-image-20220126122928](https://nnamdi.net/content/images/2022/04/Pasted-image-20220126122928.png)
+![Pasted-image-20220126122928](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515964379-Pasted-image-20220126122928.png)
 
 > Figure 2 suggests that **the stock market and unemployment respond to the same underlying forces**, especially in the past few decades – [High Discounts and High Unemployment](https://web.stanford.edu/~rehall/High%20Discounts%20and%20High%20Unemployment%20AER)
 
 You might ascribe this correlation to general economic conditions rather than discount rates, but unemployment and output per worker don't actually track each other very well:  
-![Pasted-image-20220416164600](https://nnamdi.net/content/images/2022/04/Pasted-image-20220416164600.png)
+![Pasted-image-20220416164600](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515970179-Pasted-image-20220416164600.png)
 
 To see how discount rates apply to workers in the same way they do to financial assets, imagine the net value of a worker to a company being their productivity minus their cost, i.e. wage. This "job value" takes into account all future value the worker generates along with their cost of employment, in present value terms:
 
@@ -89,12 +89,12 @@ Thus, the present value of productivity moves up and down by more than wages, dr
 Naturally, the higher the "job value," the more eager employers are to hire workers. We get cutthroat competition among employers during good economic times and workers being dropped like hot potatoes during bad times. When the present value of hiring an additional worker is high, employers clamor to grow their ranks.
 
 It's possible to use economic data to estimate job value across the entire U.S. economy. **Job value and the stock market move together in lockstep**:  
-![Pasted-image-20220126125737](https://nnamdi.net/content/images/2022/04/Pasted-image-20220126125737.png)
+![Pasted-image-20220126125737](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515965678-Pasted-image-20220126125737.png)
 
 > The similarity of the job value and the stock market value is remarkable. The figure strongly confirms the hypothesis that **similar forces govern the market values of claims on jobs and claims on corporations** – [High Discounts and High Unemployment](https://web.stanford.edu/~rehall/High%20Discounts%20and%20High%20Unemployment%20AER)
 
 The up and down movement of job value is incredibly consistent across industries too:  
-![Pasted-image-20220416154129](https://nnamdi.net/content/images/2022/04/Pasted-image-20220416154129.png)
+![Pasted-image-20220416154129](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515967280-Pasted-image-20220416154129.png)
 
 > The strikingly similar responses in diverse industries strongly supports the hypothesis that an aggregate driving force dominates the movements of the job value at the industry level. **This evidence points in the direction of aggregate forces such as rising discounts in recessions** – [High Discounts and High Unemployment](https://web.stanford.edu/~rehall/High%20Discounts%20and%20High%20Unemployment%20AER)
 
@@ -120,7 +120,7 @@ It's never pretty when leverage blows up, and talent leverage is no different. T
 
 ## Easy funding =/= easy life
 
-![Funding-Simply-Shifts-the-Bottleneck_2022-04-18-17.19.06.excalidraw](https://nnamdi.net/content/images/2022/04/Funding-Simply-Shifts-the-Bottleneck_2022-04-18-17.19.06.excalidraw.png)
+![Funding-Simply-Shifts-the-Bottleneck_2022-04-18-17.19.06.excalidraw](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515959633-Funding-Simply-Shifts-the-Bottleneck_2022-04-18-17.19.06.excalidraw.png)
 
 I'm increasingly skeptical of the notion that easy funding makes the lives of founders easier. _Funding merely shifts the bottleneck._
 
