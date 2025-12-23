@@ -110,11 +110,7 @@ export default function Portfolio({ logos, meta }) {
                 </section>
 
                 <section className="mt-16">
-                    <div className="space-y-3">
-                        <h2 className="text-2xl font-semibold text-gray-900">Selected investments</h2>
-                    </div>
-
-                    <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                         {logos.length === 0 && (
                             <p className="col-span-full text-center text-base text-gray-600">
                                 Check back soon — portfolio updates are on the way.
