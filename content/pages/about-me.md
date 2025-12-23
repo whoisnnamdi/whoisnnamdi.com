@@ -22,7 +22,7 @@ To increase total software output by supporting entrepreneurs building technical
 
 * * *
 
-### My most popular essays:
+## My most popular essays:
 
 -   [Why We Will Never Have Enough Software Developers](https://nnamdi.net/never-enough-developers/) (Popular on Reddit)
 -   [Enterprise Software Monetization is Fat-Tailed](https://nnamdi.net/software-fat-tailed/)
@@ -34,7 +34,7 @@ To increase total software output by supporting entrepreneurs building technical
 
 * * *
 
-### More about me:
+## More about me:
 
 I'm a geek at heart.
 
