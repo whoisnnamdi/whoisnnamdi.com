@@ -54,22 +54,22 @@
     @apply transition duration-500 ease-in-out sm:w-40 rounded-md py-2 px-2 text-white font-semibold bg-blue-500 shadow-md hover:bg-blue-400 focus:outline-none
 }
 
+/* Server-rendered MathJax SVG styling */
 mjx-container {
-    @apply overflow-auto overflow-y-hidden
+    display: inline-block;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
-/* Center display math blocks ($$...$$) - MathJax 3 */
 mjx-container[display="true"] {
     display: block !important;
     text-align: center !important;
-    text-align: -webkit-center !important;
-    margin: 1.5rem auto !important;
+    margin: 1em auto !important;
     width: 100%;
 }
 
-/* Standalone paragraph with only display math */
-.prose p:has(> mjx-container[display="true"]:only-child) {
-    text-align: center;
+mjx-container[display="true"] svg {
+    margin: 0 auto;
 }
 
 .imageContainer div {

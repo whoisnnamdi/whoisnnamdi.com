@@ -5,18 +5,6 @@ import Navbar from '../components/navbar'
 import Footer from '../components/footer'
 import LinkConverter from '../components/linkconverter'
 import Analytics from '../components/analytics'
-import { MathJax, MathJaxContext } from "better-react-mathjax"
-
-const mathJaxConfig = {
-    chtml: {
-        displayAlign: 'center',
-        displayIndent: '0'
-    },
-    tex: {
-        displayMath: [['$$', '$$']],
-        inlineMath: [['$', '$']]
-    }
-}
 
 export async function getStaticPaths() {
     const posts = await getPosts()
@@ -70,31 +58,27 @@ export default function PostPage ({ post }) {
             <Analytics />
             <Navbar source={post.title}/>
             <main className="mt-12">
-                <MathJaxContext config={mathJaxConfig} hideUntilTypeset="first">
-                    <MathJax>
-                        <h1 className={`text-4xl font-bold ${post.slug === 'talks' ? 'mb-4' : 'mb-6'} text-gray-900`}>
-                            {post.title}
-                        </h1>
-                        <div className={`prose md:prose-md lg:prose-lg max-w-4xl sm:mx-auto ${post.slug === 'talks' ? 'talks-prose' : ''}`}>
-                            {post.feature_image ?
-                                <div className="imageContainer">
-                                    <Image
-                                        src={post.feature_image}
-                                        alt={post.title}
-                                        width="0"
-                                        height="0"
-                                        sizes="100vw"
-                                        // layout="fill"
-                                        className="imageImage rounded-lg"
-                                        priority
-                                    />
-                                </div> :
-                                null
-                            }
-                            <LinkConverter content={post.html} />
-                        </div>
-                    </MathJax>
-                </MathJaxContext>
+                <h1 className={`text-4xl font-bold ${post.slug === 'talks' ? 'mb-4' : 'mb-6'} text-gray-900`}>
+                    {post.title}
+                </h1>
+                <div className={`prose md:prose-md lg:prose-lg max-w-4xl sm:mx-auto ${post.slug === 'talks' ? 'talks-prose' : ''}`}>
+                    {post.feature_image ?
+                        <div className="imageContainer">
+                            <Image
+                                src={post.feature_image}
+                                alt={post.title}
+                                width="0"
+                                height="0"
+                                sizes="100vw"
+                                // layout="fill"
+                                className="imageImage rounded-lg"
+                                priority
+                            />
+                        </div> :
+                        null
+                    }
+                    <LinkConverter content={post.html} />
+                </div>
             </main>
             <Footer />
         </div>
