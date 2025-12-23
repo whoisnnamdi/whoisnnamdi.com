@@ -41,7 +41,7 @@ Let’s walk through these points, one by one.
 
 That’s really all there is to this point, so let’s get it out of the way first. I’ll drop this chart in here for good measure, which makes the point visually:
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515749730-CleanShot-2020-05-23-at-01.21.24%402x.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515749730-CleanShot-2020-05-23-at-01.21.24%402x.png)
 
 In words — the median family with a bachelor degree-holding head of household earns ~100% more income than the median family without a college degree.
 
@@ -84,7 +84,7 @@ So how do we identify this “true” premium? There are multiple methods, but t
 
 So the author’s take a simpler approach, essentially controlling only for age. Surprisingly, that alone is enough to meaningfully reduce the supposed income benefit of college from 100% to only 50% for whites born in the 1980s:
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515751059-CleanShot-2020-05-23-at-01.22.20%402x.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515751059-CleanShot-2020-05-23-at-01.22.20%402x.png)
 
 Two things to note here.
 
@@ -104,11 +104,11 @@ College is increasingly “priced to perfection.”
 
 Again, in case there are any doubts, here’s some data showing the growth in the cost of college vs. broader prices in the economy since 1978. You don’t need a legend to know which line is which:
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515752654-CleanShot-2020-05-23-at-01.41.03%402x.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515752654-CleanShot-2020-05-23-at-01.41.03%402x.png)
 
 These surging costs are fueling an explosion of consumer debt. We can get some sense of this from the following table, which shows the median debt-to-income ratios among college degree holders across multiple birth decades at various years of age:
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515755489-CleanShot-2020-05-25-at-02.04.33%402x.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515755489-CleanShot-2020-05-25-at-02.04.33%402x.png)
 
 So for example, the median American born in the 1960s owed debt equal to **34%** of their annual income at the age of 26, while Americans born in the 1980s owed debt of **109%** of income, **a tripling of the typical debt burden for young adults**. While much of this relates to the broader availability of mortgage debt, at the age of 26, one has to assume that much of it comes college borrowings yet to be paid off. In fact, the authors note that “debt ratios generally are higher among college grads than non-grads.”
 
@@ -129,9 +129,9 @@ Add all that up and you arrive at the sobering conclusion that, **college may no
 
 Unconvinced? Here is possibly the most important chart in higher education, showing the expected impact of a bachelor’s degree on the net worth of graduates born across various decades, again controlling for age:
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515761026-DraggedImage.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515761026-DraggedImage.png)
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515759358-DraggedImage-1.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515759358-DraggedImage-1.png)
 
 What does this say? A white college graduate born in the 1930s could have expected to achieve **247%** higher net worth than their non-college educated peers, while one born in the 1980s can only expect to own **42%** more.
 
@@ -155,9 +155,9 @@ But there might be a counterintuitive “silver lining” to this situation.
 
 College graduates do better in recessions than non-graduates. Their incomes do not fall as significantly, nor do their unemployment rates surge to the same extent, as we can see in [data from the Great Recession](https://www.pewtrusts.org/~/media/legacy/uploadedfiles/pcs_assets/2013/pewcollegegradsrecessionreportpdf.pdf):
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515757687-CleanShot-2020-05-29-at-23.47.16%402x.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515757687-CleanShot-2020-05-29-at-23.47.16%402x.png)
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515747594-CleanShot-2020-05-23-at-01.16.34%402x.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515747594-CleanShot-2020-05-23-at-01.16.34%402x.png)
 
 In this sense, a college degree serves as downside protection or insurance against the worst outcomes. Thus, in tough times the relative value of a college degree increases. Given the way COVID disproportionately impacts low-wage workers, this is even truer right now.
 

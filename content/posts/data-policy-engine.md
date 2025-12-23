@@ -65,19 +65,19 @@ The Redpanda Data Policies Engine simultaneously extends the Kafka API and what 
 
 With Data Policies, all your favorite tools can benefit from server-side WebAssembly filters, allowing for easy and simple data scrubbing, cleaning, filtering, normalization and more. As a runtime, WebAssembly allows code to execute inside Redpanda, allowing code to be injected into an active cluster at runtime.
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515906527-classical_scrubbing_vectorized_redpanda_graph.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515906527-classical_scrubbing_vectorized_redpanda_graph.png)
 
 Redpanda Transforms enable extremely low-latency transformations by avoiding the “data ping-pong” that happens in many systems and stream processors today, where data gets sent back and forth between storage and compute, even for very minor operations. Further, Redpanda Transform is built on the [V8 engine](https://v8.dev/), the high-performance JavaScript and WebAssembly engine that also powers Chrome and NodeJS.
 
 Transforms in Redpanda are effectively a stateless [predicate pushdown](https://medium.com/microsoftazure/data-at-scale-learn-how-predicate-pushdown-will-save-you-money-7063b80878d7). In simple terms, that means performance is massively improved by “pushing down” code to the data, only touching the relevant data (and ignoring the rest), cutting down on wasteful network traffic, I/O, and latency.
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515908314-galaxy.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515908314-galaxy.png)
 
 Redpanda Transforms are also completely auditable. The controller can report on which specific piece of code is touching which specific piece of data, on which machines, at which topic offsets.
 
 ## As easy as one, two, THREE
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515925324-Uppercase_filter.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515925324-Uppercase_filter.png)
 
 Few things are simple in data engineering, but, as usual, Vectorized is changing the game. For all the cool things happening under the hood, getting started with Data Policies is shockingly easy.
 
@@ -115,7 +115,7 @@ Now, Redpanda handles the rest.
 -   Payload is transformed and re-checksumed (ensures Kafka protocol remains unchanged)
 -   Redpanda returns the transformed record
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515922973-Uppercase_filter_2.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515922973-Uppercase_filter_2.png)
 
 Pretty slick.
 

@@ -30,7 +30,7 @@ But certain non-perishables follow a different rule. Per [Wikipedia](https://en.
 
 > The Lindy effect is a theory that the future life expectancy of some non-perishable things like a technology or an idea is proportional to their current age, so that **every additional period of survival implies a longer remaining life expectancy**. Where the Lindy effect applies, **mortality rate decreases with time**.
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515822014-image-20201217101504390.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515822014-image-20201217101504390.png)
 
 Product-market fit follows the Lindy effect.
 
@@ -65,7 +65,7 @@ Here's why.
 
 A lognormal distribution is one which, if you take the logarithm of all its possible values, yields a normal distribution. Hence "log" "normal". Due to the exponential nature of the logarithm, lognormal distributions are skewed:
 
-![lognormal-distribution](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515825412-lognormal-distribution.jpg)
+![lognormal-distribution](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515825412-lognormal-distribution.jpg)
 
 Lognormal distributions are neither normally distributed nor thin-tailed. Instead, they are [fat-tailed](https://en.wikipedia.org/wiki/Fat-tailed_distribution).
 
@@ -104,7 +104,7 @@ We can see this in the chart below from the Bing paper, which shows the shape of
 
 Fat-tailedness (small \\(\\alpha\\)) leads to a concave information value curve, whereas thin-tailedness (high \\(\\alpha\\)) leads to a convex information value curve:
 
-![image-20200906170720679](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515820976-image-20200906170720679.png)
+![image-20200906170720679](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515820976-image-20200906170720679.png)
 
 ## You'll know it when you see it
 

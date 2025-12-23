@@ -33,7 +33,7 @@ Software development has a _serious_ retention problem:
 -   At age 26, 59% of engineering and computer science grads work in occupations _related_ to their field of study. By age 50, only 41% work in the same domain, meaning a full **~30% drop out of the field by mid-career**
 -   In contrast, engineering and computer science majors who join _unrelated_ fields upon graduation retain at much higher rates, with only 10-15% switching out after the age of 26:
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515812334-W-kECKz1nw.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515812334-W-kECKz1nw.png)
 
 Engineers often leave engineering for non-STEM management roles. Graduation into management is not surprising. What's surprising is that these are **non-STEM** positions. Engineers swap technical roles for _non-technical_ roles over time.
 
@@ -58,7 +58,7 @@ To demonstrate this, [researchers](https://academic.oup.com/qje/article/135/4/19
 -   This compares to _less than 20%_ of jobs in fields like education, law, and community and social services
 -   In addition, **16% of jobs in computer and mathematical fields in 2007 required a skill that was obsolete by 2019** (i.e. a skill that was common in 2007 but relatively rare in 2019), more than double any other job category:
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515784045-azDsA9n3rx.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515784045-azDsA9n3rx.png)
 
 About a third of the change in required skills in computer-related occupations is due to specific new software:
 
@@ -67,18 +67,18 @@ About a third of the change in required skills in computer-related occupations i
 
 Data science, machine learning, and AI saw big increases among technology-intensive jobs as well. For example, the number of STEM-related jobs requiring skills in machine learning and AI grew more than 4x from 2007-2017, touching more than 15% of STEM jobs:
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515806294-Pc3AjVflhW.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515806294-Pc3AjVflhW.png)
 
 To better compare rates of skill change across occupations, the researchers came up with a measure of skill change that tracks the absolute growth or decline of various skills within each profession from 2007 to 2019. Occupations whose required skills change rapidly in prevalence among job postings receive a high score, while jobs whose skills do not change much receive a lower score:
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515814960-xfeKvOWxo-.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515814960-xfeKvOWxo-.png)
 
 -   **Computer-related occupations receive the highest score by far, 4.8**. Note that the mean and standard deviation of this measure are ~3 and ~1 respectively, so computer-related jobs are **nearly two standard deviations away from the typical job in America**
 -   Meanwhile, jobs in education and and those involving manual labor have very low skill change scores, typically less than 2.
 
 We can get even more granular and look at specific job roles. This level of detail makes the difference even more stark (only showing the fastest changing roles):
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515804778-OwoB5xsSdO.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515804778-OwoB5xsSdO.png)
 
 Web development has the highest rate of skill change _among all jobs in the country_. Next up are sales engineers, another often technical role. Database administrators, computer network architects, sysadmins, and application developers all make the top 10, and we see many other technical roles among the top 30. The mean and standard deviation are similar here, placing web development **more than 3 standard deviations away from the typical job in America** in terms of skill change over time.
 
@@ -88,7 +88,7 @@ You might think, however, that skill change would eventually settle down as one 
 
 _You'd be wrong._ The skills for software engineering jobs change rapidly throughout the entire career lifecycle:
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515781496-7ItjXMaTE-.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515781496-7ItjXMaTE-.png)
 
 -   In entry-level roles in computer and engineering occupations all the way through those requiring 12+ years of experience, **the proportion of job postings requiring at least one new skill in 2019 was effectively the same, 40-45%**
 -   In contrast, **29% of entry-level non-computing and engineering roles in 2019 required at least one new skill, but this proportion declines to 24%** for jobs requiring more than four years of experience
@@ -104,7 +104,7 @@ Software engineers **never** escape the skill-change vortex, even many years int
 -   In professions with one standard deviation increased skill change, pay is **~30%** higher in the first few years of one's career
 -   If we exclude both the fastest and slowest-changing fields (Engineering/Computer Science at the high end, Health/Education at the low end), the early earnings premium for faster-changing roles increases to **~60%**:
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515788204-heMo13OsG1.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515788204-heMo13OsG1.png)
 
 **Fast-changing fields pay better.**
 
@@ -116,11 +116,11 @@ Here's another way to see the eroding pay advantage. The below chart simulates t
 -   However, this premium _falls_ over time as the earnings of CS and engineering graduates plateau over time while the earnings of their peers grow _faster_ for _longer_
 -   In fact, **life and physical science graduates' earnings surpass their computer and engineering classmates by the age of 40**:
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515802377-Lifecyle-Earnings-by-Degree-Category.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515802377-Lifecyle-Earnings-by-Degree-Category.png)
 
 Excluding business majors, the earnings premium of software engineering declines over time in both percentage _and_ absolute dollar terms, to the point where engineers barely out-earn social science majors:
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515785324-Engineering-_-Computer-Science-Earnings-Premium.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515785324-Engineering-_-Computer-Science-Earnings-Premium.png)
 
 But the focus on college major is somewhat misleading. This phenomenon has less to do with one's field of study and more to do with _choice of occupation_.
 
@@ -129,7 +129,7 @@ To show this, researchers plotted the earnings premium of various categories wor
 -   Workers who major in Engineering or Computer Science but work in unrelated fields actually see their earnings advantage _compound_ over time, rather than decline
 -   On the other hand, regardless of major, individuals who work in Engineering or Computer Science jobs see their earnings advantage erode over the years:
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515803224-OFffH9kBKA.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515803224-OFffH9kBKA.png)
 
 > **Declining relative returns is a feature of STEM jobs, not majors.** The earnings premium for non-STEM majors in STEM occupations starts off near 40%, but declines to 20% within a decade. In contrast, the relative earnings advantage grows over time for computer science and engineering majors working in non-STEM occupations.
 
@@ -147,15 +147,15 @@ Some workers, endowed with superior ability, learn faster than others, picking u
 
 In a world where human capital never depreciated, we could imagine that high-skilled individuals like software developers would maintain a relative human capital (and earnings) advantage over other professionals, leading to consistently increasing pay and a stable relative premium:
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515791338-Human-Capital--w_o-Depreciation-.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515791338-Human-Capital--w_o-Depreciation-.png)
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515811009-Software-Engineering-Human-Capital-Premium--w_o-Depreciation-.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515811009-Software-Engineering-Human-Capital-Premium--w_o-Depreciation-.png)
 
 But, if human capital depreciates over time and that rate of depreciation is higher in rapidly-changing fields like software development, then developers' initial advantage would erode over time, narrowing the gap vs. non-developers:
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515790192-Human-Capital--w_-Depreciation-.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515790192-Human-Capital--w_-Depreciation-.png)
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515810208-Software-Engineering-Human-Capital-Premium--w_-Depreciation-.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515810208-Software-Engineering-Human-Capital-Premium--w_-Depreciation-.png)
 
 This simple model helps explain what we see in the data — the software engineering earnings advantage disappears as the _effective_ human capital gap narrows.
 
@@ -177,13 +177,13 @@ Said another way, **the opportunity cost of working in a rapidly-changing field 
 
 The researchers show this by regressing STEM job status on a number of other variables, including an interaction between age and score on the [Armed Forces Qualifying Test](https://www.military.com/join-armed-forces/asvab) (AFQT), a common measure of cognitive ability. The coefficient comes out negative and statistically significant, implying that the relative probability of working in STEM at any given age _declines_ with cognitive ability (column 1 and 2 below):
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515801065-LFrqrUH7Kl.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515801065-LFrqrUH7Kl.png)
 
 > The results imply that a worker with cognitive ability one standard deviation above average is 4.9 percentage points more likely to work in STEM at age 23, but **only 1.6 percentage points more likely to be working in a STEM job by age 34**.
 
 In fact, by age 40, the regression predicts **workers with higher cognitive ability are _less_ likely to work in STEM than those with lower cognitive ability**.
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515808227-Relative-STEM-Probability-for-1-SD-Higher-Cognitive-Ability.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515808227-Relative-STEM-Probability-for-1-SD-Higher-Cognitive-Ability.png)
 
 Simply put, **professionals with higher cognitive ability drop out of STEM careers earlier and faster**:
 

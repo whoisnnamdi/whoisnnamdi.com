@@ -47,7 +47,7 @@ The Developer Productivity Manifesto has three parts, this is part 2:
 
 ## The Mythical Man-Month
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515843521-image-20210405202322027.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515843521-image-20210405202322027.png)
 
 [“The Mythical Man-Month](https://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959)” is a classic and hugely influential book about software engineering and project management. Across a series of essays, Fred Brooks (himself a former IBM project manager) lays out the cognitive errors software development teams tend to make in estimating the time to completion for software projects. His core thesis is best encapsulated by [Brooks’ law](https://en.wikipedia.org/wiki/Brooks%27s_law).
 
@@ -59,7 +59,7 @@ If anything, adding more cooks to the kitchen __lengthens__ cooking time. We sho
 
 > __… when schedule slippage is recognized, the natural (and traditional) response is to add manpower. Like dousing a fire with gasoline, ****this makes matters worse, much worse****. More fire requires more gasoline, and thus begins a regenerative cycle which ends in disaster.__
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/ballmer_600.gif)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/ballmer_600.gif)
 
 This counterintuitive phenomenon has multiple causes:
 
@@ -73,7 +73,7 @@ That last point forms the basis of the title and main thrust of the book, the fa
 
 ## Diseconomies of scale
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515838524-image-20210405115615714.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515838524-image-20210405115615714.png)
 *Source*
 
 While it is common to assume __economies of scale__, ****diseconomies of scale**** are arguably just as relevant in software development.
@@ -93,7 +93,7 @@ Humans, being the independent and unpredictable automatons we are, are especiall
 
 Executives believe that insufficient developer talent is one of the biggest threats to their business, and yet there’s good reason to think this might never be solved.
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515839905-image-20210405115744208.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515839905-image-20210405115744208.png)
 
 As I discuss in a previous essay, [Why We Will Never Have Enough Software Developers](https://whoisnnamdi.com/never-enough-developers/), changes in the underlying technologies of modern software development whittle away the accumulated human capital of software developers:
 
@@ -119,14 +119,14 @@ But is this true of the economy overall? It turns out, the answer is yes. Cross-
 
 The chart below plots the growth in the number of employed researchers and their productivity levels (measured in terms of revenue growth generated per researcher) for ~1,700 publicly-traded U.S.-based companies over a 20-year period. Most firms “threw more bodies at the problem” (orange histogram > 1), but ****~80% of firms saw declining research productivity**** (blue histogram < 1):
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515830398-0_4RM_2yR4dbE_6mb5.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515830398-0_4RM_2yR4dbE_6mb5.png)
 *Source*
 
 Hiring more researchers doesn’t necessarily __cause__ productivity to decline, but regardless, growing research teams and declining productivity go hand-in-hand more often than not.
 
 Software development could fall prey to the same trap. Most companies are growing the number of software engineers they employ, mirroring the researcher employment trends, but let’s not forget productivity:
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515831712-0_NHviru2DykbIv-9N.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515831712-0_NHviru2DykbIv-9N.png)
 
 Research productivity, and analogously developer productivity, falls over time unless acted upon by an outside force. Like gravity, this phenomenon is pervasive and ubiquitous, a force field dragging down all idea-generative industries.
 
@@ -140,7 +140,7 @@ In my last essay I talked about the importance of measuring productivity in term
 
 We can quantify the impact of engineering time spent maintaining old code rather than writing new code. According to [one analysis](http://drock.mit.edu/sites/default/files/documents/techMV_mostrecent.pdf), an engineer engaged in purely non-innovative activity __destroys__ nearly $600K in employer market value. On the other hand, the average engineer, working on a combination of maintenance and innovation activities, ****adds**** $855K in market value to their employer.
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515846676-image-5.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515846676-image-5.png)
 
 As the study’s author speculates:
 
