@@ -134,9 +134,6 @@ export default function Portfolio({ logos, meta }) {
                                             unoptimized
                                         />
                                     </div>
-                                    {logo.displayName && (
-                                        <p className="mt-3 text-sm font-medium text-gray-700">{logo.displayName}</p>
-                                    )}
                                 </div>
                             )
 
