@@ -36,7 +36,7 @@ $$
 $$  
 Wild variation in monetization across customers means most enterprise software customers contribute little to overall revenue.
 
-For example, a late-stage software company with \$50M+ in ARR and ~2,000 customers might have a small number of customers with enormous contracts, possibly greater than \$500K or even \$1M in ARR each, and a large number with tiny contracts in the ~\$10K range.
+For example, a late-stage software company with 50M+ in ARR and ~2,000 customers might have a small number of customers with enormous contracts, possibly greater than 500K or even 1M in ARR each, and a large number with tiny contracts in the ~10K range.
 
 The extreme, non-negative variation around the average produces a right or positively skewed monetization distribution:
 
@@ -89,7 +89,7 @@ With that caveat acknowledged, let's throw caution to the wind!
 
 Public companies do their best to hide customer concentration. But at a certain point fiduciary duty requires that they disclose revenue concentration, especially if a few customers account for a large enough chunk of revenue.
 
-Commonly, companies will state that "no customer represents more than X% of revenue." Less frequently, companies will go further, disclosing the number of customers that exceed some revenue threshold, typically \$100,000, and the proportion of revenue they represent. This gets framed as a point of strength — "look how many large customers we have" — but it also indicates customer concentration since the X customers with greater than \$100K contracts are by definition the X largest customers.
+Commonly, companies will state that "no customer represents more than X% of revenue." Less frequently, companies will go further, disclosing the number of customers that exceed some revenue threshold, typically 100,000, and the proportion of revenue they represent. This gets framed as a point of strength — "look how many large customers we have" — but it also indicates customer concentration since the X customers with greater than 100K contracts are by definition the X largest customers.
 
 Here's an example from [Slack's S-1](https://www.sec.gov/Archives/edgar/data/1764925/000162828019004786/slacks-1.htm):
 
