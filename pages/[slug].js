@@ -31,14 +31,8 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
     const posts = await getPosts()
 
-    if (posts.map((post) => (post.slug)).includes(params.slug)) {
-        var getter = getPost
-    } else {
-        var getter = getPage
-    }
-
-    const post = await getter(params.slug)
-    //const post = await getPost(params.slug)
+    const isPost = posts.some((post) => post.slug === params.slug)
+    const post = await (isPost ? getPost : getPage)(params.slug)
 
     return { props: { post: post } }
 }
