@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Navbar from '../components/navbar'
-import { getPosts } from './api/ghost_data'
+import { getPosts } from '../lib/content'
 import SectionPage from '../components/sectionpage'
 import Footer from '../components/footer'
 import Analytics from '../components/analytics'
@@ -48,7 +48,7 @@ export default function Page ({ posts }) {
             <Navbar source={slug}/>
             <div className="mt-12">
                 <h1 className="text-4xl font-bold text-gray-900 mb-8">
-                    All Essays
+                    Essays
                 </h1>
                 <ul>
                     {posts.map((post) => (

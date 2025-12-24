@@ -47,15 +47,29 @@
 }
 
 .subscribe-form input {
-    @apply text-gray-500 flex-grow transition duration-500 hover:bg-gray-100 w-full md:w-60 lg:w-64 rounded-md px-4 py-2 focus:ring-blue-500 focus:outline-none
+    @apply text-gray-500 transition duration-500 hover:bg-gray-100 w-full sm:w-72 rounded-md px-4 py-2 focus:ring-blue-500 focus:outline-none
 }
 
 .subscribe-form button {
     @apply transition duration-500 ease-in-out sm:w-40 rounded-md py-2 px-2 text-white font-semibold bg-blue-500 shadow-md hover:bg-blue-400 focus:outline-none
 }
 
+/* Server-rendered MathJax SVG styling */
 mjx-container {
-    @apply overflow-auto overflow-y-hidden
+    display: inline-block;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+mjx-container[display="true"] {
+    display: block !important;
+    text-align: center !important;
+    margin: 1em auto !important;
+    width: 100%;
+}
+
+mjx-container[display="true"] svg {
+    margin: 0 auto;
 }
 
 .imageContainer div {
@@ -67,6 +81,24 @@ mjx-container {
     width: 100% !important;
     position: relative !important;
     height: unset !important;
+}
+
+/* Table styling for markdown tables */
+.prose table {
+    @apply w-auto border-collapse my-6 mx-auto;
+}
+
+.prose th,
+.prose td {
+    @apply border border-gray-300 px-4 py-2 text-left;
+}
+
+.prose th {
+    @apply bg-gray-100 font-semibold;
+}
+
+.prose tr:nth-child(even) {
+    @apply bg-gray-50;
 }
 
 /* Talks page heading spacing tweaks */

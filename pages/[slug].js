@@ -1,11 +1,10 @@
 import Head from 'next/head'
 import Image from "next/image"
-import { getPosts, getPost, getPages, getPage } from './api/ghost_data'
+import { getPosts, getPost, getPages, getPage } from '../lib/content'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
 import LinkConverter from '../components/linkconverter'
 import Analytics from '../components/analytics'
-import { MathJax, MathJaxContext } from "better-react-mathjax"
 
 export async function getStaticPaths() {
     const posts = await getPosts()
@@ -20,14 +19,8 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
     const posts = await getPosts()
 
-    if (posts.map((post) => (post.slug)).includes(params.slug)) {
-        var getter = getPost
-    } else {
-        var getter = getPage
-    }
-
-    const post = await getter(params.slug)
-    //const post = await getPost(params.slug)
+    const isPost = posts.some((post) => post.slug === params.slug)
+    const post = await (isPost ? getPost : getPage)(params.slug)
 
     return { props: { post: post } }
 }
@@ -65,31 +58,27 @@ export default function PostPage ({ post }) {
             <Analytics />
             <Navbar source={post.title}/>
             <main className="mt-12">
-                <MathJaxContext hideUntilTypeset="first">
-                    <MathJax>
-                        <h1 className={`text-4xl font-bold ${post.slug === 'talks' ? 'mb-4' : 'mb-6'} text-gray-900`}>
-                            {post.title}
-                        </h1>
-                        <div className={`prose md:prose-md lg:prose-lg max-w-4xl sm:mx-auto ${post.slug === 'talks' ? 'talks-prose' : ''}`}>
-                            {post.feature_image ?
-                                <div className="imageContainer">
-                                    <Image
-                                        src={post.feature_image}
-                                        alt={post.title}
-                                        width="0"
-                                        height="0"
-                                        sizes="100vw"
-                                        // layout="fill"
-                                        className="imageImage rounded-lg"
-                                        priority
-                                    />
-                                </div> :
-                                null
-                            }
-                            <LinkConverter content={post.html} />
-                        </div>
-                    </MathJax>
-                </MathJaxContext>
+                <h1 className={`text-4xl font-bold ${post.slug === 'talks' ? 'mb-4' : 'mb-6'} text-gray-900`}>
+                    {post.title}
+                </h1>
+                <div className={`prose md:prose-md lg:prose-lg max-w-4xl sm:mx-auto ${post.slug === 'talks' ? 'talks-prose' : ''}`}>
+                    {post.feature_image ?
+                        <div className="imageContainer">
+                            <Image
+                                src={post.feature_image}
+                                alt={post.title}
+                                width="0"
+                                height="0"
+                                sizes="100vw"
+                                // layout="fill"
+                                className="imageImage rounded-lg"
+                                priority
+                            />
+                        </div> :
+                        null
+                    }
+                    <LinkConverter content={post.html} />
+                </div>
             </main>
             <Footer />
         </div>

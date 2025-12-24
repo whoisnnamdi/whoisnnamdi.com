@@ -4,8 +4,7 @@ import Link from 'next/link'
 import Analytics from '../components/analytics'
 import Footer from '../components/footer'
 import Navbar from '../components/navbar'
-import { getPage } from './api/ghost_data'
-import { extractPortfolioLogos } from '../lib/portfolio'
+import { getPage, getPortfolioData } from '../lib/content'
 
 const DEFAULT_META = {
     description: 'Partnerships with technical founders building enduring software and infrastructure companies.',
@@ -16,15 +15,16 @@ const DEFAULT_META = {
 }
 
 export async function getStaticProps() {
-    let portfolioPage
+    // Read logos from JSON data file
+    const logos = getPortfolioData()
 
+    // Get page metadata
+    let portfolioPage
     try {
         portfolioPage = await getPage('portfolio')
     } catch (error) {
-        console.error('Unable to fetch Ghost portfolio page', error)
+        console.error('Unable to fetch portfolio page', error)
     }
-
-    const logos = extractPortfolioLogos(portfolioPage?.html)
 
     const meta = {
         description: portfolioPage?.meta_description || DEFAULT_META.description,
@@ -90,14 +90,6 @@ export default function Portfolio({ logos, meta }) {
                         I partner closely with entrepreneurs reimagining how the world works — from developer platforms and applied AI
                         to the infrastructure that supports them. Below is a sample of the teams I&apos;ve been fortunate to back.
                     </p>
-                    <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                        <Link
-                            href="mailto:nnamdi@lsvp.com"
-                            className="inline-flex items-center justify-center rounded-md bg-blue-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition duration-200 hover:bg-blue-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
-                        >
-                            Get in touch
-                        </Link>
-                    </div>
                 </header>
 
                 <section className="mt-12 grid gap-4 sm:grid-cols-3">
@@ -110,11 +102,7 @@ export default function Portfolio({ logos, meta }) {
                 </section>
 
                 <section className="mt-16">
-                    <div className="space-y-3">
-                        <h2 className="text-2xl font-semibold text-gray-900">Selected investments</h2>
-                    </div>
-
-                    <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                         {logos.length === 0 && (
                             <p className="col-span-full text-center text-base text-gray-600">
                                 Check back soon — portfolio updates are on the way.
@@ -134,9 +122,6 @@ export default function Portfolio({ logos, meta }) {
                                             unoptimized
                                         />
                                     </div>
-                                    {logo.displayName && (
-                                        <p className="mt-3 text-sm font-medium text-gray-700">{logo.displayName}</p>
-                                    )}
                                 </div>
                             )
 

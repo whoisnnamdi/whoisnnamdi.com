@@ -4,18 +4,14 @@ import Link from 'next/link'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
 import React, { useRef } from 'react'
-import { getPosts, getAll } from './api/ghost_data'
+import { getPosts } from '../lib/content'
 import PostPreview from '../components/postpreview'
 import Analytics from '../components/analytics'
 import portrait from '../public/images/portrait-color-compressed.png'
-import fs from 'fs-extra'
-import axios from 'axios'
-import path from 'path'
 import { useSubscribe } from '../components/subscribe'
 
 export async function getStaticProps() {
     const posts = await getPosts()
-    const postsPages = await getAll()
 
     posts.map((post) => {
         const options = {
@@ -27,48 +23,13 @@ export async function getStaticProps() {
         post.dateFormatted = new Intl.DateTimeFormat('default', options).format(
             new Date(post.published_at)
         )
-        
-        post.excerpt = post.excerpt.replace(/\[(.*?)\]/, "")
+
+        post.excerpt = (post.excerpt || '').replace(/\[(.*?)\]/, "")
 
         const cutoff = 166
 
         post.excerpt = post.excerpt.substring(0, Math.min(cutoff, post.excerpt.length)) + (post.excerpt.length > cutoff ? "..." : "")
         post.excerpt = post.excerpt.replace(/\[(.*?)[$^.]/, "")
-    })
-
-    const downloadImage = async (image) => {
-        try {
-            const filePath = path.join("public", image.replace(/\bhttps?:\/\/[^)''"\/]+/, ""))
-            await fs.ensureDir(path.dirname(filePath))
-
-            fs.open(filePath, "wx", async (err, fd) => {
-                if (err) {
-                    if (err.code === "EEXIST") {
-                        return
-                    }
-
-                    console.log(err, filePath)
-                } else {
-                    const res = await axios({ url: image, responseType: "stream" })
-                    res.data.pipe(fs.createWriteStream(filePath))
-                }
-            })
-        } catch {
-            console.log("Image download failed: ", image)
-        }
-
-    }
-
-    postsPages.forEach(post => {
-        try {
-            post.html.match(/\bhttps?:[^)''"]+\/content\/images[^)''"]+\.(?:jpg|jpeg|gif|png|svg)/g).forEach(image => {
-                if (!image.includes("600w") && !image.includes("1000w") && !image.includes("1600w")) {
-                    downloadImage(image)
-                }
-            })
-        } catch {
-
-        }
     })
 
     const featuredPosts = posts.filter((post) => {
