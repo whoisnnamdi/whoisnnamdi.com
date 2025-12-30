@@ -38,7 +38,7 @@ _(I'm trying something new: summarizing and explaining technical research papers
 
 ## Summary
 
-"[Pre-training via Paraphrasing](http://arxiv.org/abs/2006.15020)" introduces **MARGE**, a **Multilingual Autoencoder that Retrieves and Generates**. In this architecture, a _retrieval model_ is trained to score the relevancy of batches of "evidence" documents \\(z\_{1...M}\\) based on their similarity to a "target" document \\(x\\). Simultaneously, a _reconstruction model_ is trained to reconstruct the original target document conditioning on the evidence documents and their relevance scores from the retrieval model. This back-and-forth emulates the behavior of an autoencoder (or even a denoising autoencoder) whereby the mapping of target document to evidence documents serves as an _information bottleneck_ forcing the model to learn document representations that will best enable the reconstruction of the input document.
+"[Pre-training via Paraphrasing](http://arxiv.org/abs/2006.15020)" introduces **MARGE**, a **Multilingual Autoencoder that Retrieves and Generates**. In this architecture, a _retrieval model_ is trained to score the relevancy of batches of "evidence" documents $z_{1...M}$ based on their similarity to a "target" document $x$. Simultaneously, a _reconstruction model_ is trained to reconstruct the original target document conditioning on the evidence documents and their relevance scores from the retrieval model. This back-and-forth emulates the behavior of an autoencoder (or even a denoising autoencoder) whereby the mapping of target document to evidence documents serves as an _information bottleneck_ forcing the model to learn document representations that will best enable the reconstruction of the input document.
 
 Once pre-trained on this "paraphrasing" task, MARGE can then be leveraged for downstream tasks like sentence retrieval, machine translation, summarization, paraphrasing, and question answering. Even with no fine-tuning (i.e. "zero-shot"), the model demonstrates impressive performance on these tasks. Performance improves meaningfully with task-specific fine-tuning.
 
@@ -69,12 +69,12 @@ Both the encoder and decoder here have a [Transformer](https://arxiv.org/abs/170
 The input to the MARGE model is a batch of "evidence" (the documents to be retrieved) and a "target" (the document to be reconstructed). Batches are created by:
 
 -   sharding the document dataset into groups of potentially documents using heuristics like publication date
--   taking the \\(k\\) evidence documents within the shard most similar to the target document (according to \\(f(x,z)\\) below)
--   including a subset of these \\(k\\) documents in the batch, weighting documents in other languages more than same-language documents
+-   taking the $k$ evidence documents within the shard most similar to the target document (according to $f(x,z)$ below)
+-   including a subset of these $k$ documents in the batch, weighting documents in other languages more than same-language documents
 
 Batches are dropped and regenerated offline every 10K training steps by re-computing the pairwise relevance scores across documents.
 
-The retrieval model compares candidate documents by computing a pairwise relevance score \\(f(x, z)\\) between a target document \\(x\\) and evidence document \\(z\\) from the corpus. This takes the form of the cosine similarity of the documents, encoded by a function \\(g(\\cdot)\\), which takes the form of the first token of a 4-layer Transformer network:
+The retrieval model compares candidate documents by computing a pairwise relevance score $f(x, z)$ between a target document $x$ and evidence document $z$ from the corpus. This takes the form of the cosine similarity of the documents, encoded by a function $g(\cdot)$, which takes the form of the first token of a 4-layer Transformer network:
 
 $$  
 f(x,z) = \frac{g(x) \cdot g(z)}{|g(x)| |g(z)|}  
@@ -86,13 +86,13 @@ Using the same function for both targets and evidence ensures documents with sim
 
 ### Reconstruction model
 
-The reconstruction model computes the likelihood of the target document tokens, conditioned on the evidence documents within the batch and associated relevance scores. The vector representations for all evidence documents within each batch are concatenated together into a single vector \\(z\_{1...M}\\) before being used for reconstruction:
+The reconstruction model computes the likelihood of the target document tokens, conditioned on the evidence documents within the batch and associated relevance scores. The vector representations for all evidence documents within each batch are concatenated together into a single vector $z_{1...M}$ before being used for reconstruction:
 
 $$  
 L\_\theta = - \sum\_i \log{p\_\theta(x\_i|z\_{1...M}, f(x\_i,z\_1), ..., f(x\_i,z\_M))}  
 $$
 
-During decoding, attention weights are calculated for each token of the target across the set of concatenated evidence documents, meaning that the weights correspond to the attention the decoder should pay to each token of each evidence document at each time-step, capturing token-wise similarity as in standard [dot-product attention](https://lilianweng.github.io/lil-log/2018/06/24/attention-attention.html). Here however, the relevance scores for each document are added to the attention scores for the tokens from that document, multiplied by a trainable scalar parameter \\(\\beta\\). These biased scores are then softmaxed, yielding the attention weights for each time-step, layer \\(l\\), and attention head \\(h\\):
+During decoding, attention weights are calculated for each token of the target across the set of concatenated evidence documents, meaning that the weights correspond to the attention the decoder should pay to each token of each evidence document at each time-step, capturing token-wise similarity as in standard [dot-product attention](https://lilianweng.github.io/lil-log/2018/06/24/attention-attention.html). Here however, the relevance scores for each document are added to the attention scores for the tokens from that document, multiplied by a trainable scalar parameter $\beta$. These biased scores are then softmaxed, yielding the attention weights for each time-step, layer $l$, and attention head $h$:
 
 $$  
 \alpha = softmax\_{z\_{1...M}}(Q^{lh}(x\_i)K^{lh}(z\_{1...M}) + \beta f(x\_i,z\_j)) \in \mathbb{R}^{|x\_i| \times \sum\_j |z\_j|}  
@@ -102,7 +102,7 @@ Backpropagating the reconstruction loss improves both the reconstruction model a
 
 ### Architecture and training
 
-The model encoder (distinct from the encoder \\(g(\\cdot)\\) used to encode individual documents) is a 12-layer Transformer network with dimension 1024 and feedforward layers of size 4096. The decoder is similar in structure but the feedforward layers there are size 16536 and 4 additional Transformer layers are added to the base with only self-attention (i.e. attention only to other words within the same document) and feedforward layers of size 4096. These supplemental layers allow the words in the target to contextualize locally before doing so across documents. The first four layers of the encoder are used in the relevance model (this is the \\(g(\\cdot)\\) referred to above).
+The model encoder (distinct from the encoder $g(\cdot)$ used to encode individual documents) is a 12-layer Transformer network with dimension 1024 and feedforward layers of size 4096. The decoder is similar in structure but the feedforward layers there are size 16536 and 4 additional Transformer layers are added to the base with only self-attention (i.e. attention only to other words within the same document) and feedforward layers of size 4096. These supplemental layers allow the words in the target to contextualize locally before doing so across documents. The first four layers of the encoder are used in the relevance model (this is the $g(\cdot)$ referred to above).
 
 The model is initially pre-trained on the [CC-NEWS corpus](https://commoncrawl.org/2016/10/news-dataset-available/) for 1M total steps. At this point, the checkpointed model is referred to as MARGE-NEWS. Then, the authors further pre-train for an additional 100K steps on Wikipedia, referring to the resulting model as MARGE.
 

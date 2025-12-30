@@ -53,7 +53,7 @@ $$\frac{\text{Valuation} \uparrow}{\text{Revenue or Cash Flow} \uparrow \uparrow
 
 Think of the "multiples are higher today because multiples will be higher tomorrow" justification as a sort of "bubble mentality" or "[greater fools](https://en.wikipedia.org/wiki/Greater_fool_theory)" explanation. Someone else will pay more for this later, so I'm OK paying more today. This of course can't go on for long: bubbles eventually pop; manias eventually subside. So, here too, multiples return to "normal."
 
-These three explanations for valuation multiples are collectively called the [Campbell-Shiller Decomposition](https://www.youtube.com/watch?v=CIMMkDWiqRE), originally conceived in the late 1980s. It lets us cleanly account for changing valuation multiples with changing beliefs about growth, returns, and future multiples. We can even make an equation out of it (\\(\\Delta\\) = Change):  
+These three explanations for valuation multiples are collectively called the [Campbell-Shiller Decomposition](https://www.youtube.com/watch?v=CIMMkDWiqRE), originally conceived in the late 1980s. It lets us cleanly account for changing valuation multiples with changing beliefs about growth, returns, and future multiples. We can even make an equation out of it ($\Delta$ = Change):  
 $$\Delta \text{Valuation Multiples Today} = \Delta \text{Future Growth} - \Delta\text{Future Returns} + \Delta\text{Future Valuation Multiples}$$
 
 Therefore, higher multiples today imply (1) faster growth in the future, (2) lower future returns, or (3) even higher multiples going forward.
@@ -72,7 +72,7 @@ Let's start with _subjective expectations_. When [researchers](https://onlinelib
 > ...  
 > “**high prices can largely be accounted for by high expectations for future cash flows.** Cash flow growth expectations are volatile and significantly correlated with prices. In comparison, return expectations are much less volatile and positively correlate with prices, meaning that **high prices cannot come from low discount rates**” — [Subjective Cash Flow and Discount Rate Expectations](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3841696)
 
-[Another paper](https://www.ssrn.com/abstract=3740792) breaks down the expected returns vs growth dynamic between different classes of market participants, finding that sell-side analysts, institutional investors, and corporate CFOs all use growth expectations to explain fluctuating valuations (\\(g\_t\\) in the table below) rather than expected returns (\\(\\mu\_t\\)):
+[Another paper](https://www.ssrn.com/abstract=3740792) breaks down the expected returns vs growth dynamic between different classes of market participants, finding that sell-side analysts, institutional investors, and corporate CFOs all use growth expectations to explain fluctuating valuations ($g_t$ in the table below) rather than expected returns ($\mu_t$):
 
 ![Pasted-image-20211105145501](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515917528-Pasted-image-20211105145501.png)
 

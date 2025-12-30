@@ -62,9 +62,9 @@ The strong results suggest the long hoped-for convergence of architectures acros
 
 ### **Architecture**
 
-The model effectively analogizes between words as tokens of larger sentences and groups of pixels as "tokens" of larger images. Like a sequence of word tokens makes a sentence, a sequence of pixel patches makes an image. Thus, the input image is broken up into multiple patches of \\(P^2 \\cdot C\\) dimensions representing square subsections of the original image (including all color channels \\(C\\)), forming a sequence of image patches of length \\(N\\).
+The model effectively analogizes between words as tokens of larger sentences and groups of pixels as "tokens" of larger images. Like a sequence of word tokens makes a sentence, a sequence of pixel patches makes an image. Thus, the input image is broken up into multiple patches of $P^2 \cdot C$ dimensions representing square subsections of the original image (including all color channels $C$), forming a sequence of image patches of length $N$.
 
-Image patches \\(\\mathbf{x}\_{p}^{n}\\), typically 16x16 pixels, are embedded into \\(D\\) dimension vectors using an embedding matrix \\(\\textbf{E}\\). The sequence of "patch embeddings" is prepended with a learnable \\(\\texttt{\[class\]}\\) token, similar to [BERT](https://arxiv.org/abs/1810.04805), telling the model to classify the image, leaving us  with a \\((N+1) \\times D\\) dimension vector, \\(\\textbf{z}\\).
+Image patches $\mathbf{x}_{p}^{n}$, typically 16x16 pixels, are embedded into $D$ dimension vectors using an embedding matrix $\textbf{E}$. The sequence of "patch embeddings" is prepended with a learnable $\texttt{[class]}$ token, similar to [BERT](https://arxiv.org/abs/1810.04805), telling the model to classify the image, leaving us  with a $(N+1) \times D$ dimension vector, $\textbf{z}$.
 
 The representation of the first token in the output of the final Transformer encoder layer serves as the image representation. The classification head is attached to only this token. Position embeddings are added to the patch embeddings, and these vectors serve as input to the encoder.
 
@@ -72,16 +72,16 @@ The Transformer architecture is constructed as follows:
 
 $$  
 \begin{aligned}  
-\mathbf{z}\_{0} &=\left\[\mathbf{x}\_{\text {class }} ; \mathbf{x}\_{p}^{1} \mathbf{E} ; \mathbf{x}\_{p}^{2} \mathbf{E} ; \cdots ; \mathbf{x}\_{p}^{N} \mathbf{E}\right\]+\mathbf{E}\_{p o s}, & \mathbf{E} \in \mathbb{R}^{\left(P^{2} \cdot C\right) \times D}, \mathbf{E}\_{p o s} \in \mathbb{R}^{(N+1) \times D}  
-\ \mathbf{z}\_{\ell}^{\prime} &=\operatorname{MSA}\left(\mathrm{LN}\left(\mathbf{z}\_{\ell-1}\right)\right)+\mathbf{z}\_{\ell-1}, & \ell =1 \ldots L  
-\ \mathbf{z}\_{\ell} &=\operatorname{MLP}\left(\mathrm{LN}\left(\mathbf{z}\_{\ell}^{\prime}\right)\right)+\mathbf{z}\_{\ell}^{\prime}, & \ell =1 \ldots L  
-\ \mathbf{y} &=\operatorname{LN}\left(\mathbf{z}\_{L}^{0}\right)  
+\mathbf{z}_{0} &=\left[\mathbf{x}_{\text {class }} ; \mathbf{x}_{p}^{1} \mathbf{E} ; \mathbf{x}_{p}^{2} \mathbf{E} ; \cdots ; \mathbf{x}_{p}^{N} \mathbf{E}\right]+\mathbf{E}_{p o s}, & \mathbf{E} \in \mathbb{R}^{\left(P^{2} \cdot C\right) \times D}, \mathbf{E}_{p o s} \in \mathbb{R}^{(N+1) \times D}  
+\ \mathbf{z}_{\ell}^{\prime} &=\operatorname{MSA}\left(\mathrm{LN}\left(\mathbf{z}_{\ell-1}\right)\right)+\mathbf{z}_{\ell-1}, & \ell =1 \ldots L  
+\ \mathbf{z}_{\ell} &=\operatorname{MLP}\left(\mathrm{LN}\left(\mathbf{z}_{\ell}^{\prime}\right)\right)+\mathbf{z}_{\ell}^{\prime}, & \ell =1 \ldots L  
+\ \mathbf{y} &=\operatorname{LN}\left(\mathbf{z}_{L}^{0}\right)  
 \end{aligned}  
 $$
 
-where \\(\\mathbf{z}\_{\\ell}\\) represents the patch sequence representation output at each layer \\(\\ell\\) of the network and \\(\\mathbf{z}\_{L}^{0}\\) is the first token of the final layer output, which is fed into the classification head with Layer Norm \\((\\mathrm{LN})\\) applied.
+where $\mathbf{z}_{\ell}$ represents the patch sequence representation output at each layer $\ell$ of the network and $\mathbf{z}_{L}^{0}$ is the first token of the final layer output, which is fed into the classification head with Layer Norm $(\mathrm{LN})$ applied.
 
-Layer representations \\(\\mathbf{z}\_{\\ell}\\) are passed through each Transformer block, where Layer Norm and multi-headed self-attention is applied \\((\\operatorname{MSA})\\), a residual skip connection to the previous layer's representation \\(\\mathbf{z}\_{\\ell-1}\\) added, followed by Layer Norm, and a feed forward layer \\((\\mathrm{MLP})\\) with a residual connection to the intermediate representation, \\(\\mathbf{z}\_{\\ell}^{\\prime}\\).
+Layer representations $\mathbf{z}_{\ell}$ are passed through each Transformer block, where Layer Norm and multi-headed self-attention is applied $(\operatorname{MSA})$, a residual skip connection to the previous layer's representation $\mathbf{z}_{\ell-1}$ added, followed by Layer Norm, and a feed forward layer $(\mathrm{MLP})$ with a residual connection to the intermediate representation, $\mathbf{z}_{\ell}^{\prime}$.
 
 The authors construct multiple versions of the model at various scales to compare results across model size, similar to BERT. Base = "B", Large = "L", Huge = "H".
 

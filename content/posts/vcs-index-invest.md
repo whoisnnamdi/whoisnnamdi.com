@@ -49,14 +49,14 @@ A power law distribution is one where large, consequential events (the Googles, 
 ![https://i0.wp.com/reactionwheel.net/wp-content/uploads/2015/06/normal-v-pld-tail.png?resize=606%2C287](/content/images/2020/07/normal-v-pld-tail.png)
 *Source: Reaction Wheel*
 
-These events happen with some frequency, and that frequency can be characterized by a "shape" or "tail parameter" that governs the "fatness" of the tail, typically represented by the symbol \\(\\alpha\\).
+These events happen with some frequency, and that frequency can be characterized by a "shape" or "tail parameter" that governs the "fatness" of the tail, typically represented by the symbol $\alpha$.
 
-The smaller \\(\\alpha\\), the "fatter" the tail of the power law distribution. The fatter the tail, the higher the frequency and size of outlier startups.
+The smaller $\alpha$, the "fatter" the tail of the power law distribution. The fatter the tail, the higher the frequency and size of outlier startups.
 
 ![https://i2.wp.com/reactionwheel.net/wp-content/uploads/2015/06/pld-tails.png?resize=611%2C287](/content/images/2020/07/pld-tails.png)
 *Source: Reaction Wheel*
 
-If \\(\\alpha\\) is sufficiently small, strange things begin to happen. With a small enough \\(\\alpha\\), **making investments nearly at random will increase a portfolio's expected return**.
+If $\alpha$ is sufficiently small, strange things begin to happen. With a small enough $\alpha$, **making investments nearly at random will increase a portfolio's expected return**.
 
 The exact mathematical reasons for this are [somewhat esoteric](https://arxiv.org/abs/2001.10488), but intuitively, if there are enough potential Googles, Amazons, and Facebooks out there, they will more than cover the losses from the duds thanks to the shape of the power law distribution. When fat tails dominate returns it's not worth having an extremely high bar if it might cause you to miss out on one of these future juggernauts.
 

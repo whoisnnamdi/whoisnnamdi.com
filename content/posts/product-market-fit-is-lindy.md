@@ -100,9 +100,9 @@ Again, I translate — when the value of experimentation is fat-tailed, the marg
 
 On the other hand, if the value of experimentation is normally distributed or thin-tailed, then there are almost no mammoths out there to find. Instead, most innovations are of middling value. In that range, precision matters, as it can be the difference between accidentally implementing a slightly worse change over a somewhat better one. More information helps decipher between the two. Thus, the value of information is _convex_.
 
-We can see this in the chart below from the Bing paper, which shows the shape of the experiment "production function" (which effectively represents the value of experimentally gained information) when graphed against experiment sample size. The different lines represent various levels of \\(\\alpha\\) , or the assumed fat-tailedness of the innovation distribution. Lower \\(\\alpha\\) means fatter tails, and vice versa.
+We can see this in the chart below from the Bing paper, which shows the shape of the experiment "production function" (which effectively represents the value of experimentally gained information) when graphed against experiment sample size. The different lines represent various levels of $\alpha$, or the assumed fat-tailedness of the innovation distribution. Lower $\alpha$ means fatter tails, and vice versa.
 
-Fat-tailedness (small \\(\\alpha\\)) leads to a concave information value curve, whereas thin-tailedness (high \\(\\alpha\\)) leads to a convex information value curve:
+Fat-tailedness (small $\alpha$) leads to a concave information value curve, whereas thin-tailedness (high $\alpha$) leads to a convex information value curve:
 
 ![image-20200906170720679](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515820976-image-20200906170720679.png)
 
