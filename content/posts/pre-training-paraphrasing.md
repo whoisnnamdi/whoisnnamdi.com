@@ -88,14 +88,14 @@ Using the same function for both targets and evidence ensures documents with sim
 
 The reconstruction model computes the likelihood of the target document tokens, conditioned on the evidence documents within the batch and associated relevance scores. The vector representations for all evidence documents within each batch are concatenated together into a single vector $z_{1...M}$ before being used for reconstruction:
 
-$$  
-L\_\theta = - \sum\_i \log{p\_\theta(x\_i|z\_{1...M}, f(x\_i,z\_1), ..., f(x\_i,z\_M))}  
+$$
+L_\theta = - \sum_i \log{p_\theta(x_i|z_{1...M}, f(x_i,z_1), ..., f(x_i,z_M))}
 $$
 
 During decoding, attention weights are calculated for each token of the target across the set of concatenated evidence documents, meaning that the weights correspond to the attention the decoder should pay to each token of each evidence document at each time-step, capturing token-wise similarity as in standard [dot-product attention](https://lilianweng.github.io/lil-log/2018/06/24/attention-attention.html). Here however, the relevance scores for each document are added to the attention scores for the tokens from that document, multiplied by a trainable scalar parameter $\beta$. These biased scores are then softmaxed, yielding the attention weights for each time-step, layer $l$, and attention head $h$:
 
-$$  
-\alpha = softmax\_{z\_{1...M}}(Q^{lh}(x\_i)K^{lh}(z\_{1...M}) + \beta f(x\_i,z\_j)) \in \mathbb{R}^{|x\_i| \times \sum\_j |z\_j|}  
+$$
+\alpha = softmax_{z_{1...M}}(Q^{lh}(x_i)K^{lh}(z_{1...M}) + \beta f(x_i,z_j)) \in \mathbb{R}^{|x_i| \times \sum_j |z_j|}
 $$
 
 Backpropagating the reconstruction loss improves both the reconstruction model and the relevance model via this attention mechanism.

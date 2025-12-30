@@ -30,11 +30,11 @@ There are two kinds of growth: **absolute** and **relative**:
 
 -   Absolute growth is the _absolute_ increase in a metric, like dollars of revenue added or customers acquired in a given period. The metric this period minus its value last period gives you the absolute growth:
 
-$$\text{Absolute Growth}\_t = \text{Metric}\_t - \text{Metric}\_{t-1}$$
+$$\text{Absolute Growth}_t = \text{Metric}_t - \text{Metric}_{t-1}$$
 
 -   Relative growth is measured _relative_ to what came before: "We ended the year with 150% more customers", or "We grew revenue 3X this year." It's effectively unitless, but we tend to measure it in percentages, as in "percentage points of growth." It's the absolute growth divided by the metric's value last period
 
-$$\text{Relative Growth}\_t = \frac{\text{Metric}\_t - \text{Metric}\_{t-1}}{\text{Metric}\_{t-1}}$$
+$$\text{Relative Growth}_t = \frac{\text{Metric}_t - \text{Metric}_{t-1}}{\text{Metric}_{t-1}}$$
 
 **In startup land, we talk way too much about relative growth.** It muddles our thinking and makes compound, exponential growth seem easier than it really is. **We'd do better to ground our thinking in absolute growth.**
 

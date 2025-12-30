@@ -38,7 +38,7 @@ The gravity of life and death means researchers take great care in measuring tre
 
 To do this, clinical researchers use a statistical method called the [**Kaplan-Meier estimator**](https://en.wikipedia.org/wiki/Kaplan%E2%80%93Meier_estimator). The formula elegantly solves a frequent issue that pops up in cohort retention analysis: **making valid comparisons within and across groups of cohorts of different lifespans**:
 
-$$ \widehat S(t) = \prod\limits\_{i:\ t\_i\le t} \left(1 - \frac{d\_i}{n\_i}\right) $$
+$$ \widehat S(t) = \prod\limits_{i:\ t_i\le t} \left(1 - \frac{d_i}{n_i}\right) $$
 
 Despite the fancy formula, survival analysis using Kaplan-Meier (KM) is actually quite simple and delivers much better results than other methods:
 

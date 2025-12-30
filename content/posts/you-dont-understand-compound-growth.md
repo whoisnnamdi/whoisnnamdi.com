@@ -86,11 +86,11 @@ Now we ask the question, how fast does our bacteria population grow (in percenta
 
 The number of bacteria cells one minute from now is:
 
-$$n\_{t+1} = 2n\_t$$
+$$n_{t+1} = 2n_t$$
 
 Which implies the minute-over-minute growth rate is:
 
-$$\frac{n\_{t+1}}{n\_t} - 1 = \frac{2n\_t}{n\_t} - 1 = 2 - 1 = 1$$
+$$\frac{n_{t+1}}{n_t} - 1 = \frac{2n_t}{n_t} - 1 = 2 - 1 = 1$$
 
 or 100%.
 
@@ -119,11 +119,11 @@ Going through the same growth rate calculations from above:
 
 The number of bricks 1 hour from now will be:
 
-$$n\_{t+1} = n\_t + 10$$
+$$n_{t+1} = n_t + 10$$
 
 Which implies hour-over-hour growth is:
 
-$$\frac{n\_{t+1}}{n\_t} - 1 = \frac{n\_t + 10 - n\_t}{n\_t}= \frac{10}{n\_t}$$
+$$\frac{n_{t+1}}{n_t} - 1 = \frac{n_t + 10 - n_t}{n_t}= \frac{10}{n_t}$$
 
 Notice that the growth rate depends on how many bricks we've already laid. This is **linear** or **arithmetic growth**. Because the number of bricks laid each hour is static through time, growth (in percentage terms) necessarily slows down. Scale is in the denominator. Therefore, growth and scale are negatively correlated: more scale -> less growth.
 

@@ -145,8 +145,8 @@ Said more precisely:
 > An additional difficulty in the numerical estimation of moments—and, therefore, of risk—is due to the very slow convergence of estimated values to the exact values of the process, even if the associated moments are finite. This “slow Law of Large Numbers” is caused by the large weight of rare events (black swans), which take a lot of data to show up, and prevent a proper estimation of the moments of such processes through the moments of a sample. — [Fat tails and black swans: Exact results for multiplicative processes with resets](https://aip.scitation.org/doi/10.1063/1.5141837)
 
 Further, the largest value you are likely to see in a sample of power law distribution (the expected value of the maximum value) is proportional to the sample size $n$ and inversely proportional to $\alpha$:  
-$$  
-\mathbb{E} [x\_{max}] \sim n^{1/(\alpha-1)}  
+$$
+\mathbb{E} [x_{max}] \sim n^{1/(\alpha-1)}
 $$  
 In plain English — your [personal best](https://en.wikipedia.org/wiki/Personal_record) can only get better with more attempts. In the realm of venture, that looks like this:
 
@@ -167,8 +167,8 @@ More _is_ more, or specifically, more customers is more monetization, for the sa
 It's natural to ask — "**how much does current monetization underestimate potential monetization?**"
 
 [Nassim Taleb](https://arxiv.org/abs/2001.10488) has already done the math for us. Imagine that true average monetization is the sum of the monetization of customers smaller than the largest customer we've acquired thus far, which he calls $K$, and the contribution of potential customers larger than our largest:  
-$$  
-\text{true mean} = \text{mean of existing customers}\_{<K} + \text{contribution of potential customers}\_{>K}  
+$$
+\text{true mean} = \text{mean of existing customers}_{<K} + \text{contribution of potential customers}_{>K}
 $$  
 In the chart below, the shaded region represents larger customers yet to be acquired:
 
