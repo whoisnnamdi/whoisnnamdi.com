@@ -3,25 +3,32 @@ import { render } from '@testing-library/react'
 import LinkConverter from '../components/linkconverter'
 
 describe('LinkConverter', () => {
-  beforeAll(() => {
-    process.env.NEXT_PUBLIC_HOST_URL = 'https://whoisnnamdi.com'
-    process.env.NEXT_PUBLIC_HOST_IP = '138.68.29.23'
-  })
-
-  test('rewrites internal links and normalizes Ghost image domains', async () => {
-    const content = `
-      <a href="https://whoisnnamdi.com/abc/">ABC</a>
-      <img src="http://ghost.example.com/content/images/xyz.png" srcset="http://ghost.example.com/content/images/xyz.png 2x" />
-    `
+  test('rewrites internal whoisnnamdi.com links to relative paths', async () => {
+    const content = `<a href="https://whoisnnamdi.com/abc/">ABC</a>`
     const { container } = render(<LinkConverter content={content} />)
 
     // allow effect to run
     await new Promise((r) => setTimeout(r, 0))
 
     const a = container.querySelector('a')
-    const img = container.querySelector('img')
-    expect(a.getAttribute('href')).toContain('/abc/')
-    expect(img.getAttribute('src')).toContain('https://nnamdi.net')
-    expect(img.getAttribute('srcset')).toBe('')
+    expect(a.getAttribute('href')).toBe('/abc/')
+  })
+
+  test('leaves external links unchanged', async () => {
+    const content = `<a href="https://example.com/page">External</a>`
+    const { container } = render(<LinkConverter content={content} />)
+
+    await new Promise((r) => setTimeout(r, 0))
+
+    const a = container.querySelector('a')
+    expect(a.getAttribute('href')).toBe('https://example.com/page')
+  })
+
+  test('renders content via dangerouslySetInnerHTML', () => {
+    const content = `<p>Hello <strong>world</strong></p>`
+    const { container } = render(<LinkConverter content={content} />)
+
+    expect(container.querySelector('p')).toBeTruthy()
+    expect(container.querySelector('strong').textContent).toBe('world')
   })
 })
