@@ -65,7 +65,7 @@ $$\text{Magic Number} = \frac{\text{New ARR}}{\text{Sales \& Marketing}}$$
 
 The first thing to note is that New ARR has two sources — S&M and "other stuff":
 
-$$\text{New ARR} = \text{New ARR from S&M} + \text{New ARR from Other Stuff}$$
+$$\text{New ARR} = \text{New ARR from S\&M} + \text{New ARR from Other Stuff}$$
 
 New ARR can either come from our investments in S&M or it can come from other sources. This could include organic inbound (which may or may not be "marketing" driven depending on the situation), R&D (we release a new feature or product that the market already wants, and it effectively sells itself), etc:
 
