@@ -39,13 +39,19 @@ For generating static files during build (like RSS feeds):
 - Be cautious with Node.js only modules (fs, path) in browser context
 
 ## Committing Code
-- **Before attempting to delete a file to resolve a local type/lint failure, stop and ask the user.** Other agents are often editing adjacent files; deleting their work to silence an error is never acceptable without explicit approval.
-- NEVER edit `.env` or any environment variable files—only the user may change them.
-- Moving/renaming and restoring files is allowed.
-- ABSOLUTELY NEVER run destructive git operations (e.g., `git reset --hard`, `rm`, `git checkout`/`git restore` to an older commit) unless the user gives an explicit, written instruction in this conversation. Treat these commands as catastrophic; if you are even slightly unsure, stop and ask before touching them. *(When working within Cursor or Codex Web, these git limitations do not apply; use the tooling's capabilities as needed.)*
-- Never use `git restore` (or similar commands) to revert files you didn't author—coordinate with other agents instead so their in-progress work stays intact.
-- Always double-check git status before any commit
-- Keep commits atomic: commit only the files you touched and list each path explicitly. For tracked files run `git commit -m "<scoped message>" -- path/to/file1 path/to/file2`. For brand-new files, use the one-liner `git restore --staged :/ && git add "path/to/file1" "path/to/file2" && git commit -m "<scoped message>" -- path/to/file1 path/to/file2`.
-- Quote any git paths containing brackets or parentheses (e.g., `src/app/[candidate]/**`) when staging or committing so the shell does not treat them as globs or subshells.
-- When running `git rebase`, avoid opening editors—export `GIT_EDITOR=:` and `GIT_SEQUENCE_EDITOR=:` (or pass `--no-edit`) so the default messages are used automatically.
-- Never amend commits unless you have explicit written approval in the task thread.
+This repo uses jj (jujutsu) on top of Git.
+- `jj status` status (always shows working copy changes)
+- `jj diff` to see changes
+- `jj new -m "description"` before big tasks / you want a checkpoint
+- `jj describe -m "better message"` when you finish a chunk of work / to update current change
+- `jj edit <change-id>` to check out a previous change for fixing
+- `jj split` to break messy changes into multiple logical commits
+- `jj undo` to revert last operation (or any via ID) if something breaks
+- `jj log -r @-::@` to see recent changes in this stack
+- `jj op log` to see every operation (amazing safety net)
+- `jj git push` for normal git push (jj handles branch creation)
+- Never run `git commit/add/push/reset/rebase` in this repo
+- Never run `jj rebase`, `jj move`, `jj squash` (unless explicitly told by human)
+- Never run any command that touches bookmarks or remote state
+- When done with a logical chunk: `jj describe -m "meaningful message"`
+- Then: commit and push to main yourself if needed
