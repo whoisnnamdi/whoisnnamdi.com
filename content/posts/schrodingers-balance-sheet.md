@@ -75,39 +75,13 @@ The value of preferred stock can be inferred from its cost, i.e. its premium rel
 
 A quick illustration: you're a founder, and you know you need to raise roughly $60M to achieve a meaningful outcome. Because preferred equity is worth 50% more to investors than common, you could either raise $60M in preferred stock with some level of dilution, or raise it all in common stock for 50% more dilution. Let's say the common approach would dilute you by 60%. Then raising the same amount via preferred would only dilute you by 40%:
 
-Preferred
-
-Common
-
-Capital raised
-
-$60M
-
-$60M
-
-Total shares
-
-100
-
-100
-
-Blended price/share
-
-$1.50
-
-$1.00
-
-Shares purchased
-
-40
-
-60
-
-**Dilution**
-
-**40%**
-
-**60%**
+|  | Preferred | Common |
+|---|---|---|
+| Capital raised | $60M | $60M |
+| Total shares | 100 | 100 |
+| Blended price/share | $1.50 | $1.00 |
+| Shares purchased | 40 | 60 |
+| **Dilution** | **40%** | **60%** |
 
 This obviously makes a massive difference in an upside scenario. Simply put, **you get to keep much, much more of your company.** When things work out, preferred equity has a higher cost to investors, and a lower cost to startups.
 
@@ -129,39 +103,13 @@ Remember, venture capital investors are willing to pay $1.50 for preferred equit
 
 Let's return to our previous example. This time, the company chooses a certain, fixed level of dilution that it's willing to endure, 60%, and raises money up to that point. Since preferred stock can be issued at a premium, the company can raise $90M of it for the same dilution as $60M of common:
 
-Preferred
-
-Common
-
-Capital raised
-
-$90M
-
-$60M
-
-Total shares
-
-100
-
-100
-
-Blended price/share
-
-$1.50
-
-$1.00
-
-Shares purchased
-
-60
-
-60
-
-**Dilution**
-
-**60%**
-
-**60%**
+|  | Preferred | Common |
+|---|---|---|
+| Capital raised | $90M | $60M |
+| Total shares | 100 | 100 |
+| Blended price/share | $1.50 | $1.00 |
+| Shares purchased | 60 | 60 |
+| **Dilution** | **60%** | **60%** |
 
 So far so good. The preferred approach gives you $30M more to put to work in the business. But let's say [you never quite achieve product-market fit](https://whoisnnamdi.com/product-market-fit-is-lindy/) (not uncommon, even among companies that have raised tens of millions of dollars) and you woefully underperform expectations. You never become a unicorn, and the business is sold for only $100M:
 
