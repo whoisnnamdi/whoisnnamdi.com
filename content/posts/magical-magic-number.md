@@ -32,7 +32,7 @@ I want to set the story straight.
 
 First, let's get definitions out of the way. "[Magic number](https://www.thesaascfo.com/calculate-saas-magic-number/)" is defined as follows:
 
-$$\text{Magic Number} = \frac{\text{New ARR}}{\text{Sales & Marketing}}$$
+$$\text{Magic Number} = \frac{\text{New ARR}}{\text{Sales \& Marketing}}$$
 
 Magic number is typically calculated on a quarterly basis, often with S&M shifted back one period, better matching and reflecting that software sales typically take anywhere from 3-6 months.
 
@@ -61,7 +61,7 @@ Magic number is a faulty metric because it ignores important revenue growth fact
 
 To illustrate this, I'll start with a very simple point. Refer back to the definition of magic number — New ARR divided by sales and marketing spend:
 
-$$\text{Magic Number} = \frac{\text{New ARR}}{\text{Sales & Marketing}}$$
+$$\text{Magic Number} = \frac{\text{New ARR}}{\text{Sales \& Marketing}}$$
 
 The first thing to note is that New ARR has two sources — S&M and "other stuff":
 
@@ -77,11 +77,11 @@ New ARR can either come from our investments in S&M or it can come from other so
 
 Rather than enumerate all the possible alternative sources of revenue, let's just crudely summarize them under "Other Stuff" and modify our equation to reflect this attribution:
 
-$$\text{Magic Number} = \frac{\text{New ARR from S&M} + \text{New ARR from Other Stuff}}{\text{Sales & Marketing}}$$
+$$\text{Magic Number} = \frac{\text{New ARR from S\&M} + \text{New ARR from Other Stuff}}{\text{Sales \& Marketing}}$$
 
 If we break this fraction into two parts, the first would represent "true" magic number — the true causal impact of S&M spend — while the second would represent the degree to which the typical measure of magic number is inflated by misattribution of New ARR:
 
-$$\text{Measured Magic Number} = \text{True Magic Number} + \underbrace{\frac{\text{New ARR from Other Stuff}}{\text{Sales & Marketing}}}\_{\text{Magic Number Inflation Factor}}$$
+$$\text{Measured Magic Number} = \text{True Magic Number} + \underbrace{\frac{\text{New ARR from Other Stuff}}{\text{Sales \& Marketing}}}_{\text{Magic Number Inflation Factor}}$$
 
 In other words, magic number omits important non-S&M contributors to revenue and in doing so falsely attributes the New ARR from these alternate sources to S&M. Thus, in a perverse way, we reward ourselves for S&M "efficiency" when in fact it is other factors that meaningfully drive revenue growth. For all we know, our sales and marketing expenditures could be woefully inefficient, but we fool ourselves into thinking otherwise.
 
