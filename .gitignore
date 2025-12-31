@@ -33,3 +33,6 @@ yarn-error.log*
 .aider*
 public/content/images/**
 .env
+
+ghost-export.json
+public/static/rss.xml

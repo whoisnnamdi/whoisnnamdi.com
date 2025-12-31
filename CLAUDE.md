@@ -42,8 +42,9 @@ For generating static files during build (like RSS feeds):
 This repo uses jj (jujutsu) on top of Git.
 - `jj status` status (always shows working copy changes)
 - `jj diff` to see changes
-- `jj new -m "description"` before big tasks / you want a checkpoint
-- `jj describe -m "better message"` when you finish a chunk of work / to update current change
+- `jj new` to create a checkpoint before big tasks
+- `jj new <change-id>` to create a checkpoint on top of specific revision
+- `jj describe -m "better message"` analogous to commit message, use when you finish a chunk of work / to update current change
 - `jj edit <change-id>` to check out a previous change for fixing
 - `jj split` to break messy changes into multiple logical commits
 - `jj undo` to revert last operation (or any via ID) if something breaks
