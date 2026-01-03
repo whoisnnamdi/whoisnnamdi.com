@@ -305,5 +305,3 @@ Go find it.
 <button type="submit">Go ⚡</button>
 </form>
 </div>
-
-MathJax.Hub.Queue(\["Typeset",MathJax.Hub\]);
