@@ -44,6 +44,7 @@ Here's some concrete advice:
 <h3 class="subscribe-form-title">Receive my new long-form essays</h3>
 <p>Thoughtful analysis of the business and economics of tech</p>
 <form action="/api/subscribe" method="POST">
+<input type="hidden" name="merge[SOURCE]" value="Top: Awesome Developer Advocates Are Hiding in Plain Sight" />
 <input type="email" name="email" placeholder="Enter your email" required />
 <button type="submit">Go ⚡</button>
 </form>
@@ -132,6 +133,7 @@ Again, remember this simple logic:
 <h3 class="subscribe-form-title">Receive my new long-form essays</h3>
 <p>Thoughtful analysis of the business and economics of tech</p>
 <form action="/api/subscribe" method="POST">
+<input type="hidden" name="merge[SOURCE]" value="Bottom: Awesome Developer Advocates Are Hiding in Plain Sight" />
 <input type="email" name="email" placeholder="Enter your email" required />
 <button type="submit">Go ⚡</button>
 </form>

@@ -43,6 +43,7 @@ Subscribe below to receive a nicely formatted PDF of our research!
 <h3 class="subscribe-form-title">Receive my new long-form essays</h3>
 <p>Thoughtful analysis of the business and economics of tech</p>
 <form action="/api/subscribe" method="POST">
+<input type="hidden" name="merge[SOURCE]" value="Top: Four Challenges Facing Developer Productivity Startups" />
 <input type="email" name="email" placeholder="Enter your email" required />
 <button type="submit">Go ⚡</button>
 </form>
@@ -216,6 +217,7 @@ We hope you've enjoyed this series on developer productivity. We'd love to conti
 <h3 class="subscribe-form-title">Receive my new long-form essays</h3>
 <p>Thoughtful analysis of the business and economics of tech</p>
 <form action="/api/subscribe" method="POST">
+<input type="hidden" name="merge[SOURCE]" value="Bottom: Four Challenges Facing Developer Productivity Startups" />
 <input type="email" name="email" placeholder="Enter your email" required />
 <button type="submit">Go ⚡</button>
 </form>

@@ -44,6 +44,7 @@ It's Jay Powell's world. We're just living in it.
 <h3 class="subscribe-form-title">Receive my new long-form essays</h3>
 <p>Thoughtful analysis of the business and economics of tech</p>
 <form action="/api/subscribe" method="POST">
+<input type="hidden" name="merge[SOURCE]" value="Top: Don" />
 <input type="email" name="email" placeholder="Enter your email" required />
 <button type="submit">Go ⚡</button>
 </form>
@@ -206,6 +207,7 @@ Don't discount interest rates.
 <h3 class="subscribe-form-title">Receive my new long-form essays</h3>
 <p>Thoughtful analysis of the business and economics of tech</p>
 <form action="/api/subscribe" method="POST">
+<input type="hidden" name="merge[SOURCE]" value="Bottom: Don" />
 <input type="email" name="email" placeholder="Enter your email" required />
 <button type="submit">Go ⚡</button>
 </form>

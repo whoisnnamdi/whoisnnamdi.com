@@ -40,6 +40,7 @@ Comparing the <$3M group to the >$300M group, **the richest investors earn rough
 <h3 class="subscribe-form-title">Receive my new long-form essays</h3>
 <p>Thoughtful analysis of the business and economics of tech</p>
 <form action="/api/subscribe" method="POST">
+<input type="hidden" name="merge[SOURCE]" value="Top: Do Wealthy Investors Have an Edge?" />
 <input type="email" name="email" placeholder="Enter your email" required />
 <button type="submit">Go ⚡</button>
 </form>
@@ -177,6 +178,7 @@ _Thanks to [Cynthia Balloch](https://www.lse.ac.uk/finance/people/faculty/Balloc
 <h3 class="subscribe-form-title">Receive my new long-form essays</h3>
 <p>Thoughtful analysis of the business and economics of tech</p>
 <form action="/api/subscribe" method="POST">
+<input type="hidden" name="merge[SOURCE]" value="Bottom: Do Wealthy Investors Have an Edge?" />
 <input type="email" name="email" placeholder="Enter your email" required />
 <button type="submit">Go ⚡</button>
 </form>

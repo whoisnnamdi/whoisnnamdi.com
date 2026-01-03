@@ -50,6 +50,7 @@ The Developer Productivity Manifesto has three parts, this is part 1:
 <h3 class="subscribe-form-title">Receive my new long-form essays</h3>
 <p>Thoughtful analysis of the business and economics of tech</p>
 <form action="/api/subscribe" method="POST">
+<input type="hidden" name="merge[SOURCE]" value="Top: The Developer Productivity Manifesto Part 1 — The Flywheel" />
 <input type="email" name="email" placeholder="Enter your email" required />
 <button type="submit">Go ⚡</button>
 </form>
@@ -212,6 +213,7 @@ Ready for more? Here's [Part 2](https://whoisnnamdi.com/more-developers-isnt-alw
 <h3 class="subscribe-form-title">Receive my new long-form essays</h3>
 <p>Thoughtful analysis of the business and economics of tech</p>
 <form action="/api/subscribe" method="POST">
+<input type="hidden" name="merge[SOURCE]" value="Bottom: The Developer Productivity Manifesto Part 1 — The Flywheel" />
 <input type="email" name="email" placeholder="Enter your email" required />
 <button type="submit">Go ⚡</button>
 </form>

@@ -17,8 +17,8 @@ export default async (req, res) => {
             return res.status(201).json({ error: "Email is required" })
         }
 
-        // Anti-spam: Check for suspicious sources
-        const source = merge?.SOURCE || '';
+        // Handle both JSON format (merge.SOURCE) and form-urlencoded (merge[SOURCE])
+        const source = merge?.SOURCE || req.body['merge[SOURCE]'] || '';
         const isSpamSource = source.toLowerCase().includes('newsletter') || !source.trim();
         
         if (isSpamSource) {
@@ -39,7 +39,7 @@ export default async (req, res) => {
                 email_address: email,
                 status: "subscribed",
                 merge_fields: {
-                    "SOURCE": merge.SOURCE
+                    "SOURCE": source
                 }
             })
 

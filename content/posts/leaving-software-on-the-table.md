@@ -44,6 +44,7 @@ I’ve thrown around a lot of equations, literary references, and even some meme
 <h3 class="subscribe-form-title">Receive my new long-form essays</h3>
 <p>Thoughtful analysis of the business and economics of tech</p>
 <form action="/api/subscribe" method="POST">
+<input type="hidden" name="merge[SOURCE]" value="Top: The Developer Productivity Manifesto Part 3 — Leaving Software on the Table" />
 <input type="email" name="email" placeholder="Enter your email" required />
 <button type="submit">Go ⚡</button>
 </form>
@@ -134,6 +135,7 @@ __Thanks so much for reading this — I hope it resonated with you. If it did, p
 <h3 class="subscribe-form-title">Receive my new long-form essays</h3>
 <p>Thoughtful analysis of the business and economics of tech</p>
 <form action="/api/subscribe" method="POST">
+<input type="hidden" name="merge[SOURCE]" value="Bottom: The Developer Productivity Manifesto Part 3 — Leaving Software on the Table" />
 <input type="email" name="email" placeholder="Enter your email" required />
 <button type="submit">Go ⚡</button>
 </form>

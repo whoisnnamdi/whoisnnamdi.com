@@ -40,6 +40,7 @@ The Developer Productivity Manifesto has three parts, this is part 2:
 <h3 class="subscribe-form-title">Receive my new long-form essays</h3>
 <p>Thoughtful analysis of the business and economics of tech</p>
 <form action="/api/subscribe" method="POST">
+<input type="hidden" name="merge[SOURCE]" value="Top: The Developer Productivity Manifesto Part 2 — More (Developers) Isn’t Always More" />
 <input type="email" name="email" placeholder="Enter your email" required />
 <button type="submit">Go ⚡</button>
 </form>
@@ -174,6 +175,7 @@ Ready for more? Here's [Part 3](https://whoisnnamdi.com/leaving-software-on-the-
 <h3 class="subscribe-form-title">Receive my new long-form essays</h3>
 <p>Thoughtful analysis of the business and economics of tech</p>
 <form action="/api/subscribe" method="POST">
+<input type="hidden" name="merge[SOURCE]" value="Bottom: The Developer Productivity Manifesto Part 2 — More (Developers) Isn’t Always More" />
 <input type="email" name="email" placeholder="Enter your email" required />
 <button type="submit">Go ⚡</button>
 </form>

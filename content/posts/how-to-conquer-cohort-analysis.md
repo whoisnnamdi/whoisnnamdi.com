@@ -52,6 +52,7 @@ The bottom-line: **if you are an operator or investor who wants to properly meas
 <h3 class="subscribe-form-title">Receive my new long-form essays</h3>
 <p>Thoughtful analysis of the business and economics of tech</p>
 <form action="/api/subscribe" method="POST">
+<input type="hidden" name="merge[SOURCE]" value="Top: How to Conquer Cohort Analysis With a Powerful Clinical Research Tool" />
 <input type="email" name="email" placeholder="Enter your email" required />
 <button type="submit">Go ⚡</button>
 </form>
@@ -150,6 +151,7 @@ If you're a product manager, growth hacker, marketer, data scientist, investor, 
 <h3 class="subscribe-form-title">Receive my new long-form essays</h3>
 <p>Thoughtful analysis of the business and economics of tech</p>
 <form action="/api/subscribe" method="POST">
+<input type="hidden" name="merge[SOURCE]" value="Bottom: How to Conquer Cohort Analysis With a Powerful Clinical Research Tool" />
 <input type="email" name="email" placeholder="Enter your email" required />
 <button type="submit">Go ⚡</button>
 </form>

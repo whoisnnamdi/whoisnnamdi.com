@@ -36,6 +36,7 @@ Here's the big idea: rather than ship data to code, which is expensive and laten
 <h3 class="subscribe-form-title">Receive my new long-form essays</h3>
 <p>Thoughtful analysis of the business and economics of tech</p>
 <form action="/api/subscribe" method="POST">
+<input type="hidden" name="merge[SOURCE]" value="Top: WebAssembly-ing the Pieces: Vectorized’s Data Policy Engine" />
 <input type="email" name="email" placeholder="Enter your email" required />
 <button type="submit">Go ⚡</button>
 </form>
@@ -144,6 +145,7 @@ Curious to learn more after this quick introduction? [Alex Gallego](https://twit
 <h3 class="subscribe-form-title">Receive my new long-form essays</h3>
 <p>Thoughtful analysis of the business and economics of tech</p>
 <form action="/api/subscribe" method="POST">
+<input type="hidden" name="merge[SOURCE]" value="Bottom: WebAssembly-ing the Pieces: Vectorized’s Data Policy Engine" />
 <input type="email" name="email" placeholder="Enter your email" required />
 <button type="submit">Go ⚡</button>
 </form>
