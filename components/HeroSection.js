@@ -1,5 +1,4 @@
 import DiamondImage from './DiamondImage'
-import portrait from '../public/images/portrait-color-compressed.png'
 
 export default function HeroSection() {
     return (
@@ -17,7 +16,7 @@ export default function HeroSection() {
                 {/* Diamond portrait */}
                 <div className="flex-shrink-0">
                     <DiamondImage
-                        src={portrait}
+                        src="/images/portrait-color-compressed.png"
                         alt="Nnamdi Iregbulem"
                         size={240}
                         className="md:w-72 md:h-72"

@@ -1,7 +1,20 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
+function formatTitle(title) {
+    // Check if title contains " of " to split for styling
+    const ofIndex = title.lastIndexOf(' of ')
+    if (ofIndex > 0 && ofIndex < title.length - 4) {
+        const firstPart = title.substring(0, ofIndex + 4)
+        const secondPart = title.substring(ofIndex + 4)
+        return { firstPart, secondPart }
+    }
+    return { firstPart: title, secondPart: null }
+}
+
 export default function FeaturedEssayCard({ post }) {
+    const { firstPart, secondPart } = formatTitle(post.title)
+
     return (
         <Link href={`/${post.slug}`} className="block group">
             <article className="bg-neutral-900 rounded-xl overflow-hidden">
@@ -12,7 +25,10 @@ export default function FeaturedEssayCard({ post }) {
                             Essay
                         </span>
                         <h2 className="font-serif text-2xl md:text-3xl font-bold text-white mb-4 group-hover:text-neutral-200 transition-colors leading-tight">
-                            {post.title}
+                            {firstPart}
+                            {secondPart && (
+                                <span className="block italic text-neutral-300">{secondPart}</span>
+                            )}
                         </h2>
                         {post.excerpt && (
                             <p className="text-neutral-400 text-base leading-relaxed mb-4">
