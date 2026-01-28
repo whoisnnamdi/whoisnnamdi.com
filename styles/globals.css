@@ -4,7 +4,43 @@
 
 /* Base font application */
 body {
-    @apply font-sans antialiased;
+    @apply font-sans antialiased bg-paper text-ink;
+}
+
+/* Subtle dotted grid background (paper) */
+.bg-grid {
+    background-color: #F7F4EF;
+    background-image: radial-gradient(rgba(17, 17, 17, 0.08) 0.6px, transparent 0.6px);
+    background-size: 18px 18px;
+}
+
+/* Grid overlay for imagery */
+.bg-grid-overlay {
+    background-image: radial-gradient(rgba(17, 17, 17, 0.15) 0.6px, transparent 0.6px);
+    background-size: 20px 20px;
+}
+
+.bg-grid-dark {
+    background-color: #171717;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.08) 0.6px, transparent 0.6px);
+    background-size: 18px 18px;
+}
+
+.bg-grid-blue {
+    background-color: #0E111A;
+    background-image:
+        linear-gradient(rgba(45, 74, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(45, 74, 255, 0.15) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* Blueprint-style CTA background */
+.bg-blueprint {
+    background-color: #1E3AEB;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
 }
 
 .prose img {
@@ -21,7 +57,7 @@ body {
 
 /* Blockquote styling for redesign */
 .prose blockquote {
-    @apply border-l-4 border-accent bg-neutral-50 py-4 px-6 not-italic my-6 rounded-r-lg;
+    @apply border-l-2 border-accent py-4 px-6 not-italic my-6 text-neutral-700 bg-white/60;
     quotes: none;
 }
 
@@ -38,6 +74,18 @@ body {
 .prose-essay h2,
 .prose-essay h3 {
     @apply font-serif;
+}
+
+.prose-essay h2 {
+    @apply text-2xl md:text-3xl;
+}
+
+.prose-essay h3 {
+    @apply text-xl md:text-2xl;
+}
+
+.prose-essay p {
+    @apply text-neutral-600;
 }
 
 .twitter-tweet  {

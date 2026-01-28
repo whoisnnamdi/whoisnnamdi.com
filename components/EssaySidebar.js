@@ -1,9 +1,45 @@
-export default function EssaySidebar({ sections = [] }) {
+export default function EssaySidebar({ sections = [], post }) {
+    const publishedDate = post?.published_at
+        ? new Intl.DateTimeFormat('default', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+        }).format(new Date(post.published_at))
+        : null
+    const updatedDate = post?.updated_at
+        ? new Intl.DateTimeFormat('default', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+        }).format(new Date(post.updated_at))
+        : null
+    const category = post?.tags?.[0]?.name || 'Research'
+    const rawExcerpt = post?.excerpt || 'Independent analysis on technology, markets, and venture capital.'
+    const excerpt = rawExcerpt.length > 140 ? `${rawExcerpt.slice(0, 140)}...` : rawExcerpt
+
     return (
-        <aside className="hidden lg:block w-48 flex-shrink-0">
-            <div className="sticky top-8">
-                {/* Geometric icon with gray background */}
-                <div className="mb-8 bg-neutral-100 rounded-lg p-6 flex items-center justify-center">
+        <aside className="hidden lg:block w-60 flex-shrink-0">
+            <div className="sticky top-8 space-y-6">
+                <div className="border border-neutral-300 bg-white px-4 py-5">
+                    <div className="space-y-4 text-[11px] font-mono uppercase tracking-[0.2em] text-neutral-500">
+                        <div>
+                            <p className="text-neutral-400">Role</p>
+                            <p className="mt-1 text-neutral-900">Writer / Analyst</p>
+                        </div>
+                        {publishedDate && (
+                            <div>
+                                <p className="text-neutral-400">Date</p>
+                                <p className="mt-1 text-neutral-900">{publishedDate}</p>
+                            </div>
+                        )}
+                        <div>
+                            <p className="text-neutral-400">Category</p>
+                            <p className="mt-1 text-accent">{category}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="border border-neutral-300 bg-white p-6 flex items-center justify-center">
                     <svg
                         viewBox="0 0 80 80"
                         className="w-20 h-20 text-accent"
@@ -20,10 +56,32 @@ export default function EssaySidebar({ sections = [] }) {
                     </svg>
                 </div>
 
-                {/* Section navigation */}
+                <div className="space-y-4">
+                    <div className="border border-neutral-300 bg-white px-4 py-4">
+                        <p className="text-[11px] font-mono uppercase tracking-[0.2em] text-accent">Key Insight</p>
+                        <p className="mt-2 text-sm text-neutral-600 leading-relaxed">
+                            {excerpt}
+                        </p>
+                    </div>
+                    <div className="border border-neutral-300 bg-white px-4 py-4">
+                        <p className="text-[11px] font-mono uppercase tracking-[0.2em] text-accent">Data Source</p>
+                        <p className="mt-2 text-sm text-neutral-600 leading-relaxed">
+                            Original analysis, public market and venture datasets.
+                        </p>
+                    </div>
+                    {updatedDate && (
+                        <div className="border border-neutral-300 bg-white px-4 py-4">
+                            <p className="text-[11px] font-mono uppercase tracking-[0.2em] text-accent">Last Updated</p>
+                            <p className="mt-2 text-sm text-neutral-600 leading-relaxed">
+                                {updatedDate}
+                            </p>
+                        </div>
+                    )}
+                </div>
+
                 {sections.length > 0 && (
-                    <nav className="space-y-2">
-                        <p className="text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-3">
+                    <nav className="space-y-2 border border-neutral-300 bg-white px-4 py-5">
+                        <p className="text-[11px] font-mono uppercase tracking-[0.2em] text-neutral-500 mb-3">
                             On this page
                         </p>
                         <ul className="space-y-1">

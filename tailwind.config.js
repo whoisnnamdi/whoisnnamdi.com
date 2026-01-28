@@ -4,8 +4,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#C44536',
-        accent: '#C44536',
+        primary: '#E24B2D',
+        accent: '#E24B2D',
+        paper: '#F7F4EF',
+        ink: '#111111',
+        blueprint: '#1E3AEB',
+        line: '#E2DDD4',
         neutral: {
           50: '#FAFAFA',
           100: '#F5F5F5',
@@ -22,6 +26,7 @@ module.exports = {
       fontFamily: {
         serif: ['var(--font-playfair)', 'Playfair Display', 'Georgia', 'serif'],
         sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-plex-mono)', 'IBM Plex Mono', 'ui-monospace', 'monospace'],
       },
       typography: {
         DEFAULT: {

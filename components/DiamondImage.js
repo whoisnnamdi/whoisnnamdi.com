@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-export default function DiamondImage({ src, alt, size = 288, className = '' }) {
+export default function DiamondImage({ src, alt, size = 288, className = '', grayscale = false }) {
     return (
         <div
             className={`relative transform rotate-45 overflow-hidden border-4 border-neutral-100 ${className}`}
@@ -10,7 +10,7 @@ export default function DiamondImage({ src, alt, size = 288, className = '' }) {
                 src={src}
                 alt={alt}
                 fill
-                className="transform -rotate-45 scale-[1.42] object-cover"
+                className={`transform -rotate-45 scale-[1.42] object-cover ${grayscale ? 'grayscale' : ''}`}
                 priority
             />
         </div>
