@@ -1,14 +1,14 @@
 import Head from 'next/head'
-import Image from "next/legacy/image"
 import Link from 'next/link'
-import Navbar from '../components/navbar'
-import Footer from '../components/footer'
-import React, { useRef } from 'react'
-import { getPosts } from '../lib/content'
-import PostPreview from '../components/postpreview'
+import NavbarRedesign from '../components/NavbarRedesign'
+import FooterRedesign from '../components/FooterRedesign'
+import HeroSection from '../components/HeroSection'
+import FeaturedEssayCard from '../components/FeaturedEssayCard'
+import EssayListItem from '../components/EssayListItem'
+import StatsRow from '../components/StatsRow'
+import SubscribeCTA from '../components/SubscribeCTA'
 import Analytics from '../components/analytics'
-import portrait from '../public/images/portrait-color-compressed.png'
-import { useSubscribe } from '../components/subscribe'
+import { getPosts } from '../lib/content'
 
 export async function getStaticProps() {
     const posts = await getPosts()
@@ -44,17 +44,15 @@ export async function getStaticProps() {
     }
 }
 
-export default function Home ({ posts, featuredPosts }) {
-    const input = useRef(null)
-    const subscribe = useSubscribe()
-    
-    const handleSubscribe = async (e) => {
-        e.preventDefault()
-        await subscribe(input.current.value, 'Hero', input)
-    }
+export default function Home({ posts, featuredPosts }) {
+    const stats = [
+        { label: 'Focus', value: 'Technology & Economics' },
+        { label: 'Role', value: 'Partner at Lightspeed' },
+        { label: 'Location', value: 'San Francisco, CA' },
+    ]
 
     return (
-        <div className="max-w-4xl px-6 mx-auto lg:px-0 mt-8 mb-10">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
             <Head>
                 <meta charSet="utf-8" />
                 <title>Who Is Nnamdi?</title>
@@ -75,91 +73,47 @@ export default function Home ({ posts, featuredPosts }) {
                 <meta name="twitter:site" content="@whoisnnamdi" />
             </Head>
             <Analytics />
-            <Navbar source="Home"/>
-            <div className="mb-8">
-                <div className="flex flex-col sm:flex-row sm:space-x-4 justify-between mb-4 sm:mb-8">
-                    <div className="flex flex-col justify-between mb-4 sm:mb-0 sm:w-2/3 md:w-2/3 lg:w-2/3">
-                        <div className="">
-                            <h1 className="font-bold text-4xl sm:text-5xl text-gray-900 mb-4 md:mb-5 lg:mb-7">Hi, I'm Nnamdi</h1>
-                            <h2 className="leading-relaxed sm:leading-normal font-bold text-2xl sm:text-base md:text-xl lg:text-2xl text-gray-600 mb-4 md:mb-5 lg:mb-7">I'm a <span className="px-2 rounded-md bg-indigo-200">coder</span>, <span className="px-2 rounded-md bg-green-200">economist</span>, and <span className="px-2 rounded-md bg-yellow-200">venture investor</span>.</h2>
-                            <p className="text-xl sm:text-base md:text-base lg:text-xl font-normal mb-4 md:mb-5 lg:mb-7">I invest in <span className="font-mono font-bold">technical tools</span> for <span className="font-mono font-bold">technical people.</span></p>
-                            <p className="text-xl sm:text-base md:text-base lg:text-xl font-normal mb-4 md:mb-5 lg:mb-7"><span className="font-bold underline">I love writing.</span> My most popular essays combine theory, data, real-world relevance.</p>
-                            <p className="text-xl sm:text-base md:text-base lg:text-xl font-normal mb-4 md:mb-5 lg:mb-7"><span className="font-bold">✨Subscribe below</span>, and find my writing just below that.</p>
-                        </div>
-                        <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-between">
-                            <input 
-                                id="email-input"
-                                name="email"
-                                placeholder="Type your email..."
-                                ref={input}
-                                type="email"
-                                required
-                                className="text-gray-500 flex-1 transition duration-500 hover:bg-gray-200 bg-gray-100 sm:w-80 rounded-md px-4 py-2 focus:ring-blue-500 focus:outline-none" />
-                            <button type="submit" className="md:w-1/4 transition duration-500 ease-in-out sm:w-40 rounded-md py-2 px-2 text-white font-semibold bg-blue-500 shadow-md hover:bg-blue-400 focus:outline-none">
-                                Subscribe
-                            </button>
-                        </form>                   
-                    </div>
-                    <Image
-                        src={portrait}
-                        width={346}
-                        height={400}
-                        alt="Nnamdi Iregbulem"
-                        className="sm:w-1/3 md:w-1/3 lg:w-1/3 rounded-md"
-                        priority
-                    />
-                </div>
-                <div className="flex flex-col sm:flex-row justify-between space-y-10 sm:space-x-10 sm:space-y-0">
+            <NavbarRedesign source="Home" />
+
+            {/* Hero Section */}
+            <HeroSection />
+
+            {/* Featured Essay */}
+            {featuredPosts.length > 0 && (
+                <section className="mb-16">
+                    <FeaturedEssayCard post={featuredPosts[0]} />
+                </section>
+            )}
+
+            {/* Latest Dispatches */}
+            <section className="mb-16">
+                <div className="flex items-center justify-between mb-6">
+                    <h2 className="font-serif text-2xl font-bold text-neutral-900">
+                        Latest Dispatches
+                    </h2>
                     <Link
-                        href="/founders"
-                        className="flex-1 transition duration-500 ease-in-out transform sm:hover:scale-105 font-normal text-md text-center py-10 px-6 rounded-xl border border-black border-opacity-10">
-
-                        <p className="text-5xl mb-5">🚀</p>
-                        <h2 className="font-bold text-2xl sm:text-2xl mb-2 text-gray-900">Founders</h2>
-                        <p className="text-xl md:text-lg lg:text-xl">The theories and realities of building a valuable tech startup</p>
-
-                    </Link>
-                    <Link
-                        href="/developers"
-                        className="flex-1 transition duration-500 ease-in-out transform hover:scale-105 font-normal text-md text-center py-10 px-6 rounded-xl border border-black border-opacity-10">
-
-                        <p className="text-5xl mb-5">👨‍💻👩‍💻</p>
-                        <h2 className="font-bold text-2xl sm:text-2xl mb-2 text-gray-900">Developers</h2>
-                        <p className="text-xl md:text-lg lg:text-xl">Software development, tooling, and the careers of software engineers</p>
-
-                    </Link>
-                    <Link
-                        href="/investors"
-                        className="flex-1 transition duration-500 ease-in-out transform hover:scale-105 font-normal text-md text-center py-10 px-6 rounded-xl border border-black border-opacity-10">
-
-                        <p className="text-5xl mb-5">💸</p>
-                        <h2 className="font-bold text-2xl sm:text-2xl mb-2 text-gray-900">Investors</h2>
-                        <p className="text-xl md:text-lg lg:text-xl">Analysis, charts, and equations for nerdy investors (like myself)</p>
-
+                        href="/essays"
+                        className="text-sm font-medium text-neutral-500 hover:text-neutral-900 transition-colors"
+                    >
+                        View all &rarr;
                     </Link>
                 </div>
-            </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center mt-8">
-                Featured Essay
-            </h2>
-            <ul>
-                {featuredPosts.slice(0, 1).map((post) => (
-                    <li key={post.id}>
-                        <PostPreview post={post}/>
-                    </li>
-                ))}
-            </ul>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center mt-8">
-                Latest Essays
-            </h2>
-            <ul>
-                {posts.slice(0, 5).map((post) => (
-                    <li key={post.id}>
-                        <PostPreview post={post}/>
-                    </li>
-                ))}
-            </ul>
-            <Footer />
+                <div className="border-t border-neutral-200">
+                    {posts.slice(0, 5).map((post) => (
+                        <EssayListItem key={post.id} post={post} />
+                    ))}
+                </div>
+            </section>
+
+            {/* Stats Row */}
+            <StatsRow stats={stats} />
+
+            {/* Subscribe CTA */}
+            <section className="my-16">
+                <SubscribeCTA source="Homepage CTA" />
+            </section>
+
+            <FooterRedesign />
         </div>
-    );
+    )
 }

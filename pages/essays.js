@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import Navbar from '../components/navbar'
+import NavbarRedesign from '../components/NavbarRedesign'
+import FooterRedesign from '../components/FooterRedesign'
+import EssayListItem from '../components/EssayListItem'
+import SubscribeCTA from '../components/SubscribeCTA'
 import { getPosts } from '../lib/content'
-import SectionPage from '../components/sectionpage'
-import Footer from '../components/footer'
 import Analytics from '../components/analytics'
 import postFormat from '../components/postformat'
-import PostPreview from '../components/postpreview'
 
 export async function getStaticProps() {
     const posts = postFormat(await getPosts())
@@ -17,16 +17,16 @@ export async function getStaticProps() {
     }
 }
 
-export default function Page ({ posts }) {
+export default function Page({ posts }) {
     const slug = "essays"
     const pageTitle = "Essays — Nnamdi Iregbulem"
     const pageDesc = "All essays by Nnamdi Iregbulem"
     const pageURL = "https://whoisnnamdi.com/essays"
-    
+
     return (
-        <div className="max-w-4xl sm:mx-auto px-6 mt-8 mb-10 lg:px-0">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
             <Head>
-            <meta charSet="utf-8" />
+                <meta charSet="utf-8" />
                 <title>{pageTitle}</title>
                 <meta name="description" content={pageDesc} />
                 <link rel="canonical" href={pageURL} />
@@ -45,20 +45,30 @@ export default function Page ({ posts }) {
                 <meta name="twitter:site" content="@whoisnnamdi" />
             </Head>
             <Analytics />
-            <Navbar source={slug}/>
-            <div className="mt-12">
-                <h1 className="text-4xl font-bold text-gray-900 mb-8">
-                    Essays
-                </h1>
-                <ul>
+            <NavbarRedesign source={slug} />
+
+            <main className="py-12">
+                <header className="mb-10">
+                    <h1 className="font-serif text-4xl md:text-5xl font-bold text-neutral-900 mb-4">
+                        Essays
+                    </h1>
+                    <p className="text-lg text-neutral-600">
+                        Thoughts on technology, venture capital, and the economics of both.
+                    </p>
+                </header>
+
+                <div className="border-t border-neutral-200">
                     {posts.map((post) => (
-                        <li key={post.id}>
-                            <PostPreview post={post}/>
-                        </li>
+                        <EssayListItem key={post.id} post={post} />
                     ))}
-                </ul>
-            </div>
-            <Footer />
+                </div>
+
+                <div className="mt-16">
+                    <SubscribeCTA source="Essays Page" />
+                </div>
+            </main>
+
+            <FooterRedesign />
         </div>
     )
 }

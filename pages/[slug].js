@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import Image from "next/image"
 import { getPosts, getPost, getPages, getPage } from '../lib/content'
-import Navbar from '../components/navbar'
-import Footer from '../components/footer'
+import NavbarRedesign from '../components/NavbarRedesign'
+import FooterRedesign from '../components/FooterRedesign'
+import EssaySidebar from '../components/EssaySidebar'
+import SubscribeCTA from '../components/SubscribeCTA'
 import LinkConverter from '../components/linkconverter'
 import Analytics from '../components/analytics'
 
@@ -22,12 +24,23 @@ export async function getStaticProps({ params }) {
     const isPost = posts.some((post) => post.slug === params.slug)
     const post = await (isPost ? getPost : getPage)(params.slug)
 
-    return { props: { post: post } }
+    // Extract headings for sidebar navigation
+    const headingRegex = /<h2[^>]*id="([^"]*)"[^>]*>([^<]*)<\/h2>/gi
+    const sections = []
+    let match
+    while ((match = headingRegex.exec(post.html)) !== null) {
+        sections.push({
+            id: match[1],
+            title: match[2].replace(/<[^>]*>/g, '').trim()
+        })
+    }
+
+    return { props: { post, sections, isPost } }
 }
 
-export default function PostPage ({ post }) {
+export default function PostPage({ post, sections, isPost }) {
     return (
-        <div className="max-w-4xl sm:mx-auto px-6 mt-8 mb-10 lg:px-0">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
             <Head>
                 <meta charSet="utf-8" />
                 <title>{post.title}</title>
@@ -56,31 +69,57 @@ export default function PostPage ({ post }) {
                 <meta property="og:image:height" content="584" />
             </Head>
             <Analytics />
-            <Navbar source={post.title}/>
-            <main className="mt-12">
-                <h1 className={`text-4xl font-bold ${post.slug === 'talks' ? 'mb-4' : 'mb-6'} text-gray-900`}>
-                    {post.title}
-                </h1>
-                <div className={`prose md:prose-md lg:prose-lg max-w-4xl sm:mx-auto ${post.slug === 'talks' ? 'talks-prose' : ''}`}>
-                    {post.feature_image ?
-                        <div className="imageContainer">
+            <NavbarRedesign source={post.title} />
+
+            <div className="flex gap-12 py-12">
+                {/* Sidebar - only show for posts, not pages */}
+                {isPost && <EssaySidebar sections={sections} />}
+
+                {/* Main content */}
+                <main className="flex-1 min-w-0">
+                    <header className="mb-10">
+                        <h1 className={`font-serif text-4xl md:text-5xl font-bold leading-tight text-neutral-900 ${post.slug === 'talks' ? 'mb-4' : 'mb-6'}`}>
+                            {post.title}
+                        </h1>
+                        {isPost && post.published_at && (
+                            <p className="text-neutral-500">
+                                {new Intl.DateTimeFormat('default', {
+                                    year: 'numeric',
+                                    month: 'long',
+                                    day: 'numeric'
+                                }).format(new Date(post.published_at))}
+                            </p>
+                        )}
+                    </header>
+
+                    {post.feature_image && (
+                        <div className="mb-10 imageContainer">
                             <Image
                                 src={post.feature_image}
                                 alt={post.title}
                                 width="0"
                                 height="0"
                                 sizes="100vw"
-                                // layout="fill"
                                 className="imageImage rounded-lg"
                                 priority
                             />
-                        </div> :
-                        null
-                    }
-                    <LinkConverter content={post.html} />
-                </div>
-            </main>
-            <Footer />
+                        </div>
+                    )}
+
+                    <article className={`prose prose-lg max-w-none prose-essay ${post.slug === 'talks' ? 'talks-prose' : ''}`}>
+                        <LinkConverter content={post.html} />
+                    </article>
+
+                    {/* Subscribe CTA - only show for posts */}
+                    {isPost && (
+                        <div className="mt-16">
+                            <SubscribeCTA source={`Essay: ${post.title}`} />
+                        </div>
+                    )}
+                </main>
+            </div>
+
+            <FooterRedesign />
         </div>
     )
 }

@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Base font application */
+body {
+    @apply font-sans antialiased;
+}
+
 .prose img {
     @apply mx-auto
 }
@@ -14,12 +19,25 @@
     @apply mx-auto max-w-full
 }
 
+/* Blockquote styling for redesign */
+.prose blockquote {
+    @apply border-l-4 border-accent bg-neutral-50 py-4 px-6 not-italic my-6 rounded-r-lg;
+    quotes: none;
+}
+
 .prose blockquote p:first-of-type::before {
     content: none
 }
 
 .prose blockquote p:last-of-type::after {
     content: none
+}
+
+/* Serif headings for essay pages */
+.prose-essay h1,
+.prose-essay h2,
+.prose-essay h3 {
+    @apply font-serif;
 }
 
 .twitter-tweet  {
