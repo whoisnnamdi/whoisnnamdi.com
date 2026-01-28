@@ -38,21 +38,11 @@ For generating static files during build (like RSS feeds):
 - For pages that need to return XML/non-HTML content, use `getServerSideProps` with proper content-type headers
 - Be cautious with Node.js only modules (fs, path) in browser context
 
-## Committing Code
-This repo uses jj (jujutsu) on top of Git.
-- `jj status` status (always shows working copy changes)
-- `jj diff` to see changes
-- `jj new` to create a checkpoint before big tasks
-- `jj new <change-id>` to create a checkpoint on top of specific revision
-- `jj describe -m "better message"` analogous to commit message, use when you finish a chunk of work / to update current change
-- `jj edit <change-id>` to check out a previous change for fixing
-- `jj split` to break messy changes into multiple logical commits
-- `jj undo` to revert last operation (or any via ID) if something breaks
-- `jj log -r @-::@` to see recent changes in this stack
-- `jj op log` to see every operation (amazing safety net)
-- `jj git push` for normal git push (jj handles branch creation)
-- Never run `git commit/add/push/reset/rebase` in this repo
-- Never run `jj rebase`, `jj move`, `jj squash` (unless explicitly told by human)
-- Never run any command that touches bookmarks or remote state
-- When done with a logical chunk: `jj describe -m "meaningful message"`
-- Then: commit and push to main yourself if needed
+## Browser Automation
+Use `agent-browser` for web automation. Run `agent-browser --help` for all commands.
+
+Core workflow:
+1. `agent-browser open <url>` - Navigate to page
+2. `agent-browser snapshot -i` - Get interactive elements with refs (@e1, @e2)
+3. `agent-browser click @e1` / `fill @e2 "text"` - Interact using refs
+4. Re-snapshot after page changes
