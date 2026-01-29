@@ -193,7 +193,7 @@ export default function Portfolio({ logos, meta }) {
                 </p>
                 <Link
                   href="mailto:nnamdi@lsvp.com"
-                  className="inline-flex items-center gap-2 px-6 py-3 text-white font-mono uppercase tracking-[0.2em] bg-neutral-900 border border-neutral-900 hover:bg-neutral-800 transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3 text-white font-mono uppercase tracking-[0.2em] bg-neutral-900 border border-neutral-900 hover:bg-accent transition-colors"
                 >
                   Send an email
                   <span aria-hidden="true">→</span>

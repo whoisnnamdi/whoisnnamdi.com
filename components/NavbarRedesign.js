@@ -90,7 +90,7 @@ export default function NavbarRedesign({ source, dateLabel, codeOverride }) {
                 <Popover.Button
                   className={`${
                     open ? "hidden" : ""
-                  } px-4 py-2 text-[11px] font-mono uppercase tracking-[0.2em] text-white bg-neutral-900 rounded-none border border-neutral-900 hover:bg-neutral-800 transition-colors focus:outline-none`}
+                  } px-4 py-2 text-[11px] font-mono uppercase tracking-[0.2em] text-white bg-neutral-900 rounded-none border border-neutral-900 hover:bg-accent transition-colors focus:outline-none`}
                 >
                   Subscribe_
                 </Popover.Button>
@@ -110,7 +110,7 @@ export default function NavbarRedesign({ source, dateLabel, codeOverride }) {
                     />
                     <button
                       type="submit"
-                      className="px-4 py-2 text-[11px] font-mono uppercase tracking-[0.2em] text-white bg-neutral-900 hover:bg-neutral-800 transition-colors"
+                      className="px-4 py-2 text-[11px] font-mono uppercase tracking-[0.2em] text-white bg-neutral-900 hover:bg-accent transition-colors"
                     >
                       Join
                     </button>
