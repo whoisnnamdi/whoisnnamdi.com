@@ -55,7 +55,7 @@ export default function Home({ posts, featuredPosts }) {
   const stats = [
     { label: "Role", value: "VC @ Lightspeed" },
     { label: "Focus", value: "Infra & Dev Tools" },
-    { label: "Location", value: "San Francisco" },
+    { label: "Location", value: "San Francisco, CA" },
     { label: "Status", value: "Deploying", accent: true },
   ];
 

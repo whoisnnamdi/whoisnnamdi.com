@@ -48,7 +48,7 @@ export default function FooterRedesign() {
             Nnamdi.
           </Link>
           <p className="mt-3 text-sm text-neutral-500 font-mono uppercase tracking-[0.2em]">
-            &copy; {currentYear} Nnamdi.
+            &copy; {currentYear}
             <br />
             San Francisco, CA.
           </p>
