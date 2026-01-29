@@ -45,7 +45,7 @@ export default function HeroSection({ latestPost }) {
             src="/images/portrait-bw.png"
             alt="Nnamdi Iregbulem portrait"
             fill
-            className="object-cover"
+            className="object-cover grayscale"
             priority
           />
           <svg

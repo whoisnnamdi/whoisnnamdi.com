@@ -191,26 +191,28 @@ export default function Home({ posts, featuredPosts }) {
       )}
 
       <section className="bg-grid border-b border-neutral-300">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-10 pt-6 pb-12 grid grid-cols-1 lg:grid-cols-[1fr,2fr] gap-10">
-          <div>
-            <h2 className="pt-6 font-serif text-3xl md:text-4xl text-neutral-900">
-              Latest Dispatches
-            </h2>
-            <p className="mt-3 text-sm font-mono uppercase tracking-[0.2em] text-neutral-500">
-              Observations from the field.
-            </p>
-          </div>
-          <div className="border-neutral-300">
-            {posts.slice(0, 3).map((post) => (
-              <EssayListItem key={post.id} post={post} variant="dispatch" />
-            ))}
-            <div className="pt-6 text-right">
-              <Link
-                href="/essays"
-                className="text-[11px] font-mono uppercase tracking-[0.2em] text-neutral-500 hover:text-neutral-900 transition-colors"
-              >
-                View archive →
-              </Link>
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-10 py-12">
+          <div className="border border-neutral-900 bg-white p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-[1fr,2fr] gap-10">
+            <div>
+              <h2 className="font-serif text-3xl md:text-4xl text-neutral-900">
+                Latest Dispatches
+              </h2>
+              <p className="mt-3 text-sm font-mono uppercase tracking-[0.2em] text-neutral-500">
+                Observations from the field.
+              </p>
+            </div>
+            <div className="border-neutral-300">
+              {posts.slice(0, 3).map((post) => (
+                <EssayListItem key={post.id} post={post} variant="dispatch" />
+              ))}
+              <div className="pt-6 text-right">
+                <Link
+                  href="/essays"
+                  className="text-[11px] font-mono uppercase tracking-[0.2em] text-neutral-500 hover:text-neutral-900 transition-colors"
+                >
+                  View archive →
+                </Link>
+              </div>
             </div>
           </div>
         </div>
