@@ -16,10 +16,10 @@ export default function SubscribeCTA({ source = "CTA" }) {
         Join the Syndicate
       </h2>
       <p className="text-sm md:text-base font-mono uppercase tracking-[0.2em] text-white/80 mb-2">
-        Weekly analysis on tech markets and venture capital.
+        Thoughtful analysis of the business and economics of tech.
       </p>
       <p className="text-base md:text-lg text-white/90 mb-8 max-w-md mx-auto">
-        No noise, just signal. Read by 5,000+ investors and founders.
+        Read by 5,000+ founders and investors.
       </p>
       <form
         onSubmit={handleSubscribe}
