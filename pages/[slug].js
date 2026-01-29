@@ -48,7 +48,8 @@ export default function PostPage({ post, sections, isPost }) {
         .format(new Date(post.published_at))
         .toUpperCase()
     : null;
-  const navLabel = post?.slug === "about-me" ? "About Me." : publishedLabel;
+  const navLabel = post?.slug === "about-me" ? "About" : publishedLabel;
+  const isAbout = post?.slug === "about-me";
   const titleMatch = post.title.match(/Aren[’']t/);
   const titleContent = titleMatch
     ? (() => {
@@ -109,27 +110,62 @@ export default function PostPage({ post, sections, isPost }) {
         <NavbarRedesign
           source={post.title}
           dateLabel={navLabel}
-          codeOverride={post?.slug === "about-me" ? "05" : undefined}
+          codeOverride={post?.slug === "about-me" ? "Index 05" : undefined}
         />
       </div>
 
       <div className="bg-grid border-neutral-300">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-10 py-4 grid grid-cols-1 lg:grid-cols-[240px,1fr] gap-12">
+        <div
+          className={`max-w-[1200px] mx-auto px-6 lg:px-10 py-4 grid grid-cols-1 ${isPost ? "lg:grid-cols-[240px,1fr] gap-12" : ""}`}
+        >
           {isPost && <EssaySidebar sections={sections} post={post} />}
 
-          <main className="min-w-0 lg:border-l lg:border-neutral-300 lg:pl-10">
-            <header className="mb-10">
-              <h1
-                className={`font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-neutral-900 ${post.slug === "talks" ? "mb-4" : "mb-6"}`}
-              >
-                {titleContent}
-              </h1>
-              {post.excerpt && (
-                <p className="text-base md:text-lg text-neutral-600 max-w-2xl">
-                  {post.excerpt}
+          <main
+            className={`min-w-0 ${isPost ? "lg:border-l lg:border-neutral-300 lg:pl-10" : ""}`}
+          >
+            {isAbout ? (
+              <header className="border-b pb-12 mb-12 relative overflow-hidden">
+                <div className="flex items-center gap-2 font-mono uppercase text-xs tracking-[0.35em] text-blue-600 mb-6">
+                  <span className="inline-block w-2 h-2 bg-blue-600" />
+                  <span>About Me</span>
+                </div>
+                <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-neutral-900 max-w-4xl">
+                  Investigating the{" "}
+                  <span className="italic text-accent">mechanics</span> of
+                  digital value.
+                </h1>
+                <p className="mt-8 text-sm md:text-base font-mono uppercase tracking-[0.2em] text-neutral-500">
+                  <span className="mr-2 text-neutral-400">|</span>
+                  Software Metrics • Economic Theory • Venture Capital
                 </p>
-              )}
-            </header>
+                <div className="hidden md:block absolute right-0 top-2 text-neutral-200">
+                  <svg
+                    viewBox="0 0 64 64"
+                    className="w-20 h-20"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <rect x="14" y="14" width="36" height="36" rx="4" />
+                    <rect x="24" y="24" width="16" height="16" rx="2" />
+                    <path d="M8 24h6M8 32h6M8 40h6M50 24h6M50 32h6M50 40h6M24 8v6M32 8v6M40 8v6M24 50v6M32 50v6M40 50v6" />
+                  </svg>
+                </div>
+              </header>
+            ) : (
+              <header className="mb-10">
+                <h1
+                  className={`font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-neutral-900 ${post.slug === "talks" ? "mb-4" : "mb-6"}`}
+                >
+                  {titleContent}
+                </h1>
+                {post.excerpt && (
+                  <p className="text-base md:text-lg text-neutral-600 max-w-2xl">
+                    {post.excerpt}
+                  </p>
+                )}
+              </header>
+            )}
 
             {post.feature_image && (
               <div className="mb-10 border border-neutral-300 imageContainer">
@@ -154,6 +190,11 @@ export default function PostPage({ post, sections, isPost }) {
             {isPost && (
               <div className="mt-16">
                 <SubscribeCTA source={`Essay: ${post.title}`} />
+              </div>
+            )}
+            {isAbout && (
+              <div className="my-16">
+                <SubscribeCTA source="About" />
               </div>
             )}
           </main>

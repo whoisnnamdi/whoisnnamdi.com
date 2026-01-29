@@ -51,12 +51,3 @@ I studied Economics at [Yale University](https://www.yale.edu/). While there, I 
 I was selected for [Forbes 30 Under 30 Venture Capital](https://www.forbes.com/profile/nnamdi-iregbulem/?sh=2774f2426190) and [Venture Capital Journal 40 Under 40](https://www.venturecapitaljournal.com/40-rising-stars-to-tap-into-in-2022/).
 
 Connect with me on [LinkedIn](https://www.linkedin.com/in/nnamdiiregbulem/) or [Twitter](https://twitter.com/whoisnnamdi).
-
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
