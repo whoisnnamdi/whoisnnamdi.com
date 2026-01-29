@@ -111,7 +111,7 @@ export default function Home({ posts, featuredPosts }) {
             {
               title: "Founders",
               description:
-                "Navigating the messy middle of zero to one. Tactics for building technical moats in crowded markets.",
+                "Navigating the messy middle of zero to one. The theories and realities of building a valuable tech startup.",
               icon: (
                 <svg
                   viewBox="0 0 24 24"
@@ -144,7 +144,7 @@ export default function Home({ posts, featuredPosts }) {
             {
               title: "Investors",
               description:
-                "Macro analysis for the micro-focused. Charts, models, and equations finding signal in the noise.",
+                "Macro analysis for the micro-focused. Charts, models, and equations separating signal from the noise.",
               icon: (
                 <svg
                   viewBox="0 0 24 24"
@@ -191,16 +191,16 @@ export default function Home({ posts, featuredPosts }) {
       )}
 
       <section className="bg-grid border-b border-neutral-300">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-10 py-12 grid grid-cols-1 lg:grid-cols-[1fr,2fr] gap-10">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-10 pt-6 pb-12 grid grid-cols-1 lg:grid-cols-[1fr,2fr] gap-10">
           <div>
-            <h2 className="font-serif text-3xl md:text-4xl text-neutral-900">
+            <h2 className="pt-6 font-serif text-3xl md:text-4xl text-neutral-900">
               Latest Dispatches
             </h2>
             <p className="mt-3 text-sm font-mono uppercase tracking-[0.2em] text-neutral-500">
-              Observations from the field. Updates weekly on Tuesdays.
+              Observations from the field.
             </p>
           </div>
-          <div className="border-t border-neutral-300">
+          <div className="border-neutral-300">
             {posts.slice(0, 3).map((post) => (
               <EssayListItem key={post.id} post={post} variant="dispatch" />
             ))}
