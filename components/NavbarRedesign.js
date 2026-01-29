@@ -138,12 +138,7 @@ export default function NavbarRedesign({ source, dateLabel, codeOverride }) {
               leaveTo="transform opacity-0 scale-95"
             >
               <Menu.Items className="absolute right-0 mt-2 w-48 origin-top-right bg-white rounded-lg shadow-lg border border-neutral-200 py-1 z-50">
-                {[
-                  { href: "/", label: "Home" },
-                  ...navLinks,
-                  { href: "/about-me", label: "About" },
-                  { href: "/talks", label: "Talks" },
-                ].map((link) => (
+                {[{ href: "/", label: "Home" }, ...navLinks].map((link) => (
                   <Menu.Item key={link.href}>
                     {({ active }) => (
                       <Link
