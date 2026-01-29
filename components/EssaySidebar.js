@@ -13,7 +13,7 @@ export default function EssaySidebar({ sections = [], post }) {
         day: "numeric",
       }).format(new Date(post.updated_at))
     : null;
-  const category = post?.tags?.[0]?.name || "Research";
+  const tags = post?.tags || [];
   const rawExcerpt =
     post?.excerpt ||
     "Independent analysis on technology, markets, and venture capital.";
@@ -31,10 +31,21 @@ export default function EssaySidebar({ sections = [], post }) {
                 <p className="mt-1 text-neutral-900">{publishedDate}</p>
               </div>
             )}
-            <div>
-              <p className="text-neutral-400">Category</p>
-              <p className="mt-1 text-accent">{category}</p>
-            </div>
+            {tags.length > 0 && (
+              <div>
+                <p className="text-neutral-400">Categories</p>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {tags.map((tag) => (
+                    <span
+                      key={tag.slug || tag.name}
+                      className="px-2 py-1 border border-neutral-300 text-[10px] font-mono uppercase tracking-[0.2em] text-accent"
+                    >
+                      {tag.name}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
         <div className="space-y-4">

@@ -33,7 +33,7 @@ export default function NavbarRedesign({ source, dateLabel, codeOverride }) {
   };
 
   const context = dateLabel
-    ? { code: codeOverride || "EDITORIAL", label: dateLabel }
+    ? { code: codeOverride || "ESSAY", label: dateLabel }
     : contextMap[source] || {
         code: "INDEX",
         label: String(source || "").toUpperCase(),
