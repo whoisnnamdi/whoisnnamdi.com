@@ -41,7 +41,7 @@ export default function HeroSection({ latestPost }) {
         {/* Portrait */}
         <div className="relative min-h-[320px] lg:min-h-[520px] border-t lg:border-t-0 lg:border-l border-neutral-900 bg-neutral-100 overflow-hidden">
           <Image
-            src="/images/portrait-bw.png"
+            src="/images/portrait2.png"
             alt="Nnamdi Iregbulem portrait"
             fill
             className="object-cover grayscale"
