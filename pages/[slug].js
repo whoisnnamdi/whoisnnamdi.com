@@ -136,7 +136,8 @@ export default function PostPage({ post, sections, isPost }) {
                 </h1>
                 <p className="mt-8 text-sm md:text-base font-mono uppercase tracking-[0.2em] text-neutral-500">
                   <span className="mr-2 text-neutral-400">|</span>
-                  Software Metrics • Economic Theory • Venture Capital
+                  Technology • Software Metrics • Economic Theory • Venture
+                  Capital
                 </p>
                 <div className="hidden md:block absolute right-0 top-2 text-neutral-200">
                   <svg
