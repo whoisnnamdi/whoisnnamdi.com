@@ -159,11 +159,6 @@ export default function PostPage({ post, sections, isPost }) {
                 >
                   {titleContent}
                 </h1>
-                {post.excerpt && (
-                  <p className="text-base md:text-lg text-neutral-600 max-w-2xl">
-                    {post.excerpt}
-                  </p>
-                )}
               </header>
             )}
 
