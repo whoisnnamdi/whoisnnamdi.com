@@ -20,7 +20,7 @@ export default function NavbarRedesign({ source, dateLabel, codeOverride }) {
     { href: "/notes", label: "Notes" },
     { href: "/talks", label: "Talks" },
     { href: "/portfolio", label: "Portfolio" },
-    { href: "/about-me", label: "WHOAMI" },
+    { href: "/about-me", label: "whoami" },
   ];
 
   const contextMap = {
@@ -71,7 +71,7 @@ export default function NavbarRedesign({ source, dateLabel, codeOverride }) {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`pb-1 text-[12px] font-mono uppercase tracking-[0.18em] transition-colors ${
+                className={`text-[12px] font-mono uppercase tracking-[0.18em] transition-colors ${
                   isActive
                     ? "text-accent border-b-2 border-accent"
                     : "text-neutral-600 hover:text-neutral-900"
