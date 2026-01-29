@@ -105,7 +105,7 @@ export default function Home({ posts, featuredPosts }) {
         <StatsRow stats={stats} variant="dark" />
       </div>
 
-      <section className="bg-grid border-b border-neutral-300">
+      <section className="bg-grid">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10 py-10 grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             {
@@ -183,14 +183,14 @@ export default function Home({ posts, featuredPosts }) {
       </section>
 
       {featuredPosts.length > 0 && (
-        <section className="bg-grid border-b border-neutral-300">
-          <div className="max-w-[1200px] mx-auto px-6 lg:px-10 py-12">
+        <section className="bg-grid">
+          <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
             <FeaturedEssayCard post={featuredPosts[0]} />
           </div>
         </section>
       )}
 
-      <section className="bg-grid border-b border-neutral-300">
+      <section className="bg-grid">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10 py-12">
           <div className="border border-neutral-900 bg-white p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-[1fr,2fr] gap-10">
             <div>
@@ -218,7 +218,7 @@ export default function Home({ posts, featuredPosts }) {
         </div>
       </section>
 
-      <section className="max-w-[1200px] mx-auto px-6 lg:px-10 my-16">
+      <section className="max-w-[1200px] mx-auto px-6 lg:px-10 mb-12">
         <SubscribeCTA source="Homepage CTA" />
       </section>
 
