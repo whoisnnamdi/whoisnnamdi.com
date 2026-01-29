@@ -1,3 +1,4 @@
+import { useMemo, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -35,18 +36,21 @@ export default function Page({ posts = [] }) {
   );
   const archivePosts = posts.filter((post) => !excludedIds.has(post.id));
   const listPosts = archivePosts.length > 0 ? archivePosts : posts;
+  const [selectedYears, setSelectedYears] = useState([]);
+  const [selectedFocus, setSelectedFocus] = useState([]);
 
   const years = Array.from(
     new Set(
-      posts
+      listPosts
         .map((post) => new Date(post.published_at).getFullYear())
         .filter(Boolean),
     ),
   ).sort((a, b) => b - a);
   const yearCounts = years.map(
     (year) =>
-      posts.filter((post) => new Date(post.published_at).getFullYear() === year)
-        .length,
+      listPosts.filter(
+        (post) => new Date(post.published_at).getFullYear() === year,
+      ).length,
   );
   const maxYearCount = Math.max(...yearCounts, 1);
   const archiveBars = yearCounts.length
@@ -55,7 +59,7 @@ export default function Page({ posts = [] }) {
         .map((count) => Math.round((count / maxYearCount) * 100))
     : [24, 38, 30, 52, 40];
 
-  const tagCounts = posts.reduce((acc, post) => {
+  const tagCounts = listPosts.reduce((acc, post) => {
     (post.tags || []).forEach((tag) => {
       const key = tag?.name || tag?.slug;
       if (!key) return;
@@ -73,6 +77,33 @@ export default function Page({ posts = [] }) {
     ? focusTags
     : ["Founders", "Investors", "Developers"];
   const focusLabel = focusTagList.join(", ");
+  const filteredPosts = useMemo(() => {
+    let filtered = listPosts;
+    if (selectedYears.length > 0) {
+      filtered = filtered.filter((post) =>
+        selectedYears.includes(new Date(post.published_at).getFullYear()),
+      );
+    }
+    if (selectedFocus.length > 0) {
+      filtered = filtered.filter((post) => {
+        const postTags = (post.tags || []).map((tag) => tag?.name || tag?.slug);
+        return selectedFocus.some((tag) => postTags.includes(tag));
+      });
+    }
+    return filtered;
+  }, [listPosts, selectedFocus, selectedYears]);
+
+  const toggleYear = (year) => {
+    setSelectedYears((prev) =>
+      prev.includes(year) ? prev.filter((item) => item !== year) : [...prev, year],
+    );
+  };
+
+  const toggleFocus = (tag) => {
+    setSelectedFocus((prev) =>
+      prev.includes(tag) ? prev.filter((item) => item !== tag) : [...prev, tag],
+    );
+  };
 
   return (
     <div className="bg-paper min-h-screen">
@@ -210,12 +241,19 @@ export default function Page({ posts = [] }) {
                     </p>
                     <div className="mt-3 flex flex-wrap gap-2">
                       {years.map((year) => (
-                        <span
+                        <button
+                          type="button"
                           key={year}
-                          className="px-2 py-1 border border-neutral-300 text-[10px] font-mono uppercase tracking-[0.2em] text-neutral-500"
+                          aria-pressed={selectedYears.includes(year)}
+                          onClick={() => toggleYear(year)}
+                          className={`px-2 py-1 border text-[10px] font-mono uppercase tracking-[0.2em] transition ${
+                            selectedYears.includes(year)
+                              ? "border-neutral-900 bg-neutral-900 text-white"
+                              : "border-neutral-300 text-neutral-500 hover:border-neutral-500 hover:text-neutral-700"
+                          }`}
                         >
                           {year}
-                        </span>
+                        </button>
                       ))}
                     </div>
                   </div>
@@ -225,12 +263,19 @@ export default function Page({ posts = [] }) {
                     </p>
                     <div className="mt-3 flex flex-wrap gap-2">
                       {focusTagList.map((tag) => (
-                        <span
+                        <button
+                          type="button"
                           key={tag}
-                          className="px-2 py-1 border border-neutral-300 text-[10px] font-mono uppercase tracking-[0.2em] text-neutral-500"
+                          aria-pressed={selectedFocus.includes(tag)}
+                          onClick={() => toggleFocus(tag)}
+                          className={`px-2 py-1 border text-[10px] font-mono uppercase tracking-[0.2em] transition ${
+                            selectedFocus.includes(tag)
+                              ? "border-neutral-900 bg-neutral-900 text-white"
+                              : "border-neutral-300 text-neutral-500 hover:border-neutral-500 hover:text-neutral-700"
+                          }`}
                         >
                           {tag}
-                        </span>
+                        </button>
                       ))}
                     </div>
                   </div>
@@ -248,18 +293,24 @@ export default function Page({ posts = [] }) {
                     </p>
                   </div>
                   <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-neutral-400">
-                    {listPosts.length} entries
+                    {filteredPosts.length} entries
                   </span>
                 </div>
 
                 <div className="px-6 border-t border-neutral-200">
-                  {listPosts.map((post) => (
-                    <EssayListItem
-                      key={post.id}
-                      post={post}
-                      variant="archive"
-                    />
-                  ))}
+                  {filteredPosts.length > 0 ? (
+                    filteredPosts.map((post) => (
+                      <EssayListItem
+                        key={post.id}
+                        post={post}
+                        variant="archive"
+                      />
+                    ))
+                  ) : (
+                    <p className="py-10 text-sm text-neutral-500">
+                      No essays match those filters.
+                    </p>
+                  )}
                 </div>
               </div>
             </div>
