@@ -3,19 +3,50 @@ import Link from "next/link";
 
 export default function EssayListItem({ post, variant = "default" }) {
   if (variant === "dispatch") {
+    const bars = [22, 36, 28, 52, 34];
+
     return (
       <Link href={`/${post.slug}`} className="block group">
-        <article className="grid grid-cols-[84px,1fr,64px] gap-6 items-center py-6 border-b border-neutral-200">
-          <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-neutral-500">
-            {post.dateFormatted}
-          </span>
+        <article className="grid grid-cols-1 lg:grid-cols-[1fr,180px] gap-6 items-center py-6 border-b border-neutral-200">
           <div className="min-w-0">
-            <h3 className="text-lg font-serif text-neutral-900 group-hover:text-accent transition-colors">
+            <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-neutral-500">
+              {post.dateFormatted}
+            </span>
+            <h3 className="mt-2 text-lg font-serif text-neutral-900 group-hover:text-accent transition-colors">
               {post.title}
             </h3>
             {post.excerpt && (
-              <p className="mt-1 text-sm text-neutral-500">{post.excerpt}</p>
+              <p className="mt-1 text-sm text-neutral-500 line-clamp-2">
+                {post.excerpt}
+              </p>
             )}
+          </div>
+          <div className="hidden lg:block w-full">
+            <div className="border border-neutral-300 bg-white">
+              {post.feature_image ? (
+                <div className="relative h-24 w-full overflow-hidden bg-neutral-100">
+                  <Image
+                    src={post.feature_image}
+                    alt={post.title}
+                    fill
+                    className="object-cover grayscale group-hover:grayscale-0 transition"
+                    sizes="180px"
+                  />
+                </div>
+              ) : (
+                <div className="h-24 flex items-end gap-1 p-3 bg-neutral-100">
+                  {bars.map((height, index) => (
+                    <div
+                      key={index}
+                      className={`w-full ${
+                        index === 3 ? "bg-accent" : "bg-neutral-800"
+                      }`}
+                      style={{ height: `${height}%` }}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </article>
       </Link>

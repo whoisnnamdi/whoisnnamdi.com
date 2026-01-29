@@ -66,20 +66,6 @@ export default function FeaturedEssayCard({ post }) {
             <span className="text-neutral-900">4 charts</span>
           </div>
         </div>
-        <div className="mt-6 border border-neutral-200 p-4">
-          <div className="flex items-end gap-2 h-16">
-            {[20, 38, 30, 52, 68].map((height, index) => (
-              <div
-                key={index}
-                className={`w-full ${index === 3 ? "bg-accent" : "bg-neutral-800"}`}
-                style={{ height: `${height}%` }}
-              />
-            ))}
-          </div>
-          <p className="mt-3 text-[10px] font-mono uppercase tracking-[0.2em] text-neutral-400">
-            Figure 1.2: Valuation multiples
-          </p>
-        </div>
       </aside>
     </section>
   );
