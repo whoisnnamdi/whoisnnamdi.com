@@ -53,7 +53,7 @@ export async function getStaticProps() {
 
 export default function Home({ posts, featuredPosts }) {
   const stats = [
-    { label: "Role", value: "Venture Partner" },
+    { label: "Role", value: "VC @ Lightspeed" },
     { label: "Focus", value: "Infra & Dev Tools" },
     { label: "Location", value: "San Francisco" },
     { label: "Status", value: "Deploying", accent: true },

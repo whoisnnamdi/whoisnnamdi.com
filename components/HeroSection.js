@@ -19,9 +19,8 @@ export default function HeroSection({ latestPost }) {
             <span className="italic text-accent">bullion</span>.
           </h1>
           <p className="mt-6 max-w-md border-l-2 border-accent pl-4 text-sm md:text-base font-mono text-neutral-600 leading-relaxed">
-            Investigating how software eats finance. I write about the theory of
-            value in a digital age, backing technical founders building
-            technical tools.
+            I invest in technical tools for technical people. I write about the
+            business and economics of tech and venture capital.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-5 text-[11px] font-mono uppercase tracking-[0.2em]">
             <Link
