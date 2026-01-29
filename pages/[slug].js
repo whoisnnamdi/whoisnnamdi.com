@@ -48,7 +48,7 @@ export default function PostPage({ post, sections, isPost }) {
         .format(new Date(post.published_at))
         .toUpperCase()
     : null;
-  const navLabel = post?.slug === "about-me" ? "About." : publishedLabel;
+  const navLabel = post?.slug === "about-me" ? "About Me." : publishedLabel;
   const titleMatch = post.title.match(/Aren[’']t/);
   const titleContent = titleMatch
     ? (() => {

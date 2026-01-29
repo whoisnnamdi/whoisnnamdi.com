@@ -48,6 +48,44 @@ export default function HeroSection({ latestPost }) {
             className="object-cover"
             priority
           />
+          <svg
+            className="absolute inset-0 w-full h-full opacity-10"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          >
+            <defs>
+              <pattern
+                id="grid"
+                width="10"
+                height="10"
+                patternUnits="userSpaceOnUse"
+              >
+                <path
+                  d="M 10 0 L 0 0 0 10"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="0.5"
+                />
+              </pattern>
+            </defs>
+            <rect width="100" height="100" fill="url(#grid)" />
+            <path
+              d="M0,80 Q25,30 50,60 T100,20"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="0.5"
+            />
+            <path
+              d="M0,90 Q40,50 60,80 T100,40"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="0.5"
+            />
+          </svg>
+          <div
+            className="absolute top-10 right-10 w-32 h-32 rounded-full border border-ink opacity-20 animate-spin"
+            style={{ animationDuration: "20s" }}
+          ></div>
           <div className="absolute inset-0 bg-grid-overlay pointer-events-none" />
           <span className="absolute bottom-4 right-4 bg-white/90 border border-neutral-300 px-2 py-1 text-[10px] font-mono uppercase tracking-[0.2em] text-neutral-600">
             Fig. 1 — Portrait

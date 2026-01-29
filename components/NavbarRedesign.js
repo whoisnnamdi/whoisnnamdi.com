@@ -26,9 +26,10 @@ export default function NavbarRedesign({ source, dateLabel, codeOverride }) {
   const contextMap = {
     Home: { code: "INDEX 01", label: "HOME." },
     essays: { code: "INDEX 02", label: "ESSAYS." },
-    notes: { code: "INDEX 04", label: "NOTES" },
-    talks: { code: "INDEX 03", label: "TALKS & MEDIA" },
-    portfolio: { code: "INDEX 04", label: "PORTFOLIO." },
+    notes: { code: "INDEX 03", label: "NOTES" },
+    talks: { code: "INDEX 04", label: "TALKS & MEDIA." },
+    portfolio: { code: "INDEX 05", label: "PORTFOLIO." },
+    about: { code: "INDEX 06", label: "ABOUT ME." },
   };
 
   const context = dateLabel

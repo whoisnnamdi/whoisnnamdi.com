@@ -138,8 +138,8 @@ export default function TalksPage({ talks }) {
         </div>
       </section>
 
-      <section className="bg-grid border-b border-neutral-300">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-10 py-12">
+      <section className="bg-grid border-neutral-300">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-10 pt-12">
           <div className="grid grid-cols-1 lg:grid-cols-[1.5fr,1fr] border border-neutral-900 bg-white">
             <a
               href={featured?.href || "#"}
@@ -183,8 +183,8 @@ export default function TalksPage({ talks }) {
         </div>
       </section>
 
-      <section className="bg-grid border-b border-neutral-300">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-10 py-12">
+      <section className="bg-grid border-neutral-300">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-10 pt-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-neutral-300 bg-white">
             {gridItems.map((item, index) => {
               const platform = getPlatform(item.href);

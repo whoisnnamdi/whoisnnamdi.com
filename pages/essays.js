@@ -73,7 +73,7 @@ export default function Page({ posts }) {
             ))}
           </div>
 
-          <div className="mt-16">
+          <div className="my-16">
             <SubscribeCTA source="Essays Page" />
           </div>
         </div>

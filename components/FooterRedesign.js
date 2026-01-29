@@ -38,7 +38,7 @@ export default function FooterRedesign() {
   ];
 
   return (
-    <footer className="mt-20 border-t border-neutral-300 bg-white">
+    <footer className="border-t border-neutral-300 bg-white">
       <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-[1.2fr,1fr,1fr,1fr,0.8fr] gap-8 px-6 lg:px-10 py-12">
         <div>
           <Link

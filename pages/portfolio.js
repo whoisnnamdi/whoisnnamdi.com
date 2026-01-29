@@ -148,7 +148,7 @@ export default function Portfolio({ logos, meta }) {
       <main className="bg-grid border-neutral-300">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10 pt-4 pb-12">
           <header className="text-center max-w-4xl mx-auto">
-            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-neutral-900 mb-6">
+            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-neutral-900 mb-12">
               Backing <span className="italic text-accent">technical</span>{" "}
               founders building{" "}
               <span className="italic text-accent">enduring</span> companies.
@@ -179,23 +179,27 @@ export default function Portfolio({ logos, meta }) {
           )}
         </section>
 
-        <section className="border-t border-neutral-300 bg-white py-16">
-          <div className="max-w-[900px] mx-auto px-6 text-center">
-            <h2 className="font-serif text-3xl md:text-5xl font-bold text-neutral-900 mb-4">
-              Building something ambitious?
-            </h2>
-            <p className="text-sm md:text-base font-mono uppercase tracking-[0.2em] text-neutral-500 mb-8">
-              I love meeting founders at the earliest stages. Share what
-              you&apos;re working on and let&apos;s explore how I can help —
-              from underwriting your first rounds to scaling a breakout company.
-            </p>
-            <Link
-              href="mailto:nnamdi@lsvp.com"
-              className="inline-flex items-center gap-2 px-6 py-3 text-white font-mono uppercase tracking-[0.2em] bg-neutral-900 border border-neutral-900 hover:bg-neutral-800 transition-colors"
-            >
-              Send an email
-              <span aria-hidden="true">→</span>
-            </Link>
+        <section className="pb-12">
+          <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
+            <div className="bg-blueprint border border-neutral-900 py-14 px-6 md:px-12 text-center text-white">
+              <div className="max-w-[900px] mx-auto">
+                <h2 className="font-serif text-3xl md:text-5xl font-bold mb-4">
+                  Building something ambitious?
+                </h2>
+                <p className="text-base md:text-lg text-white/90 mb-8 max-w-md mx-auto">
+                  I love meeting founders at the earliest stages. Share what
+                  you&apos;re working on and let&apos;s explore how we could
+                  collaborate.
+                </p>
+                <Link
+                  href="mailto:nnamdi@lsvp.com"
+                  className="inline-flex items-center gap-2 px-6 py-3 text-white font-mono uppercase tracking-[0.2em] bg-neutral-900 border border-neutral-900 hover:bg-neutral-800 transition-colors"
+                >
+                  Send an email
+                  <span aria-hidden="true">→</span>
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
       </main>
