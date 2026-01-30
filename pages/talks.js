@@ -170,7 +170,7 @@ export default function TalksPage({ talks }) {
               </div>
             </a>
 
-            <div className="border-t lg:border-t-0 lg:border-l border-neutral-300 bg-grid px-8 py-10 lg:px-10 lg:py-12">
+            <div className="border-t lg:border-t-0 lg:border-l border-neutral-300 bg-white px-8 py-10 lg:px-10 lg:py-12">
               <p className="text-[11px] font-mono uppercase tracking-[0.2em] text-neutral-500">
                 Episode Summary
               </p>
