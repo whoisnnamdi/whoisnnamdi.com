@@ -228,7 +228,7 @@ export default function Page({ posts = [] }) {
         )}
 
         <section className="bg-grid border-neutral-300">
-          <div className="max-w-[1200px] mx-auto px-6 lg:px-10 pt-6">
+          <div className="max-w-[1200px] mx-auto px-6 lg:px-10 pt-6 pb-12">
             <div className="grid grid-cols-1 lg:grid-cols-[260px,1fr] border border-neutral-300 bg-white">
               <aside className="border-b lg:border-b-0 lg:border-r border-neutral-300 p-6">
                 <p className="text-[11px] font-mono uppercase tracking-[0.2em] text-neutral-500">
@@ -317,7 +317,7 @@ export default function Page({ posts = [] }) {
           </div>
         </section>
 
-        <section className="max-w-[1200px] mx-auto px-6 lg:px-10 my-16">
+        <section className="max-w-[1200px] mx-auto px-6 lg:px-10 mb-12">
           <SubscribeCTA source="Essays Page" />
         </section>
       </main>

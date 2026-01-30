@@ -286,7 +286,7 @@ export default function TalksPage({ talks }) {
         </div>
       </section>
 
-      <section className="max-w-[1200px] mx-auto px-6 lg:px-10 my-16">
+      <section className="max-w-[1200px] mx-auto px-6 lg:px-10 my-12">
         <SubscribeCTA source="Talks Page" />
       </section>
 
