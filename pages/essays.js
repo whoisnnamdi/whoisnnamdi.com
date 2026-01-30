@@ -139,7 +139,7 @@ export default function Page({ posts = [] }) {
 
       <main>
         <section className="bg-grid border-neutral-300">
-          <div className="max-w-[1200px] mx-auto px-6 lg:px-10 py-12">
+          <div className="max-w-[1200px] mx-auto px-6 lg:px-10 pb-12">
             <div className="grid grid-cols-1 lg:grid-cols-[1.5fr,1fr] border border-neutral-900 bg-white">
               <div className="px-8 py-10 lg:px-12 lg:py-12">
                 <p className="text-[11px] font-mono uppercase tracking-[0.2em] text-neutral-500">
