@@ -112,60 +112,30 @@ export default function Home({ posts, featuredPosts }) {
               title: "Founders",
               description:
                 "Navigating the messy middle of zero to one. The theories and realities of building a valuable tech startup.",
-              icon: (
-                <svg
-                  viewBox="0 0 24 24"
-                  className="w-5 h-5 text-neutral-700"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                >
-                  <path d="M4 10h16M6 6h12M7 14h10M8 18h8" />
-                </svg>
-              ),
+              icon: "rocket_launch",
             },
             {
               title: "Developers",
               description:
                 "The rise of the engineer-executive. Tooling, workflows, and the future of software construction.",
-              icon: (
-                <svg
-                  viewBox="0 0 24 24"
-                  className="w-5 h-5 text-neutral-700"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                >
-                  <path d="M4 6h16v12H4z" />
-                  <path d="M8 10h8M8 14h6" />
-                </svg>
-              ),
+              icon: "terminal",
             },
             {
               title: "Investors",
               description:
                 "Macro analysis for the micro-focused. Charts, models, and equations separating signal from the noise.",
-              icon: (
-                <svg
-                  viewBox="0 0 24 24"
-                  className="w-5 h-5 text-neutral-700"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                >
-                  <path d="M5 16l4-4 3 3 5-6" />
-                  <path d="M4 20h16" />
-                </svg>
-              ),
+              icon: "bar_chart",
             },
           ].map((card, index) => (
             <div
               key={card.title}
-              className="border border-neutral-300 bg-white p-6"
+              className="group border border-neutral-300 bg-white p-6"
             >
               <div className="flex items-center justify-between">
-                <div className="w-10 h-10 border border-neutral-300 flex items-center justify-center">
-                  {card.icon}
+                <div className="w-12 h-12 border-2 border-ink bg-primary/10 text-ink flex items-center justify-center shadow-[4px_4px_0_0_rgba(17,17,17,0.9)] transition-all group-hover:bg-primary group-hover:text-white">
+                  <span className="material-symbols-outlined text-2xl leading-none">
+                    {card.icon}
+                  </span>
                 </div>
                 <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-neutral-400">
                   0{index + 1}
