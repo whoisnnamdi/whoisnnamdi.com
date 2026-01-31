@@ -77,7 +77,7 @@ export default function TalksPage({ talks }) {
               </p>
               <h1 className="mt-6 font-serif text-4xl md:text-5xl lg:text-6xl leading-tight text-neutral-900">
                 Conversations on{" "}
-                <span className="italic text-accent">infrastructure</span> & the{" "}
+                <span className="italic text-accent">technology</span> & the{" "}
                 <span className="italic text-accent">economics</span> of{" "}
                 software.
               </h1>
