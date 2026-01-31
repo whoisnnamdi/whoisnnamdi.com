@@ -146,9 +146,10 @@ export default function Page({ posts = [] }) {
                   ↘ Essays Archive
                 </p>
                 <h1 className="mt-6 font-serif text-4xl md:text-5xl lg:text-6xl leading-tight text-neutral-900">
-                  The Archive: Insights at the intersection of{" "}
-                  <span className="italic text-accent">bits</span> &{" "}
-                  <span className="italic text-accent">bullion</span>.
+                  Essays on{" "}
+                  <span className="italic text-accent">technology</span> &{" "}
+                  <span className="italic text-accent">capital</span> in the real
+                  world.
                 </h1>
                 <p className="mt-4 max-w-lg text-sm text-neutral-600 leading-relaxed">
                   Long-form essays on technology, venture capital, and the
