@@ -33,7 +33,7 @@ describe('[slug] data functions', () => {
 
   test('getStaticProps uses getPost when slug is a post', async () => {
     content.getPosts.mockResolvedValueOnce([{ slug: 'my-post' }])
-    content.getPost.mockResolvedValueOnce({ id: '1', slug: 'my-post' })
+    content.getPost.mockResolvedValueOnce({ id: '1', slug: 'my-post', html: '<p>hello</p>' })
 
     const res = await page.getStaticProps({ params: { slug: 'my-post' } })
     expect(content.getPost).toHaveBeenCalledWith('my-post')
@@ -42,7 +42,7 @@ describe('[slug] data functions', () => {
 
   test('getStaticProps uses getPage when slug is not a post', async () => {
     content.getPosts.mockResolvedValueOnce([{ slug: 'other-post' }])
-    content.getPage.mockResolvedValueOnce({ id: '2', slug: 'about-me' })
+    content.getPage.mockResolvedValueOnce({ id: '2', slug: 'about-me', html: '<p>about</p>' })
 
     const res = await page.getStaticProps({ params: { slug: 'about-me' } })
     expect(content.getPage).toHaveBeenCalledWith('about-me')
