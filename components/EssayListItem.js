@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const FALLBACK_BARS = [22, 36, 28, 52, 34];
+
 export default function EssayListItem({ post, variant = "default" }) {
   if (variant === "dispatch") {
-    const bars = [22, 36, 28, 52, 34];
-
     return (
       <Link href={`/${post.slug}`} className="block group">
         <article className="grid grid-cols-1 lg:grid-cols-[1fr,180px] gap-6 items-center py-6 border-b border-neutral-200">
@@ -35,7 +35,7 @@ export default function EssayListItem({ post, variant = "default" }) {
                 </div>
               ) : (
                 <div className="h-24 flex items-end gap-1 p-3 bg-neutral-100">
-                  {bars.map((height, index) => (
+                  {FALLBACK_BARS.map((height, index) => (
                     <div
                       key={index}
                       className={`w-full ${
@@ -56,7 +56,6 @@ export default function EssayListItem({ post, variant = "default" }) {
   if (variant === "archive") {
     const tags = (post.tags || []).slice(0, 2).map((tag) => tag.name);
     const tagLabel = tags.length ? tags.join(" / ") : "Essay";
-    const bars = [22, 36, 28, 52, 34];
 
     return (
       <Link href={`/${post.slug}`} className="block group">
@@ -93,7 +92,7 @@ export default function EssayListItem({ post, variant = "default" }) {
                 </div>
               ) : (
                 <div className="h-24 flex items-end gap-1 p-3 bg-neutral-100">
-                  {bars.map((height, index) => (
+                  {FALLBACK_BARS.map((height, index) => (
                     <div
                       key={index}
                       className={`w-full ${
