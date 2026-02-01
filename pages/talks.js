@@ -1,9 +1,9 @@
-import Head from "next/head";
 import { useState } from "react";
 import Image from "next/image";
 import Analytics from "../components/Analytics";
 import NavbarRedesign from "../components/NavbarRedesign";
 import FooterRedesign from "../components/FooterRedesign";
+import SEO from "../components/SEO";
 import SubscribeCTA from "../components/SubscribeCTA";
 import { getTalksData } from "../lib/content";
 
@@ -43,25 +43,11 @@ export default function TalksPage({ talks }) {
 
   return (
     <div className="bg-paper min-h-screen">
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <link rel="canonical" href="https://whoisnnamdi.com/talks" />
-        <meta property="og:site_name" content="Who is Nnamdi?" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:url" content="https://whoisnnamdi.com/talks" />
-        <meta
-          property="og:image"
-          content="https://whoisnnamdi.com/content/images/2019/10/DSC_0562_cropped_2.jpg"
-        />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:url" content="https://whoisnnamdi.com/talks" />
-        <meta name="twitter:site" content="@whoisnnamdi" />
-      </Head>
+      <SEO
+        title={title}
+        description={description}
+        url="https://whoisnnamdi.com/talks"
+      />
       <Analytics />
 
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10">

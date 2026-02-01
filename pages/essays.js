@@ -1,5 +1,4 @@
 import { useMemo, useState } from "react";
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Analytics from "../components/Analytics";
@@ -7,6 +6,7 @@ import EssayListItem from "../components/EssayListItem";
 import FeaturedEssayCard from "../components/FeaturedEssayCard";
 import FooterRedesign from "../components/FooterRedesign";
 import NavbarRedesign from "../components/NavbarRedesign";
+import SEO from "../components/SEO";
 import SubscribeCTA from "../components/SubscribeCTA";
 import postFormat from "../components/PostFormat";
 import { getPosts } from "../lib/content";
@@ -97,31 +97,7 @@ export default function Page({ posts = [] }) {
 
   return (
     <div className="bg-paper min-h-screen">
-      <Head>
-        <meta charSet="utf-8" />
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDesc} />
-        <link rel="canonical" href={pageURL} />
-        <meta name="referrer" content="no-referrer-when-downgrade" />
-        <meta property="og:site_name" content="Who is Nnamdi?" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDesc} />
-        <meta property="og:url" content={pageURL} />
-        <meta
-          property="og:image"
-          content="https://whoisnnamdi.com/content/images/2019/10/DSC_0562_cropped_2.jpg"
-        />
-        <meta
-          property="article:publisher"
-          content="https://www.facebook.com/nnamdi.iregbulem"
-        />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content={pageDesc} />
-        <meta name="twitter:url" content={pageURL} />
-        <meta name="twitter:site" content="@whoisnnamdi" />
-      </Head>
+      <SEO title={pageTitle} description={pageDesc} url={pageURL} />
       <Analytics />
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
         <NavbarRedesign source={slug} />

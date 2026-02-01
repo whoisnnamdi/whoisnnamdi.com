@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Link from "next/link";
 import NavbarRedesign from "../components/NavbarRedesign";
 import FooterRedesign from "../components/FooterRedesign";
@@ -8,6 +7,7 @@ import EssayListItem from "../components/EssayListItem";
 import StatsRow from "../components/StatsRow";
 import SubscribeCTA from "../components/SubscribeCTA";
 import Analytics from "../components/Analytics";
+import SEO from "../components/SEO";
 import { getPosts } from "../lib/content";
 import { formatDate, formatExcerpt } from "../lib/dates";
 
@@ -46,40 +46,11 @@ export default function Home({ posts, featuredPosts }) {
 
   return (
     <div className="bg-paper min-h-screen">
-      <Head>
-        <meta charSet="utf-8" />
-        <title>Who Is Nnamdi?</title>
-        <meta
-          name="description"
-          content="Thoughts on technology, venture capital, and the economics of both"
-        />
-        <link rel="canonical" href="https://whoisnnamdi.com/" />
-        <meta name="referrer" content="no-referrer-when-downgrade" />
-        <meta property="og:site_name" content="Who is Nnamdi?" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Who is Nnamdi?" />
-        <meta
-          property="og:description"
-          content="Thoughts on technology, venture capital, and the economics of both"
-        />
-        <meta property="og:url" content="https://whoisnnamdi.com/" />
-        <meta
-          property="og:image"
-          content="https://whoisnnamdi.com/content/images/2019/10/DSC_0562_cropped_2.jpg"
-        />
-        <meta
-          property="article:publisher"
-          content="https://www.facebook.com/nnamdi.iregbulem"
-        />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Who is Nnamdi?" />
-        <meta
-          name="twitter:description"
-          content="Thoughts on technology, venture capital, and the economics of both"
-        />
-        <meta name="twitter:url" content="https://whoisnnamdi.com/" />
-        <meta name="twitter:site" content="@whoisnnamdi" />
-      </Head>
+      <SEO
+        title="Who Is Nnamdi?"
+        description="Thoughts on technology, venture capital, and the economics of both"
+        url="https://whoisnnamdi.com/"
+      />
       <Analytics />
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
         <NavbarRedesign source="Home" />

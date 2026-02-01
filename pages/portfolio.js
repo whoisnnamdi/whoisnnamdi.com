@@ -1,8 +1,8 @@
-import Head from "next/head";
 import Link from "next/link";
 import Analytics from "../components/Analytics";
 import NavbarRedesign from "../components/NavbarRedesign";
 import FooterRedesign from "../components/FooterRedesign";
+import SEO from "../components/SEO";
 import StatsRow from "../components/StatsRow";
 import PortfolioCard from "../components/PortfolioCard";
 import { getPage, getPortfolioData } from "../lib/content";
@@ -103,43 +103,11 @@ export default function Portfolio({ logos, meta }) {
 
   return (
     <div className="bg-paper min-h-screen">
-      <Head>
-        <meta charSet="utf-8" />
-        <title>{meta.title}</title>
-        <meta name="description" content={meta.description} />
-        <link rel="canonical" href="https://whoisnnamdi.com/portfolio" />
-        <meta name="referrer" content="no-referrer-when-downgrade" />
-        <meta property="og:site_name" content="Who is Nnamdi?" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={meta.ogTitle || meta.title} />
-        <meta
-          property="og:description"
-          content={meta.ogDescription || meta.description}
-        />
-        <meta
-          property="og:url"
-          content={meta.ogUrl || "https://whoisnnamdi.com/portfolio"}
-        />
-        <meta
-          property="og:image"
-          content="https://whoisnnamdi.com/content/images/2019/10/DSC_0562_cropped_2.jpg"
-        />
-        <meta
-          property="article:publisher"
-          content="https://www.facebook.com/nnamdi.iregbulem"
-        />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={meta.ogTitle || meta.title} />
-        <meta
-          name="twitter:description"
-          content={meta.ogDescription || meta.description}
-        />
-        <meta
-          name="twitter:url"
-          content={meta.ogUrl || "https://whoisnnamdi.com/portfolio"}
-        />
-        <meta name="twitter:site" content="@whoisnnamdi" />
-      </Head>
+      <SEO
+        title={meta.title}
+        description={meta.description}
+        url={meta.ogUrl || "https://whoisnnamdi.com/portfolio"}
+      />
       <Analytics />
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
         <NavbarRedesign source="portfolio" />
