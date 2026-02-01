@@ -9,7 +9,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/generate-static-files.js && next build",
+    "build": "node scripts/generate-static-files.mjs && next build",
     "start": "next start",
     "test": "jest",
     "test:watch": "jest --watch",

@@ -1,8 +1,8 @@
 // Script to generate RSS feed at build time
-require('dotenv').config();
-const fs = require('fs');
-const path = require('path');
-const { getPosts } = require('./content-api');
+import 'dotenv/config';
+import fs from 'fs';
+import path from 'path';
+import { getAllPosts } from '../lib/content.js';
 
 const options = {
     year: 'numeric',
@@ -15,12 +15,12 @@ const options = {
     timeZone: 'GMT',
 }
 
-const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
-    <rss 
-        xmlns:dc="http://purl.org/dc/elements/1.1/" 
-        xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-        xmlns:atom="http://www.w3.org/2005/Atom" 
-        version="2.0" 
+export const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
+    <rss
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:content="http://purl.org/rss/1.0/modules/content/"
+        xmlns:atom="http://www.w3.org/2005/Atom"
+        version="2.0"
         xmlns:media="http://search.yahoo.com/mrss/"
     >
         <channel>
@@ -71,22 +71,22 @@ const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
     </rss>
 `
 
-async function generateRSS() {
+export default async function generateRSS() {
     try {
         console.log('Generating RSS feed...');
-        
+
         // Ensure the static directory exists
         const staticDir = path.join(process.cwd(), 'public', 'static');
         fs.mkdirSync(staticDir, { recursive: true });
-        
+
         // Generate the RSS feed
-        const posts = await getPosts();
+        const posts = await getAllPosts();
         const rssContent = createRSS(posts);
-        
+
         // Write the file
         const filePath = path.join(staticDir, 'rss.xml');
         fs.writeFileSync(filePath, rssContent);
-        
+
         console.log(`RSS feed generated at ${filePath}`);
         return true;
     } catch (error) {
@@ -96,9 +96,7 @@ async function generateRSS() {
 }
 
 // Run the function if this script is executed directly
-if (require.main === module) {
+const isMain = import.meta.url === `file://${process.argv[1]}`;
+if (isMain) {
     generateRSS();
 }
-
-module.exports = generateRSS;
-module.exports.createRSS = createRSS;

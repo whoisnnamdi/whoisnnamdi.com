@@ -1,8 +1,8 @@
 // Script to generate sitemap at build time
-require('dotenv').config();
-const fs = require('fs');
-const path = require('path');
-const { getAll } = require('./content-api');
+import 'dotenv/config';
+import fs from 'fs';
+import path from 'path';
+import { getAllContent } from '../lib/content.js';
 
 const others = [
     "founders",
@@ -18,7 +18,7 @@ const buildLastModTag = (value) => {
                     <lastmod>${date.toISOString()}</lastmod>`
 }
 
-const createSitemap = (posts) => {
+export const createSitemap = (posts) => {
     const latestUpdatedAt = posts.reduce((latest, post) => {
         const candidate = post.updated_at || post.published_at
         if (!candidate) return latest
@@ -60,21 +60,21 @@ const createSitemap = (posts) => {
 `;
 }
 
-async function generateSitemap() {
+export default async function generateSitemap() {
     try {
         console.log('Generating sitemap...');
-        
+
         // Ensure the public directory exists
         const publicDir = path.join(process.cwd(), 'public');
-        
+
         // Get all posts and pages
-        const postsPages = await getAll();
+        const postsPages = await getAllContent();
         const sitemapContent = createSitemap(postsPages);
-        
+
         // Write sitemap directly to /public
         const filePath = path.join(publicDir, 'sitemap.xml');
         fs.writeFileSync(filePath, sitemapContent);
-        
+
         console.log(`Sitemap generated at ${filePath}`);
         return true;
     } catch (error) {
@@ -84,9 +84,7 @@ async function generateSitemap() {
 }
 
 // Run the function if this script is executed directly
-if (require.main === module) {
+const isMain = import.meta.url === `file://${process.argv[1]}`;
+if (isMain) {
     generateSitemap();
 }
-
-module.exports = generateSitemap;
-module.exports.createSitemap = createSitemap;
