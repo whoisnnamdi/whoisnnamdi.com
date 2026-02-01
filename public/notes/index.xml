@@ -6,6 +6,12 @@
       <description>Last 10 notes on Nnamdi&#039;s Notes</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>Nnamdi&#039;s Notes</title>
+    <link>https://whoisnnamdi.com/notes/</link>
+    <guid>https://whoisnnamdi.com/notes/</guid>
+    <description>Home These are my personal notes on various topics that don’t meet the bar for a proper essay. Most are not even in essay form — they are scratchings and inklings of ideas or notes to myself about things I’ve been researching or learning about.</description>
+    <pubDate>Sun, 01 Feb 2026 23:52:27 GMT</pubDate>
+  </item><item>
     <title>The Adaptive Lasso and Its Oracle Properties</title>
     <link>https://whoisnnamdi.com/notes/@zouAdaptiveLassoIts2006</link>
     <guid>https://whoisnnamdi.com/notes/@zouAdaptiveLassoIts2006</guid>
@@ -58,12 +64,6 @@
     <link>https://whoisnnamdi.com/notes/@plagborg-mollerEssaysMacroeconometrics</link>
     <guid>https://whoisnnamdi.com/notes/@plagborg-mollerEssaysMacroeconometrics</guid>
     <description>Essays in Macroeconometrics Mikkel Plagborg-Møller Link Abstract This dissertation consists of three independent chapters on econometric methods for macroeconomic analysis ...</description>
-    <pubDate>Sun, 01 Feb 2026 23:35:04 GMT</pubDate>
-  </item><item>
-    <title>Boosting: Why You Can Use the Hp Filter</title>
-    <link>https://whoisnnamdi.com/notes/@phillipsBoostingWhyYou2021</link>
-    <guid>https://whoisnnamdi.com/notes/@phillipsBoostingWhyYou2021</guid>
-    <description>Boosting: Why You Can Use the Hp Filter Peter C. B. Phillips, Zhentao Shi Abstract We propose a procedure of iterating the HP filter to produce a smarter smoothing device, called the boosted HP (bHP) filter, based on L2-boosting in machine learning.</description>
     <pubDate>Sun, 01 Feb 2026 23:35:04 GMT</pubDate>
   </item>
     </channel>
