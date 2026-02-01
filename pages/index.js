@@ -9,20 +9,14 @@ import StatsRow from "../components/StatsRow";
 import SubscribeCTA from "../components/SubscribeCTA";
 import Analytics from "../components/analytics";
 import { getPosts } from "../lib/content";
-import { formatDate } from "../lib/dates";
+import { formatDate, formatExcerpt } from "../lib/dates";
 
 export async function getStaticProps() {
   const posts = await getPosts();
 
   posts.forEach((post) => {
     post.dateFormatted = formatDate(post.published_at);
-
-    post.excerpt = (post.excerpt || "").replace(/\[(.*?)\]/, "");
-    const cutoff = 166;
-    post.excerpt =
-      post.excerpt.substring(0, Math.min(cutoff, post.excerpt.length)) +
-      (post.excerpt.length > cutoff ? "..." : "");
-    post.excerpt = post.excerpt.replace(/\[(.*?)[$^.]/, "");
+    post.excerpt = formatExcerpt(post.excerpt, 166);
   });
 
   const featuredPosts = posts.filter((post) => {
