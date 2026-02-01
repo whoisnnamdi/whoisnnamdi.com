@@ -1,4 +1,3 @@
-import Analytics from "./Analytics";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
@@ -20,7 +19,6 @@ export default function Layout({
 }) {
   return (
     <div className="bg-paper min-h-screen">
-      <Analytics />
       {showNavbarContainer ? (
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
           <Navbar {...navbarProps} />
