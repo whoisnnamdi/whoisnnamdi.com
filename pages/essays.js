@@ -8,10 +8,10 @@ import SEO from "../components/SEO";
 import SubscribeCTA from "../components/SubscribeCTA";
 import Container from "../components/Container";
 import postFormat from "../lib/postFormat";
-import { getPosts } from "../lib/content";
+import { getPostSummaries } from "../lib/content";
 
 export async function getStaticProps() {
-  const posts = postFormat(await getPosts());
+  const posts = postFormat(await getPostSummaries());
 
   return {
     props: {
