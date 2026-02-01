@@ -7,30 +7,65 @@ import StatsRow from "../components/StatsRow";
 import SubscribeCTA from "../components/SubscribeCTA";
 import SEO from "../components/SEO";
 import Container from "../components/Container";
-import { getPosts } from "../lib/content";
+import { getPostBySlug, getPostSummaries } from "../lib/content";
 import postFormat from "../lib/postFormat";
 
-export async function getStaticProps() {
-  const posts = postFormat(await getPosts());
+function calculateReadingTime(content) {
+  if (!content) return null;
+  const words = content.trim().split(/\s+/).length;
+  const minutes = Math.ceil(words / 200);
+  return `${minutes} min`;
+}
 
-  const featuredPosts = posts.filter((post) => {
-    return [
-      "dark-matter",
-      "never-enough-developers",
-      "developer-productivity-trends",
-      "software-fat-tailed",
-    ].includes(post.slug);
-  });
+function countCharts(html) {
+  if (!html) return 0;
+  const imgCount = (html.match(/<img\s/gi) || []).length;
+  return imgCount;
+}
+
+export async function getStaticProps() {
+  const allPosts = postFormat(await getPostSummaries());
+  const latestPost = allPosts[0] || null;
+  const latestPosts = allPosts.slice(0, 3);
+
+  const featuredSlugs = [
+    "dark-matter",
+    "never-enough-developers",
+    "developer-productivity-trends",
+    "software-fat-tailed",
+  ];
+
+  const featuredPostsFull = await Promise.all(
+    featuredSlugs.map(async (slug) => {
+      const post = await getPostBySlug(slug);
+      if (!post) return null;
+      return {
+        id: post.id || post.slug,
+        slug: post.slug,
+        title: post.title,
+        tags: post.tags,
+        excerpt: post.excerpt,
+        published_at: post.published_at,
+        readingTime: calculateReadingTime(post.content),
+        chartCount: countCharts(post.html),
+      };
+    }),
+  );
+
+  const featuredPosts = postFormat(
+    featuredPostsFull.filter((post) => post !== null),
+  );
 
   return {
     props: {
-      posts,
+      latestPost,
+      latestPosts,
       featuredPosts,
     },
   };
 }
 
-export default function Home({ posts, featuredPosts }) {
+export default function Home({ latestPost, latestPosts, featuredPosts }) {
   const stats = [
     { label: "Role", value: "VC @ Lightspeed" },
     { label: "Focus", value: "Infra & Dev Tools" },
@@ -46,7 +81,7 @@ export default function Home({ posts, featuredPosts }) {
         url="https://whoisnnamdi.com/"
       />
       <Container>
-        <HeroSection latestPost={posts[0]} />
+        <HeroSection latestPost={latestPost} />
       </Container>
 
       <Container>
@@ -120,7 +155,7 @@ export default function Home({ posts, featuredPosts }) {
               </p>
             </div>
             <div className="border-neutral-300">
-              {posts.slice(0, 3).map((post) => (
+              {latestPosts.map((post) => (
                 <EssayListItem key={post.id} post={post} variant="dispatch" />
               ))}
               <div className="pt-6 text-right">
