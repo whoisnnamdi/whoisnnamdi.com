@@ -100,9 +100,5 @@ module.exports = {
           ]
         }
       ]
-    },
-    // The redirects function can be removed or left empty
-    async redirects() {
-      return []
     }
 }

@@ -166,7 +166,7 @@ export default function TalksPage({ talks }) {
       <section className="bg-grid border-neutral-300">
         <Container className="pt-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-neutral-300 bg-white">
-            {gridItems.map((item, index) => {
+            {gridItems.map((item) => {
               const platform = getPlatform(item.href);
               const formatTag = getFormatTag(item.href);
               return (
