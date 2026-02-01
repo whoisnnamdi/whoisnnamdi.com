@@ -1,17 +1,55 @@
 module.exports = {
     images: {
-      domains: ['whoisnnamdi.com',
-                'fbnlxna1ujeyw7ap.public.blob.vercel-storage.com',
-                'res-9.cloudinary.com',
-                'res-8.cloudinary.com',
-                'res-7.cloudinary.com',
-                'res-6.cloudinary.com',
-                'res-5.cloudinary.com',
-                'res-4.cloudinary.com',
-                'res-3.cloudinary.com',
-                'res-2.cloudinary.com',
-                'res-1.cloudinary.com',
-                'res.cloudinary.com'],
+      remotePatterns: [
+        {
+          protocol: "https",
+          hostname: "whoisnnamdi.com"
+        },
+        {
+          protocol: "https",
+          hostname: "fbnlxna1ujeyw7ap.public.blob.vercel-storage.com"
+        },
+        {
+          protocol: "https",
+          hostname: "res-9.cloudinary.com"
+        },
+        {
+          protocol: "https",
+          hostname: "res-8.cloudinary.com"
+        },
+        {
+          protocol: "https",
+          hostname: "res-7.cloudinary.com"
+        },
+        {
+          protocol: "https",
+          hostname: "res-6.cloudinary.com"
+        },
+        {
+          protocol: "https",
+          hostname: "res-5.cloudinary.com"
+        },
+        {
+          protocol: "https",
+          hostname: "res-4.cloudinary.com"
+        },
+        {
+          protocol: "https",
+          hostname: "res-3.cloudinary.com"
+        },
+        {
+          protocol: "https",
+          hostname: "res-2.cloudinary.com"
+        },
+        {
+          protocol: "https",
+          hostname: "res-1.cloudinary.com"
+        },
+        {
+          protocol: "https",
+          hostname: "res.cloudinary.com"
+        }
+      ]
     },
     i18n: {
       locales: ["en"],
