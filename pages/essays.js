@@ -7,7 +7,7 @@ import FeaturedEssayCard from "../components/FeaturedEssayCard";
 import SEO from "../components/SEO";
 import SubscribeCTA from "../components/SubscribeCTA";
 import Container from "../components/Container";
-import postFormat from "../lib/postFormat";
+import { postFormat } from "../lib/postFormat";
 import { getPostSummaries } from "../lib/content";
 
 export async function getStaticProps() {

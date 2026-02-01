@@ -8,7 +8,7 @@ import SubscribeCTA from "../components/SubscribeCTA";
 import SEO from "../components/SEO";
 import Container from "../components/Container";
 import { getPostBySlug, getPostSummaries } from "../lib/content";
-import postFormat from "../lib/postFormat";
+import { postFormat } from "../lib/postFormat";
 
 function calculateReadingTime(content) {
   if (!content) return null;

@@ -1,5 +1,4 @@
-const postFormat =
-  require("../lib/postFormat").default || require("../lib/postFormat");
+const { postFormat } = require("../lib/postFormat");
 
 describe("postFormat", () => {
   test("formats date and trims excerpt with brackets removed", () => {
