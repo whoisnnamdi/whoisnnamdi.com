@@ -4,16 +4,6 @@ import fs from 'fs';
 import path from 'path';
 import { getAllPosts } from '../lib/content.js';
 
-const options = {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-    weekday: 'short',
-    hour: 'numeric',
-    minute: 'numeric',
-    second: 'numeric',
-    timeZone: 'GMT',
-}
 
 export const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
     <rss
@@ -29,7 +19,7 @@ export const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
                 <![CDATA[ Thoughts on technology, venture capital, and the economics of both ]]>
             </description>
             <link>https://whoisnnamdi.com</link>
-            <lastBuildDate>${new Intl.DateTimeFormat('en-GB', options).format(new Date()) + " GMT"}</lastBuildDate>
+            <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
             <atom:link href="https://whoisnnamdi.com/rss" rel="self" type="application/rss+xml"/>
             ${posts
                 .map((post) => {
@@ -57,7 +47,7 @@ export const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
                         <dc:creator>
                             <![CDATA[ Nnamdi Iregbulem ]]>
                         </dc:creator>
-                        <pubDate>${new Intl.DateTimeFormat('en-GB', options).format(new Date(post.published_at)) + " GMT"}</pubDate>
+                        <pubDate>${new Date(post.published_at).toUTCString()}</pubDate>
                         <media:content url="${post.feature_image}" medium="image" />
                         <content:encoded>
                             <![CDATA[ ${post.html} ]]>
