@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { Popover, Menu, Transition } from "@headlessui/react";
 import { Fragment, useRef } from "react";
 import { ChevronDownIcon } from "@heroicons/react/solid";
-import { useSubscribe } from "./subscribe";
+import { useSubscribe } from "./Subscribe";
 
 export default function Navbar({ source, dateLabel, codeOverride }) {
   const input = useRef(null);

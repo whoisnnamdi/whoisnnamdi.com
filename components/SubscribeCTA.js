@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useSubscribe } from "./subscribe";
+import { useSubscribe } from "./Subscribe";
 
 export default function SubscribeCTA({ source = "CTA" }) {
   const input = useRef(null);
