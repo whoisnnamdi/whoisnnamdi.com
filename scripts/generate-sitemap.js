@@ -49,10 +49,8 @@ async function generateSitemap() {
         const postsPages = await getAll();
         const sitemapContent = createSitemap(postsPages);
         
-        // Write the file to a different path to avoid conflict with pages/sitemap.xml.js
-        const sitemapDir = path.join(publicDir, 'static');
-        fs.mkdirSync(sitemapDir, { recursive: true });
-        const filePath = path.join(sitemapDir, 'sitemap.xml');
+        // Write sitemap directly to /public
+        const filePath = path.join(publicDir, 'sitemap.xml');
         fs.writeFileSync(filePath, sitemapContent);
         
         console.log(`Sitemap generated at ${filePath}`);
