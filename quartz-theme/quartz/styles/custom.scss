@@ -31,6 +31,10 @@ header {
   margin-top: calc(var(--notes-navbar-height) + var(--notes-content-offset));
 }
 
+footer ul {
+  margin-top: 0;
+}
+
 @media (max-width: $fullPageWidth) {
   .page .page-header {
     margin-top: 2rem;

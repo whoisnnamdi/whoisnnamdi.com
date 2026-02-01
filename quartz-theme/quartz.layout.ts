@@ -5,7 +5,7 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [Component.NotesNavbar()],
-  footer: Component.Footer({
+  footer: Component.NotesFooter({
     links: {
       "whoisnnamdi.com": "https://whoisnnamdi.com",
       "X": "https://x.com/whoisnnamdi",

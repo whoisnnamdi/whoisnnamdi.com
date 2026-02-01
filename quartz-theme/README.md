@@ -34,6 +34,7 @@ The overlay currently copies these files into Quartz:
 - `quartz/styles/custom.scss`
 - `quartz/styles/variables.scss`
 - `quartz/components/NotesNavbar.tsx`
+- `quartz/components/NotesFooter.tsx`
 - `quartz/components/index.ts`
 - `quartz/components/renderPage.tsx`
 - `quartz/components/scripts/navbar.inline.ts`
