@@ -1,5 +1,18 @@
 import Link from "next/link";
 
+function calculateReadingTime(content) {
+  if (!content) return null;
+  const words = content.trim().split(/\s+/).length;
+  const minutes = Math.ceil(words / 200);
+  return `${minutes} min`;
+}
+
+function countCharts(html) {
+  if (!html) return 0;
+  const imgCount = (html.match(/<img\s/gi) || []).length;
+  return imgCount;
+}
+
 function formatTitle(title) {
   const ofIndex = title.lastIndexOf(" of ");
   if (ofIndex > 0 && ofIndex < title.length - 4) {
@@ -15,6 +28,8 @@ export default function FeaturedEssayCard({ post }) {
   const category = post.tags?.[0]?.name || "Essays";
   const quote = (post.excerpt || "").replace(/\.$/, "");
   const date = post.dateFormatted || post.published_at;
+  const readingTime = calculateReadingTime(post.content);
+  const chartCount = countCharts(post.html);
 
   return (
     <section className="grid grid-cols-1 lg:grid-cols-[1.6fr,1fr] border border-neutral-900 bg-white">
@@ -53,18 +68,26 @@ export default function FeaturedEssayCard({ post }) {
           ”
         </p>
         <div className="mt-6 space-y-3 text-[11px] font-mono uppercase tracking-[0.2em] text-neutral-500">
-          <div className="flex items-center justify-between border-b border-neutral-200 pb-2">
-            <span>Reading Time</span>
-            <span className="text-neutral-900">12 min</span>
-          </div>
-          <div className="flex items-center justify-between border-b border-neutral-200 pb-2">
+          {readingTime && (
+            <div className="flex items-center justify-between border-b border-neutral-200 pb-2">
+              <span>Reading Time</span>
+              <span className="text-neutral-900">{readingTime}</span>
+            </div>
+          )}
+          <div
+            className={`flex items-center justify-between ${chartCount > 0 ? "border-b border-neutral-200 pb-2" : ""}`}
+          >
             <span>Category</span>
             <span className="text-neutral-900">{category}</span>
           </div>
-          <div className="flex items-center justify-between">
-            <span>Data Points</span>
-            <span className="text-neutral-900">4 charts</span>
-          </div>
+          {chartCount > 0 && (
+            <div className="flex items-center justify-between">
+              <span>Data Points</span>
+              <span className="text-neutral-900">
+                {chartCount} {chartCount === 1 ? "chart" : "charts"}
+              </span>
+            </div>
+          )}
         </div>
       </aside>
     </section>
