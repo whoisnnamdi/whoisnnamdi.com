@@ -7,15 +7,10 @@ import StatsRow from "../components/StatsRow";
 import SubscribeCTA from "../components/SubscribeCTA";
 import SEO from "../components/SEO";
 import { getPosts } from "../lib/content";
-import { formatDate, formatExcerpt } from "../lib/dates";
+import postFormat from "../lib/postFormat";
 
 export async function getStaticProps() {
-  const posts = await getPosts();
-
-  posts.forEach((post) => {
-    post.dateFormatted = formatDate(post.published_at);
-    post.excerpt = formatExcerpt(post.excerpt, 166);
-  });
+  const posts = postFormat(await getPosts());
 
   const featuredPosts = posts.filter((post) => {
     return [

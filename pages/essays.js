@@ -6,7 +6,7 @@ import EssayListItem from "../components/EssayListItem";
 import FeaturedEssayCard from "../components/FeaturedEssayCard";
 import SEO from "../components/SEO";
 import SubscribeCTA from "../components/SubscribeCTA";
-import postFormat from "../components/PostFormat";
+import postFormat from "../lib/postFormat";
 import { getPosts } from "../lib/content";
 
 export async function getStaticProps() {
