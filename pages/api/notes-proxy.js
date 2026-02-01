@@ -75,6 +75,18 @@ function resolveNotesIndexHtml(requestedPath) {
     return null
 }
 
+function injectBaseTag(html, baseHref) {
+    if (!html || !baseHref) return html
+    if (/<base\b/i.test(html)) return html
+
+    const headMatch = html.match(/<head[^>]*>/i)
+    if (headMatch) {
+        return html.replace(headMatch[0], `${headMatch[0]}\n<base href="${baseHref}" />`)
+    }
+
+    return html
+}
+
 function injectBeforeHeadClose(html, snippet) {
     if (!snippet) return html
     if (!html) return html
@@ -116,8 +128,9 @@ export default function handler(req, res) {
 
     try {
         const html = fs.readFileSync(indexHtmlPath, 'utf8')
+        const withBase = injectBaseTag(html, '/notes/')
         const snippet = buildFathomScriptTag()
-        const injected = injectBeforeHeadClose(html, snippet)
+        const injected = injectBeforeHeadClose(withBase, snippet)
 
         res.setHeader('Content-Type', 'text/html; charset=utf-8')
         // Cache for browsers; allow CDN/proxy to revalidate periodically

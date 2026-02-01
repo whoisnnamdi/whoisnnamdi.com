@@ -244,5 +244,9 @@ export function renderPage(
     </html>
   )
 
-  return "<!DOCTYPE html>\n" + render(doc)
+  const html = "<!DOCTYPE html>\n" + render(doc)
+  if (html.includes("<base")) {
+    return html
+  }
+  return html.replace("<head>", "<head><base href=\"/notes/\" />")
 }
