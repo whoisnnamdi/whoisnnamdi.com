@@ -39,23 +39,25 @@ export async function getStaticProps({ params }) {
   return { props: { post, sections, isPost } };
 }
 
+function formatTitle(title) {
+  const match = title.match(/Aren['']t/);
+  if (!match) return title;
+
+  const [before, after] = title.split(match[0]);
+  return (
+    <>
+      {before}
+      <span className="italic text-blue-600">{match[0]}</span>
+      {after}
+    </>
+  );
+}
+
 export default function PostPage({ post, sections, isPost }) {
   const publishedLabel = formatDate(post?.published_at, "upper");
   const navLabel = post?.slug === "about-me" ? "About" : publishedLabel;
   const isAbout = post?.slug === "about-me";
-  const titleMatch = post.title.match(/Aren[’']t/);
-  const titleContent = titleMatch
-    ? (() => {
-        const [before, after] = post.title.split(titleMatch[0]);
-        return (
-          <>
-            {before}
-            <span className="italic text-blue-600">{titleMatch[0]}</span>
-            {after}
-          </>
-        );
-      })()
-    : post.title;
+  const titleContent = formatTitle(post.title);
 
   return (
     <div className="bg-paper min-h-screen">
