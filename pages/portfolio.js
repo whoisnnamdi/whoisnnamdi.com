@@ -1,7 +1,5 @@
 import Link from "next/link";
-import Analytics from "../components/Analytics";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import StatsRow from "../components/StatsRow";
 import PortfolioCard from "../components/PortfolioCard";
@@ -102,16 +100,12 @@ export default function Portfolio({ logos, meta }) {
   ];
 
   return (
-    <div className="bg-paper min-h-screen">
+    <Layout navbarProps={{ source: "portfolio" }}>
       <SEO
         title={meta.title}
         description={meta.description}
         url={meta.ogUrl || "https://whoisnnamdi.com/portfolio"}
       />
-      <Analytics />
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
-        <Navbar source="portfolio" />
-      </div>
 
       <main className="bg-grid border-neutral-300">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10 pt-4 pb-12">
@@ -171,8 +165,6 @@ export default function Portfolio({ logos, meta }) {
           </div>
         </section>
       </main>
-
-      <Footer />
-    </div>
+    </Layout>
   );
 }

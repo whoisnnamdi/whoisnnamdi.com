@@ -1,12 +1,10 @@
 import Image from "next/image";
 import { getPosts, getPost, getPages, getPage } from "../lib/content";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Layout from "../components/Layout";
 import EssaySidebar from "../components/EssaySidebar";
 import SEO from "../components/SEO";
 import SubscribeCTA from "../components/SubscribeCTA";
 import LinkConverter from "../components/LinkConverter";
-import Analytics from "../components/Analytics";
 import { formatDate } from "../lib/dates";
 
 export async function getStaticPaths() {
@@ -61,8 +59,14 @@ export default function PostPage({ post, sections, isPost }) {
 
   const postUrl = `https://whoisnnamdi.com/${post.slug}/`;
 
+  const navbarProps = {
+    source: post.title,
+    dateLabel: navLabel,
+    codeOverride: post?.slug === "about-me" ? "Index 05" : undefined,
+  };
+
   return (
-    <div className="bg-paper min-h-screen">
+    <Layout navbarProps={navbarProps}>
       <SEO
         title={post.title}
         description={post.meta_description || post.og_description}
@@ -84,14 +88,6 @@ export default function PostPage({ post, sections, isPost }) {
           data1: "Nnamdi Iregbulem",
         }}
       />
-      <Analytics />
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
-        <Navbar
-          source={post.title}
-          dateLabel={navLabel}
-          codeOverride={post?.slug === "about-me" ? "Index 05" : undefined}
-        />
-      </div>
 
       <div className="bg-grid border-neutral-300">
         <div
@@ -177,8 +173,6 @@ export default function PostPage({ post, sections, isPost }) {
           </main>
         </div>
       </div>
-
-      <Footer />
-    </div>
+    </Layout>
   );
 }

@@ -1,8 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
-import Analytics from "../components/Analytics";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import SubscribeCTA from "../components/SubscribeCTA";
 import { getTalksData } from "../lib/content";
@@ -42,17 +40,12 @@ export default function TalksPage({ talks }) {
   const gridItems = showAll ? talks.slice(2) : talks.slice(2, 10);
 
   return (
-    <div className="bg-paper min-h-screen">
+    <Layout navbarProps={{ source: "talks" }}>
       <SEO
         title={title}
         description={description}
         url="https://whoisnnamdi.com/talks"
       />
-      <Analytics />
-
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
-        <Navbar source="talks" />
-      </div>
 
       <section className="bg-grid border-neutral-300">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
@@ -275,8 +268,6 @@ export default function TalksPage({ talks }) {
       <section className="max-w-[1200px] mx-auto px-6 lg:px-10 my-12">
         <SubscribeCTA source="Talks Page" />
       </section>
-
-      <Footer />
-    </div>
+    </Layout>
   );
 }

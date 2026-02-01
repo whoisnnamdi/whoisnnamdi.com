@@ -1,11 +1,9 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Analytics from "../components/Analytics";
+import Layout from "../components/Layout";
 import EssayListItem from "../components/EssayListItem";
 import FeaturedEssayCard from "../components/FeaturedEssayCard";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
 import SEO from "../components/SEO";
 import SubscribeCTA from "../components/SubscribeCTA";
 import postFormat from "../components/PostFormat";
@@ -96,12 +94,8 @@ export default function Page({ posts = [] }) {
   };
 
   return (
-    <div className="bg-paper min-h-screen">
+    <Layout navbarProps={{ source: slug }}>
       <SEO title={pageTitle} description={pageDesc} url={pageURL} />
-      <Analytics />
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
-        <Navbar source={slug} />
-      </div>
 
       <main>
         <section className="bg-grid border-neutral-300">
@@ -288,8 +282,6 @@ export default function Page({ posts = [] }) {
           <SubscribeCTA source="Essays Page" />
         </section>
       </main>
-
-      <Footer />
-    </div>
+    </Layout>
   );
 }

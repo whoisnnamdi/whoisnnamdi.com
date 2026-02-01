@@ -1,12 +1,10 @@
 import Link from "next/link";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Layout from "../components/Layout";
 import HeroSection from "../components/HeroSection";
 import FeaturedEssayCard from "../components/FeaturedEssayCard";
 import EssayListItem from "../components/EssayListItem";
 import StatsRow from "../components/StatsRow";
 import SubscribeCTA from "../components/SubscribeCTA";
-import Analytics from "../components/Analytics";
 import SEO from "../components/SEO";
 import { getPosts } from "../lib/content";
 import { formatDate, formatExcerpt } from "../lib/dates";
@@ -45,15 +43,13 @@ export default function Home({ posts, featuredPosts }) {
   ];
 
   return (
-    <div className="bg-paper min-h-screen">
+    <Layout navbarProps={{ source: "Home" }}>
       <SEO
         title="Who Is Nnamdi?"
         description="Thoughts on technology, venture capital, and the economics of both"
         url="https://whoisnnamdi.com/"
       />
-      <Analytics />
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
-        <Navbar source="Home" />
         <HeroSection latestPost={posts[0]} />
       </div>
 
@@ -147,8 +143,6 @@ export default function Home({ posts, featuredPosts }) {
       <section className="max-w-[1200px] mx-auto px-6 lg:px-10 mb-12">
         <SubscribeCTA source="Homepage CTA" />
       </section>
-
-      <Footer />
-    </div>
+    </Layout>
   );
 }
