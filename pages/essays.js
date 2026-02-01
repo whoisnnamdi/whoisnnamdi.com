@@ -46,18 +46,6 @@ export default function Page({ posts = [] }) {
         .filter(Boolean),
     ),
   ).sort((a, b) => b - a);
-  const yearCounts = years.map(
-    (year) =>
-      listPosts.filter(
-        (post) => new Date(post.published_at).getFullYear() === year,
-      ).length,
-  );
-  const maxYearCount = Math.max(...yearCounts, 1);
-  const archiveBars = yearCounts.length
-    ? yearCounts
-        .slice(0, 5)
-        .map((count) => Math.round((count / maxYearCount) * 100))
-    : [24, 38, 30, 52, 40];
 
   const tagCounts = listPosts.reduce((acc, post) => {
     (post.tags || []).forEach((tag) => {
@@ -95,7 +83,9 @@ export default function Page({ posts = [] }) {
 
   const toggleYear = (year) => {
     setSelectedYears((prev) =>
-      prev.includes(year) ? prev.filter((item) => item !== year) : [...prev, year],
+      prev.includes(year)
+        ? prev.filter((item) => item !== year)
+        : [...prev, year],
     );
   };
 
@@ -148,8 +138,8 @@ export default function Page({ posts = [] }) {
                 <h1 className="mt-6 font-serif text-4xl md:text-5xl lg:text-6xl leading-tight text-neutral-900">
                   Essays on{" "}
                   <span className="italic text-accent">technology</span> &{" "}
-                  <span className="italic text-accent">capital</span> in the real
-                  world.
+                  <span className="italic text-accent">capital</span> in the
+                  real world.
                 </h1>
                 <p className="mt-4 max-w-lg text-sm text-neutral-600 leading-relaxed">
                   Long-form essays on technology, venture capital, and the
