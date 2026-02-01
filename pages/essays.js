@@ -6,6 +6,7 @@ import EssayListItem from "../components/EssayListItem";
 import FeaturedEssayCard from "../components/FeaturedEssayCard";
 import SEO from "../components/SEO";
 import SubscribeCTA from "../components/SubscribeCTA";
+import Container from "../components/Container";
 import postFormat from "../lib/postFormat";
 import { getPosts } from "../lib/content";
 
@@ -99,7 +100,7 @@ export default function Page({ posts = [] }) {
 
       <main>
         <section className="bg-grid border-neutral-300">
-          <div className="max-w-[1200px] mx-auto px-6 lg:px-10 pb-12">
+          <Container className="pb-12">
             <div className="grid grid-cols-1 lg:grid-cols-[1.5fr,1fr] border border-neutral-900 bg-white">
               <div className="px-8 py-10 lg:px-12 lg:py-12">
                 <p className="text-[11px] font-mono uppercase tracking-[0.2em] text-neutral-500">
@@ -177,19 +178,19 @@ export default function Page({ posts = [] }) {
                 </div>
               )}
             </div>
-          </div>
+          </Container>
         </section>
 
         {showFeatured && (
           <section className="bg-grid border-neutral-300">
-            <div className="max-w-[1200px] mx-auto px-6 lg:px-10 pb-6">
+            <Container className="pb-6">
               <FeaturedEssayCard post={featuredPost} />
-            </div>
+            </Container>
           </section>
         )}
 
         <section className="bg-grid border-neutral-300">
-          <div className="max-w-[1200px] mx-auto px-6 lg:px-10 pt-6 pb-12">
+          <Container className="pt-6 pb-12">
             <div className="grid grid-cols-1 lg:grid-cols-[260px,1fr] border border-neutral-300 bg-white">
               <aside className="border-b lg:border-b-0 lg:border-r border-neutral-300 p-6">
                 <p className="text-[11px] font-mono uppercase tracking-[0.2em] text-neutral-500">
@@ -275,12 +276,12 @@ export default function Page({ posts = [] }) {
                 </div>
               </div>
             </div>
-          </div>
+          </Container>
         </section>
 
-        <section className="max-w-[1200px] mx-auto px-6 lg:px-10 mb-12">
+        <Container as="section" className="mb-12">
           <SubscribeCTA source="Essays Page" />
-        </section>
+        </Container>
       </main>
     </Layout>
   );

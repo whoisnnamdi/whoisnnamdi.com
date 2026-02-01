@@ -1,5 +1,6 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import Container from "./Container";
 
 /**
  * Layout component that wraps all pages with common structure:
@@ -20,9 +21,9 @@ export default function Layout({
   return (
     <div className="bg-paper min-h-screen">
       {showNavbarContainer ? (
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
+        <Container>
           <Navbar {...navbarProps} />
-        </div>
+        </Container>
       ) : (
         <Navbar {...navbarProps} />
       )}

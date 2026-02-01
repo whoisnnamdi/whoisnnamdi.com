@@ -5,6 +5,7 @@ import EssaySidebar from "../components/EssaySidebar";
 import SEO from "../components/SEO";
 import SubscribeCTA from "../components/SubscribeCTA";
 import LinkConverter from "../components/LinkConverter";
+import Container from "../components/Container";
 import { formatDate } from "../lib/dates";
 
 export async function getStaticPaths() {
@@ -90,8 +91,8 @@ export default function PostPage({ post, sections, isPost }) {
       />
 
       <div className="bg-grid border-neutral-300">
-        <div
-          className={`max-w-[1200px] mx-auto px-6 lg:px-10 ${isAbout ? "pt-0 pb-4" : "py-4"} grid grid-cols-1 ${isPost ? "lg:grid-cols-[240px,1fr] gap-12" : ""}`}
+        <Container
+          className={`${isAbout ? "pt-0 pb-4" : "py-4"} grid grid-cols-1 ${isPost ? "lg:grid-cols-[240px,1fr] gap-12" : ""}`}
         >
           {isPost && <EssaySidebar sections={sections} post={post} />}
 
@@ -171,7 +172,7 @@ export default function PostPage({ post, sections, isPost }) {
               </div>
             )}
           </main>
-        </div>
+        </Container>
       </div>
     </Layout>
   );

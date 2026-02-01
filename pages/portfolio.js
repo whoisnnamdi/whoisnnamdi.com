@@ -3,6 +3,7 @@ import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import StatsRow from "../components/StatsRow";
 import PortfolioCard from "../components/PortfolioCard";
+import Container from "../components/Container";
 import { getPage, getPortfolioData } from "../lib/content";
 
 const DEFAULT_META = {
@@ -108,7 +109,7 @@ export default function Portfolio({ logos, meta }) {
       />
 
       <main className="bg-grid border-neutral-300">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-10 pt-4 pb-12">
+        <Container className="pt-4 pb-12">
           <header className="text-center max-w-4xl mx-auto">
             <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-neutral-900 mb-12">
               Backing <span className="italic text-accent">technical</span>{" "}
@@ -121,13 +122,13 @@ export default function Portfolio({ logos, meta }) {
               supports them.
             </p>
           </header>
-        </div>
+        </Container>
 
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
+        <Container>
           <StatsRow stats={stats} variant="split" />
-        </div>
+        </Container>
 
-        <section className="max-w-[1200px] mx-auto px-6 lg:px-10 py-14">
+        <Container as="section" className="py-14">
           {logos.length === 0 ? (
             <p className="text-center text-neutral-600">
               Check back soon — portfolio updates are on the way.
@@ -139,10 +140,10 @@ export default function Portfolio({ logos, meta }) {
               ))}
             </div>
           )}
-        </section>
+        </Container>
 
         <section className="pb-12">
-          <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
+          <Container>
             <div className="bg-blueprint border border-neutral-900 py-14 px-6 md:px-12 text-center text-white">
               <div className="max-w-[900px] mx-auto">
                 <h2 className="font-serif text-3xl md:text-5xl font-bold mb-4">
@@ -162,7 +163,7 @@ export default function Portfolio({ logos, meta }) {
                 </Link>
               </div>
             </div>
-          </div>
+          </Container>
         </section>
       </main>
     </Layout>

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import SubscribeCTA from "../components/SubscribeCTA";
+import Container from "../components/Container";
 import { getTalksData } from "../lib/content";
 
 function getPlatform(href = "") {
@@ -48,7 +49,7 @@ export default function TalksPage({ talks }) {
       />
 
       <section className="bg-grid border-neutral-300">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
+        <Container>
           <div className="grid grid-cols-1 lg:grid-cols-[1.6fr,1fr] border border-neutral-900 bg-white">
             <div className="px-8 py-10 lg:px-12 lg:py-12">
               <p className="text-[11px] font-mono uppercase tracking-[0.2em] text-neutral-500">
@@ -114,11 +115,11 @@ export default function TalksPage({ talks }) {
               </div>
             </a>
           </div>
-        </div>
+        </Container>
       </section>
 
       <section className="bg-grid border-neutral-300">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-10 pt-12">
+        <Container className="pt-12">
           <div className="grid grid-cols-1 lg:grid-cols-[1.5fr,1fr] border border-neutral-900 bg-white">
             <a
               href={featured?.href || "#"}
@@ -159,11 +160,11 @@ export default function TalksPage({ talks }) {
               </p>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       <section className="bg-grid border-neutral-300">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-10 pt-12">
+        <Container className="pt-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-neutral-300 bg-white">
             {gridItems.map((item, index) => {
               const platform = getPlatform(item.href);
@@ -262,12 +263,12 @@ export default function TalksPage({ talks }) {
               </div>
             )}
           </div>
-        </div>
+        </Container>
       </section>
 
-      <section className="max-w-[1200px] mx-auto px-6 lg:px-10 my-12">
+      <Container as="section" className="my-12">
         <SubscribeCTA source="Talks Page" />
-      </section>
+      </Container>
     </Layout>
   );
 }

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Container from "./Container";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -39,7 +40,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-neutral-300 bg-white">
-      <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-[1.2fr,1fr,1fr,1fr,0.8fr] gap-8 px-6 lg:px-10 py-12">
+      <Container className="grid grid-cols-1 md:grid-cols-[1.2fr,1fr,1fr,1fr,0.8fr] gap-8 py-12">
         <div>
           <Link
             href="/"
@@ -89,7 +90,7 @@ export default function Footer() {
             </svg>
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

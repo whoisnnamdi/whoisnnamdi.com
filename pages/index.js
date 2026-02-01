@@ -6,6 +6,7 @@ import EssayListItem from "../components/EssayListItem";
 import StatsRow from "../components/StatsRow";
 import SubscribeCTA from "../components/SubscribeCTA";
 import SEO from "../components/SEO";
+import Container from "../components/Container";
 import { getPosts } from "../lib/content";
 import postFormat from "../lib/postFormat";
 
@@ -44,16 +45,16 @@ export default function Home({ posts, featuredPosts }) {
         description="Thoughts on technology, venture capital, and the economics of both"
         url="https://whoisnnamdi.com/"
       />
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
+      <Container>
         <HeroSection latestPost={posts[0]} />
-      </div>
+      </Container>
 
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
+      <Container>
         <StatsRow stats={stats} variant="dark" />
-      </div>
+      </Container>
 
       <section className="bg-grid">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-10 py-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <Container className="py-10 grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             {
               title: "Founders",
@@ -96,19 +97,19 @@ export default function Home({ posts, featuredPosts }) {
               </p>
             </div>
           ))}
-        </div>
+        </Container>
       </section>
 
       {featuredPosts.length > 0 && (
         <section className="bg-grid">
-          <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
+          <Container>
             <FeaturedEssayCard post={featuredPosts[0]} />
-          </div>
+          </Container>
         </section>
       )}
 
       <section className="bg-grid">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-10 py-12">
+        <Container className="py-12">
           <div className="border border-neutral-900 bg-white p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-[1fr,2fr] gap-10">
             <div>
               <h2 className="font-serif text-3xl md:text-4xl text-neutral-900">
@@ -132,12 +133,12 @@ export default function Home({ posts, featuredPosts }) {
               </div>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
-      <section className="max-w-[1200px] mx-auto px-6 lg:px-10 mb-12">
+      <Container as="section" className="mb-12">
         <SubscribeCTA source="Homepage CTA" />
-      </section>
+      </Container>
     </Layout>
   );
 }
