@@ -1,0 +1,42 @@
+@use "./base.scss";
+@use "./variables.scss" as *;
+
+:root {
+  --notes-navbar-height: 4.5rem;
+  --notes-content-offset: 1rem;
+}
+
+header {
+  margin: 0;
+  width: 100%;
+}
+
+.page-title a {
+  color: var(--dark);
+}
+
+.page-title a:hover {
+  color: var(--dark);
+}
+
+.page .page-header {
+  margin: var(--notes-content-offset) auto 0;
+}
+
+.page article > h1:first-child {
+  margin-top: 0;
+}
+
+.page > #quartz-body .sidebar {
+  margin-top: calc(var(--notes-navbar-height) + var(--notes-content-offset));
+}
+
+@media (max-width: $fullPageWidth) {
+  .page .page-header {
+    margin-top: 2rem;
+  }
+
+  .page > #quartz-body .sidebar {
+    margin-top: 2rem;
+  }
+}
