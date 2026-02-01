@@ -28,16 +28,6 @@ Cushy tech jobs are looking better and better to our most highly-educated as ent
 
 Here's why.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: PhDs Aren" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## Two decades of declining PhD entrepreneurship
 
 [STEM PhDs are creating fewer startups than they used to](https://www.nber.org/papers/w27787):
@@ -220,12 +210,3 @@ In Silicon Valley we talk a lot about management practices to help founders and 
 
 _Thanks to [Thomas Astebro](https://www.hec.edu/en/faculty-research/faculty-directory/faculty-member/astebro-thomas), [Serguey Braguinsky](https://www.rhsmith.umd.edu/directory/serguey-braguinsky), and [Yuheng Ding](https://www.rhsmith.umd.edu/directory/yuheng-gavin-ding), the authors of [the study](https://www.nber.org/papers/w27787) from which much of this essay is derived._
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: PhDs Aren" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

@@ -39,16 +39,6 @@ In this third and final chapter, we share our findings on the **top challenges a
 
 Subscribe below to receive a nicely formatted PDF of our research!
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: Four Challenges Facing Developer Productivity Startups" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## Defining and planning for success
 
 It's common for developer productivity startups to take an engineering-first approach to development, where engineers take the lead on deciding what to build and when to build it, often leveraging personal intuitions as consumers of the product.
@@ -213,12 +203,3 @@ We hope you've enjoyed this series on developer productivity. We'd love to conti
 
 [Clio Smurro](https://www.linkedin.com/in/clio-smurro-31967b9/) & [Nnamdi Iregbulem](https://www.linkedin.com/in/nnamdiiregbulem/)
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: Four Challenges Facing Developer Productivity Startups" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

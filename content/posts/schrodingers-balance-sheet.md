@@ -29,16 +29,6 @@ It combines an equity-like security with a debt-like security. Which one it is d
 
 In this way, preferred equity exists in a constant state of [**quantum superposition**](https://scienceexchange.caltech.edu/topics/quantum-science-explained/quantum-superposition). It's neither equity nor debt, until it is.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: Schrodinger" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## Schrödinger's balance sheet
 
 ![Schrodingers_cat](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515940895-Schrodingers_cat.svg)
@@ -166,12 +156,3 @@ Likewise, as a founder or startup employee, even if corporate finance isn't your
 
 What could investors be so concerned about that they would willingly overpay by 50%? And if they're so concerned, do you think, maybe, you should be too?
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: Schrodinger" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

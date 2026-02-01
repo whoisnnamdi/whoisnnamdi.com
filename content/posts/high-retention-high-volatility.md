@@ -52,16 +52,6 @@ Due to the [multiplicative nature](https://whoisnnamdi.com/you-dont-understand-c
 
 This is exactly the situation companies with high retention face.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: High Retention = High Volatility" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## Cohort Lifetime = Bond Duration
 
 **With higher retention, more and more of the value of an acquired customer comes from its later years of life.**
@@ -147,12 +137,3 @@ If you want to comment, like or share this post you can use this tweet:
 > 
 > — Nnamdi Iregbulem (@whoisnnamdi) [November 4, 2019](https://twitter.com/whoisnnamdi/status/1191487947528269827?ref_src=twsrc%5Etfw)
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: High Retention = High Volatility" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

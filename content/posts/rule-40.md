@@ -32,16 +32,6 @@ But it's got 99 3 problems:
 
 In this essay, I break apart the Rule of 40, fix it, and put it back together again.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: Breaking Apart the Rule of 40" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## Laying down the rules
 
 After flying high for some time, software valuation multiples have come back down to Earth (Note: LTM multiples used throughout this article):  
@@ -150,12 +140,3 @@ Though the days of "growth at _all_ costs" are clearly over, it's still fair to 
 
 I'll leave that to a future post. 👀
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: Breaking Apart the Rule of 40" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

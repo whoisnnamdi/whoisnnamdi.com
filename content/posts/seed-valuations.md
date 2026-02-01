@@ -32,16 +32,6 @@ Seed companies don’t seem to be priced as businesses with intrinsic value deri
 
 Seed valuations aren’t valuations.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: Seed Valuations Aren’t Valuations" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## Non-standard deviations
 
 **First: seed valuations aren’t volatile enough.**
@@ -138,12 +128,3 @@ This is odd only if your mental model values these fledging enterprises as… en
 
 I’ll explore this hypothesis in a future essay.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: Seed Valuations Aren’t Valuations" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

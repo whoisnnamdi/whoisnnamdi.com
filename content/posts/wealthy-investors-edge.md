@@ -36,16 +36,6 @@ Here are the exact returns at various levels of wealth:
 
 Comparing the <$3M group to the >$300M group, **the richest investors earn roughly 2 percentage points more on their investment portfolios annually**, a sizable advantage.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: Do Wealthy Investors Have an Edge?" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## High class asset classes?
 
 Richer investors could be allocating their capital to different asset classes than other investors, and that could be driving the return differential.
@@ -174,12 +164,3 @@ If these new investors only receive access to the worst-performing funds, the ef
 
 _Thanks to [Cynthia Balloch](https://www.lse.ac.uk/finance/people/faculty/Balloch) and [Julian Richers](https://sites.google.com/site/julianrichers/home), the authors of the study from which much of this essay is derived._
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: Do Wealthy Investors Have an Edge?" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

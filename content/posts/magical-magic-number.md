@@ -46,16 +46,6 @@ Here's why:
 
 I'll walk through each in turn.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: There" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## Omitted / confounding variables
 
 Magic number is a faulty metric because it ignores important revenue growth factors and incorrectly attributes those growth contributions to "sales and marketing efficiency."
@@ -205,12 +195,3 @@ I've always liked the easy heuristic of **New ARR vs. cash burned**. This ignore
 
 _3,000 words later, I hope I've convinced you that magic number doesn't tell you much about sales efficiency or productivity. If you've found a better metric, I'd love to hear about it. Feel free to shoot me a note at [first.last@gmail.com](mailto:first.last@gmail.com)_
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: There" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

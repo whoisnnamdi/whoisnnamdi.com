@@ -36,16 +36,6 @@ The Developer Productivity Manifesto has three parts, this is part 2:
 -   ****Part 2: More (Developers) Isn’t Always More (you are here)****
 -   [Part 3: Leaving Software on the Table](https://whoisnnamdi.com/leaving-software-on-the-table/)
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: The Developer Productivity Manifesto Part 2 — More (Developers) Isn’t Always More" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## The Mythical Man-Month
 
 ![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515843521-image-20210405202322027.png)
@@ -171,12 +161,3 @@ Ready for more? Here's [Part 3](https://whoisnnamdi.com/leaving-software-on-the-
 
 ****Follow me on**** [****Twitter****](https://twitter.com/whoisnnamdi)****, subscribe to my monthly essays**** [****here****](https://whoisnnamdi.com/)****, and reach out to me directly via nnamdi@lsvp.com****
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: The Developer Productivity Manifesto Part 2 — More (Developers) Isn’t Always More" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

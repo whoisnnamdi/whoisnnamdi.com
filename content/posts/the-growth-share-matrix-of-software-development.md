@@ -97,16 +97,6 @@ One striking feature that immediately jumps out - very few languages saw a net d
 
 Let’s spin through each quadrant and discuss some of the highlights.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: The Growth-Share Matrix of Software Development" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## Stars
 
 ![pink star ornament decor](https://images.unsplash.com/photo-1481015172496-8cfcb0d85e59?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ&s=c67577076a4f8934b61e78fa16a91909)
@@ -138,16 +128,6 @@ Let’s spin through each quadrant and discuss some of the highlights.
 _**Swift**_ - The popularity of Swift derives directly from the underlying popularity of macOS and iOS devices which, though a minority of overall smartphone shipments, represents a massive install base, especially among more affluent western populations. Launched in 2014, Swift initially saw massive growth, [becoming one of the fastest growing languages in history](https://9to5mac.com/2018/03/09/swift-ranking-programming-languages/). Swift is heavily influenced by Objective-C, another cash cow, which it recently surpassed in popularity. As the brainchild of Apple, Swift will live or die by Apple's own success, so plan accordingly.
 
 **Takeaway** - These languages really pay the bills. If you are already proficient in any of the above languages, great, leverage that saved time to pick up some skills in the rising stars. If you do not know these languages well today, evaluate how practical / necessary they are for the specific set of projects you want to work on now or in the near future.
-
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: The Growth-Share Matrix of Software Development" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
 
 ## Question marks
 

@@ -35,7 +35,18 @@ export async function getStaticProps({ params }) {
     });
   }
 
-  return { props: { post, sections, isPost } };
+  // Split content at first H2 for intro CTA placement (posts only)
+  let introHtml = null;
+  let mainHtml = post.html;
+  if (isPost) {
+    const firstH2Index = post.html.search(/<h2[\s>]/i);
+    if (firstH2Index > 0) {
+      introHtml = post.html.slice(0, firstH2Index);
+      mainHtml = post.html.slice(firstH2Index);
+    }
+  }
+
+  return { props: { post, sections, isPost, introHtml, mainHtml } };
 }
 
 function formatTitle(title) {
@@ -52,7 +63,7 @@ function formatTitle(title) {
   );
 }
 
-export default function PostPage({ post, sections, isPost }) {
+export default function PostPage({ post, sections, isPost, introHtml, mainHtml }) {
   const publishedLabel = formatDate(post?.published_at, "upper");
   const navLabel = post?.slug === "about-me" ? "About" : publishedLabel;
   const isAbout = post?.slug === "about-me";
@@ -155,15 +166,33 @@ export default function PostPage({ post, sections, isPost }) {
               </div>
             )}
 
-            <article
-              className={`prose prose-lg md:prose-xl max-w-none prose-essay ${post.slug === "talks" ? "talks-prose" : ""}`}
-            >
-              <LinkConverter content={post.html} />
-            </article>
+            {isPost && introHtml ? (
+              <>
+                <article
+                  className={`prose prose-lg md:prose-xl max-w-none prose-essay`}
+                >
+                  <LinkConverter content={introHtml} />
+                </article>
+                <div className="my-12">
+                  <SubscribeCTA source={`Top: ${post.title}`} />
+                </div>
+                <article
+                  className={`prose prose-lg md:prose-xl max-w-none prose-essay`}
+                >
+                  <LinkConverter content={mainHtml} />
+                </article>
+              </>
+            ) : (
+              <article
+                className={`prose prose-lg md:prose-xl max-w-none prose-essay ${post.slug === "talks" ? "talks-prose" : ""}`}
+              >
+                <LinkConverter content={post.html} />
+              </article>
+            )}
 
             {isPost && (
               <div className="mt-16">
-                <SubscribeCTA source={`Essay: ${post.title}`} />
+                <SubscribeCTA source={`Bottom: ${post.title}`} />
               </div>
             )}
             {isAbout && (

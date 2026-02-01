@@ -38,16 +38,6 @@ As in [previous analyses](https://whoisnnamdi.com/age-race-gender-software-engin
 
 Advanced degrees carry greater benefits — master's degree holders earn **13.3%** more than college degree holders, while those with doctoral degrees (i.e. PhDs) earn **20.5%** more. These numbers decrease meaningfully though once I add in the controls I mentioned above, falling to **4.1%** and **7.8%** respectively.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: Do College Degrees Matter for Software Engineers? Maybe" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## Is this a big deal?
 
 Now, a 7.5% college degree advantage is nothing to scoff at.
@@ -76,12 +66,3 @@ I think the jury is still out. [Recent media reports](https://www.theinformation
 
 That said, we can finally put some numbers behind the claim that college degrees don't matter for software engineers. They matter, but not much, assuming you can get hired as a developer. Once in the seat, your degree matters much less than other factors, like on the job performance, competence, etc.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: Do College Degrees Matter for Software Engineers? Maybe" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

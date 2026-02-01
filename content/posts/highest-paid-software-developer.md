@@ -98,16 +98,6 @@ The results represent a subset of approximately 11,000 U.S-based developers from
 
 If you'd like a nicely formatted report with the full set of results, enter your email below and you'll receive an email with a download link when ready.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: Meet Dev, the Highest-Paid Software Developer in America" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 For more detail on the methodology, please see the appendix at the end.
 
 ![](/content/images/2019/01/annie-spratt-608001-unsplash-2.jpg)
@@ -571,12 +561,3 @@ Long story short, Double Selection makes us much more confident that the results
 
 _This post has been published on [www.productschool.com](http://www.productschool.com) communities_
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: Meet Dev, the Highest-Paid Software Developer in America" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

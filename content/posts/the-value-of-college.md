@@ -49,16 +49,6 @@ Unfortunately, this is where most mainstream analysis of higher education ends.
 
 Let’s go further.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: The Value of College May Be Negative for the COVID Generation" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## A degree is only one of many factors
 
 **Point two** is where things get interesting. As I’ve discussed in [prior analyses](https://whoisnnamdi.com/remote-software-developers-earn-more/), _correlation is not causation_. But that’s not very interesting. What’s interesting is exactly how much correlation is in fact causation vs. not. It turns out, college degrees do raise incomes but not as much as simple correlations like above would suggest.
@@ -114,16 +104,6 @@ These surging costs are fueling an explosion of consumer debt. We can get some s
 So for example, the median American born in the 1960s owed debt equal to **34%** of their annual income at the age of 26, while Americans born in the 1980s owed debt of **109%** of income, **a tripling of the typical debt burden for young adults**. While much of this relates to the broader availability of mortgage debt, at the age of 26, one has to assume that much of it comes college borrowings yet to be paid off. In fact, the authors note that “debt ratios generally are higher among college grads than non-grads.”
 
 That debt levies a pernicious tax on the debt holder in the form of regular interest payments and often leaves them with negative net worth until the debt can be sufficiently paid down.
-
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: The Value of College May Be Negative for the COVID Generation" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
 
 ## The grand finale
 

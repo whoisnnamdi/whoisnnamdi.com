@@ -30,16 +30,6 @@ The truth is much more ironic.
 
 Robinhood traders get fleeced not by HFTs front-running milliseconds before their order hits but **by other retail investors, days earlier.**
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: Robinhood Traders are Last to the Party" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## The party ended \*five\* days ago
 
 It turns out, [trading activity among Robinhood users lags the rest of the retail community by multiple days](https://papers.ssrn.com/abstract=3776874), more than enough time to squeeze out any potential profits.
@@ -86,12 +76,3 @@ I think it's great that Robinhood exists. I love that individuals have more ways
 
 Despite the app's name, Robinhood users for the most part redistribute among themselves the breadcrumbs left by the rest of the market.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: Robinhood Traders are Last to the Party" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

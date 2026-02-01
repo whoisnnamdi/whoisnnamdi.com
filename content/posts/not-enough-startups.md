@@ -31,16 +31,6 @@ In other words, was it demand, supply, or some combination of the two?
 
 Here's a hint: we don't have nearly enough startups.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: We Don" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## Narrative violation
 
 Measured in either financing activity or equity valuations, the venture-backed startup ecosystem has grown _a lot_:
@@ -211,12 +201,3 @@ The demand side got a bit ahead of itself. It's time for the supply side to catc
 
 We don't have _nearly_ enough startups.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: We Don" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

@@ -28,16 +28,6 @@ Most often, companies don't grow fast enough to compensate for rising valuation 
 
 Thus, companies don't catch up to their valuations; **their valuations catch up to _them_.**
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: Companies Rarely Grow Into Their Valuations" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ### Expanding on multiple expansion
 
 Investors can justify rising [valuation multiples](https://en.wikipedia.org/wiki/Valuation_using_multiples) with a belief that:
@@ -145,12 +135,3 @@ Until then, growth is just a cop out.
 > 
 > — Nnamdi Iregbulem (@whoisnnamdi) [November 11, 2021](https://twitter.com/whoisnnamdi/status/1458872942960398346?ref_src=twsrc%5Etfw)
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: Companies Rarely Grow Into Their Valuations" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

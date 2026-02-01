@@ -50,16 +50,6 @@ This is an impressive result.
 
 While I can't be sure this is [causal](https://towardsdatascience.com/causal-vs-statistical-inference-3f2c3e617220), the **large apparent effects** (even after controlling for other variables) paired with the **clear upward trend** as remote work increases gives me confidence there is something real here.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: Remote Software Developers Earn 22% More Than Non-Remote Developers" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## Wait but why?
 
 The obvious next question is… _why_?
@@ -94,12 +84,3 @@ Does this apply to non-software developers? Again, can’t say.
 
 But it's an interesting result nonetheless, and one that deserves further investigation as more knowledge workers shift their work online and away from the corporate office—[virus](https://www.cdc.gov/coronavirus/2019-ncov/index.html) or no virus.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: Remote Software Developers Earn 22% More Than Non-Remote Developers" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

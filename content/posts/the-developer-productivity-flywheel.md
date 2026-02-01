@@ -46,16 +46,6 @@ The Developer Productivity Manifesto has three parts, this is part 1:
 -   [Part 2: More (Developers) Isn’t Always More](https://whoisnnamdi.com/more-developers-isnt-always-more/)
 -   [Part 3: Leaving Software on the Table](https://whoisnnamdi.com/leaving-software-on-the-table/)
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: The Developer Productivity Manifesto Part 1 — The Flywheel" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## Every company is becoming a software factory
 
 ![](/content/images/2021/05/0_A8QJ_-v0lvk9FBMK-1.jpg)
@@ -209,12 +199,3 @@ Ready for more? Here's [Part 2](https://whoisnnamdi.com/more-developers-isnt-alw
 
 ****Follow me on**** [****Twitter****](https://twitter.com/whoisnnamdi)****, subscribe to my monthly essays**** [****here****](https://whoisnnamdi.com/)****, and reach out to me directly via nnamdi@lsvp.com****
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: The Developer Productivity Manifesto Part 1 — The Flywheel" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

@@ -30,16 +30,6 @@ In other words, the "shadow price" of venture capital is a lot lower than what w
 
 What does it all mean?
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: The Shadow Price of Venture Capital" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## A 3-for-2 special
 
 Valuations and capital invested in venture have both grown substantially since 2010:
@@ -163,12 +153,3 @@ This double whammy is how you end up with such severe valuation swings.
 
 Ironically, it's the tourists who "price" venture investments on the margin – those much-derided investors who, like birds, cyclically flock to and flee from venture investing with the changing economic winds. Us "locals" have no choice but to live with it.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: The Shadow Price of Venture Capital" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

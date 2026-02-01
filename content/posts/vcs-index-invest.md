@@ -24,16 +24,6 @@ _Yet they do the opposite._
 
 The reason is counterintuitive: VCs are picky, not because they have so many options but **because they have so few**.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: Why Don" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## More deals, better performance
 
 Theoretical modeling and empirical data both suggest that early-stage VCs do better when they spread the wealth wider.
@@ -209,12 +199,3 @@ Far from masters of the universe, selectively picking among desperate founders l
 
 In a future article, I'll extend this idea and demonstrate why it shows venture capitalists aren't funding nearly enough startups.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: Why Don" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

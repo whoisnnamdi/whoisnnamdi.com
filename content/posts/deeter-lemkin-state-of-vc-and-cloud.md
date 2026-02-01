@@ -39,16 +39,6 @@ You can find:
 
 Enjoy!
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: Byron Deeter and Jason Lemkin on the State of VC and the Cloud" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 * * *
 
 ## What's happening in venture today
@@ -201,12 +191,3 @@ That said, prepare for some economic hit, no matter what industry you are in. Th
 
 **Get ahead of this**—figure out what your leading indicators are for potential problems. Poor customer health, will ultimately lead to churn, which will lead to revenue and business impact.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: Byron Deeter and Jason Lemkin on the State of VC and the Cloud" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

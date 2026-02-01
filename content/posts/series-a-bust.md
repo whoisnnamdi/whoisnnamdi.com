@@ -32,16 +32,6 @@ The bigger picture? In addition to raising their expectations for Series A, inve
 
 **Series A investors expect more but believe less.**
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: The Series A Bust" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## Relatively speaking
 
 Valuations for both Seed and Series A stage companies rose dramatically over the last decade or so of venture:
@@ -186,12 +176,3 @@ While it's a tough time for founders, I think it's important to be clear-eyed ab
 
 So yes, your first priority is still to raise that next round, but there's still much work to be done thereafter. More so than ever, Series A does not mean you have product-market fit. Investors don't believe it and neither should you.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: The Series A Bust" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

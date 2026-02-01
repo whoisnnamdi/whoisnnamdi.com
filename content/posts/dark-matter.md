@@ -28,16 +28,6 @@ This leaves a vast amount of "dark matter" in the software universe – variatio
 
 I want to explore this vast darkness.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: The Dark Matter of Software Valuations" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## Who knew there was such skew?
 
 ![avg](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515993502-avg.png)  
@@ -233,12 +223,3 @@ More sophisticated [factor modeling](https://en.wikipedia.org/wiki/Factor_analys
 
 If you do have thoughts on that second mystery factor, shoot me a note!
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: The Dark Matter of Software Valuations" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

@@ -32,16 +32,6 @@ For most however, **a frothy funding environment means more competition for tale
 
 The capital "bottleneck" hasn't disappeared – it's moved to another part of the production chain. **Funding gets easier; hiring gets harder.**
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: Funding Simply Shifts the Bottleneck" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## Cheap money, expensive people
 
 He deleted the tweet, but [Mike Speiser](https://twitter.com/laserlikemike) once said:
@@ -133,12 +123,3 @@ In fact, hiring can be _tougher_ after raising at a big valuation because candid
 
 Between the increased effort that hiring requires during boom periods and the prospect of employee exodus after hitting choppy waters, founders should be wary of getting caught up in the irrational exuberance of the broader market.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: Funding Simply Shifts the Bottleneck" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

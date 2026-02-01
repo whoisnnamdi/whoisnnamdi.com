@@ -40,16 +40,6 @@ I've spoken to numerous founders and developer relations professionals to tease 
 
 Here's some concrete advice:
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: Awesome Developer Advocates Are Hiding in Plain Sight" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## Most developer advocates are former engineers. So, talk to some current engineers
 
 Current engineers are future developer advocates hiding in plain sight:
@@ -129,12 +119,3 @@ Again, remember this simple logic:
 -   IF most _current_ DevRel professionals were **past** engineers,
 -   THEN most _future_ DevRel professionals are **current** engineers.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: Awesome Developer Advocates Are Hiding in Plain Sight" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

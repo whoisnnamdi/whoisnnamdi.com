@@ -38,16 +38,6 @@ In this second chapter, we share our findings on the **top strategic priorities*
 
 Want to be notified when we publish part three of our findings? Subscribe below, and we'll also send you a nicely formatted PDF of our research!
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: Top Three Strategic Priorities of Developer Productivity Startups" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## Priority #1: Product-(go-to-)market fit
 
 Developer productivity companies work extremely hard on the initial V1 of the product. As developers themselves, these founders are targeting difficult technical problems where elegant solutions do not yet exist, hoping to bring a product to market that is fundamentally innovative. While in "heads down" mode, however, it's easy to ignore market sizing. Many developer productivity founders do not sit down to make initial estimates of their addressable market until after the technology has already been built:
@@ -156,12 +146,3 @@ Successful execution of this three part plan lays a strong foundation for develo
 
 Be informed of our next and final publication in this series, the **biggest challenges and pain points of developer productivity companies**, by entering your email below:
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: Top Three Strategic Priorities of Developer Productivity Startups" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
