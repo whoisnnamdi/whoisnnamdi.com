@@ -15,11 +15,12 @@ export default function SubscribeCTA({ source = "CTA" }) {
       <h2 className="font-serif text-3xl md:text-5xl font-bold mb-4">
         Join the Syndicate
       </h2>
-      <p className="text-sm md:text-base font-mono uppercase tracking-[0.2em] text-white/80 mb-2">
-        Thoughtful analysis of the business and economics of tech.
+      <p className="text-sm md:text-base font-mono uppercase tracking-[0.2em] text-white/80 mb-2 max-w-2xl mx-auto">
+        Long-form essays on the economics of tech, with the data to back it up.
+        All signal, no noise.
       </p>
       <p className="text-base md:text-lg text-white/90 mb-8 max-w-md mx-auto">
-        Read by 5,000+ founders and investors.
+        Read by 5,000+ founders, engineers, and investors.
       </p>
       <form
         onSubmit={handleSubscribe}
