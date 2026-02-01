@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Analytics from "../components/Analytics";
-import NavbarRedesign from "../components/NavbarRedesign";
-import FooterRedesign from "../components/FooterRedesign";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import SEO from "../components/SEO";
 import StatsRow from "../components/StatsRow";
 import PortfolioCard from "../components/PortfolioCard";
@@ -110,7 +110,7 @@ export default function Portfolio({ logos, meta }) {
       />
       <Analytics />
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
-        <NavbarRedesign source="portfolio" />
+        <Navbar source="portfolio" />
       </div>
 
       <main className="bg-grid border-neutral-300">
@@ -172,7 +172,7 @@ export default function Portfolio({ logos, meta }) {
         </section>
       </main>
 
-      <FooterRedesign />
+      <Footer />
     </div>
   );
 }

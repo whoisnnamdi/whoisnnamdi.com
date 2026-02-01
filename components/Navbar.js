@@ -5,7 +5,7 @@ import { Fragment, useRef } from "react";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import { useSubscribe } from "./subscribe";
 
-export default function NavbarRedesign({ source, dateLabel, codeOverride }) {
+export default function Navbar({ source, dateLabel, codeOverride }) {
   const input = useRef(null);
   const router = useRouter();
   const subscribe = useSubscribe();

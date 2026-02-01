@@ -1,6 +1,6 @@
 import Link from "next/link";
-import NavbarRedesign from "../components/NavbarRedesign";
-import FooterRedesign from "../components/FooterRedesign";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import HeroSection from "../components/HeroSection";
 import FeaturedEssayCard from "../components/FeaturedEssayCard";
 import EssayListItem from "../components/EssayListItem";
@@ -53,7 +53,7 @@ export default function Home({ posts, featuredPosts }) {
       />
       <Analytics />
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
-        <NavbarRedesign source="Home" />
+        <Navbar source="Home" />
         <HeroSection latestPost={posts[0]} />
       </div>
 
@@ -148,7 +148,7 @@ export default function Home({ posts, featuredPosts }) {
         <SubscribeCTA source="Homepage CTA" />
       </section>
 
-      <FooterRedesign />
+      <Footer />
     </div>
   );
 }

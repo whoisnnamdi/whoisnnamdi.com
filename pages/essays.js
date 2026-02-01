@@ -4,8 +4,8 @@ import Link from "next/link";
 import Analytics from "../components/Analytics";
 import EssayListItem from "../components/EssayListItem";
 import FeaturedEssayCard from "../components/FeaturedEssayCard";
-import FooterRedesign from "../components/FooterRedesign";
-import NavbarRedesign from "../components/NavbarRedesign";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 import SEO from "../components/SEO";
 import SubscribeCTA from "../components/SubscribeCTA";
 import postFormat from "../components/PostFormat";
@@ -100,7 +100,7 @@ export default function Page({ posts = [] }) {
       <SEO title={pageTitle} description={pageDesc} url={pageURL} />
       <Analytics />
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
-        <NavbarRedesign source={slug} />
+        <Navbar source={slug} />
       </div>
 
       <main>
@@ -289,7 +289,7 @@ export default function Page({ posts = [] }) {
         </section>
       </main>
 
-      <FooterRedesign />
+      <Footer />
     </div>
   );
 }

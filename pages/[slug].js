@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { getPosts, getPost, getPages, getPage } from "../lib/content";
-import NavbarRedesign from "../components/NavbarRedesign";
-import FooterRedesign from "../components/FooterRedesign";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import EssaySidebar from "../components/EssaySidebar";
 import SEO from "../components/SEO";
 import SubscribeCTA from "../components/SubscribeCTA";
@@ -86,7 +86,7 @@ export default function PostPage({ post, sections, isPost }) {
       />
       <Analytics />
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
-        <NavbarRedesign
+        <Navbar
           source={post.title}
           dateLabel={navLabel}
           codeOverride={post?.slug === "about-me" ? "Index 05" : undefined}
@@ -178,7 +178,7 @@ export default function PostPage({ post, sections, isPost }) {
         </div>
       </div>
 
-      <FooterRedesign />
+      <Footer />
     </div>
   );
 }

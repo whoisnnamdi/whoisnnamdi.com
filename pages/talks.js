@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import Analytics from "../components/Analytics";
-import NavbarRedesign from "../components/NavbarRedesign";
-import FooterRedesign from "../components/FooterRedesign";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import SEO from "../components/SEO";
 import SubscribeCTA from "../components/SubscribeCTA";
 import { getTalksData } from "../lib/content";
@@ -51,7 +51,7 @@ export default function TalksPage({ talks }) {
       <Analytics />
 
       <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
-        <NavbarRedesign source="talks" />
+        <Navbar source="talks" />
       </div>
 
       <section className="bg-grid border-neutral-300">
@@ -276,7 +276,7 @@ export default function TalksPage({ talks }) {
         <SubscribeCTA source="Talks Page" />
       </section>
 
-      <FooterRedesign />
+      <Footer />
     </div>
   );
 }
