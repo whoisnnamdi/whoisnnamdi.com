@@ -23,12 +23,17 @@ describe('static file generators', () => {
   })
 
   test('createSitemap outputs urls for posts and others', () => {
-    const items = [{ slug: 'hello' }, { slug: 'world' }]
+    const items = [
+      { slug: 'hello', published_at: '2024-01-01T00:00:00.000Z' },
+      { slug: 'world', updated_at: '2024-02-01T00:00:00.000Z' },
+    ]
     const xml = createSitemap(items)
     expect(xml).toContain('https://whoisnnamdi.com/hello/')
     expect(xml).toContain('https://whoisnnamdi.com/world/')
     expect(xml).toContain('https://whoisnnamdi.com/founders/')
     expect(xml).toContain('https://whoisnnamdi.com/investors/')
+    expect(xml).toContain('<lastmod>2024-01-01T00:00:00.000Z</lastmod>')
+    expect(xml).toContain('<lastmod>2024-02-01T00:00:00.000Z</lastmod>')
   })
 })
 

@@ -10,16 +10,37 @@ const others = [
     "investors"
 ];
 
-const createSitemap = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
+const buildLastModTag = (value) => {
+    if (!value) return ''
+    const date = new Date(value)
+    if (Number.isNaN(date.getTime())) return ''
+    return `
+                    <lastmod>${date.toISOString()}</lastmod>`
+}
+
+const createSitemap = (posts) => {
+    const latestUpdatedAt = posts.reduce((latest, post) => {
+        const candidate = post.updated_at || post.published_at
+        if (!candidate) return latest
+        const candidateDate = new Date(candidate)
+        if (Number.isNaN(candidateDate.getTime())) return latest
+        if (!latest) return candidateDate
+        return candidateDate > latest ? candidateDate : latest
+    }, null)
+
+    const rootLastMod = latestUpdatedAt ? latestUpdatedAt.toISOString() : null
+
+    return `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>${`https://whoisnnamdi.com`}</loc>
+        <loc>${`https://whoisnnamdi.com`}</loc>${buildLastModTag(rootLastMod)}
     </url>
     ${posts
-        .map(({ slug }) => {
+        .map(({ slug, updated_at, published_at }) => {
+            const lastMod = updated_at || published_at
             return `
                 <url>
-                    <loc>${`https://whoisnnamdi.com/${slug}/`}</loc>
+                    <loc>${`https://whoisnnamdi.com/${slug}/`}</loc>${buildLastModTag(lastMod)}
                 </url>
             `
         })
@@ -29,7 +50,7 @@ const createSitemap = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
         .map((slug) => {
             return `
                 <url>
-                    <loc>${`https://whoisnnamdi.com/${slug}/`}</loc>
+                    <loc>${`https://whoisnnamdi.com/${slug}/`}</loc>${buildLastModTag(rootLastMod)}
                 </url>
             `
         })
@@ -37,6 +58,7 @@ const createSitemap = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
     }
     </urlset>
 `;
+}
 
 async function generateSitemap() {
     try {
