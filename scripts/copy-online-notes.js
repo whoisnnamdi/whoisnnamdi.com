@@ -61,6 +61,24 @@ async function walkDir(dir, files = []) {
   return files
 }
 
+async function ensureIndexPage() {
+  const indexPath = path.join(destRoot, "index.md")
+  const template = `---\ntitle: "Nnamdi's Notes"\n---\n\n# Home\n\nThese are my personal notes on various topics that don’t meet the bar for a proper essay. Most are not even in essay form — they are scratchings and inklings of ideas or notes to myself about things I’ve been researching or learning about.\n\nPeople often ask for my sources of inspiration or about my “writing process”. These notes give some sense of how I end up with these ideas.\n`
+
+  try {
+    await fs.access(indexPath)
+    return false
+  } catch (error) {
+    if (error && error.code !== "ENOENT") {
+      throw error
+    }
+  }
+
+  await fs.mkdir(destRoot, { recursive: true })
+  await fs.writeFile(indexPath, template)
+  return true
+}
+
 async function main() {
   const markdownFiles = await walkDir(sourceRoot)
   let matchedCount = 0
@@ -79,9 +97,12 @@ async function main() {
     }
   }
 
+  const indexCreated = await ensureIndexPage()
+
   console.log(`Matched ${matchedCount} markdown files containing #online.`)
   console.log(`Copied ${copiedCount} files into ${destRoot} (flattened).`)
   console.log(`Skipped ${skippedCount} files with identical content already present.`)
+  console.log(indexCreated ? "Created index.md homepage." : "index.md homepage already exists.")
 }
 
 main().catch((error) => {
