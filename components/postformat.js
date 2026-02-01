@@ -1,22 +1,18 @@
-export default function postFormat(posts) {   
-    posts.map((post) => {
-        const options = {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric'
-        }
+import { formatDate } from "../lib/dates";
 
-        post.dateFormatted = new Intl.DateTimeFormat('default', options).format(
-            new Date(post.published_at)
-        )
-        
-        post.excerpt = post.excerpt.replace(/\[(.*?)\]/, "")
+export default function postFormat(posts) {
+  posts.forEach((post) => {
+    post.dateFormatted = formatDate(post.published_at);
 
-        const cutoff = 120
+    post.excerpt = (post.excerpt || "").replace(/\[(.*?)\]/, "");
 
-        post.excerpt = post.excerpt.substring(0, Math.min(cutoff, post.excerpt.length)) + (post.excerpt.length > cutoff ? "..." : "")
-        post.excerpt = post.excerpt.replace(/\[(.*?)[$^.]/, "")
-    })
-    
-    return posts
+    const cutoff = 120;
+
+    post.excerpt =
+      post.excerpt.substring(0, Math.min(cutoff, post.excerpt.length)) +
+      (post.excerpt.length > cutoff ? "..." : "");
+    post.excerpt = post.excerpt.replace(/\[(.*?)[$^.]/, "");
+  });
+
+  return posts;
 }

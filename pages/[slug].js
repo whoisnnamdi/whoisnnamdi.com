@@ -7,6 +7,7 @@ import EssaySidebar from "../components/EssaySidebar";
 import SubscribeCTA from "../components/SubscribeCTA";
 import LinkConverter from "../components/linkconverter";
 import Analytics from "../components/analytics";
+import { formatDate } from "../lib/dates";
 
 export async function getStaticPaths() {
   const posts = await getPosts();
@@ -39,15 +40,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function PostPage({ post, sections, isPost }) {
-  const publishedLabel = post?.published_at
-    ? new Intl.DateTimeFormat("default", {
-        month: "short",
-        day: "2-digit",
-        year: "numeric",
-      })
-        .format(new Date(post.published_at))
-        .toUpperCase()
-    : null;
+  const publishedLabel = formatDate(post?.published_at, "upper");
   const navLabel = post?.slug === "about-me" ? "About" : publishedLabel;
   const isAbout = post?.slug === "about-me";
   const titleMatch = post.title.match(/Aren[’']t/);

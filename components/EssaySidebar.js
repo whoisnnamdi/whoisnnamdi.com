@@ -1,18 +1,8 @@
+import { formatDate } from "../lib/dates";
+
 export default function EssaySidebar({ sections = [], post }) {
-  const publishedDate = post?.published_at
-    ? new Intl.DateTimeFormat("default", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      }).format(new Date(post.published_at))
-    : null;
-  const updatedDate = post?.updated_at
-    ? new Intl.DateTimeFormat("default", {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-      }).format(new Date(post.updated_at))
-    : null;
+  const publishedDate = formatDate(post?.published_at, "long");
+  const updatedDate = formatDate(post?.updated_at);
   const tags = post?.tags || [];
   const rawExcerpt =
     post?.excerpt ||
