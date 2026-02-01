@@ -39,7 +39,7 @@ export default function SubscribeCTA({ source = "CTA" }) {
           type="submit"
           className="px-6 py-3 text-white font-mono uppercase tracking-[0.2em] bg-neutral-900 border border-neutral-900 hover:bg-accent transition-colors"
         >
-          Subscribe
+          Subscribe_
         </button>
       </form>
     </section>
