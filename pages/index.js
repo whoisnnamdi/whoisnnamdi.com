@@ -7,7 +7,7 @@ import FeaturedEssayCard from "../components/FeaturedEssayCard";
 import EssayListItem from "../components/EssayListItem";
 import StatsRow from "../components/StatsRow";
 import SubscribeCTA from "../components/SubscribeCTA";
-import Analytics from "../components/analytics";
+import Analytics from "../components/Analytics";
 import { getPosts } from "../lib/content";
 import { formatDate, formatExcerpt } from "../lib/dates";
 

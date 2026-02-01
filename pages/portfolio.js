@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import Analytics from "../components/analytics";
+import Analytics from "../components/Analytics";
 import NavbarRedesign from "../components/NavbarRedesign";
 import FooterRedesign from "../components/FooterRedesign";
 import StatsRow from "../components/StatsRow";

@@ -2,13 +2,13 @@ import { useMemo, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import Analytics from "../components/analytics";
+import Analytics from "../components/Analytics";
 import EssayListItem from "../components/EssayListItem";
 import FeaturedEssayCard from "../components/FeaturedEssayCard";
 import FooterRedesign from "../components/FooterRedesign";
 import NavbarRedesign from "../components/NavbarRedesign";
 import SubscribeCTA from "../components/SubscribeCTA";
-import postFormat from "../components/postformat";
+import postFormat from "../components/PostFormat";
 import { getPosts } from "../lib/content";
 
 export async function getStaticProps() {

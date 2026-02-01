@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import Image from "next/image";
-import Analytics from "../components/analytics";
+import Analytics from "../components/Analytics";
 import NavbarRedesign from "../components/NavbarRedesign";
 import FooterRedesign from "../components/FooterRedesign";
 import SubscribeCTA from "../components/SubscribeCTA";

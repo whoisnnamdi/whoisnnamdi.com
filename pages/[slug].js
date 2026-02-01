@@ -5,8 +5,8 @@ import NavbarRedesign from "../components/NavbarRedesign";
 import FooterRedesign from "../components/FooterRedesign";
 import EssaySidebar from "../components/EssaySidebar";
 import SubscribeCTA from "../components/SubscribeCTA";
-import LinkConverter from "../components/linkconverter";
-import Analytics from "../components/analytics";
+import LinkConverter from "../components/LinkConverter";
+import Analytics from "../components/Analytics";
 import { formatDate } from "../lib/dates";
 
 export async function getStaticPaths() {
