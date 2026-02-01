@@ -1,8 +1,8 @@
-import Link from 'next/link'
+import Link from "next/link";
 
 // Renders either an internal post (with slug) or an external link (with href)
 export default function TalkCard({ item }) {
-  const isInternal = !!item.slug
+  const isInternal = !!item.slug;
   const content = (
     <>
       {item.feature_image ? (
@@ -26,18 +26,17 @@ export default function TalkCard({ item }) {
         ) : null}
       </div>
     </>
-  )
+  );
 
   if (isInternal) {
     return (
       <Link
-        href="[slug]"
-        as={`/${item.slug}/`}
+        href={`/${item.slug}/`}
         className="block group rounded-xl border border-black border-opacity-10 overflow-hidden bg-white"
       >
         {content}
       </Link>
-    )
+    );
   }
 
   return (
@@ -49,5 +48,5 @@ export default function TalkCard({ item }) {
     >
       {content}
     </a>
-  )
+  );
 }
