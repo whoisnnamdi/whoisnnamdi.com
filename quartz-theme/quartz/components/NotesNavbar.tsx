@@ -13,6 +13,8 @@ const NotesNavbar: QuartzComponent = ({ displayClass }: QuartzComponentProps) =>
     { href: "/about-me/", label: "whoami" },
   ]
 
+  const menuLinks = [{ href: "/", label: "Home" }, ...navLinks]
+
   return (
     <nav class={classNames(displayClass, "notes-navbar")}>
       <div class="notes-navbar__left">
@@ -51,6 +53,36 @@ const NotesNavbar: QuartzComponent = ({ displayClass }: QuartzComponentProps) =>
             />
             <button type="submit">Join</button>
           </form>
+        </details>
+        <details class="notes-navbar__menu">
+          <summary class="notes-navbar__menu-toggle" aria-label="Open menu">
+            <svg
+              class="notes-navbar__menu-icon"
+              viewBox="0 0 20 20"
+              aria-hidden="true"
+            >
+              <path
+                d="M5.25 7.5L10 12.25L14.75 7.5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </summary>
+          <div class="notes-navbar__menu-items">
+            {menuLinks.map((link) => (
+              <a
+                key={link.href}
+                class={classNames("notes-navbar__menu-link", link.active && "is-active")}
+                href={link.href}
+                data-router-ignore
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
         </details>
       </div>
     </nav>
