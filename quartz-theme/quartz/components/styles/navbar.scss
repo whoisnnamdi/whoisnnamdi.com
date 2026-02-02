@@ -95,7 +95,8 @@
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  padding: 0.6rem 1.1rem;
+  line-height: 1.5;
+  padding: 0.5rem 1rem;
   display: inline-flex;
   align-items: center;
   white-space: nowrap;
@@ -161,7 +162,7 @@
   list-style: none;
   cursor: pointer;
   border: none;
-  background: var(--lightgray);
+  background: transparent;
   color: var(--dark);
   padding: 0.4rem 0.55rem;
   display: inline-flex;
@@ -170,7 +171,7 @@
 }
 
 .notes-navbar__menu-toggle:hover {
-  background: #d7d1c6;
+  background: var(--lightgray);
 }
 
 .notes-navbar__menu-toggle::-webkit-details-marker {
@@ -190,7 +191,7 @@
   flex-direction: column;
   gap: 0;
   min-width: 12rem;
-  background: #ffffff;
+  background: var(--light);
   border: 1px solid var(--lightgray);
   box-shadow:
     0 14px 50px rgba(27, 33, 48, 0.12),
@@ -212,7 +213,7 @@
   text-transform: none;
   letter-spacing: normal;
   color: var(--darkgray);
-  background: #ffffff;
+  background: var(--light);
 }
 
 .notes-navbar__menu-link:hover {
