@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function HeroSection({ latestPost }) {
   return (
     <section className="border border-neutral-900 bg-white">
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr,0.95fr]">
+      <div className="grid grid-cols-1 lg:grid-cols-2">
         {/* Text content */}
         <div className="px-8 py-10 lg:px-12 lg:py-14">
           <div className="flex items-center gap-3 text-[11px] font-mono uppercase tracking-[0.2em] text-blue-600">
