@@ -26,15 +26,15 @@ twitter_image: ""
 
 ![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515980657-Redpanda_horizontal.png)
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515828636-image.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1770116264514-Snorkel_Wordmark_Dark.jpg)
 
 ![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515779085-materialize-1.png)
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516350208-PolarSignalsLogo.jpg)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1770116663856-polarsignals-cropped.jpg)
 
 ![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515927644-matillion_logo.png)
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516266969-image-6.png)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1770116921175-tana-logo-1.png)
 
 ![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516276903-image.png)
 
@@ -52,9 +52,9 @@ twitter_image: ""
 
 ![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515947432-Ponder_LogoWordmark_H1_Color.png)
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516348737-Observo_AI_Logo-1.jpg)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1770116663445-observo-cropped.jpg)
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515953420-VoltronData_Logo-green_vertical-copy-2-2048x1032-1.jpeg)
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1770116662611-voltron-cropped.jpeg)
 
 ![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515768814-gitlab.png)
 
