@@ -37,21 +37,9 @@
   },
   {
     "section": "Current",
-    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512355333-Observo_AI_Logo-1.jpg",
-    "alt": "",
-    "displayName": "Observo AI Logo"
-  },
-  {
-    "section": "Current",
     "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512356337-PolarSignalsLogo.jpg",
     "alt": "",
     "displayName": "PolarSignalsLogo"
-  },
-  {
-    "section": "Current",
-    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512358090-Ponder_LogoWordmark_H1_Color.png",
-    "alt": "",
-    "displayName": "Ponder LogoWordmark H Color"
   },
   {
     "section": "Current",
@@ -64,24 +52,6 @@
     "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512361131-VoltronData_Logo-green_vertical-copy-2-2048x1032-1.jpeg",
     "alt": "",
     "displayName": "VoltronData Logo green vertical copy  x"
-  },
-  {
-    "section": "Current",
-    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512362554-image.png",
-    "alt": "",
-    "displayName": "image"
-  },
-  {
-    "section": "Current",
-    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512363729-astro-full-logo.png",
-    "alt": "",
-    "displayName": "astro full logo"
-  },
-  {
-    "section": "Current",
-    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512365251-image-1.png",
-    "alt": "",
-    "displayName": "image"
   },
   {
     "section": "Current",
@@ -106,6 +76,36 @@
     "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512369628-contextual-ai-wordmark-gray.jpg",
     "alt": "",
     "displayName": "contextual ai wordmark gray"
+  },
+  {
+    "section": "Previous Enterprise / Software",
+    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512363729-astro-full-logo.png",
+    "alt": "",
+    "displayName": "astro full logo"
+  },
+  {
+    "section": "Previous Enterprise / Software",
+    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512365251-image-1.png",
+    "alt": "",
+    "displayName": "image"
+  },
+  {
+    "section": "Previous Enterprise / Software",
+    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512362554-image.png",
+    "alt": "",
+    "displayName": "image"
+  },
+  {
+    "section": "Previous Enterprise / Software",
+    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512358090-Ponder_LogoWordmark_H1_Color.png",
+    "alt": "",
+    "displayName": "Ponder LogoWordmark H Color"
+  },
+  {
+    "section": "Previous Enterprise / Software",
+    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512355333-Observo_AI_Logo-1.jpg",
+    "alt": "",
+    "displayName": "Observo AI Logo"
   },
   {
     "section": "Previous Enterprise / Software",

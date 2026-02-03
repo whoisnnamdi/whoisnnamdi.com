@@ -30,21 +30,11 @@ twitter_image: ""
 
 ![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515779085-materialize-1.png)
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516348737-Observo_AI_Logo-1.jpg)
-
 ![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516350208-PolarSignalsLogo.jpg)
-
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515947432-Ponder_LogoWordmark_H1_Color.png)
 
 ![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515927644-matillion_logo.png)
 
 ![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515953420-VoltronData_Logo-green_vertical-copy-2-2048x1032-1.jpeg)
-
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516268436-image.png)
-
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515942367-astro-full-logo.png)
-
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516154917-image-1.png)
 
 ![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516266969-image-6.png)
 
@@ -55,6 +45,16 @@ twitter_image: ""
 ![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516342869-contextual-ai-wordmark-gray.jpg)
 
 ## Previous: Enterprise / Software
+
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515942367-astro-full-logo.png)
+
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516154917-image-1.png)
+
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516268436-image.png)
+
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515947432-Ponder_LogoWordmark_H1_Color.png)
+
+![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516348737-Observo_AI_Logo-1.jpg)
 
 ![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515768814-gitlab.png)
 
