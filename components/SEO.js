@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 const DEFAULT_IMAGE =
-  "https://whoisnnamdi.com/content/images/2019/10/DSC_0562_cropped_2.jpg";
+  "https://whoisnnamdi.com/images/portrait2.png";
 const SITE_NAME = "Who is Nnamdi?";
 const TWITTER_HANDLE = "@whoisnnamdi";
 const FACEBOOK_PUBLISHER = "https://www.facebook.com/nnamdi.iregbulem";
