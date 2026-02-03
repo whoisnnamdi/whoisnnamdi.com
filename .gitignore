@@ -37,3 +37,6 @@ public/content/images/**
 ghost-export.json
 public/static/rss.xml
 redesign/
+
+# pi
+.pi/todos/
