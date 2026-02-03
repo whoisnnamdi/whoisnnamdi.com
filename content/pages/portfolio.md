@@ -40,7 +40,7 @@ twitter_image: ""
 
 ![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516276903-image.png)
 
-![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516347080-NuanceLabs.png)
+![](/https://framerusercontent.com/images/81jfKQqIs12cdk44KZdQJivLUJY.png?width=1461&height=433)
 
 ![](/https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516342869-contextual-ai-wordmark-gray.jpg)
 
