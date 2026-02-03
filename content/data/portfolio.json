@@ -137,7 +137,8 @@
     "section": "Previous Enterprise / Software",
     "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512375020-surveymonkey.png",
     "alt": "",
-    "displayName": "surveymonkey"
+    "displayName": "surveymonkey",
+    "exit": { "type": "ACQUIRED" }
   },
   {
     "section": "Previous Enterprise / Software",
