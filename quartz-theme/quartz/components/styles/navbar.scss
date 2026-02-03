@@ -100,6 +100,13 @@
   display: inline-flex;
   align-items: center;
   white-space: nowrap;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.notes-navbar__subscribe-toggle:hover {
+  background: var(--secondary);
+  border-color: var(--dark);
+  color: var(--light);
 }
 
 .notes-navbar__subscribe-toggle::-webkit-details-marker {
