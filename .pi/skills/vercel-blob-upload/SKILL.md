@@ -18,6 +18,14 @@ Set the token in your shell (do **not** commit it):
 export BLOB_READ_WRITE_TOKEN="<token>"
 ```
 
+Or load it from this repo's `.env`:
+
+```bash
+set -a
+source .env
+set +a
+```
+
 ## Upload a remote URL (download + upload)
 
 Run from the repo root:
