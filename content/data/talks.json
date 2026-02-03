@@ -14,6 +14,13 @@
     "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512389824-benedikt.png"
   },
   {
+    "id": "talk-33",
+    "title": "Delta Podcast Ep. 21: Nnamdi Iregbulem, Lightspeed Partner",
+    "excerpt": "Delta Institute (deltainstitutes.org) is the most talent-dense community of engineers and researchers in the world. They have hosted events across the Bay Area, including both Stanford and Berkeley. Past event co-hosts include partners at Sequoia and Andreessen Horowitz, and one of the first ten employees at Cursor. Delta Institute also hosts the Delta Podcast, a series of video interviews with top researchers/engineers in order to help share their experiences and reach a broader international audience.",
+    "href": "https://www.youtube.com/watch?v=vr4e3v3bRyI",
+    "feature_image": "/images/talks/delta-podcast-ep-21.jpg"
+  },
+  {
     "id": "talk-3",
     "title": "Satish Chandra: Google's AI Coding Agents That Fix Bugs Automatically",
     "excerpt": "Can AI agents soon eliminate the tedious task of debugging code? Google's Satish Chandra reveals groundbreaking research on how AI is changing the way teams fix and maintain production code.",
