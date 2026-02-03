@@ -4,6 +4,23 @@ import fs from 'fs';
 import path from 'path';
 import { getAllPosts } from '../lib/content.js';
 
+const SITE_URL = 'https://whoisnnamdi.com';
+
+const toAbsoluteUrl = (url) => {
+    if (!url) return url;
+    if (url.startsWith('http://') || url.startsWith('https://')) return url;
+    if (url.startsWith('//')) return `https:${url}`;
+    if (url.startsWith('/')) return `${SITE_URL}${url}`;
+    return `${SITE_URL}/${url}`;
+};
+
+const toAbsoluteHtml = (html) => {
+    if (!html) return html;
+    return html
+        .replaceAll('src="/content/images', `src="${SITE_URL}/content/images`)
+        .replaceAll('srcset="/content/images', `srcset="${SITE_URL}/content/images`)
+        .replaceAll('href="/content/images', `href="${SITE_URL}/content/images`);
+};
 
 export const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
     <rss
@@ -18,11 +35,13 @@ export const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
             <description>
                 <![CDATA[ Thoughts on technology, venture capital, and the economics of both ]]>
             </description>
-            <link>https://whoisnnamdi.com</link>
+            <link>${SITE_URL}</link>
             <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
-            <atom:link href="https://whoisnnamdi.com/rss" rel="self" type="application/rss+xml"/>
+            <atom:link href="${SITE_URL}/rss" rel="self" type="application/rss+xml"/>
             ${posts
                 .map((post) => {
+                    const featureImage = toAbsoluteUrl(post.feature_image);
+                    const htmlContent = toAbsoluteHtml(post.html);
                     return `<item>
                         <title>
                             <![CDATA[${post.title}]]>
@@ -30,8 +49,8 @@ export const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
                         <description>
                             <![CDATA[${post.excerpt}]]>
                         </description>
-                        <link>${`https://whoisnnamdi.com/${post.slug}/`}</link>
-                        <guid isPermaLink="true">${`https://whoisnnamdi.com/${post.slug}/`}</guid>
+                        <link>${`${SITE_URL}/${post.slug}/`}</link>
+                        <guid isPermaLink="true">${`${SITE_URL}/${post.slug}/`}</guid>
                         ${post.tags ?
                             post
                             .tags.map((tag) => {
@@ -48,9 +67,9 @@ export const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
                             <![CDATA[ Nnamdi Iregbulem ]]>
                         </dc:creator>
                         <pubDate>${new Date(post.published_at).toUTCString()}</pubDate>
-                        <media:content url="${post.feature_image}" medium="image" />
+                        <media:content url="${featureImage}" medium="image" />
                         <content:encoded>
-                            <![CDATA[ ${post.html} ]]>
+                            <![CDATA[ ${htmlContent} ]]>
                         </content:encoded>
                     </item>
                     `
