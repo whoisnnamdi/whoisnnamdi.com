@@ -41,9 +41,25 @@ function setupSubscribeForm() {
   })
 }
 
+function setupMobileMenuToggle() {
+  const menuDetails = document.querySelector<HTMLDetailsElement>(".notes-navbar__menu")
+  const menuToggle = document.querySelector<HTMLElement>(".notes-navbar__menu-toggle")
+  if (!menuDetails || !menuToggle) return
+
+  const handler = (event: Event) => {
+    // Prevent default to handle toggle manually (fixes mobile close issue)
+    event.preventDefault()
+    menuDetails.open = !menuDetails.open
+  }
+
+  menuToggle.addEventListener("click", handler)
+  window.addCleanup(() => menuToggle.removeEventListener("click", handler))
+}
+
 document.addEventListener("nav", () => {
   setNavbarHeight()
   setupSubscribeForm()
+  setupMobileMenuToggle()
 
   if (typeof ResizeObserver !== "undefined") {
     const header = document.querySelector("header")
