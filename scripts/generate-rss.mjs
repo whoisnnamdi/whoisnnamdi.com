@@ -5,6 +5,7 @@ import path from 'path';
 import { getAllPosts } from '../lib/content.js';
 
 const SITE_URL = 'https://whoisnnamdi.com';
+const IMAGE_PATH = '/content/images';
 
 const toAbsoluteUrl = (url) => {
     if (!url) return url;
@@ -16,11 +17,13 @@ const toAbsoluteUrl = (url) => {
 
 const toAbsoluteHtml = (html) => {
     if (!html) return html;
-    return html
-        .replaceAll('src="/content/images', `src="${SITE_URL}/content/images`)
-        .replaceAll('srcset="/content/images', `srcset="${SITE_URL}/content/images`)
-        .replaceAll('href="/content/images', `href="${SITE_URL}/content/images`);
+    return ['src', 'srcset', 'href'].reduce((acc, attr) => {
+        return acc.replaceAll(`${attr}="${IMAGE_PATH}`, `${attr}="${SITE_URL}${IMAGE_PATH}`);
+    }, html);
 };
+
+const postUrl = (slug) => `${SITE_URL}/${slug}/`;
+const toUtc = (dateLike = Date.now()) => new Date(dateLike).toUTCString();
 
 export const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
     <rss
@@ -36,12 +39,13 @@ export const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
                 <![CDATA[ Thoughts on technology, venture capital, and the economics of both ]]>
             </description>
             <link>${SITE_URL}</link>
-            <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+            <lastBuildDate>${toUtc()}</lastBuildDate>
             <atom:link href="${SITE_URL}/rss" rel="self" type="application/rss+xml"/>
             ${posts
                 .map((post) => {
                     const featureImage = toAbsoluteUrl(post.feature_image);
                     const htmlContent = toAbsoluteHtml(post.html);
+                    const url = postUrl(post.slug);
                     return `<item>
                         <title>
                             <![CDATA[${post.title}]]>
@@ -49,8 +53,8 @@ export const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
                         <description>
                             <![CDATA[${post.excerpt}]]>
                         </description>
-                        <link>${`${SITE_URL}/${post.slug}/`}</link>
-                        <guid isPermaLink="true">${`${SITE_URL}/${post.slug}/`}</guid>
+                        <link>${url}</link>
+                        <guid isPermaLink="true">${url}</guid>
                         ${post.tags ?
                             post
                             .tags.map((tag) => {
@@ -66,7 +70,7 @@ export const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
                         <dc:creator>
                             <![CDATA[ Nnamdi Iregbulem ]]>
                         </dc:creator>
-                        <pubDate>${new Date(post.published_at).toUTCString()}</pubDate>
+                        <pubDate>${toUtc(post.published_at)}</pubDate>
                         <media:content url="${featureImage}" medium="image" />
                         <content:encoded>
                             <![CDATA[ ${htmlContent} ]]>
