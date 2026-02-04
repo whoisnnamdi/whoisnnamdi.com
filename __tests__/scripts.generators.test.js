@@ -10,6 +10,56 @@ const buildLastModTag = (value) => {
 };
 
 const others = ["founders", "developers", "investors"];
+const SITE_URL = "https://whoisnnamdi.com";
+const IMAGE_PATH = "/content/images";
+
+const toAbsoluteUrl = (url) => {
+  if (!url) return url;
+  if (url.startsWith("http://") || url.startsWith("https://")) return url;
+  if (url.startsWith("//")) return `https:${url}`;
+  if (url.startsWith("/")) return `${SITE_URL}${url}`;
+  return `${SITE_URL}/${url}`;
+};
+
+const toAbsoluteImageUrl = (url) => {
+  if (!url) return url;
+  if (!url.startsWith(IMAGE_PATH)) return url;
+  return `${SITE_URL}${url}`;
+};
+
+const rewriteSrcset = (value) => {
+  if (!value) return value;
+  return value
+    .split(",")
+    .map((entry) => {
+      const trimmed = entry.trim();
+      if (!trimmed) return trimmed;
+      const [url, ...rest] = trimmed.split(/\s+/);
+      const absoluteUrl = toAbsoluteImageUrl(url);
+      return [absoluteUrl, ...rest].join(" ");
+    })
+    .join(", ");
+};
+
+const toAbsoluteHtml = (html) => {
+  if (!html) return html;
+  let output = html.replace(/srcset="([^"]*)"/g, (match, value) => {
+    return `srcset="${rewriteSrcset(value)}"`;
+  });
+  output = output.replace(/(src|href)="([^"]*)"/g, (match, attr, value) => {
+    const absolute = toAbsoluteImageUrl(value);
+    if (absolute === value) return match;
+    return `${attr}="${absolute}"`;
+  });
+  return output;
+};
+
+const toUtc = (dateLike) => {
+  if (!dateLike) return null;
+  const date = new Date(dateLike);
+  if (Number.isNaN(date.getTime())) return null;
+  return date.toUTCString();
+};
 
 const createSitemap = (posts) => {
   const latestUpdatedAt = posts.reduce((latest, post) => {
@@ -51,17 +101,6 @@ const createSitemap = (posts) => {
 `;
 };
 
-const options = {
-  year: "numeric",
-  month: "short",
-  day: "numeric",
-  weekday: "short",
-  hour: "numeric",
-  minute: "numeric",
-  second: "numeric",
-  timeZone: "GMT",
-};
-
 const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
     <rss
         xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -75,11 +114,15 @@ const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
             <description>
                 <![CDATA[ Thoughts on technology, venture capital, and the economics of both ]]>
             </description>
-            <link>https://whoisnnamdi.com</link>
-            <lastBuildDate>${new Intl.DateTimeFormat("en-GB", options).format(new Date()) + " GMT"}</lastBuildDate>
-            <atom:link href="https://whoisnnamdi.com/rss" rel="self" type="application/rss+xml"/>
+            <link>${SITE_URL}</link>
+            <lastBuildDate>${toUtc(Date.now())}</lastBuildDate>
+            <atom:link href="${SITE_URL}/rss" rel="self" type="application/rss+xml"/>
             ${posts
               .map((post) => {
+                const featureImage = toAbsoluteUrl(post.feature_image);
+                const htmlContent = toAbsoluteHtml(post.html);
+                const url = `${SITE_URL}/${post.slug}/`;
+                const pubDate = toUtc(post.published_at);
                 return `<item>
                         <title>
                             <![CDATA[${post.title}]]>
@@ -87,8 +130,8 @@ const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
                         <description>
                             <![CDATA[${post.excerpt}]]>
                         </description>
-                        <link>${`https://whoisnnamdi.com/${post.slug}/`}</link>
-                        <guid isPermaLink="false">${post.id}</guid>
+                        <link>${url}</link>
+                        <guid isPermaLink="true">${url}</guid>
                         ${
                           post.tags
                             ? post.tags
@@ -104,10 +147,10 @@ const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
                         <dc:creator>
                             <![CDATA[ Nnamdi Iregbulem ]]>
                         </dc:creator>
-                        <pubDate>${new Intl.DateTimeFormat("en-GB", options).format(new Date(post.published_at)) + " GMT"}</pubDate>
-                        <media:content url="${post.feature_image}" medium="image" />
+                        ${pubDate ? `<pubDate>${pubDate}</pubDate>` : ""}
+                        <media:content url="${featureImage}" medium="image" />
                         <content:encoded>
-                            <![CDATA[ ${post.html} ]]>
+                            <![CDATA[ ${htmlContent} ]]>
                         </content:encoded>
                     </item>
                     `;
@@ -136,6 +179,44 @@ describe("static file generators", () => {
     expect(xml).toContain("<item>");
     expect(xml).toContain("<title>");
     expect(xml).toContain("https://whoisnnamdi.com/hello/");
+  });
+
+  test("createRSS omits pubDate when published_at is missing", () => {
+    const posts = [
+      {
+        id: "p2",
+        title: "No Date",
+        excerpt: "Missing",
+        slug: "no-date",
+        html: "<p>Body</p>",
+        feature_image: "https://img/2.jpg",
+        tags: [],
+      },
+    ];
+    const xml = createRSS(posts);
+    expect(xml).toContain("<item>");
+    expect(xml).not.toContain("<pubDate>");
+  });
+
+  test("createRSS rewrites all srcset image URLs to absolute", () => {
+    const posts = [
+      {
+        id: "p3",
+        title: "Images",
+        excerpt: "Pictures",
+        slug: "images",
+        html:
+          '<img src="/content/images/a.jpg" srcset="/content/images/a.jpg 1x, /content/images/b.jpg 2x" />',
+        published_at: "2023-01-01T00:00:00.000Z",
+        feature_image: "/content/images/feature.jpg",
+        tags: [],
+      },
+    ];
+    const xml = createRSS(posts);
+    expect(xml).toContain(
+      'srcset="https://whoisnnamdi.com/content/images/a.jpg 1x, https://whoisnnamdi.com/content/images/b.jpg 2x"',
+    );
+    expect(xml).toContain('src="https://whoisnnamdi.com/content/images/a.jpg"');
   });
 
   test("createSitemap outputs urls for posts and others", () => {

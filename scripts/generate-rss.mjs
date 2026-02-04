@@ -15,15 +15,46 @@ const toAbsoluteUrl = (url) => {
     return `${SITE_URL}/${url}`;
 };
 
+const toAbsoluteImageUrl = (url) => {
+    if (!url) return url;
+    if (!url.startsWith(IMAGE_PATH)) return url;
+    return `${SITE_URL}${url}`;
+};
+
+const rewriteSrcset = (value) => {
+    if (!value) return value;
+    return value
+        .split(',')
+        .map((entry) => {
+            const trimmed = entry.trim();
+            if (!trimmed) return trimmed;
+            const [url, ...rest] = trimmed.split(/\s+/);
+            const absoluteUrl = toAbsoluteImageUrl(url);
+            return [absoluteUrl, ...rest].join(' ');
+        })
+        .join(', ');
+};
+
 const toAbsoluteHtml = (html) => {
     if (!html) return html;
-    return ['src', 'srcset', 'href'].reduce((acc, attr) => {
-        return acc.replaceAll(`${attr}="${IMAGE_PATH}`, `${attr}="${SITE_URL}${IMAGE_PATH}`);
-    }, html);
+    let output = html.replace(/srcset="([^"]*)"/g, (match, value) => {
+        return `srcset="${rewriteSrcset(value)}"`;
+    });
+    output = output.replace(/(src|href)="([^"]*)"/g, (match, attr, value) => {
+        const absolute = toAbsoluteImageUrl(value);
+        if (absolute === value) return match;
+        return `${attr}="${absolute}"`;
+    });
+    return output;
 };
 
 const postUrl = (slug) => `${SITE_URL}/${slug}/`;
-const toUtc = (dateLike = Date.now()) => new Date(dateLike).toUTCString();
+const toUtc = (dateLike) => {
+    if (!dateLike) return null;
+    const date = new Date(dateLike);
+    if (Number.isNaN(date.getTime())) return null;
+    return date.toUTCString();
+};
 
 export const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
     <rss
@@ -39,13 +70,14 @@ export const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
                 <![CDATA[ Thoughts on technology, venture capital, and the economics of both ]]>
             </description>
             <link>${SITE_URL}</link>
-            <lastBuildDate>${toUtc()}</lastBuildDate>
+            <lastBuildDate>${toUtc(Date.now())}</lastBuildDate>
             <atom:link href="${SITE_URL}/rss" rel="self" type="application/rss+xml"/>
             ${posts
                 .map((post) => {
                     const featureImage = toAbsoluteUrl(post.feature_image);
                     const htmlContent = toAbsoluteHtml(post.html);
                     const url = postUrl(post.slug);
+                    const pubDate = toUtc(post.published_at);
                     return `<item>
                         <title>
                             <![CDATA[${post.title}]]>
@@ -70,7 +102,7 @@ export const createRSS = (posts) => `<?xml version="1.0" encoding="UTF-8"?>
                         <dc:creator>
                             <![CDATA[ Nnamdi Iregbulem ]]>
                         </dc:creator>
-                        <pubDate>${toUtc(post.published_at)}</pubDate>
+                        ${pubDate ? `<pubDate>${pubDate}</pubDate>` : ''}
                         <media:content url="${featureImage}" medium="image" />
                         <content:encoded>
                             <![CDATA[ ${htmlContent} ]]>
