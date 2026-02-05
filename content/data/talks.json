@@ -1,5 +1,12 @@
 [
   {
+    "id": "talk-38",
+    "title": "We are in a Race To Understand AI | Eric Ho, Goodfire",
+    "excerpt": "Goodfire co-founder and CEO Eric Ho joins Lightspeed partner Nnamdi Iregbulem to explain why AI interpretability is becoming critical infrastructure, and how opening the black box of neural networks can enable safer deployment, intentional model design, and deeper scientific discovery.",
+    "href": "https://www.youtube.com/watch?v=7Y3dIOlxvUA",
+    "feature_image": "/images/talks/eric-ho-goodfire.jpg"
+  },
+  {
     "id": "talk-1",
     "title": "Inside the Black Box: The Urgency of AI Interpretability",
     "excerpt": "Recorded live at Lightspeed’s offices in San Francisco, this special episode of Generative Now dives into the urgency and promise of AI interpretability. Lightspeed partner Nnamdi Iregbulem spoke with Anthropic researcher Jack Lindsey and Goodfire co-founder and Chief Scientist Tom McGrath, who previously co-founded Google DeepMind’s interpretability team. They discuss opening the black box of modern AI models in order to understand their reliability and spot real-world safety concerns, in order to build AI systems of the future that we can trust.",
