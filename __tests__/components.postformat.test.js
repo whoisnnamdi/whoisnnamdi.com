@@ -71,4 +71,11 @@ describe("postFormatInPlace", () => {
     expect(posts[0].dateFormatted).toMatch(/\b2024\b/);
     expect(posts[0].excerpt).not.toMatch(/\[note\]/);
   });
+
+  test("throws when input is not an array", () => {
+    expect(() => postFormatInPlace(null)).toThrow(TypeError);
+    expect(() => postFormatInPlace({})).toThrow(
+      "postFormatInPlace expects an array of posts"
+    );
+  });
 });
