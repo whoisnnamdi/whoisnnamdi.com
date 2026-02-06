@@ -4,7 +4,7 @@ title: "Tokens Aren't Fungible"
 excerpt: "Open source LLMs are 90% cheaper than closed source models, yet they capture less than 30% of token share"
 published_at: "2026-02-02T22:48:06.000Z"
 updated_at: "2026-02-02T22:48:06.000Z"
-feature_image: "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/tokens-arent-fungible/Pasted-image-20260123104611.png"
+feature_image: "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/tokens-arent-fungible/optimized/Pasted-image-20260123104611.png"
 tags:
   - slug: "developers"
     name: "Developers"
@@ -14,10 +14,10 @@ meta_description: ""
 canonical_url: "https://whoisnnamdi.com/tokens-arent-fungible/"
 og_title: "Tokens Aren't Fungible"
 og_description: ""
-og_image: "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/tokens-arent-fungible/Pasted-image-20260123104611.png"
+og_image: "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/tokens-arent-fungible/optimized/Pasted-image-20260123104611.png"
 twitter_title: "Tokens Aren't Fungible"
 twitter_description: ""
-twitter_image: "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/tokens-arent-fungible/Pasted-image-20260123104611.png"
+twitter_image: "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/tokens-arent-fungible/optimized/Pasted-image-20260123104611.png"
 ---
 
 Open source LLMs are **90% cheaper** than closed source models at the same benchmarked intelligence level. Yet they capture less than **30% of token share.**
@@ -26,7 +26,7 @@ If intelligence were all that users cared about, price competition should have c
 
 Open source's share of token volume on OpenRouter, the leading LLM aggregator, has been stable at 30% for some time, despite all the shifts in the broader market. They even go so far as to call this an "equilibrium."
 
-![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/tokens-arent-fungible/Pasted-image-20260129174926.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/tokens-arent-fungible/optimized/Pasted-image-20260129174926.png)
 
 Standard economic intuition says that, at the same quality level, the cheaper option should win. The LLM market seems to violate this. **Something else must be going on.**
 
@@ -40,16 +40,16 @@ The irony of that title: the paper's results suggest consumers of LLM APIs care 
 > … open-source models are approximately 90% cheaper than closed-source models, conditional on the same level of intelligence… Nonetheless, the share of tokens consumed from open-source models remains  consistently below 30%, suggesting meaningful differentiation between open and closed-source models not captured by intelligence measures – [The Emerging Market for Intelligence: Pricing, Supply, and Demand for LLMs](https://nadavtadelis.com/files/EmergingMarketForIntelligence_12_12_2025.pdf)
 
 Intelligence only explains so much. You can see it visually here, where open source models at any given level of intelligence are consistently cheaper:
-![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/tokens-arent-fungible/Pasted-image-20260123104611.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/tokens-arent-fungible/optimized/Pasted-image-20260123104611.png)
 
 Not just that, but there's incredibly wide dispersion in prices at every level of intelligence. In fact, prices vary by up to two orders of magnitude, and models that are much more expensive relative to their benchmark performance still see substantial use.
 
 That dispersion of pricing has only gotten more severe over time despite prices falling overall. The price-to-intelligence ratio, which you can think of as representing a measure of quality-adjusted token pricing, has become more dispersed over time:
-![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/tokens-arent-fungible/Pasted-image-20260126143513.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/tokens-arent-fungible/optimized/Pasted-image-20260126143513.png)
 
 More [price puzzles](https://en.wikipedia.org/wiki/Price_puzzle): the average price actually paid for tokens (as opposed to simply the average or median list price) increased over the course of 2025. This seems to have been completely missed in the discourse last year and is strong evidence that price is not a primary motivating factor for many users:
 
-![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/tokens-arent-fungible/Pasted-image-20260203002101.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/tokens-arent-fungible/optimized/Pasted-image-20260203002101.png)
 
 A reasonable hypothesis is that the observed run up in token-weighted prices for output tokens was driven by the release of the Claude 4 models in May 2025. This occurred during a period where, per the prior chart, intelligence-adjusted prices were falling through the ground. This is a powerful argument for revealed preference of users, who migrated toward premium models to pay for something benchmarks don’t fully capture.
 
@@ -58,7 +58,7 @@ The authors conduct a series of regression analyses across about 150 model-provi
 -   **Age is just a number:** adding in controls for the age of a given model doesn't explain much variation in pricing, only increasing the $R^2$ by ~4% over and above the baseline controls. Surprisingly, there's no guaranteed obsolescence here
 -   **Brand matters, even more so than intelligence:** Adding in controls for the model creator bumps up $R^2$ by 13%, even after including many other controls, explaining more pricing variance than intelligence alone
 
-![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/tokens-arent-fungible/Pasted-image-20260126134505.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/tokens-arent-fungible/optimized/Pasted-image-20260126134505.png)
 
 In total, intelligence clearly matters but it's far from being the only relevant pricing factor.
 
@@ -68,18 +68,18 @@ That's pricing, what about quantities? Here too we find a complex picture with n
 
 Again, intelligence is not destiny – LLM customers are making decisions based on many factors. If you weight intelligence over time by the actual token usage of those models on OpenRouter, what you see is that typical usage concentrates far from the frontier of intelligence. The median user isn't using anything close to the smartest model, and even the 90% percentile token is coming from a model that is well below the best available:
 
-![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/tokens-arent-fungible/Pasted-image-20260126144723.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/tokens-arent-fungible/optimized/Pasted-image-20260126144723.png)
 
 Some more regressions, this time with token volume as the dependent variable.
 -   **Pricing matters but only so much:** Prices have a statistically significant relationship with token demand, but within a given model, prices explain only 18% of the variance in token volumes. The remaining 82% is driven by other factors
 -   **Price competition is zero-sum:** The price elasticity of demand is almost exactly one, meaning a 10% price cut generates roughly 10% more volume, leaving revenue (price times quantity) unchanged. To grow revenue, providers must [shift the demand curve](https://whoisnnamdi.com/red-ocean/) itself through alternative means
 -   **[HODL](https://www.binance.com/en/academy/glossary/hodl) the model:** Within a given model/provider combination (rightmost column), price is again statistically significant but explains almost nothing (within $R^2$ of 5%). Most of the action is in the discrete choice of which provider to use in the first place, which is driven largely by factors other than price
 
-![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/tokens-arent-fungible/Pasted-image-20260130184111.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/tokens-arent-fungible/optimized/Pasted-image-20260130184111.png)
 
 We saw a drastic example of this phenomenon during the release of Grok Code Fast 1, xAI’s extremely fast and cheap coding model, with heavily subsidized pricing (even as low as free). Grok Code Fast 1’s release had **zero impact** on the demand for other models, suggesting more nuanced user preferences not easily swayed by cost:
 
-![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/tokens-arent-fungible/Pasted-image-20260203001604.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/tokens-arent-fungible/optimized/Pasted-image-20260203001604.png)
 
 The pattern on the quantity side mirrors what we saw with pricing. Intelligence alone explains little price variation; price alone explains little quantity variation. In both cases, the observable characteristics we fixate on (benchmark scores, token prices) leave most of the picture unexplained.
 
@@ -91,7 +91,7 @@ The asset pricing literature has developed precise tools for exactly this kind o
 > We refer to $\varepsilon_{i,t}(n)$ as latent demand, which captures investor $i$'s demand for unobserved (by the econometrician) characteristics of asset $n$ – [A Demand System Approach to Asset Pricing](https://oar.princeton.edu/bitstream/88435/pr1mb4c/1/jpe.pdf)
 
 When they apply this framework to the data on U.S. stock returns, they find something striking -- observable characteristics on both the supply and demand side only explain ~20% of the cross-sectional variance of returns. The remaining 80% is [dark matter](https://whoisnnamdi.com/dark-matter/) -- driven by unobservable, latent demand among investors:
-![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/tokens-arent-fungible/Pasted-image-20260129100607.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/tokens-arent-fungible/optimized/Pasted-image-20260129100607.png)
 
 > Thus, stock returns are mostly explained by demand shocks that are unrelated to changes in observed characteristics. This finding is consistent with the fact that cross-sectional regressions of stock returns on characteristics have low explanatory power
 
@@ -130,7 +130,7 @@ Applying this framework to the OpenRouter data, we see substantial evidence for 
 
 The data? Just over 50% of OpenRouter users use only one model. Among those that use multiple models, a very large share of users allocate almost all their usage to only one of those models:
 
-![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/tokens-arent-fungible/Pasted-image-20260129175551.png)
+![](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/tokens-arent-fungible/optimized/Pasted-image-20260129175551.png)
 
 To quote the study:
 > Our interpretation  of these patterns is that, for most firms, multi-homing reflects experimentation rather than  intensive dual use of models tailored to specific tasks – [The Emerging Market for Intelligence: Pricing, Supply, and Demand for LLMs](https://nadavtadelis.com/files/EmergingMarketForIntelligence_12_12_2025.pdf)
