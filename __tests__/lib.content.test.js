@@ -124,7 +124,12 @@ describe('lib/content', () => {
       return false
     })
 
+    fs.readFileSync.mockImplementation(() => {
+      throw new Error('Unexpected readFileSync call for missing data file')
+    })
+
     expect(content.getPortfolioData()).toEqual([])
     expect(content.getTalksData()).toEqual([])
+    expect(fs.readFileSync).not.toHaveBeenCalled()
   })
 })
