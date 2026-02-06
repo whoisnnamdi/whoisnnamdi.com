@@ -10,6 +10,12 @@ import Container from "../components/Container";
 import { postFormat } from "../lib/postFormat";
 import { getPostSummaries } from "../lib/content";
 
+function toggleSelection(previousValues, value) {
+  return previousValues.includes(value)
+    ? previousValues.filter((item) => item !== value)
+    : [...previousValues, value];
+}
+
 export async function getStaticProps() {
   const posts = postFormat(await getPostSummaries());
 
@@ -81,17 +87,11 @@ export default function Page({ posts = [] }) {
   }, [listPosts, selectedFocus, selectedYears]);
 
   const toggleYear = (year) => {
-    setSelectedYears((prev) =>
-      prev.includes(year)
-        ? prev.filter((item) => item !== year)
-        : [...prev, year],
-    );
+    setSelectedYears((prev) => toggleSelection(prev, year));
   };
 
   const toggleFocus = (tag) => {
-    setSelectedFocus((prev) =>
-      prev.includes(tag) ? prev.filter((item) => item !== tag) : [...prev, tag],
-    );
+    setSelectedFocus((prev) => toggleSelection(prev, tag));
   };
 
   return (
