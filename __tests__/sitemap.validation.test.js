@@ -1,16 +1,32 @@
 const fs = require("fs");
 const path = require("path");
+const matter = require("gray-matter");
 
-const SITE_URL = "https://whoisnnamdi.com";
-const EXTRA_ROUTES = new Set(["founders", "developers", "investors"]);
+let SITE_URL;
+let EXTRA_ROUTES;
+let createSitemap;
+let allowedSlugs;
+let contentItems;
+
 const EXCLUDED_PAGES = new Set(["newsletter", "portfolio"]);
 
-const readSlugs = (dir) => {
+const readContentItems = (dir) => {
   if (!fs.existsSync(dir)) return [];
-  return fs
-    .readdirSync(dir)
-    .filter((file) => file.endsWith(".md"))
-    .map((file) => path.basename(file, ".md"));
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) return readContentItems(fullPath);
+    if (!entry.isFile() || !entry.name.endsWith(".md")) return [];
+    const fileContents = fs.readFileSync(fullPath, "utf8");
+    const { data } = matter(fileContents);
+    const slug = data.slug || path.basename(entry.name, ".md");
+    return [
+      {
+        slug,
+        published_at: data.published_at,
+        updated_at: data.updated_at,
+      },
+    ];
+  });
 };
 
 const extractSitemapUrls = (xml) => {
@@ -26,31 +42,45 @@ const toSlug = (url) => {
 };
 
 describe("sitemap validation", () => {
-  test("sitemap entries map to known content or configured routes", () => {
-    const sitemapPath = path.join(process.cwd(), "public", "sitemap.xml");
-    const xml = fs.readFileSync(sitemapPath, "utf8");
+  beforeAll(async () => {
+    const sitemapModule = await import("../lib/sitemap.js");
+    SITE_URL = sitemapModule.SITE_URL;
+    EXTRA_ROUTES = sitemapModule.EXTRA_ROUTES;
+    createSitemap = sitemapModule.createSitemap;
+
+    const publicDir = path.join(process.cwd(), "public");
+    fs.mkdirSync(publicDir, { recursive: true });
 
     const contentDir = path.join(process.cwd(), "content");
     const postsDir = path.join(contentDir, "posts");
     const pagesDir = path.join(contentDir, "pages");
 
-    const postSlugs = readSlugs(postsDir);
-    const pageSlugs = readSlugs(pagesDir).filter(
-      (slug) => !EXCLUDED_PAGES.has(slug),
+    const postItems = readContentItems(postsDir);
+    const pageItems = readContentItems(pagesDir).filter(
+      (item) => !EXCLUDED_PAGES.has(item.slug),
     );
 
-    const allowedSlugs = new Set([
-      ...postSlugs,
-      ...pageSlugs,
-      ...EXTRA_ROUTES,
-    ]);
+    contentItems = [...postItems, ...pageItems];
+    const contentSlugs = contentItems.map((item) => item.slug).filter(Boolean);
+    allowedSlugs = new Set([...contentSlugs, ...EXTRA_ROUTES]);
+
+    const xml = createSitemap(contentItems);
+    fs.writeFileSync(path.join(publicDir, "sitemap.xml"), xml);
+  });
+
+  test("sitemap entries map to known content or configured routes", () => {
+    const sitemapPath = path.join(process.cwd(), "public", "sitemap.xml");
+    const xml = fs.readFileSync(sitemapPath, "utf8");
 
     const locs = extractSitemapUrls(xml);
-    const unknownSlugs = locs
-      .map(toSlug)
-      .filter(Boolean)
-      .filter((slug) => !allowedSlugs.has(slug));
+    const sitemapSlugs = locs.map(toSlug).filter(Boolean);
+    const unknownSlugs = sitemapSlugs.filter((slug) => !allowedSlugs.has(slug));
+    const missingSlugs = [...allowedSlugs].filter(
+      (slug) => !sitemapSlugs.includes(slug),
+    );
 
+    expect(locs).toContain(SITE_URL);
     expect(unknownSlugs).toEqual([]);
+    expect(missingSlugs).toEqual([]);
   });
 });
