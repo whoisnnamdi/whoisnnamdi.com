@@ -34,4 +34,22 @@ describe("postFormat", () => {
     expect(posts[0].dateFormatted).toBeUndefined();
     expect(posts[0].excerpt).toBe("Original excerpt");
   });
+
+  test("returns a shallow clone (nested references are shared)", () => {
+    const posts = [
+      {
+        id: "1",
+        published_at: "2024-01-15T12:00:00.000Z",
+        excerpt: "Original excerpt",
+        tags: [{ name: "Founders" }],
+        meta: { wordCount: 1200 },
+      },
+    ];
+
+    const out = postFormat(posts);
+
+    expect(out[0]).not.toBe(posts[0]);
+    expect(out[0].tags).toBe(posts[0].tags);
+    expect(out[0].meta).toBe(posts[0].meta);
+  });
 });
