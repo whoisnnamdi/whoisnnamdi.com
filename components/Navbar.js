@@ -5,6 +5,23 @@ import { Fragment, useRef } from "react";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import { useSubscribe } from "./Subscribe";
 
+const NAV_LINKS = [
+  { href: "/essays", label: "Essays" },
+  { href: "/notes", label: "Notes" },
+  { href: "/talks", label: "Talks" },
+  { href: "/portfolio", label: "Portfolio" },
+  { href: "/about-me", label: "whoami" },
+];
+
+const CONTEXT_MAP = {
+  Home: { code: "INDEX 01", label: "HOME." },
+  essays: { code: "INDEX 02", label: "ESSAYS." },
+  notes: { code: "INDEX 03", label: "NOTES" },
+  talks: { code: "INDEX 04", label: "TALKS & MEDIA." },
+  portfolio: { code: "INDEX 05", label: "PORTFOLIO." },
+  about: { code: "INDEX 06", label: "ABOUT ME." },
+};
+
 export default function Navbar({ source, dateLabel, codeOverride }) {
   const input = useRef(null);
   const router = useRouter();
@@ -15,26 +32,11 @@ export default function Navbar({ source, dateLabel, codeOverride }) {
     await subscribe(input.current.value, "Navbar: " + source, input);
   };
 
-  const navLinks = [
-    { href: "/essays", label: "Essays" },
-    { href: "/notes", label: "Notes" },
-    { href: "/talks", label: "Talks" },
-    { href: "/portfolio", label: "Portfolio" },
-    { href: "/about-me", label: "whoami" },
-  ];
-
-  const contextMap = {
-    Home: { code: "INDEX 01", label: "HOME." },
-    essays: { code: "INDEX 02", label: "ESSAYS." },
-    notes: { code: "INDEX 03", label: "NOTES" },
-    talks: { code: "INDEX 04", label: "TALKS & MEDIA." },
-    portfolio: { code: "INDEX 05", label: "PORTFOLIO." },
-    about: { code: "INDEX 06", label: "ABOUT ME." },
-  };
+  const currentPath = (router.asPath || "/").split("?")[0].replace(/\/$/, "");
 
   const context = dateLabel
     ? { code: codeOverride || "ESSAY", label: dateLabel }
-    : contextMap[source] || {
+    : CONTEXT_MAP[source] || {
         code: "INDEX",
         label: String(source || "").toUpperCase(),
       };
@@ -61,10 +63,7 @@ export default function Navbar({ source, dateLabel, codeOverride }) {
       {/* Right side - navigation + subscribe */}
       <div className="flex items-center gap-6 flex-shrink-0">
         <div className="hidden md:flex items-center gap-6">
-          {navLinks.map((link) => {
-            const currentPath = (router.asPath || "/")
-              .split("?")[0]
-              .replace(/\/$/, "");
+          {NAV_LINKS.map((link) => {
             const linkPath = link.href.replace(/\/$/, "");
             const isActive = currentPath === linkPath;
             return (
@@ -138,7 +137,7 @@ export default function Navbar({ source, dateLabel, codeOverride }) {
               leaveTo="transform opacity-0 scale-95"
             >
               <Menu.Items className="absolute right-0 mt-2 w-48 origin-top-right bg-white rounded-none shadow-lg border border-neutral-200 py-1 z-50">
-                {[{ href: "/", label: "Home" }, ...navLinks].map((link) => (
+                {[{ href: "/", label: "Home" }, ...NAV_LINKS].map((link) => (
                   <Menu.Item key={link.href}>
                     {({ active }) => (
                       <Link
