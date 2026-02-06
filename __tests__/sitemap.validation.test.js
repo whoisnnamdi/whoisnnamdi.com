@@ -1,33 +1,13 @@
 const fs = require("fs");
 const path = require("path");
-const matter = require("gray-matter");
+const os = require("os");
+const { execFileSync } = require("child_process");
 
 let SITE_URL;
 let EXTRA_ROUTES;
-let createSitemap;
 let allowedSlugs;
-let contentItems;
-
-const EXCLUDED_PAGES = new Set(["newsletter", "portfolio"]);
-
-const readContentItems = (dir) => {
-  if (!fs.existsSync(dir)) return [];
-  return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
-    const fullPath = path.join(dir, entry.name);
-    if (entry.isDirectory()) return readContentItems(fullPath);
-    if (!entry.isFile() || !entry.name.endsWith(".md")) return [];
-    const fileContents = fs.readFileSync(fullPath, "utf8");
-    const { data } = matter(fileContents);
-    const slug = data.slug || path.basename(entry.name, ".md");
-    return [
-      {
-        slug,
-        published_at: data.published_at,
-        updated_at: data.updated_at,
-      },
-    ];
-  });
-};
+let sitemapXml;
+let tempDir;
 
 const extractSitemapUrls = (xml) => {
   const matches = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)];
@@ -43,36 +23,36 @@ const toSlug = (url) => {
 
 describe("sitemap validation", () => {
   beforeAll(async () => {
-    const sitemapModule = await import("../lib/sitemap.js");
+    const sitemapModule = await import("../lib/sitemap.mjs");
     SITE_URL = sitemapModule.SITE_URL;
     EXTRA_ROUTES = sitemapModule.EXTRA_ROUTES;
-    createSitemap = sitemapModule.createSitemap;
 
-    const publicDir = path.join(process.cwd(), "public");
-    fs.mkdirSync(publicDir, { recursive: true });
+    tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "sitemap-"));
+    const manifestPath = path.join(tempDir, "sitemap-content.json");
 
-    const contentDir = path.join(process.cwd(), "content");
-    const postsDir = path.join(contentDir, "posts");
-    const pagesDir = path.join(contentDir, "pages");
+    execFileSync(process.execPath, ["scripts/generate-sitemap.mjs"], {
+      cwd: process.cwd(),
+      env: {
+        ...process.env,
+        SITEMAP_PUBLIC_DIR: tempDir,
+        SITEMAP_MANIFEST_PATH: manifestPath,
+      },
+      stdio: "pipe",
+    });
 
-    const postItems = readContentItems(postsDir);
-    const pageItems = readContentItems(pagesDir).filter(
-      (item) => !EXCLUDED_PAGES.has(item.slug),
-    );
-
-    contentItems = [...postItems, ...pageItems];
-    const contentSlugs = contentItems.map((item) => item.slug).filter(Boolean);
+    sitemapXml = fs.readFileSync(path.join(tempDir, "sitemap.xml"), "utf8");
+    const contentSlugs = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
     allowedSlugs = new Set([...contentSlugs, ...EXTRA_ROUTES]);
+  });
 
-    const xml = createSitemap(contentItems);
-    fs.writeFileSync(path.join(publicDir, "sitemap.xml"), xml);
+  afterAll(() => {
+    if (tempDir) {
+      fs.rmSync(tempDir, { recursive: true, force: true });
+    }
   });
 
   test("sitemap entries map to known content or configured routes", () => {
-    const sitemapPath = path.join(process.cwd(), "public", "sitemap.xml");
-    const xml = fs.readFileSync(sitemapPath, "utf8");
-
-    const locs = extractSitemapUrls(xml);
+    const locs = extractSitemapUrls(sitemapXml);
     const sitemapSlugs = locs.map(toSlug).filter(Boolean);
     const unknownSlugs = sitemapSlugs.filter((slug) => !allowedSlugs.has(slug));
     const missingSlugs = [...allowedSlugs].filter(

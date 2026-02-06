@@ -56,7 +56,7 @@ const toUtc = (dateLike) => {
 };
 
 beforeAll(async () => {
-  const sitemapModule = await import("../lib/sitemap.js");
+  const sitemapModule = await import("../lib/sitemap.mjs");
   createSitemap = sitemapModule.createSitemap;
   extraRoutes = sitemapModule.EXTRA_ROUTES;
 });
