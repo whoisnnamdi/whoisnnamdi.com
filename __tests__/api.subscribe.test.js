@@ -21,6 +21,33 @@ function createRes() {
 }
 
 describe('subscribe api', () => {
+  beforeEach(() => {
+    jest.clearAllMocks()
+  })
+
+  test('GET returns Mailchimp ping response', async () => {
+    mailchimp.ping.get.mockResolvedValueOnce({ health_status: "Everything's Chimpy!" })
+
+    const req = { method: 'GET', body: {}, headers: {} }
+    const res = createRes()
+
+    await subscribe(req, res)
+
+    expect(mailchimp.ping.get).toHaveBeenCalledTimes(1)
+    expect(res.statusCode).toBe(200)
+    expect(res.body).toMatchObject({ health_status: "Everything's Chimpy!" })
+  })
+
+  test('rejects invalid HTTP method', async () => {
+    const req = { method: 'PUT', body: {}, headers: {} }
+    const res = createRes()
+
+    await subscribe(req, res)
+
+    expect(res.statusCode).toBe(500)
+    expect(res.body).toMatchObject({ message: 'Was not a GET or POST' })
+  })
+
   test('rejects missing email with 201 and error message', async () => {
     const req = { method: 'POST', body: { email: '', merge: { SOURCE: 'Hero' } }, headers: {} }
     const res = createRes()
@@ -36,6 +63,24 @@ describe('subscribe api', () => {
     expect(res.statusCode).toBe(200)
     expect(res.body).toMatchObject({ message: 'You are now subscribed!' })
     expect(mailchimp.lists.addListMember).not.toHaveBeenCalled()
+  })
+
+  test('uses form-encoded merge[SOURCE] fallback when merge is missing', async () => {
+    mailchimp.lists.addListMember.mockResolvedValueOnce({ id: 'x' })
+    const req = { method: 'POST', body: { email: 'a@b.co', 'merge[SOURCE]': 'Hero Form' }, headers: {} }
+    const res = createRes()
+
+    await subscribe(req, res)
+
+    expect(res.statusCode).toBe(200)
+    expect(mailchimp.lists.addListMember).toHaveBeenCalledWith(
+      process.env.MAILCHIMP_AUDIENCE_ID,
+      expect.objectContaining({
+        email_address: 'a@b.co',
+        status: 'subscribed',
+        merge_fields: { SOURCE: 'Hero Form' },
+      }),
+    )
   })
 
   test('successful subscription returns 200', async () => {
@@ -54,6 +99,17 @@ describe('subscribe api', () => {
     await subscribe(req, res)
     expect(res.statusCode).toBe(400)
     expect(res.body).toMatchObject({ message: "You're already subscribed!" })
+  })
+
+  test('invalid resource returns spam hint message', async () => {
+    mailchimp.lists.addListMember.mockRejectedValueOnce({ response: { body: { title: 'Invalid Resource' } } })
+    const req = { method: 'POST', body: { email: 'a@b.co', merge: { SOURCE: 'Hero' } }, headers: {} }
+    const res = createRes()
+
+    await subscribe(req, res)
+
+    expect(res.statusCode).toBe(400)
+    expect(res.body).toMatchObject({ message: 'Seems like a spam email?' })
   })
 })
 
