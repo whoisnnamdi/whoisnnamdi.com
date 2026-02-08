@@ -46,6 +46,8 @@ const buffer = Buffer.from(await res.arrayBuffer());
 const blob = await put(filename, buffer, {
   access: 'public',
   contentType,
+  addRandomSuffix: false,
+  allowOverwrite: true,
 });
 
 console.log(blob.url);
@@ -68,6 +70,8 @@ const buffer = await readFile(filePath);
 const blob = await put(filename, buffer, {
   access: 'public',
   contentType: 'image/png',
+  addRandomSuffix: false,
+  allowOverwrite: true,
 });
 
 console.log(blob.url);
@@ -90,6 +94,8 @@ for (const filePath of files) {
   const blob = await put(filename, buffer, {
     access: 'public',
     contentType: 'image/png',
+    addRandomSuffix: false,
+    allowOverwrite: true,
   });
   console.log(`${filePath} -> ${blob.url}`);
 }
@@ -101,6 +107,14 @@ NODE
 - Replace the old URLs in content sources (often `content/data/portfolio.json` and `content/pages/portfolio.md`).
 - Keep blob filenames organized by area (`portfolio/`, `talks/`, etc.).
 - Do **not** store tokens in repo files or scripts.
+
+## Deterministic paths
+
+All examples above use `addRandomSuffix: false` and `allowOverwrite: true`. This means:
+- The blob URL matches the exact `filename` you provide (no random suffix appended).
+- Re-uploading to the same path overwrites the existing blob instead of failing.
+
+This is the default for this project — essay images use stable paths like `blog/<slug>/chart.png` so that markdown references don't break on re-upload.
 
 ## Notes from prior sessions
 

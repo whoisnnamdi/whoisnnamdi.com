@@ -82,6 +82,19 @@ Convert to markdown image links and ensure the referenced image is available.
    - `blog/<slug>/<filename>`
 3. Replace body image links and frontmatter image fields with blob URLs.
 
+### 3b) Optimize images (optional, recommended for large PNGs)
+
+For screenshot/chart-heavy essays, optimize PNGs before upload:
+
+```bash
+pixo --preset balanced --png-optimize-alpha --png-reduce-color --png-strip-metadata <image.png>
+```
+
+Notes:
+- `--preset balanced` is the sweet spot. Avoid `--preset max` (timeouts on large files).
+- JPEG conversion often *increases* file size for chart/screenshot content — stick with PNG.
+- Process images one at a time, not in a monolithic script.
+
 ### 4) Final content checks
 
 - No Obsidian embeds remain:
