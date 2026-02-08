@@ -47,7 +47,6 @@ const blob = await put(filename, buffer, {
   access: 'public',
   contentType,
   addRandomSuffix: false,
-  allowOverwrite: true,
 });
 
 console.log(blob.url);
@@ -71,7 +70,6 @@ const blob = await put(filename, buffer, {
   access: 'public',
   contentType: 'image/png',
   addRandomSuffix: false,
-  allowOverwrite: true,
 });
 
 console.log(blob.url);
@@ -95,7 +93,6 @@ for (const filePath of files) {
     access: 'public',
     contentType: 'image/png',
     addRandomSuffix: false,
-    allowOverwrite: true,
   });
   console.log(`${filePath} -> ${blob.url}`);
 }
@@ -110,11 +107,19 @@ NODE
 
 ## Deterministic paths
 
-All examples above use `addRandomSuffix: false` and `allowOverwrite: true`. This means:
-- The blob URL matches the exact `filename` you provide (no random suffix appended).
-- Re-uploading to the same path overwrites the existing blob instead of failing.
+All examples above use `addRandomSuffix: false` so the blob URL matches the exact `filename` you provide (no random suffix appended). Essay images use stable paths like `blog/<slug>/chart.png`.
 
-This is the default for this project — essay images use stable paths like `blog/<slug>/chart.png` so that markdown references don't break on re-upload.
+**Initial uploads** omit `allowOverwrite` (defaults to `false`). This is intentional — if the path already exists, the upload fails, catching accidental overwrites from mistyped or reused filenames.
+
+**Re-uploads** (e.g., replacing images with optimized versions) require `allowOverwrite: true`:
+```js
+const blob = await put(filename, buffer, {
+  access: 'public',
+  contentType,
+  addRandomSuffix: false,
+  allowOverwrite: true,  // only for intentional re-uploads
+});
+```
 
 ## Notes from prior sessions
 
