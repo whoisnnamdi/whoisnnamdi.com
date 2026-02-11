@@ -14,18 +14,18 @@
     "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512386671-gensf.png"
   },
   {
-    "id": "talk-2",
-    "title": "Benedikt Stroebl: With Imperfect Verifiers, Scale Fails",
-    "excerpt": "Verifiers are a hot topic in AI these days, where they play a role in both post-training and inference time scaling. But what if more compute at inference time doesn't always improve AI performance? I discuss with Benedikt Stroebl his research on the challenges presented by the inference time scaling paradigm, along with a particular application of agentic techniques to the world of cybersecurity.",
-    "href": "https://www.youtube.com/watch?v=Id7ebjEqAW8",
-    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512389824-benedikt.png"
-  },
-  {
     "id": "talk-33",
     "title": "Delta Podcast Ep. 21: Nnamdi Iregbulem, Lightspeed Partner",
     "excerpt": "Delta Institute (deltainstitutes.org) is the most talent-dense community of engineers and researchers in the world. They have hosted events across the Bay Area, including both Stanford and Berkeley. Past event co-hosts include partners at Sequoia and Andreessen Horowitz, and one of the first ten employees at Cursor. Delta Institute also hosts the Delta Podcast, a series of video interviews with top researchers/engineers in order to help share their experiences and reach a broader international audience.",
     "href": "https://www.youtube.com/watch?v=vr4e3v3bRyI",
     "feature_image": "/images/talks/delta-podcast-ep-21.jpg"
+  },
+  {
+    "id": "talk-2",
+    "title": "Benedikt Stroebl: With Imperfect Verifiers, Scale Fails",
+    "excerpt": "Verifiers are a hot topic in AI these days, where they play a role in both post-training and inference time scaling. But what if more compute at inference time doesn't always improve AI performance? I discuss with Benedikt Stroebl his research on the challenges presented by the inference time scaling paradigm, along with a particular application of agentic techniques to the world of cybersecurity.",
+    "href": "https://www.youtube.com/watch?v=Id7ebjEqAW8",
+    "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512389824-benedikt.png"
   },
   {
     "id": "talk-3",
