@@ -20,6 +20,7 @@ const CONTEXT_MAP = {
   talks: { code: "INDEX 04", label: "TALKS & MEDIA." },
   portfolio: { code: "INDEX 05", label: "PORTFOLIO." },
   about: { code: "INDEX 06", label: "ABOUT ME." },
+  "Thank You for Subscribing!": { code: "INDEX", label: "" },
 };
 
 export default function Navbar({ source, dateLabel, codeOverride }) {

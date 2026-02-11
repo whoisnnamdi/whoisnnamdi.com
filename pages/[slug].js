@@ -53,7 +53,7 @@ export async function getStaticProps({ params }) {
 
 export default function PostPage({ post, sections, isPost, introHtml, mainHtml }) {
   const publishedLabel = formatDate(post?.published_at, "upper");
-  const navLabel = post?.slug === "about-me" ? "About" : publishedLabel;
+  const navLabel = post?.slug === "about-me" ? "About" : post?.slug === "thank-you-subscribe" ? null : publishedLabel;
   const isAbout = post?.slug === "about-me";
   const titleContent = post.title;
 
