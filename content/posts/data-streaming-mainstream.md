@@ -35,16 +35,6 @@ At Lightspeed, it’s our core belief that there’s a potentially massive marke
 
 That's where Redpanda comes in.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: How Redpanda is Taking Data Streaming Mainstream" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## Spinning up without spinning your wheels
 
 Too often, developers looking to deploy streaming data systems are left to their own devices when it comes to deployment. Deployment is often a mess, involving multiple separate binaries, each with its own peculiarities, requiring engineers to develop expertise in systems they couldn't care less about and in which they have no comparative advantage. Streaming systems can easily become one of the most painful pieces of infrastructure they’ll deploy.
@@ -190,12 +180,3 @@ Redpanda meets developers where they are and then enables them to go even furthe
 
 It's why we were so excited to lead their recent [$100M Series C financing](https://medium.com/lightspeed-venture-partners/why-lightspeed-is-leading-redpandas-100-million-series-c-553ffe38d6e). The real-time revolution has only just begun, and Redpanda is leading the charge.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: How Redpanda is Taking Data Streaming Mainstream" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

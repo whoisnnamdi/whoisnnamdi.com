@@ -30,16 +30,6 @@ So I came up with a methodology for measuring the state of the venture "business
 
 It's called the Venture Activity Index, or "VAI". Let me walk you through how I got there.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: The Venture Activity Index" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## Quick stats
 
 To measure the venture cycle, we need a notion of "trend" – the thing around which the venture market is fluctuating. If we plot funding growth on a logarithmic scale across each stage of venture investment, a clear linear trend emerges. (Note: linear trends in logarithms implies constant percentage growth over time):
@@ -114,12 +104,3 @@ To wrap up, a few caveats:
 
 **I plan to update the VAI quarterly as new data comes in.** For the latest data, look [here](https://whoisnnamdi.com/vai).
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: The Venture Activity Index" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

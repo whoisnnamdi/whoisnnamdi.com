@@ -32,16 +32,6 @@ As we all lick our wounds during this venture downturn, many are asking: when wi
 
 The answer? **About three years.**
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: Old Valuations Die Hard" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## Public-private partnership
 
 Private valuations rose dramatically over the last decade. But so did the Nasdaq:
@@ -173,12 +163,3 @@ Things get better from there, with deal activity back on track after another yea
 
 All-in-all, it's a three year odyssey from start to finish.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: Old Valuations Die Hard" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

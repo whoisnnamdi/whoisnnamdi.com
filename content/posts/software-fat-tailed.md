@@ -48,16 +48,6 @@ In a [previous essay](https://whoisnnamdi.com/vcs-index-invest/), I introduced t
 
 Evidence for skewed monetization is tough to come by without access to a company's commercial contracts. However, we can infer the fat-tailedness from the SEC filings of public software companies with a simple trick.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: Enterprise Software Monetization is Fat-Tailed" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## The math
 
 The trick? A [formula](https://www.youtube.com/watch?v=XhTHG3QmVwM) exists that calculates the concentration in the top percentiles of a power law distribution based on the $\alpha$ of the distribution:  
@@ -217,12 +207,3 @@ Here's a preview of the topics:
 
 I've been thinking about some of these essays for the better part of a year, so I'm excited to _finally_ share these ideas.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: Enterprise Software Monetization is Fat-Tailed" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

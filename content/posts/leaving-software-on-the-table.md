@@ -40,16 +40,6 @@ In part 2, I argued that [more developers won’t solve all our software enginee
 
 I’ve thrown around a lot of equations, literary references, and even some memes. In this third and final piece, I'll talk dollars and cents, quantifying the impact of lost developer productivity and how much software we're "leaving on the table" as a result.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: The Developer Productivity Manifesto Part 3 — Leaving Software on the Table" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## (Technical) debt to (developer) GDP
 
 In [part 2](https://whoisnnamdi.com/more-developers-isnt-always-more/), I made the case that software maintenance is not sufficiently value generating to cover engineering salary expenses. In other words, ****busy work doesn’t work****:
@@ -131,12 +121,3 @@ __Thanks so much for reading this — I hope it resonated with you. If it did, p
 
 ****Follow me on**** [****Twitter****](https://twitter.com/whoisnnamdi)****, subscribe to my monthly essays**** [****here****](https://whoisnnamdi.com/)****, and reach out to me directly via nnamdi@lsvp.com****
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: The Developer Productivity Manifesto Part 3 — Leaving Software on the Table" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

@@ -35,16 +35,6 @@ This is the current state of AI benchmarking. Ironically, we hold AI benchmarks 
 
 We must do better.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: AI Benchmarking Is Broken" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## Something’s in the water
 
 ![training-data-contamination](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516274212-training-data-contamination.jpeg)
@@ -127,12 +117,3 @@ It’s why I was so excited to lead [Patronus AI’s](https://www.patronus.ai/) 
 
 ![patronus-series-a](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766516270273-patronus-series-a.jpeg)
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: AI Benchmarking Is Broken" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

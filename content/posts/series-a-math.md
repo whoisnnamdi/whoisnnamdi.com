@@ -30,16 +30,6 @@ How much more? It turns out – more than you think.
 
 **Low monetization requires extraordinary traction, and vice versa.**
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: Series A Rounds Are a Math Test" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## 2 + 2 = 4
 
 In addition to factors like _team quality_ and _market size_ (which also matter at the pre-seed/seed stage), investors evaluate Series A startups on their **traction** and **monetization**.
@@ -149,12 +139,3 @@ That's a lot harder to visualize, but the same ideas apply. You need to really s
 
 Rather than cram for the exam, delay your Series A until you pass the simple math test I've outlined here. Until then, keep practicing those multiplication tables!
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: Series A Rounds Are a Math Test" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

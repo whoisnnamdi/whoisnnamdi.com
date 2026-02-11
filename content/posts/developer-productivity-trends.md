@@ -41,16 +41,6 @@ In this first chapter, we share our findings on the important trends shaping dev
 
 Want to be notified when we publish part two of our findings? Subscribe below, and we'll also send you a nicely formatted PDF of our research!
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: Six Trends Shaping Developer Productivity" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## Trend #1: Developers have the power... and the purse
 
 ![](/content/images/2020/07/dev-power.png)
@@ -225,12 +215,3 @@ As the scarce input of the software production function, software engineers don'
 
 Be informed of our next publication in this series, the **top strategic priorities of developer productivity companies**, by entering your email below:
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: Six Trends Shaping Developer Productivity" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

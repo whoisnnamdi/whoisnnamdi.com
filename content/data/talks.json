@@ -1,10 +1,24 @@
 [
   {
+    "id": "talk-38",
+    "title": "We are in a Race To Understand AI | Eric Ho, Goodfire",
+    "excerpt": "Goodfire co-founder and CEO Eric Ho joins Lightspeed partner Nnamdi Iregbulem to explain why AI interpretability is becoming critical infrastructure, and how opening the black box of neural networks can enable safer deployment, intentional model design, and deeper scientific discovery.",
+    "href": "https://www.youtube.com/watch?v=7Y3dIOlxvUA",
+    "feature_image": "/images/talks/eric-ho-goodfire.jpg"
+  },
+  {
     "id": "talk-1",
     "title": "Inside the Black Box: The Urgency of AI Interpretability",
     "excerpt": "Recorded live at Lightspeed’s offices in San Francisco, this special episode of Generative Now dives into the urgency and promise of AI interpretability. Lightspeed partner Nnamdi Iregbulem spoke with Anthropic researcher Jack Lindsey and Goodfire co-founder and Chief Scientist Tom McGrath, who previously co-founded Google DeepMind’s interpretability team. They discuss opening the black box of modern AI models in order to understand their reliability and spot real-world safety concerns, in order to build AI systems of the future that we can trust.",
     "href": "https://www.youtube.com/watch?v=azoBSxpkv7Y",
     "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512386671-gensf.png"
+  },
+  {
+    "id": "talk-33",
+    "title": "Delta Podcast Ep. 21: Nnamdi Iregbulem, Lightspeed Partner",
+    "excerpt": "Delta Institute (deltainstitutes.org) is the most talent-dense community of engineers and researchers in the world. They have hosted events across the Bay Area, including both Stanford and Berkeley. Past event co-hosts include partners at Sequoia and Andreessen Horowitz, and one of the first ten employees at Cursor. Delta Institute also hosts the Delta Podcast, a series of video interviews with top researchers/engineers in order to help share their experiences and reach a broader international audience.",
+    "href": "https://www.youtube.com/watch?v=vr4e3v3bRyI",
+    "feature_image": "/images/talks/delta-podcast-ep-21.jpg"
   },
   {
     "id": "talk-2",
@@ -222,5 +236,33 @@
     "excerpt": "",
     "href": "https://whoisnnamdi.com/highest-paid-software-developer/",
     "feature_image": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512476416-years_coding.png"
+  },
+  {
+    "id": "talk-34",
+    "title": "Seed Valuations Aren’t Valuations",
+    "excerpt": "It’s not obvious what drives them",
+    "href": "https://drive.google.com/file/d/15PM98HoeqQ-0SOp2_w53BfYx809aW8zH/view?usp=sharing",
+    "feature_image": "/images/talks/seed-preso.png"
+  },
+  {
+    "id": "talk-35",
+    "title": "The Shadow Price of Venture Capital",
+    "excerpt": "Valuations are 60% too high relative to the volume of venture funding",
+    "href": "https://drive.google.com/file/d/1ir9BWdnPSU4CPgcgPlm2l8S0N8RAGx99/view?usp=sharing",
+    "feature_image": "/images/talks/shadow-preso.png"
+  },
+  {
+    "id": "talk-36",
+    "title": "We Don’t Have Nearly Enough Startups",
+    "excerpt": "Where did the explosive growth in venture activity come from?",
+    "href": "https://drive.google.com/file/d/1ocQuGNkOGs0byZZJs_yXpZmXBvh_myRn/view?usp=sharing",
+    "feature_image": "/images/talks/startups-preso.png"
+  },
+  {
+    "id": "talk-37",
+    "title": "The Series A Bust",
+    "excerpt": "Investors have lost faith in Series A as a sign of product-market fit. In other words, they expect more but believe less.",
+    "href": "https://drive.google.com/file/d/1rKSgSQa3MxErVEXVUrWCcurAKQXWcZ4d/view?usp=sharing",
+    "feature_image": "/images/talks/a-preso.png"
   }
 ]

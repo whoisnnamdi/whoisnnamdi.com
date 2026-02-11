@@ -39,16 +39,6 @@ Engineers often leave engineering for non-STEM management roles. Graduation into
 
 This phenomenon, which I'll call "**developer dropout**," is a real problem. What's behind it?
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: Why We Will Never Have Enough Software Developers" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## Out with the old skills, in with the new skills
 
 Programming-related jobs have high rates of skill turnover. Over time, the types of skills required by companies hiring software developers change more rapidly than any other profession.
@@ -210,12 +200,3 @@ To conclude, I emphasize: **highly skilled people prefer highly stable careers i
 
 _Thanks to [David Deming](https://scholar.harvard.edu/ddeming/home), [Kadeem Noray](https://scholar.harvard.edu/kadeem/home), the authors of [the study](https://academic.oup.com/qje/article/135/4/1965/5858010) from which much of this essay is derived._
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: Why We Will Never Have Enough Software Developers" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

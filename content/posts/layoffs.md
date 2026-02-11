@@ -36,16 +36,6 @@ However, it's slow hiring, not layoffs, that most drives unemployment.
 
 Layoffs don't tell the whole story.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: Layoffs Don" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## Stocking up
 
 Employment and unemployment are both "stocks".
@@ -223,12 +213,3 @@ Keep in mind both the seen _and_ the unseen. It's easy to focus on the shock and
 
 Layoffs aren't even half the story – they're 10% of it.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: Layoffs Don" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

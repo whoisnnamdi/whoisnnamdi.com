@@ -32,16 +32,6 @@ Today, I want to expand on this and talk a bit more about the exciting developme
 
 Here's the big idea: rather than ship data to code, which is expensive and latency-prone, why not ship code to the data?
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: WebAssembly-ing the Pieces: Vectorized’s Data Policy Engine" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## The keystone problem in streaming
 
 Streaming has seen a ton of innovation over the last few years, but one area that remains painful today is stream processing. While a full explanation of these difficulties probably warrants its own article, I’ll cover the most salient points here.
@@ -141,12 +131,3 @@ Curious to learn more after this quick introduction? [Alex Gallego](https://twit
 > 
 > — 🕺💃🤟 Alexander Gallego (@emaxerrno) [September 15, 2021](https://twitter.com/emaxerrno/status/1438214386124873728?ref_src=twsrc%5Etfw)
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: WebAssembly-ing the Pieces: Vectorized’s Data Policy Engine" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

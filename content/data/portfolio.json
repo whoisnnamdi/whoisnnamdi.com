@@ -25,7 +25,7 @@
   },
   {
     "section": "Current",
-    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512352609-image.png",
+    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1770116264514-Snorkel_Wordmark_Dark.jpg",
     "alt": "",
     "displayName": "image"
   },
@@ -37,21 +37,9 @@
   },
   {
     "section": "Current",
-    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512355333-Observo_AI_Logo-1.jpg",
-    "alt": "",
-    "displayName": "Observo AI Logo"
-  },
-  {
-    "section": "Current",
-    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512356337-PolarSignalsLogo.jpg",
+    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1770116663856-polarsignals-cropped.jpg",
     "alt": "",
     "displayName": "PolarSignalsLogo"
-  },
-  {
-    "section": "Current",
-    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512358090-Ponder_LogoWordmark_H1_Color.png",
-    "alt": "",
-    "displayName": "Ponder LogoWordmark H Color"
   },
   {
     "section": "Current",
@@ -61,43 +49,19 @@
   },
   {
     "section": "Current",
-    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512361131-VoltronData_Logo-green_vertical-copy-2-2048x1032-1.jpeg",
-    "alt": "",
-    "displayName": "VoltronData Logo green vertical copy  x"
-  },
-  {
-    "section": "Current",
-    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512362554-image.png",
+    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1770116921175-tana-logo-1.png",
     "alt": "",
     "displayName": "image"
   },
   {
     "section": "Current",
-    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512363729-astro-full-logo.png",
+    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1770140705395-light.svg",
     "alt": "",
-    "displayName": "astro full logo"
+    "displayName": "Zo Computer"
   },
   {
     "section": "Current",
-    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512365251-image-1.png",
-    "alt": "",
-    "displayName": "image"
-  },
-  {
-    "section": "Current",
-    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512366591-image-6.png",
-    "alt": "",
-    "displayName": "image"
-  },
-  {
-    "section": "Current",
-    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512367682-image.png",
-    "alt": "",
-    "displayName": "image"
-  },
-  {
-    "section": "Current",
-    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512368846-NuanceLabs.png",
+    "src": "https://framerusercontent.com/images/81jfKQqIs12cdk44KZdQJivLUJY.png?width=1461&height=433",
     "alt": "",
     "displayName": "NuanceLabs"
   },
@@ -109,27 +73,72 @@
   },
   {
     "section": "Previous Enterprise / Software",
+    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512363729-astro-full-logo.png",
+    "alt": "",
+    "displayName": "astro full logo",
+    "exit": { "type": "ACQUIRED", "detail": "Cloudflare" }
+  },
+  {
+    "section": "Previous Enterprise / Software",
+    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512365251-image-1.png",
+    "alt": "",
+    "displayName": "image",
+    "exit": { "type": "ACQUIRED", "detail": "Snowflake" }
+  },
+  {
+    "section": "Previous Enterprise / Software",
+    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512362554-image.png",
+    "alt": "",
+    "displayName": "image",
+    "exit": { "type": "ACQUIRED", "detail": "Voltron Data" }
+  },
+  {
+    "section": "Previous Enterprise / Software",
+    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512358090-Ponder_LogoWordmark_H1_Color.png",
+    "alt": "",
+    "displayName": "Ponder LogoWordmark H Color",
+    "exit": { "type": "ACQUIRED", "detail": "Snowflake" }
+  },
+  {
+    "section": "Previous Enterprise / Software",
+    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1770116663445-observo-cropped.jpg",
+    "alt": "",
+    "displayName": "Observo AI Logo",
+    "exit": { "type": "ACQUIRED", "detail": "SentinelOne" }
+  },
+  {
+    "section": "Previous Enterprise / Software",
+    "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1770116662611-voltron-cropped.jpeg",
+    "alt": "",
+    "displayName": "VoltronData Logo green vertical copy  x"
+  },
+  {
+    "section": "Previous Enterprise / Software",
     "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512370845-gitlab.png",
     "alt": "",
-    "displayName": "gitlab"
+    "displayName": "gitlab",
+    "exit": { "type": "PUBLIC" }
   },
   {
     "section": "Previous Enterprise / Software",
     "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512372785-fastly.png",
     "alt": "",
-    "displayName": "fastly"
+    "displayName": "fastly",
+    "exit": { "type": "PUBLIC" }
   },
   {
     "section": "Previous Enterprise / Software",
     "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512373819-alteryx.png",
     "alt": "",
-    "displayName": "alteryx"
+    "displayName": "alteryx",
+    "exit": { "type": "PUBLIC" }
   },
   {
     "section": "Previous Enterprise / Software",
     "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512375020-surveymonkey.png",
     "alt": "",
-    "displayName": "surveymonkey"
+    "displayName": "surveymonkey",
+    "exit": { "type": "ACQUIRED" }
   },
   {
     "section": "Previous Enterprise / Software",
@@ -147,13 +156,15 @@
     "section": "Previous Enterprise / Software",
     "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512379609-heptagon-1.png",
     "alt": "",
-    "displayName": "heptagon"
+    "displayName": "heptagon",
+    "exit": { "type": "ACQUIRED", "detail": "AMS" }
   },
   {
     "section": "Previous Enterprise / Software",
     "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512380986-viv.png",
     "alt": "",
-    "displayName": "viv"
+    "displayName": "viv",
+    "exit": { "type": "ACQUIRED", "detail": "Samsung" }
   },
   {
     "section": "Previous Consumer / Internet",
@@ -177,6 +188,7 @@
     "section": "Previous Consumer / Internet",
     "src": "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766512385098-uber.png",
     "alt": "",
-    "displayName": "uber"
+    "displayName": "uber",
+    "exit": { "type": "PUBLIC" }
   }
 ]

@@ -16,25 +16,10 @@ twitter_description: ""
 twitter_image: ""
 ---
 
-## My mission:
-
-To increase total software output by supporting entrepreneurs building technical tools for technical people
-
-* * *
-
-## My most popular essays:
-
--   [Why We Will Never Have Enough Software Developers](https://whoisnnamdi.com/never-enough-developers/) (Popular on Reddit)
--   [Enterprise Software Monetization is Fat-Tailed](https://whoisnnamdi.com/software-fat-tailed/)
--   [Companies Rarely Grow Into Their Valuations](https://whoisnnamdi.com/grow-valuation/)
--   [The Developer Productivity Manifesto](https://whoisnnamdi.com/the-developer-productivity-flywheel/)
--   [Remote Software Developers Earn 22% More Than Non-Remote Developers](https://whoisnnamdi.com/remote-software-developers-earn-more/) (#1 on Hacker News)
--   [High Retention = High Volatility](https://whoisnnamdi.com/high-retention-high-volatility/)
--   [You Don't Understand Compound Growth](https://whoisnnamdi.com/you-dont-understand-compound-growth/)
-
-* * *
-
-## More about me:
+<div class="mission-block bg-grid not-prose">
+  <p class="mission-label">My mission</p>
+  <p class="mission-quote">"To increase total software output by supporting entrepreneurs building technical tools for <span class="mission-emphasis">technical people</span>."</p>
+</div>
 
 I'm a geek at heart.
 
@@ -50,13 +35,4 @@ I studied Economics at [Yale University](https://www.yale.edu/). While there, I 
 
 I was selected for [Forbes 30 Under 30 Venture Capital](https://www.forbes.com/profile/nnamdi-iregbulem/?sh=2774f2426190) and [Venture Capital Journal 40 Under 40](https://www.venturecapitaljournal.com/40-rising-stars-to-tap-into-in-2022/).
 
-Connect with me on [LinkedIn](https://www.linkedin.com/in/nnamdiiregbulem/) or [Twitter](https://twitter.com/whoisnnamdi).
-
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
+Connect with me on [LinkedIn](https://www.linkedin.com/in/nnamdiiregbulem/) or [X](https://x.com/whoisnnamdi).

@@ -40,16 +40,6 @@ These effects are persistent, meaning we're always dealing with the aftermath of
 
 It's Jay Powell's world. We're just living in it.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: Don" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## Interest rates are interesting
 
 The Federal Reserve's zero interest rate policy (ZIRP) has come to an end:
@@ -203,12 +193,3 @@ Importantly, **interest rates cannot forever move in one direction.** Over the y
 
 Don't discount interest rates.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: Don" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

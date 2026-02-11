@@ -2,56 +2,134 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Base font application */
+body {
+    @apply font-sans antialiased bg-paper text-ink;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        "FILL" 0,
+        "wght" 400,
+        "GRAD" 0,
+        "opsz" 24;
+}
+
+/* Subtle dotted grid background (paper) */
+.bg-grid {
+    background-color: #f7f4ef;
+    background-image: radial-gradient(
+        rgba(17, 17, 17, 0.08) 0.6px,
+        transparent 0.6px
+    );
+    background-size: 18px 18px;
+}
+
+/* Grid overlay for imagery */
+.bg-grid-overlay {
+    background-image: radial-gradient(
+        rgba(17, 17, 17, 0.15) 0.6px,
+        transparent 0.6px
+    );
+    background-size: 20px 20px;
+}
+
+.bg-grid-dark {
+    background-color: #171717;
+    background-image: radial-gradient(
+        rgba(255, 255, 255, 0.08) 0.6px,
+        transparent 0.6px
+    );
+    background-size: 18px 18px;
+}
+
+.bg-grid-blue {
+    background-color: #0e111a;
+    background-image:
+        linear-gradient(rgba(45, 74, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(45, 74, 255, 0.15) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* Blueprint-style CTA background */
+.bg-blueprint {
+    background-color: #1e3aeb;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
 .prose img {
-    @apply mx-auto
+    @apply mx-auto;
 }
 
 .prose figcaption {
-    @apply text-center
+    @apply text-center;
 }
 
 .prose iframe {
-    @apply mx-auto max-w-full
+    @apply mx-auto max-w-full;
+}
+
+/* Blockquote styling for redesign */
+.prose blockquote {
+    @apply border-l-2 border-accent py-4 px-6 not-italic my-6 text-neutral-700 bg-white/60;
+    quotes: none;
 }
 
 .prose blockquote p:first-of-type::before {
-    content: none
+    content: none;
 }
 
 .prose blockquote p:last-of-type::after {
-    content: none
+    content: none;
 }
 
-.twitter-tweet  {
-    @apply mx-auto
+/* About page mission block */
+.mission-block {
+    @apply relative my-10 border border-neutral-900 bg-white px-6 py-6 md:px-10 md:py-8;
 }
 
-.subscribe-form {
-    @apply mx-auto w-full mb-8 bg-blue-600 bg-opacity-90 rounded-xl pt-10 pb-10 px-10 shadow-xl
+.mission-label {
+    @apply font-mono uppercase text-xs md:text-sm text-neutral-500 mb-4;
+    letter-spacing: 0.32em;
 }
 
-.prose .subscribe-form-title {
-    @apply text-2xl sm:text-3xl lg:text-3xl font-bold text-center text-white mt-0
+.mission-quote {
+    @apply m-0 font-serif text-2xl md:text-3xl lg:text-4xl text-neutral-900 font-semibold leading-tight;
 }
 
-.prose .subscribe-form p {
-    @apply text-base sm:text-xl lg:text-2xl
+.mission-emphasis {
+    font-style: italic;
+    text-decoration: underline;
+    text-decoration-color: #e24b2d;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+    text-decoration-skip-ink: none;
 }
 
-.subscribe-form form {
-    @apply flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center
+/* Serif headings for essay pages */
+.prose-essay h1,
+.prose-essay h2,
+.prose-essay h3 {
+    @apply font-serif;
 }
 
-.subscribe-form p {
-    @apply text-lg sm:text-xl text-center font-semibold text-gray-100
+.prose-essay h2 {
+    @apply text-2xl md:text-3xl;
 }
 
-.subscribe-form input {
-    @apply text-gray-500 transition duration-500 hover:bg-gray-100 w-full sm:w-72 rounded-md px-4 py-2 focus:ring-blue-500 focus:outline-none
+.prose-essay h3 {
+    @apply text-xl md:text-2xl;
 }
 
-.subscribe-form button {
-    @apply transition duration-500 ease-in-out sm:w-40 rounded-md py-2 px-2 text-white font-semibold bg-blue-500 shadow-md hover:bg-blue-400 focus:outline-none
+.prose-essay p {
+    @apply text-neutral-600;
+}
+
+.twitter-tweet {
+    @apply mx-auto;
 }
 
 /* Server-rendered MathJax SVG styling */

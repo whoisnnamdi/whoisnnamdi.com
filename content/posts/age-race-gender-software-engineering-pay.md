@@ -40,16 +40,6 @@ In this first part of my 2020 analysis of software engineering pay, I explore ho
 
 If you haven't already, please check out the [methodology behind the analysis](https://whoisnnamdi.com/highest-paid-software-engineers-2020), otherwise the numbers below might be difficult to interpret.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: How Age, Race, and Gender Affect Software Engineering Pay" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## Age
 
 [![Age](https://plot.ly/~whoisnnamdi/49.png?share_key=AeS6BZEpGR5FXWfIFa29gc)](https://plot.ly/~whoisnnamdi/49/?share_key=A4rtkRSqRGar7d19Zq3Xf6 "Age")
@@ -204,12 +194,3 @@ That said, the data suggest the software development industry is well on its way
 
 _Thanks for reading part 1 of my 2020 analysis of software developer pay. You can find the rest of the analysis and methodology [here](https://whoisnnamdi.com/highest-paid-software-engineers-2020)._
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: How Age, Race, and Gender Affect Software Engineering Pay" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

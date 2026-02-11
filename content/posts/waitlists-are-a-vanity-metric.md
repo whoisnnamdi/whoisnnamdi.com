@@ -39,16 +39,6 @@ Cumulative metrics are problematic for many reasons. The main two are:
 -   They almost never decrease – _by design_
 -   They have _zero_ intrinsic correlation to customer value
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: Waitlists are a Vanity Metric" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## If it can't decline, it's not worth your time
 
 > To have weight, a metric should be capable of moving in either direction – up or down.
@@ -135,12 +125,3 @@ But please, don't just hand them a ticket with a number on it and call it a day 
 
 _This post has been published on [www.productschool.com](https://www.productschool.com) communities._
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: Waitlists are a Vanity Metric" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

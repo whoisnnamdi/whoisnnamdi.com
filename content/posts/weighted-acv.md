@@ -30,16 +30,6 @@ We need a different SaaS monetization metric.
 
 I present to you: **weighted ACV (WACV)**.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: Introducing a New and Improved SaaS Metric: Weighted ACV" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## Customer-centric or dollar-centric?
 
 In [Enterprise Software Monetization is Fat-Tailed](https://whoisnnamdi.com/software-fat-tailed/), I talked about the follies of focusing on simple averages, especially in enterprise software:
@@ -210,12 +200,3 @@ If you _do_ have enough information to calculate weighted ACV, you should _alway
 
 _If you found this helpful, need help with the calculation, or end up implementing this in your analytics, do let me know!_
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: Introducing a New and Improved SaaS Metric: Weighted ACV" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

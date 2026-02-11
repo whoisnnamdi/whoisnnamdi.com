@@ -31,16 +31,6 @@ Likewise, deals might "slip," but there's no "catch up growth" – a missed quar
 
 [Diamonds](https://youtu.be/92FCRmggNqQ?t=56), beats, and misses are forever 💎.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: Beats and Misses Are Forever" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## Long vs. short
 
 Public market investors are often criticized for being too "short-term focused."
@@ -174,12 +164,3 @@ This analysis continues a line of thinking I touched on in a [prior piece](https
 
 For software companies, every day is [Day 1](https://s2.q4cdn.com/299287126/files/doc_financials/annual/Shareholderletter97.pdf) or, at least, dependent on it.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: Beats and Misses Are Forever" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

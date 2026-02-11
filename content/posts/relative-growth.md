@@ -44,16 +44,6 @@ Obsessing too much over relative growth injects a number of "bugs" into our thin
 -   It makes us forget what startups actually do
 -   It sets up unrealistic expectations
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: You Can" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## No sense, this makes
 
 ![Pasted-image-20210906134123](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/1766515898670-Pasted-image-20210906134123.png)
@@ -164,12 +154,3 @@ So in our board rooms, pitch decks, and quarterly business reviews, let's ground
 > 
 > — Nnamdi Iregbulem (@whoisnnamdi) [September 24, 2021](https://twitter.com/whoisnnamdi/status/1441460616917504008?ref_src=twsrc%5Etfw)
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: You Can" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

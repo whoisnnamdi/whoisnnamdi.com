@@ -28,16 +28,6 @@ In fact, the typical public software company remains 10-12% below its pre-COVID 
 
 **COVID put most software companies on a permanently lower growth trajectory.**
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: COVID Hurt Most Software Companies" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## A few case studies
 
 The COVID shock generated divergent outcomes across software companies.
@@ -129,12 +119,3 @@ Here again, I find that software companies are sensitive to economic conditions,
 
 So let's set the record straight: **COVID left a nasty scar on us all, software companies included.**
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: COVID Hurt Most Software Companies" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

@@ -22,16 +22,6 @@ twitter_image: "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/17665121
 
 In evaluating potential opportunities, leaders must consider both _probability_ (the odds of success) and _criticality_ (the importance of success).
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: Entrepreneur" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 We can arrange these opportunities on a matrix, with "necessity for survival" on the x-axis and "probability of success" on the y-axis:
 
 ![](/content/images/2020/04/matrix-3.png)
@@ -180,12 +170,3 @@ In doing so, they increase the effective “money in the bank” or “reserve c
 
 So do what you want in your personal life, but in managing a business, don't be needy. It'll ruin you!
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: Entrepreneur" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>

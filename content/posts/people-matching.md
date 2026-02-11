@@ -60,16 +60,6 @@ Many VCs "saw" the Facebook deal. Many VCs "saw" the Google deal. And yet they m
 
 I don't mean to deny or discount the value of deal flow. Deal flow is a valuable resource, but it's exactly that — a resource. A resource must be extracted, enriched, and processed. Converting that resource into useful energy requires investment and effort. Otherwise, it remains inert.
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Top: Pattern Matching is Dead. Long Live People Matching" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
-
 ## 🧠 Signal in the noise
 
 ![](/content/images/2019/12/analyze-2.jpg)
@@ -188,12 +178,3 @@ There’s some moral justice in this. I’ve always been irked by the very diffe
 
 This is out of balance. Entrepreneurs hustle, **why shouldn't VCs?**
 
-<div class="subscribe-form">
-<h3 class="subscribe-form-title">Receive my new long-form essays</h3>
-<p>Thoughtful analysis of the business and economics of tech</p>
-<form action="/api/subscribe" method="POST">
-<input type="hidden" name="merge[SOURCE]" value="Bottom: Pattern Matching is Dead. Long Live People Matching" />
-<input type="email" name="email" placeholder="Enter your email" required />
-<button type="submit">Go ⚡</button>
-</form>
-</div>
