@@ -49,25 +49,13 @@ export async function getStaticProps({ params }) {
   return { props: { post, sections, isPost, introHtml, mainHtml } };
 }
 
-function formatTitle(title) {
-  const match = title.match(/Aren['']t/);
-  if (!match) return title;
 
-  const [before, after] = title.split(match[0]);
-  return (
-    <>
-      {before}
-      <span className="italic text-blue-600">{match[0]}</span>
-      {after}
-    </>
-  );
-}
 
 export default function PostPage({ post, sections, isPost, introHtml, mainHtml }) {
   const publishedLabel = formatDate(post?.published_at, "upper");
   const navLabel = post?.slug === "about-me" ? "About" : publishedLabel;
   const isAbout = post?.slug === "about-me";
-  const titleContent = formatTitle(post.title);
+  const titleContent = post.title;
 
   const postUrl = `https://whoisnnamdi.com/${post.slug}/`;
 
