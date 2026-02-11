@@ -172,7 +172,7 @@ export default function Home({ latestPost, latestPosts, featuredPosts }) {
       </section>
 
       <Container as="section" className="mb-12">
-        <SubscribeCTA source="Homepage CTA" />
+        <SubscribeCTA source="Bottom: Home" />
       </Container>
     </Layout>
   );
