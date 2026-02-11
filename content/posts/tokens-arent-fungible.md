@@ -2,8 +2,8 @@
 slug: "tokens-arent-fungible"
 title: "Tokens Aren't Fungible"
 excerpt: "Open source LLMs are 90% cheaper than closed source models, yet they capture less than 30% of token share"
-published_at: "2026-02-02T22:48:06.000Z"
-updated_at: "2026-02-02T22:48:06.000Z"
+published_at: "2026-02-11T00:00:00.000Z"
+updated_at: "2026-02-11T00:00:00.000Z"
 feature_image: "https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/tokens-arent-fungible/optimized/Pasted-image-20260123104611.png"
 tags:
   - slug: "developers"
