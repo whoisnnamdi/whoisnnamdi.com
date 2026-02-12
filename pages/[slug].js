@@ -179,7 +179,7 @@ export default function PostPage({ post, sections, isPost, introHtml, mainHtml }
             )}
 
             {isPost && (
-              <div className="mt-16">
+              <div className="mt-16 mb-8">
                 <SubscribeCTA source={`Bottom: ${post.title}`} />
               </div>
             )}
