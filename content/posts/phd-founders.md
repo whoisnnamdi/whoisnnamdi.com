@@ -36,7 +36,7 @@ Here's why.
 
 Here's what the data shows: today, of STEM PhDs working in the private sector, only ~20% start companies, down from 30%+ in the late 90s:
 
-![izoe3lP-QH](https://res-1.cloudinary.com/whoisnnamdi/image/upload/q_auto/v1/whoisnnamdi/izoe3lP-QH.png)
+![izoe3lP-QH](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/phd-founders/izoe3lP-QH.png)
 
 > "Figure 1 displays the large decline over the past two decades in the share of founders among PhDs in science and engineering. **In 1997, 34 percent reported being a founder of a startup, but by 2017 this rate had declined to 21 percent, a decline of 38 percent.**"
 
@@ -62,7 +62,7 @@ Here again we see the impact of the burden of scientific knowledge. With so much
 
 Even worse, relative to their more experienced peers, newly minted PhDs who do found startups earn much less than they used to, making founding a company an even less appealing proposition:
 
-![Jy9Ww_-fUd](https://res-5.cloudinary.com/whoisnnamdi/image/upload/q_auto/v1/whoisnnamdi/Jy9Ww_-fUd.png)
+![Jy9Ww_-fUd](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/phd-founders/Jy9Ww_-fUd.png)
 
 > "Figure 2 illustrates **a pronounced decline over time in the earnings of less experienced founders relative to their more experienced peers.** Here, we separate less and more experienced founders by the median number of years after PhD (13 years), although other reasonable cut-offs lead to similar results. Between 1997 and 2001, founders with post-PhD experience at or below the median earned more... but by the 2010s, the situation is reversed, with **less experienced founders earning on average 30-40 percent less than other founders. Prior work experience apparently is becoming much more valuable for founders over time.**"
 
@@ -86,7 +86,7 @@ OK, this takes a bit of unpacking. Earnings for less experienced PhD founders ha
 
 _The good news:_ overall PhD founder earnings aren't declining! _The bad news:_ PhD founder earnings aren't rising either!
 
-![Real-Earnings-of-PhD-Founders--1619555660589](https://res-1.cloudinary.com/whoisnnamdi/image/upload/q_auto/v1/whoisnnamdi/Real-Earnings-of-PhD-Founders--1619555660589.svg)
+![Real-Earnings-of-PhD-Founders--1619555660589](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/phd-founders/Real-Earnings-of-PhD-Founders--1619555660589.svg)
 
 The craziest thing about all this? PhD _employees_ are doing much better:
 
@@ -94,15 +94,15 @@ The craziest thing about all this? PhD _employees_ are doing much better:
 
 Again, let's unpack. STEM PhDs who work at established companies rather than startups have seen their earnings rise across the board, regardless of experience level:
 
-![Real-Earnings-of-PhD-Workers-1619555855360](https://res-4.cloudinary.com/whoisnnamdi/image/upload/q_auto/v1/whoisnnamdi/Real-Earnings-of-PhD-Workers-1619555855360.svg)
+![Real-Earnings-of-PhD-Workers-1619555855360](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/phd-founders/Real-Earnings-of-PhD-Workers-1619555855360.svg)
 
 As discussed earlier, founding a company as a young PhD is less attractive than it used to be. While young PhD founders used to make slightly more than young PhDs at established firms, this relationship has completely reversed, with inexperienced PhD founders now earning significantly less than their less entrepreneurial associates:
 
-![Real-Earnings-of-Inexperienced-PhDs-1619556012742](https://res-4.cloudinary.com/whoisnnamdi/image/upload/q_auto/v1/whoisnnamdi/Real-Earnings-of-Inexperienced-PhDs-1619556012742.svg)
+![Real-Earnings-of-Inexperienced-PhDs-1619556012742](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/phd-founders/Real-Earnings-of-Inexperienced-PhDs-1619556012742.svg)
 
 In summary, **new PhD founders get the worst deal**, earning less than both their equally and more experienced peers:
 
-![Real-Earnings-of-PhDs-1619556257369](https://res-1.cloudinary.com/whoisnnamdi/image/upload/q_auto/v1/whoisnnamdi/Real-Earnings-of-PhDs-1619556257369.svg)
+![Real-Earnings-of-PhDs-1619556257369](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/phd-founders/Real-Earnings-of-PhDs-1619556257369.svg)
 
 That was all a bit complicated, so before moving on, let's summarize the trends.
 
@@ -132,13 +132,13 @@ On the other hand, startup founders do not have armies of willing cadets to offl
 
 The job of a founder has gotten harder — running a startup today requires more management and R&D activities than it did 20 years ago. Quantified, this is about 15% more "tasks", with **R&D tasks growing by about 50% and management tasks growing 5%**:
 
-![fig3a](https://res-2.cloudinary.com/whoisnnamdi/image/upload/q_auto/v1/whoisnnamdi/fig3a.png)
+![fig3a](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/phd-founders/fig3a.png)
 
 > "The average number of all tasks for founders increased by about 15 percent from the beginning to the end of our sample, a statistically significant difference... Furthermore, although the number of both R&D and management tasks increased, the increase is more pronounced in **R&D, for which it rose by more than 50 percent from 1997 to 2017**... As a result, R&D tasks that comprised about 25 percent of all tasks conducted by founders in 1997 increased to 34 percent of all tasks in 2017. As can be seen in Figure 3, this was not accompanied by any decline in management tasks, so the founders had to shoulder the burden of doing more R&D tasks while also running the same or more administrative tasks."
 
 PhD workers at established firms also saw their total tasks grow, but to a lesser degree. **R&D tasks for workers only grew 12% over the same 20 year period, and management tasks did not increase at all**:
 
-![fig3b](https://res-4.cloudinary.com/whoisnnamdi/image/upload/q_auto/v1/whoisnnamdi/fig3b.png)
+![fig3b](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/phd-founders/fig3b.png)
 
 > "Workers were also affected by the need to perform more R&D tasks, as the increase in the number of R&D tasks from 1997 to 2017 is about 12 percent. Notably, however, as the figure reveals, workers did not need to handle more management tasks, which remained relatively flat for them."
 
@@ -173,7 +173,7 @@ The directly supervised corresponds to the **managerial burden** that each PhD-h
 
 And that's exactly what we see:
 
-![managerial](https://res-3.cloudinary.com/whoisnnamdi/image/upload/q_auto/v1/whoisnnamdi/managerial.png)
+![managerial](https://fbnlxna1ujeyw7ap.public.blob.vercel-storage.com/blog/phd-founders/managerial.png)
 
 -   Workers with PhDs saw the number of employees directly managed _decline_ over time while the number of employees indirectly managed _increased_ over time. In others words, **the proliferation of middle management reduces the management burden for any individual worker but increases overall managerial leverage.**
     

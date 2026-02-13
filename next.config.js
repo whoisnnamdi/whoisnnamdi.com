@@ -1,5 +1,10 @@
 module.exports = {
     images: {
+      // Cache optimized images for 30 days. Source images on Vercel Blob
+      // are immutable, and Vercel purges the CDN on deploy, so this only
+      // governs caching between deploys. Reduces /_next/image origin
+      // transfer from revalidating every 60s (default) to every 30 days.
+      minimumCacheTTL: 2592000,
       remotePatterns: [
         {
           protocol: "https",
@@ -8,46 +13,6 @@ module.exports = {
         {
           protocol: "https",
           hostname: "fbnlxna1ujeyw7ap.public.blob.vercel-storage.com"
-        },
-        {
-          protocol: "https",
-          hostname: "res-9.cloudinary.com"
-        },
-        {
-          protocol: "https",
-          hostname: "res-8.cloudinary.com"
-        },
-        {
-          protocol: "https",
-          hostname: "res-7.cloudinary.com"
-        },
-        {
-          protocol: "https",
-          hostname: "res-6.cloudinary.com"
-        },
-        {
-          protocol: "https",
-          hostname: "res-5.cloudinary.com"
-        },
-        {
-          protocol: "https",
-          hostname: "res-4.cloudinary.com"
-        },
-        {
-          protocol: "https",
-          hostname: "res-3.cloudinary.com"
-        },
-        {
-          protocol: "https",
-          hostname: "res-2.cloudinary.com"
-        },
-        {
-          protocol: "https",
-          hostname: "res-1.cloudinary.com"
-        },
-        {
-          protocol: "https",
-          hostname: "res.cloudinary.com"
         }
       ]
     },
