@@ -164,14 +164,31 @@ describe('notes-proxy API', () => {
       expect(res.body).toContain('href="./@wang1000LayerNetworks2025/"')
     })
 
+    test('appends trailing slash to dotted note slugs', () => {
+      fs.existsSync.mockReturnValue(true)
+      fs.readFileSync.mockReturnValue(
+        '<html><head></head><body>' +
+        '<a href="./Tweets-From-vitalik.eth">link</a>' +
+        '<a href="./Local-projections-vs.-VARs">link</a>' +
+        '<a href="./i.i.d.">link</a>' +
+        '</body></html>'
+      )
+      const res = createRes()
+      handler(createReq('/notes/'), res)
+      expect(res.body).toContain('href="./Tweets-From-vitalik.eth/"')
+      expect(res.body).toContain('href="./Local-projections-vs.-VARs/"')
+      expect(res.body).toContain('href="./i.i.d./"')
+    })
+
     test('does not add slash to file links with extensions', () => {
       fs.existsSync.mockReturnValue(true)
       fs.readFileSync.mockReturnValue(
-        '<html><head></head><body><link href="./index.css"/><img src="./static/icon.png"/></body></html>'
+        '<html><head></head><body><link href="./index.css"/><a href="./prescript.js">js</a><img src="./static/icon.png"/></body></html>'
       )
       const res = createRes()
       handler(createReq('/notes/'), res)
       expect(res.body).toContain('href="./index.css"')
+      expect(res.body).toContain('href="./prescript.js"')
     })
 
     test('does not double-slash links that already have trailing slash', () => {

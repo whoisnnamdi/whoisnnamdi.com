@@ -75,6 +75,11 @@ function resolveNotesIndexHtml(requestedPath) {
     return null
 }
 
+// Known static file extensions served under /notes.
+// Note slugs can contain dots (e.g., "vitalik.eth", "i.i.d.", "vs.-VARs"),
+// so we match only actual file extensions rather than any dot in the path.
+const STATIC_EXT = /\.(css|js|mjs|json|xml|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|webp|avif|mp4|webm|pdf)$/i
+
 function appendTrailingSlashToNoteLinks(html) {
     // Quartz generates internal note links without trailing slashes, e.g.:
     //   href="./Autoregressive-models"
@@ -84,9 +89,8 @@ function appendTrailingSlashToNoteLinks(html) {
     // the pushed URL matches the canonical trailing-slash form and avoids
     // an extra 308 redirect on every SPA navigation.
     return html.replace(/href="\.\/([^"]*)"/g, (match, path) => {
-        // Skip files with extensions (e.g., index.css, static/icon.png)
-        const lastSegment = path.split('/').pop()
-        if (lastSegment.includes('.')) return match
+        // Skip static files with known extensions (css, js, png, etc.)
+        if (STATIC_EXT.test(path)) return match
         // Skip if already has trailing slash or is empty
         if (!path || path.endsWith('/')) return match
         return `href="./${path}/"`
