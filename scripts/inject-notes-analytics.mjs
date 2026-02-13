@@ -32,15 +32,17 @@ function buildFathomScriptTag() {
 
   const domains = 'whoisnnamdi.com,www.whoisnnamdi.com'
   const src = isFullScriptUrl ? fathomUrl : `${fathomUrl}script.js`
-  return `<script src="${src}" data-site="${siteId}" data-domains="${domains}" defer></script>`
+  return `<!-- fathom --><script src="${src}" data-site="${siteId}" data-domains="${domains}" defer></script>`
 }
 
 /** Strip any previously-injected Fathom script tag (stale or current). */
 function stripExistingFathom(html) {
-  // Matches <script ... data-site="..." ... defer></script> lines including
-  // surrounding whitespace/newlines.  Covers usefathom.com hosted scripts and
-  // custom-domain proxied scripts (both contain `data-site=`).
-  return html.replace(/\n?<script [^>]*data-site="[^"]*"[^>]*><\/script>\n?/g, '')
+  return html
+    // Current format: <!-- fathom --> marker + script tag
+    .replace(/\n?<!-- fathom --><script [^>]*><\/script>\n?/g, '')
+    // Legacy format (pre-marker): match on data-domains which is unique to
+    // our Fathom setup — won't collide with other scripts.
+    .replace(/\n?<script [^>]*data-domains="whoisnnamdi\.com[^"]*"[^>]*><\/script>\n?/g, '')
 }
 
 function injectBeforeHeadClose(html, snippet) {
