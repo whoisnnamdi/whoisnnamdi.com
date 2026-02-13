@@ -226,6 +226,54 @@ describe('notes-proxy API', () => {
       expect(res.body).toContain('href="./some-note/?foo=bar"')
     })
 
+    test('inserts slash before hash on dotted note slugs', () => {
+      fs.existsSync.mockReturnValue(true)
+      fs.readFileSync.mockReturnValue(
+        '<html><head></head><body>' +
+        '<a href="./Tweets-From-vitalik.eth#85c681">link</a>' +
+        '<a href="./i.i.d.#section">link</a>' +
+        '</body></html>'
+      )
+      const res = createRes()
+      handler(createReq('/notes/'), res)
+      expect(res.body).toContain('href="./Tweets-From-vitalik.eth/#85c681"')
+      expect(res.body).toContain('href="./i.i.d./#section"')
+    })
+
+    test('inserts slash before query on dotted note slugs', () => {
+      fs.existsSync.mockReturnValue(true)
+      fs.readFileSync.mockReturnValue(
+        '<html><head></head><body><a href="./Local-projections-vs.-VARs?highlight=true">link</a></body></html>'
+      )
+      const res = createRes()
+      handler(createReq('/notes/'), res)
+      expect(res.body).toContain('href="./Local-projections-vs.-VARs/?highlight=true"')
+    })
+
+    test('does not add slash to static files with hash or query', () => {
+      fs.existsSync.mockReturnValue(true)
+      fs.readFileSync.mockReturnValue(
+        '<html><head></head><body>' +
+        '<a href="./index.css#section">link</a>' +
+        '<a href="./prescript.js?v=123">link</a>' +
+        '</body></html>'
+      )
+      const res = createRes()
+      handler(createReq('/notes/'), res)
+      expect(res.body).toContain('href="./index.css#section"')
+      expect(res.body).toContain('href="./prescript.js?v=123"')
+    })
+
+    test('handles query and hash together', () => {
+      fs.existsSync.mockReturnValue(true)
+      fs.readFileSync.mockReturnValue(
+        '<html><head></head><body><a href="./some-note?foo=1#bar">link</a></body></html>'
+      )
+      const res = createRes()
+      handler(createReq('/notes/'), res)
+      expect(res.body).toContain('href="./some-note/?foo=1#bar"')
+    })
+
     test('handles multiple note links in one page', () => {
       fs.existsSync.mockReturnValue(true)
       fs.readFileSync.mockReturnValue(
