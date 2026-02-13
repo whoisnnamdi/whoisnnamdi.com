@@ -136,7 +136,9 @@ export default function handler(req, res) {
         // Cache aggressively at the CDN edge (24 h) to minimize Fast Origin
         // Transfer. stale-while-revalidate lets the CDN serve stale content
         // while refreshing in the background, so users never wait.
-        // Notes content only changes on deploy, so this is safe.
+        // Notes content only changes on deploy, and Vercel automatically
+        // purges its entire CDN cache on every deployment, so these TTLs
+        // only govern caching *between* deploys.
         res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=86400, stale-while-revalidate=604800')
         res.status(200).send(injected)
     } catch (err) {
