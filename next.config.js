@@ -1,5 +1,10 @@
 module.exports = {
     images: {
+      // Cache optimized images for 30 days. Source images on Vercel Blob
+      // are immutable, and Vercel purges the CDN on deploy, so this only
+      // governs caching between deploys. Reduces /_next/image origin
+      // transfer from revalidating every 60s (default) to every 30 days.
+      minimumCacheTTL: 2592000,
       remotePatterns: [
         {
           protocol: "https",
