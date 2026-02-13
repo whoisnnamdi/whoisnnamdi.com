@@ -75,6 +75,24 @@ function resolveNotesIndexHtml(requestedPath) {
     return null
 }
 
+function appendTrailingSlashToNoteLinks(html) {
+    // Quartz generates internal note links without trailing slashes, e.g.:
+    //   href="./Autoregressive-models"
+    //   href="./@wang1000LayerNetworks2025"
+    // The Quartz SPA router uses these hrefs for history.pushState, so the
+    // URL bar shows the non-slash version. Appending slashes here ensures
+    // the pushed URL matches the canonical trailing-slash form and avoids
+    // an extra 308 redirect on every SPA navigation.
+    return html.replace(/href="\.\/([^"]*)"/g, (match, path) => {
+        // Skip files with extensions (e.g., index.css, static/icon.png)
+        const lastSegment = path.split('/').pop()
+        if (lastSegment.includes('.')) return match
+        // Skip if already has trailing slash or is empty
+        if (!path || path.endsWith('/')) return match
+        return `href="./${path}/"`
+    })
+}
+
 function injectBaseTag(html, baseHref) {
     if (!html || !baseHref) return html
     if (/<base\b/i.test(html)) return html
@@ -128,7 +146,8 @@ export default function handler(req, res) {
 
     try {
         const html = fs.readFileSync(indexHtmlPath, 'utf8')
-        const withBase = injectBaseTag(html, '/notes/')
+        const withSlashes = appendTrailingSlashToNoteLinks(html)
+        const withBase = injectBaseTag(withSlashes, '/notes/')
         const snippet = buildFathomScriptTag()
         const injected = injectBeforeHeadClose(withBase, snippet)
 

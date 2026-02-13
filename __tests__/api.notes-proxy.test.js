@@ -143,6 +143,65 @@ describe('notes-proxy API', () => {
     })
   })
 
+  describe('trailing slash rewriting', () => {
+    test('appends trailing slash to internal note links', () => {
+      fs.existsSync.mockReturnValue(true)
+      fs.readFileSync.mockReturnValue(
+        '<html><head></head><body><a href="./Autoregressive-models">link</a></body></html>'
+      )
+      const res = createRes()
+      handler(createReq('/notes/'), res)
+      expect(res.body).toContain('href="./Autoregressive-models/"')
+    })
+
+    test('appends trailing slash to @ prefixed note links', () => {
+      fs.existsSync.mockReturnValue(true)
+      fs.readFileSync.mockReturnValue(
+        '<html><head></head><body><a href="./@wang1000LayerNetworks2025">link</a></body></html>'
+      )
+      const res = createRes()
+      handler(createReq('/notes/'), res)
+      expect(res.body).toContain('href="./@wang1000LayerNetworks2025/"')
+    })
+
+    test('does not add slash to file links with extensions', () => {
+      fs.existsSync.mockReturnValue(true)
+      fs.readFileSync.mockReturnValue(
+        '<html><head></head><body><link href="./index.css"/><img src="./static/icon.png"/></body></html>'
+      )
+      const res = createRes()
+      handler(createReq('/notes/'), res)
+      expect(res.body).toContain('href="./index.css"')
+    })
+
+    test('does not double-slash links that already have trailing slash', () => {
+      fs.existsSync.mockReturnValue(true)
+      fs.readFileSync.mockReturnValue(
+        '<html><head></head><body><a href="./some-note/">link</a></body></html>'
+      )
+      const res = createRes()
+      handler(createReq('/notes/'), res)
+      expect(res.body).toContain('href="./some-note/"')
+      expect(res.body).not.toContain('href="./some-note//"')
+    })
+
+    test('handles multiple note links in one page', () => {
+      fs.existsSync.mockReturnValue(true)
+      fs.readFileSync.mockReturnValue(
+        '<html><head></head><body>' +
+        '<a href="./Note-A">A</a>' +
+        '<a href="./Note-B">B</a>' +
+        '<a href="./index.css">css</a>' +
+        '</body></html>'
+      )
+      const res = createRes()
+      handler(createReq('/notes/'), res)
+      expect(res.body).toContain('href="./Note-A/"')
+      expect(res.body).toContain('href="./Note-B/"')
+      expect(res.body).toContain('href="./index.css"')
+    })
+  })
+
   describe('error handling', () => {
     test('returns 404 when file read fails', () => {
       fs.existsSync.mockReturnValue(false)
