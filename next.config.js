@@ -13,46 +13,6 @@ module.exports = {
         {
           protocol: "https",
           hostname: "fbnlxna1ujeyw7ap.public.blob.vercel-storage.com"
-        },
-        {
-          protocol: "https",
-          hostname: "res-9.cloudinary.com"
-        },
-        {
-          protocol: "https",
-          hostname: "res-8.cloudinary.com"
-        },
-        {
-          protocol: "https",
-          hostname: "res-7.cloudinary.com"
-        },
-        {
-          protocol: "https",
-          hostname: "res-6.cloudinary.com"
-        },
-        {
-          protocol: "https",
-          hostname: "res-5.cloudinary.com"
-        },
-        {
-          protocol: "https",
-          hostname: "res-4.cloudinary.com"
-        },
-        {
-          protocol: "https",
-          hostname: "res-3.cloudinary.com"
-        },
-        {
-          protocol: "https",
-          hostname: "res-2.cloudinary.com"
-        },
-        {
-          protocol: "https",
-          hostname: "res-1.cloudinary.com"
-        },
-        {
-          protocol: "https",
-          hostname: "res.cloudinary.com"
         }
       ]
     },
