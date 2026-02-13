@@ -35,26 +35,27 @@ function buildFathomScriptTag() {
   return `<script src="${src}" data-site="${siteId}" data-domains="${domains}" defer></script>`
 }
 
+/** Strip any previously-injected Fathom script tag (stale or current). */
+function stripExistingFathom(html) {
+  // Matches <script ... data-site="..." ... defer></script> lines including
+  // surrounding whitespace/newlines.  Covers usefathom.com hosted scripts and
+  // custom-domain proxied scripts (both contain `data-site=`).
+  return html.replace(/\n?<script [^>]*data-site="[^"]*"[^>]*><\/script>\n?/g, '')
+}
+
 function injectBeforeHeadClose(html, snippet) {
   if (!snippet) return html
 
-  // Avoid double-injection
-  const siteId = process.env.NEXT_PUBLIC_FATHOM_KEY || ''
-  if (
-    html.includes(`data-site="${siteId}"`) ||
-    html.includes('usefathom.com') ||
-    html.includes('script.js" data-site=')
-  ) {
-    return html
-  }
+  // Remove any stale Fathom tag so we always write the current one.
+  const cleaned = stripExistingFathom(html)
 
-  const idx = html.indexOf('</head>')
+  const idx = cleaned.indexOf('</head>')
   if (idx !== -1) {
-    return html.slice(0, idx) + '\n' + snippet + '\n' + html.slice(idx)
+    return cleaned.slice(0, idx) + '\n' + snippet + '\n' + cleaned.slice(idx)
   }
 
   // Fallback: inject at start of <body>
-  return html.replace(/<body[^>]*>/i, (m) => `${m}\n${snippet}\n`)
+  return cleaned.replace(/<body[^>]*>/i, (m) => `${m}\n${snippet}\n`)
 }
 
 /** Recursively find all .html files under a directory */
