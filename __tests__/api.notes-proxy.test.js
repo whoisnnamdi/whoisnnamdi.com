@@ -274,6 +274,22 @@ describe('notes-proxy API', () => {
       expect(res.body).toContain('href="./some-note/?foo=1#bar"')
     })
 
+    test('does not rewrite fragment-only links', () => {
+      fs.existsSync.mockReturnValue(true)
+      fs.readFileSync.mockReturnValue(
+        '<html><head></head><body>' +
+        '<a href="./#section">link</a>' +
+        '<a href="./?foo=bar">link</a>' +
+        '</body></html>'
+      )
+      const res = createRes()
+      handler(createReq('/notes/'), res)
+      expect(res.body).toContain('href="./#section"')
+      expect(res.body).toContain('href="./?foo=bar"')
+      expect(res.body).not.toContain('href=".//#section"')
+      expect(res.body).not.toContain('href=".//?foo=bar"')
+    })
+
     test('handles multiple note links in one page', () => {
       fs.existsSync.mockReturnValue(true)
       fs.readFileSync.mockReturnValue(

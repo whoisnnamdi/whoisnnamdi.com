@@ -95,6 +95,8 @@ function appendTrailingSlashToNoteLinks(html) {
         const sepIdx = rawPath.search(/[?#]/)
         const slug = sepIdx === -1 ? rawPath : rawPath.slice(0, sepIdx)
         const suffix = sepIdx === -1 ? '' : rawPath.slice(sepIdx)
+        // Skip when there is no slug (e.g., "./#section" or "./?foo")
+        if (!slug) return match
         // Skip static files with known extensions (css, js, png, etc.)
         if (STATIC_EXT.test(slug)) return match
         // Skip if slug already has trailing slash
