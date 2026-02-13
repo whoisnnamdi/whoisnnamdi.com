@@ -84,16 +84,22 @@ function appendTrailingSlashToNoteLinks(html) {
     // Quartz generates internal note links without trailing slashes, e.g.:
     //   href="./Autoregressive-models"
     //   href="./@wang1000LayerNetworks2025"
+    //   href="./@jonesGrowthIdeas2005#17fe4e"
     // The Quartz SPA router uses these hrefs for history.pushState, so the
     // URL bar shows the non-slash version. Appending slashes here ensures
     // the pushed URL matches the canonical trailing-slash form and avoids
     // an extra 308 redirect on every SPA navigation.
-    return html.replace(/href="\.\/([^"]*)"/g, (match, path) => {
+    return html.replace(/href="\.\/([^"]*)"/g, (match, rawPath) => {
+        if (!rawPath) return match
+        // Separate slug from query/hash suffix (e.g., "foo#section" → "foo" + "#section")
+        const sepIdx = rawPath.search(/[?#]/)
+        const slug = sepIdx === -1 ? rawPath : rawPath.slice(0, sepIdx)
+        const suffix = sepIdx === -1 ? '' : rawPath.slice(sepIdx)
         // Skip static files with known extensions (css, js, png, etc.)
-        if (STATIC_EXT.test(path)) return match
-        // Skip if already has trailing slash or is empty
-        if (!path || path.endsWith('/')) return match
-        return `href="./${path}/"`
+        if (STATIC_EXT.test(slug)) return match
+        // Skip if slug already has trailing slash
+        if (slug.endsWith('/')) return match
+        return `href="./${slug}/${suffix}"`
     })
 }
 

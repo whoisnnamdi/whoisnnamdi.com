@@ -202,6 +202,30 @@ describe('notes-proxy API', () => {
       expect(res.body).not.toContain('href="./some-note//"')
     })
 
+    test('inserts slash before hash fragment', () => {
+      fs.existsSync.mockReturnValue(true)
+      fs.readFileSync.mockReturnValue(
+        '<html><head></head><body>' +
+        '<a href="./@jonesGrowthIdeas2005#17fe4e">link</a>' +
+        '<a href="./Augmenting-Long-term-Memory#80aa23">link</a>' +
+        '</body></html>'
+      )
+      const res = createRes()
+      handler(createReq('/notes/'), res)
+      expect(res.body).toContain('href="./@jonesGrowthIdeas2005/#17fe4e"')
+      expect(res.body).toContain('href="./Augmenting-Long-term-Memory/#80aa23"')
+    })
+
+    test('inserts slash before query string', () => {
+      fs.existsSync.mockReturnValue(true)
+      fs.readFileSync.mockReturnValue(
+        '<html><head></head><body><a href="./some-note?foo=bar">link</a></body></html>'
+      )
+      const res = createRes()
+      handler(createReq('/notes/'), res)
+      expect(res.body).toContain('href="./some-note/?foo=bar"')
+    })
+
     test('handles multiple note links in one page', () => {
       fs.existsSync.mockReturnValue(true)
       fs.readFileSync.mockReturnValue(
