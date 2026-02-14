@@ -50,12 +50,6 @@ describe('notes-proxy API', () => {
       expect(res.statusCode).toBe(404)
     })
 
-    test('blocks forward slash in slug', () => {
-      const res = createRes()
-      handler(createReq('/notes/foo%2Fbar'), res)
-      expect(res.statusCode).toBe(404)
-    })
-
     test('blocks backslash in slug', () => {
       const res = createRes()
       handler(createReq('/notes/foo%5Cbar'), res)
@@ -92,6 +86,27 @@ describe('notes-proxy API', () => {
       fs.existsSync.mockImplementation((p) => p.endsWith('test-note.html'))
       const res = createRes()
       handler(createReq('/notes/test-note'), res)
+      expect(res.statusCode).toBe(200)
+    })
+
+    test('resolves nested tag pages like /notes/tags/online/', () => {
+      fs.existsSync.mockImplementation((p) => p.endsWith('tags/online.html'))
+      const res = createRes()
+      handler(createReq('/notes/tags/online/'), res)
+      expect(res.statusCode).toBe(200)
+    })
+
+    test('resolves deeply nested tag pages', () => {
+      fs.existsSync.mockImplementation((p) => p.endsWith('tags/Economics/Competition.html'))
+      const res = createRes()
+      handler(createReq('/notes/tags/Economics/Competition/'), res)
+      expect(res.statusCode).toBe(200)
+    })
+
+    test('resolves tag index page', () => {
+      fs.existsSync.mockImplementation((p) => p.endsWith('tags/index.html'))
+      const res = createRes()
+      handler(createReq('/notes/tags/'), res)
       expect(res.statusCode).toBe(200)
     })
   })

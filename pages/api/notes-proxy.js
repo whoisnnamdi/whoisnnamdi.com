@@ -45,9 +45,8 @@ function resolveNotesIndexHtml(requestedPath) {
     const slugEncoded = safeRequested.replace(/^\/notes\/?/, '').replace(/\/$/, '')
     const slug = decodeURIComponent(slugEncoded)
 
-    // SECURITY: Guard against traversal and path separators after decoding
-    // Disallow any path separators or parent directory segments
-    if (slug.includes('..') || slug.includes('/') || slug.includes('\\')) {
+    // SECURITY: Guard against path traversal after decoding
+    if (slug.includes('..') || slug.includes('\\')) {
         return null
     }
 
