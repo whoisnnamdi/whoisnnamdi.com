@@ -79,59 +79,64 @@ function resolveNotesIndexHtml(requestedPath) {
 // so we match only actual file extensions rather than any dot in the path.
 const STATIC_EXT = /\.(css|js|mjs|json|xml|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|webp|avif|mp4|webm|pdf)$/i
 
-function resolveRelativeUrls(html, pagePath) {
-    // Convert ALL relative href/src attributes to absolute paths.
+function resolveRelativeUrls(html, pagePath, isDirIndex = false) {
+    // Convert ALL relative href and src attributes to absolute paths.
     //
-    // Quartz generates links like href="./slug" (top-level pages) and
-    // href="../slug" (nested pages like tags). The SPA router resolves
-    // ./  and ../ links against the current page URL during navigation,
-    // which can break with trailing-slash URLs. Making them absolute
-    // bypasses the SPA router's resolver entirely.
+    // Quartz generates relative links (./slug, ../slug) that break under
+    // our trailing-slash URL scheme. We resolve everything server-side so
+    // links, stylesheets, scripts, and images all use absolute paths and
+    // are completely independent of the <base> tag.
     //
     // pagePath is the requested URL path (e.g., "/notes/tags/online/").
-    // Use the path WITHOUT trailing slash as the base URL for resolution.
-    // This matches how Quartz generates relative links — they expect the page
-    // to be treated as a "file" not a "directory". E.g., for /notes/tags/online/:
-    //   base = /notes/tags/online  →  ../ resolves to /notes/  (correct)
-    //   base = /notes/tags/online/ →  ../ resolves to /notes/tags/ (wrong)
+    //
+    // For leaf pages (slug.html), we strip the trailing slash so Quartz's
+    // relative links resolve as if the last segment is a "file":
+    //   /notes/tags/online  →  ../ = /notes/  (correct)
+    //
+    // For directory-index pages (slug/index.html, e.g., /notes/tags/),
+    // we keep the trailing slash so the URL is treated as a "directory":
+    //   /notes/tags/  →  ../ = /notes/  (correct)
+    //   /notes/tags   →  ../ = /        (wrong — tags is treated as a file)
     const isNotesRoot = pagePath === '/notes/' || pagePath === '/notes'
-    const basePath = isNotesRoot ? '/notes/' : pagePath.replace(/\/$/, '')
+    const basePath = isNotesRoot || isDirIndex
+        ? (pagePath.endsWith('/') ? pagePath : pagePath + '/')
+        : pagePath.replace(/\/$/, '')
     const baseUrl = 'http://localhost' + basePath
 
-    // Resolve href attributes starting with ./ or ../
-    html = html.replace(/href="(\.\.?\/[^"]*)"/g, (match, relPath) => {
+    // Resolve both href= and src= attributes starting with ./ or ../
+    html = html.replace(/(href|src)="(\.\.?\/[^"]*)"/g, (match, attr, relPath) => {
         try {
             const resolved = new URL(relPath, baseUrl)
             let absPath = resolved.pathname
             const suffix = (resolved.search || '') + (resolved.hash || '')
-            // Keep static files relative (handled by <base> tag + spa-preserve)
-            if (STATIC_EXT.test(absPath)) return match
-            // Ensure trailing slash for non-file paths
+            // Static files: resolve to absolute but keep as file path (no trailing slash)
+            if (STATIC_EXT.test(absPath)) return `${attr}="${absPath}${suffix}"`
+            // Note/page links: add trailing slash
             if (!absPath.endsWith('/')) absPath += '/'
-            return `href="${absPath}${suffix}"`
+            return `${attr}="${absPath}${suffix}"`
         } catch {
             return match
         }
     })
-    // Also handle bare "." and ".." (no trailing slash)
-    html = html.replace(/href="\.\."/g, (match) => {
+    // Also handle bare href=".." and href="." (no trailing slash)
+    html = html.replace(/href="\.\."/g, () => {
         try {
             const resolved = new URL('..', baseUrl)
             let absPath = resolved.pathname
             if (!absPath.endsWith('/')) absPath += '/'
             return `href="${absPath}"`
         } catch {
-            return match
+            return `href=".."`
         }
     })
-    html = html.replace(/href="\."/g, (match) => {
+    html = html.replace(/href="\."/g, () => {
         try {
             const resolved = new URL('.', baseUrl)
             let absPath = resolved.pathname
             if (!absPath.endsWith('/')) absPath += '/'
             return `href="${absPath}"`
         } catch {
-            return match
+            return `href="."`
         }
     })
     return html
@@ -195,14 +200,13 @@ export default function handler(req, res) {
 
     try {
         const html = fs.readFileSync(indexHtmlPath, 'utf8')
-        const withSlashes = resolveRelativeUrls(html, requestedPath)
-        // Set base to the page path WITHOUT trailing slash so that ../
-        // relative paths resolve correctly at any nesting depth.
-        // e.g., for /notes/tags/online/, base="/notes/tags/online" makes
-        // "../index.css" resolve to /notes/index.css (directory = /notes/tags/).
-        // The root /notes/ keeps its trailing slash since ./ paths need
-        // the directory to be /notes/ itself.
+        // Directory-index pages (e.g., tags/index.html served at /notes/tags/)
+        // need the trailing slash kept so ../ resolves correctly.
+        // Leaf pages (e.g., tags/online.html served at /notes/tags/online/)
+        // need it stripped so the last segment is treated as a "file".
         const isNotesRoot = requestedPath === '/notes/' || requestedPath === '/notes'
+        const isDirIndex = indexHtmlPath.endsWith(path.sep + 'index.html') && !isNotesRoot
+        const withSlashes = resolveRelativeUrls(html, requestedPath, isDirIndex)
         const baseHref = isNotesRoot ? '/notes/' : requestedPath.replace(/\/$/, '')
         const withBase = injectBaseTag(withSlashes, baseHref)
         const snippet = buildFathomScriptTag()

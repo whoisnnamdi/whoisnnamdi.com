@@ -276,18 +276,50 @@ describe('notes-proxy API', () => {
       expect(res.body).toContain('href="/notes/i.i.d./"')
     })
 
-    test('keeps static file links relative', () => {
+    test('resolves static file links to absolute paths', () => {
       fs.existsSync.mockReturnValue(true)
       fs.readFileSync.mockReturnValue(
-        '<html><head></head><body>' +
-        '<link href="./index.css"/>' +
-        '<a href="../index.css">css</a>' +
+        '<html><head>' +
+        '<link href="../index.css"/>' +
+        '<script src="../prescript.js"></script>' +
+        '</head><body>' +
+        '<img src="../static/icon.png"/>' +
         '</body></html>'
       )
       const res = createRes()
       handler(createReq('/notes/tags/online/'), res)
-      expect(res.body).toContain('href="./index.css"')
-      expect(res.body).toContain('href="../index.css"')
+      expect(res.body).toContain('href="/notes/index.css"')
+      expect(res.body).toContain('src="/notes/prescript.js"')
+      expect(res.body).toContain('src="/notes/static/icon.png"')
+    })
+
+    test('resolves static files from tags index page', () => {
+      // tags/ is a directory-index page: tags.html doesn't exist, tags/index.html does
+      fs.existsSync.mockImplementation((p) => p.endsWith('index.html'))
+      fs.readFileSync.mockReturnValue(
+        '<html><head>' +
+        '<link href="../index.css"/>' +
+        '<script src="../prescript.js"></script>' +
+        '</head><body></body></html>'
+      )
+      const res = createRes()
+      handler(createReq('/notes/tags/'), res)
+      expect(res.body).toContain('href="/notes/index.css"')
+      expect(res.body).toContain('src="/notes/prescript.js"')
+    })
+
+    test('resolves static files from notes root', () => {
+      fs.existsSync.mockReturnValue(true)
+      fs.readFileSync.mockReturnValue(
+        '<html><head>' +
+        '<link href="./index.css"/>' +
+        '<script src="./prescript.js"></script>' +
+        '</head><body></body></html>'
+      )
+      const res = createRes()
+      handler(createReq('/notes/'), res)
+      expect(res.body).toContain('href="/notes/index.css"')
+      expect(res.body).toContain('src="/notes/prescript.js"')
     })
 
     test('places hash after trailing slash', () => {
@@ -332,7 +364,7 @@ describe('notes-proxy API', () => {
       expect(res.body).toContain('href="/notes/"')
       expect(res.body).toContain('href="/notes/tags/"')
       expect(res.body).toContain('href="/notes/Note-A/"')
-      expect(res.body).toContain('href="../index.css"')
+      expect(res.body).toContain('href="/notes/index.css"')
       expect(res.body).toContain('href="/notes/"')
     })
   })
