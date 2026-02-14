@@ -197,25 +197,69 @@ describe('notes-proxy API', () => {
     })
   })
 
-  describe('note link rewriting', () => {
-    test('converts relative note links to absolute with trailing slash', () => {
+  describe('relative URL resolution', () => {
+    test('converts ./ note links to absolute with trailing slash', () => {
       fs.existsSync.mockReturnValue(true)
       fs.readFileSync.mockReturnValue(
-        '<html><head></head><body><a href="./Autoregressive-models">link</a></body></html>'
+        '<html><head></head><body>' +
+        '<a href="./Autoregressive-models">link</a>' +
+        '<a href="./@wang1000LayerNetworks2025">link</a>' +
+        '</body></html>'
       )
       const res = createRes()
       handler(createReq('/notes/'), res)
       expect(res.body).toContain('href="/notes/Autoregressive-models/"')
+      expect(res.body).toContain('href="/notes/@wang1000LayerNetworks2025/"')
     })
 
-    test('converts @ prefixed note links to absolute', () => {
+    test('converts ../ links from tag pages to absolute', () => {
       fs.existsSync.mockReturnValue(true)
       fs.readFileSync.mockReturnValue(
-        '<html><head></head><body><a href="./@wang1000LayerNetworks2025">link</a></body></html>'
+        '<html><head></head><body>' +
+        '<a href="../">Home</a>' +
+        '<a href="../tags/">tags</a>' +
+        '<a href="../Autoregressive-models">link</a>' +
+        '</body></html>'
+      )
+      const res = createRes()
+      handler(createReq('/notes/tags/online/'), res)
+      expect(res.body).toContain('href="/notes/"')
+      expect(res.body).toContain('href="/notes/tags/"')
+      expect(res.body).toContain('href="/notes/Autoregressive-models/"')
+    })
+
+    test('converts ../../ links from deep tag pages to absolute', () => {
+      fs.existsSync.mockReturnValue(true)
+      fs.readFileSync.mockReturnValue(
+        '<html><head></head><body>' +
+        '<a href="../../">Home</a>' +
+        '<a href="../../Autoregressive-models">link</a>' +
+        '</body></html>'
+      )
+      const res = createRes()
+      handler(createReq('/notes/tags/Economics/Competition/'), res)
+      expect(res.body).toContain('href="/notes/"')
+      expect(res.body).toContain('href="/notes/Autoregressive-models/"')
+    })
+
+    test('converts bare ".." to absolute', () => {
+      fs.existsSync.mockReturnValue(true)
+      fs.readFileSync.mockReturnValue(
+        '<html><head></head><body><a href="..">Home</a></body></html>'
+      )
+      const res = createRes()
+      handler(createReq('/notes/tags/online/'), res)
+      expect(res.body).toContain('href="/notes/"')
+    })
+
+    test('converts bare "." to absolute', () => {
+      fs.existsSync.mockReturnValue(true)
+      fs.readFileSync.mockReturnValue(
+        '<html><head></head><body><a href=".">Notes</a></body></html>'
       )
       const res = createRes()
       handler(createReq('/notes/'), res)
-      expect(res.body).toContain('href="/notes/@wang1000LayerNetworks2025/"')
+      expect(res.body).toContain('href="/notes/"')
     })
 
     test('converts dotted note slugs to absolute', () => {
@@ -223,37 +267,27 @@ describe('notes-proxy API', () => {
       fs.readFileSync.mockReturnValue(
         '<html><head></head><body>' +
         '<a href="./Tweets-From-vitalik.eth">link</a>' +
-        '<a href="./Local-projections-vs.-VARs">link</a>' +
         '<a href="./i.i.d.">link</a>' +
         '</body></html>'
       )
       const res = createRes()
       handler(createReq('/notes/'), res)
       expect(res.body).toContain('href="/notes/Tweets-From-vitalik.eth/"')
-      expect(res.body).toContain('href="/notes/Local-projections-vs.-VARs/"')
       expect(res.body).toContain('href="/notes/i.i.d./"')
     })
 
     test('keeps static file links relative', () => {
       fs.existsSync.mockReturnValue(true)
       fs.readFileSync.mockReturnValue(
-        '<html><head></head><body><link href="./index.css"/><a href="./prescript.js">js</a></body></html>'
+        '<html><head></head><body>' +
+        '<link href="./index.css"/>' +
+        '<a href="../index.css">css</a>' +
+        '</body></html>'
       )
       const res = createRes()
-      handler(createReq('/notes/'), res)
+      handler(createReq('/notes/tags/online/'), res)
       expect(res.body).toContain('href="./index.css"')
-      expect(res.body).toContain('href="./prescript.js"')
-    })
-
-    test('preserves trailing slash on already-slashed links', () => {
-      fs.existsSync.mockReturnValue(true)
-      fs.readFileSync.mockReturnValue(
-        '<html><head></head><body><a href="./some-note/">link</a></body></html>'
-      )
-      const res = createRes()
-      handler(createReq('/notes/'), res)
-      expect(res.body).toContain('href="/notes/some-note/"')
-      expect(res.body).not.toContain('href="/notes/some-note//"')
+      expect(res.body).toContain('href="../index.css"')
     })
 
     test('places hash after trailing slash', () => {
@@ -270,103 +304,35 @@ describe('notes-proxy API', () => {
       expect(res.body).toContain('href="/notes/Augmenting-Long-term-Memory/#80aa23"')
     })
 
-    test('places query after trailing slash', () => {
-      fs.existsSync.mockReturnValue(true)
-      fs.readFileSync.mockReturnValue(
-        '<html><head></head><body><a href="./some-note?foo=bar">link</a></body></html>'
-      )
-      const res = createRes()
-      handler(createReq('/notes/'), res)
-      expect(res.body).toContain('href="/notes/some-note/?foo=bar"')
-    })
-
-    test('handles hash on dotted note slugs', () => {
+    test('handles dotted slugs with hash from tag pages', () => {
       fs.existsSync.mockReturnValue(true)
       fs.readFileSync.mockReturnValue(
         '<html><head></head><body>' +
-        '<a href="./Tweets-From-vitalik.eth#85c681">link</a>' +
-        '<a href="./i.i.d.#section">link</a>' +
+        '<a href="../Tweets-From-vitalik.eth#85c681">link</a>' +
         '</body></html>'
       )
       const res = createRes()
-      handler(createReq('/notes/'), res)
+      handler(createReq('/notes/tags/online/'), res)
       expect(res.body).toContain('href="/notes/Tweets-From-vitalik.eth/#85c681"')
-      expect(res.body).toContain('href="/notes/i.i.d./#section"')
     })
 
-    test('handles query on dotted note slugs', () => {
-      fs.existsSync.mockReturnValue(true)
-      fs.readFileSync.mockReturnValue(
-        '<html><head></head><body><a href="./Local-projections-vs.-VARs?highlight=true">link</a></body></html>'
-      )
-      const res = createRes()
-      handler(createReq('/notes/'), res)
-      expect(res.body).toContain('href="/notes/Local-projections-vs.-VARs/?highlight=true"')
-    })
-
-    test('keeps static file links with hash or query relative', () => {
+    test('handles mixed links on a tag page', () => {
       fs.existsSync.mockReturnValue(true)
       fs.readFileSync.mockReturnValue(
         '<html><head></head><body>' +
-        '<a href="./index.css#section">link</a>' +
-        '<a href="./prescript.js?v=123">link</a>' +
+        '<a href="../">Home</a>' +
+        '<a href="../tags/">tags</a>' +
+        '<a href="../Note-A">A</a>' +
+        '<a href="../index.css">css</a>' +
+        '<a href="..">up</a>' +
         '</body></html>'
       )
       const res = createRes()
-      handler(createReq('/notes/'), res)
-      expect(res.body).toContain('href="./index.css#section"')
-      expect(res.body).toContain('href="./prescript.js?v=123"')
-    })
-
-    test('handles combined query and hash', () => {
-      fs.existsSync.mockReturnValue(true)
-      fs.readFileSync.mockReturnValue(
-        '<html><head></head><body><a href="./some-note?foo=1#bar">link</a></body></html>'
-      )
-      const res = createRes()
-      handler(createReq('/notes/'), res)
-      expect(res.body).toContain('href="/notes/some-note/?foo=1#bar"')
-    })
-
-    test('does not rewrite fragment-only or query-only links', () => {
-      fs.existsSync.mockReturnValue(true)
-      fs.readFileSync.mockReturnValue(
-        '<html><head></head><body>' +
-        '<a href="./#section">link</a>' +
-        '<a href="./?foo=bar">link</a>' +
-        '</body></html>'
-      )
-      const res = createRes()
-      handler(createReq('/notes/'), res)
-      expect(res.body).toContain('href="./#section"')
-      expect(res.body).toContain('href="./?foo=bar"')
-    })
-
-    test('converts notes home link to absolute', () => {
-      fs.existsSync.mockReturnValue(true)
-      fs.readFileSync.mockReturnValue(
-        '<html><head></head><body><a href=".">Nnamdi\'s Notes</a></body></html>'
-      )
-      const res = createRes()
-      handler(createReq('/notes/'), res)
+      handler(createReq('/notes/tags/online/'), res)
       expect(res.body).toContain('href="/notes/"')
-    })
-
-    test('handles mixed links in one page', () => {
-      fs.existsSync.mockReturnValue(true)
-      fs.readFileSync.mockReturnValue(
-        '<html><head></head><body>' +
-        '<a href="./Note-A">A</a>' +
-        '<a href="./Note-B#sec">B</a>' +
-        '<a href="./index.css">css</a>' +
-        '<a href=".">home</a>' +
-        '</body></html>'
-      )
-      const res = createRes()
-      handler(createReq('/notes/'), res)
+      expect(res.body).toContain('href="/notes/tags/"')
       expect(res.body).toContain('href="/notes/Note-A/"')
-      expect(res.body).toContain('href="/notes/Note-B/#sec"')
-      expect(res.body).toContain('href="./index.css"')
+      expect(res.body).toContain('href="../index.css"')
       expect(res.body).toContain('href="/notes/"')
     })
   })

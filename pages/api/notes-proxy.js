@@ -79,31 +79,61 @@ function resolveNotesIndexHtml(requestedPath) {
 // so we match only actual file extensions rather than any dot in the path.
 const STATIC_EXT = /\.(css|js|mjs|json|xml|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|webp|avif|mp4|webm|pdf)$/i
 
-function rewriteNoteLinksToAbsolute(html) {
-    // Convert relative note links to absolute paths with trailing slashes.
+function resolveRelativeUrls(html, pagePath) {
+    // Convert ALL relative href/src attributes to absolute paths.
     //
-    // Quartz generates links like href="./slug" and its SPA router resolves
-    // them relative to the current page URL during navigation. With trailing-
-    // slash URLs (/notes/slug/), the "directory" becomes /notes/slug/ instead
-    // of /notes/, causing path stacking (e.g., /notes/a/b/ instead of /notes/b/).
+    // Quartz generates links like href="./slug" (top-level pages) and
+    // href="../slug" (nested pages like tags). The SPA router resolves
+    // ./  and ../ links against the current page URL during navigation,
+    // which can break with trailing-slash URLs. Making them absolute
+    // bypasses the SPA router's resolver entirely.
     //
-    // Absolute links (/notes/slug/) bypass this because the SPA router's URL
-    // resolver (We) only processes [href^="./"] — it leaves absolute paths alone.
-    html = html.replace(/href="\.\/([^"]*)"/g, (match, rawPath) => {
-        if (!rawPath) return match
-        // Separate slug from query/hash suffix (e.g., "foo#section" → "foo" + "#section")
-        const sepIdx = rawPath.search(/[?#]/)
-        const slug = sepIdx === -1 ? rawPath : rawPath.slice(0, sepIdx)
-        const suffix = sepIdx === -1 ? '' : rawPath.slice(sepIdx)
-        // Skip fragment-only or query-only (e.g., "./#section", "./?foo")
-        if (!slug) return match
-        // Keep static files relative (handled by <base> tag + spa-preserve)
-        if (STATIC_EXT.test(slug)) return match
-        const normalizedSlug = slug.endsWith('/') ? slug : slug + '/'
-        return `href="/notes/${normalizedSlug}${suffix}"`
+    // pagePath is the requested URL path (e.g., "/notes/tags/online/").
+    // Use the path WITHOUT trailing slash as the base URL for resolution.
+    // This matches how Quartz generates relative links — they expect the page
+    // to be treated as a "file" not a "directory". E.g., for /notes/tags/online/:
+    //   base = /notes/tags/online  →  ../ resolves to /notes/  (correct)
+    //   base = /notes/tags/online/ →  ../ resolves to /notes/tags/ (wrong)
+    const isNotesRoot = pagePath === '/notes/' || pagePath === '/notes'
+    const basePath = isNotesRoot ? '/notes/' : pagePath.replace(/\/$/, '')
+    const baseUrl = 'http://localhost' + basePath
+
+    // Resolve href attributes starting with ./ or ../
+    html = html.replace(/href="(\.\.?\/[^"]*)"/g, (match, relPath) => {
+        try {
+            const resolved = new URL(relPath, baseUrl)
+            let absPath = resolved.pathname
+            const suffix = (resolved.search || '') + (resolved.hash || '')
+            // Keep static files relative (handled by <base> tag + spa-preserve)
+            if (STATIC_EXT.test(absPath)) return match
+            // Ensure trailing slash for non-file paths
+            if (!absPath.endsWith('/')) absPath += '/'
+            return `href="${absPath}${suffix}"`
+        } catch {
+            return match
+        }
     })
-    // Convert the notes home link: href="." → href="/notes/"
-    html = html.replace(/href="\."/g, 'href="/notes/"')
+    // Also handle bare "." and ".." (no trailing slash)
+    html = html.replace(/href="\.\."/g, (match) => {
+        try {
+            const resolved = new URL('..', baseUrl)
+            let absPath = resolved.pathname
+            if (!absPath.endsWith('/')) absPath += '/'
+            return `href="${absPath}"`
+        } catch {
+            return match
+        }
+    })
+    html = html.replace(/href="\."/g, (match) => {
+        try {
+            const resolved = new URL('.', baseUrl)
+            let absPath = resolved.pathname
+            if (!absPath.endsWith('/')) absPath += '/'
+            return `href="${absPath}"`
+        } catch {
+            return match
+        }
+    })
     return html
 }
 
@@ -165,7 +195,7 @@ export default function handler(req, res) {
 
     try {
         const html = fs.readFileSync(indexHtmlPath, 'utf8')
-        const withSlashes = rewriteNoteLinksToAbsolute(html)
+        const withSlashes = resolveRelativeUrls(html, requestedPath)
         // Set base to the page path WITHOUT trailing slash so that ../
         // relative paths resolve correctly at any nesting depth.
         // e.g., for /notes/tags/online/, base="/notes/tags/online" makes
