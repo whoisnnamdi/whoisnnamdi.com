@@ -475,6 +475,66 @@ describe('notes-proxy API', () => {
     })
   })
 
+  describe('inline script URL resolution', () => {
+    // Quartz spa-preserve scripts contain fetch("../static/contentIndex.json")
+    // on tag pages and fetch("../../static/...") on deep tag pages.  These
+    // resolve against <base href="/notes/"> in the browser, so ../static
+    // becomes /static/ (404).  The proxy must rewrite them to absolute.
+
+    test('rewrites fetch("../static/...") to /notes/static/... on tag pages', () => {
+      fs.existsSync.mockReturnValue(true)
+      fs.readFileSync.mockReturnValue(
+        '<html><head>' +
+        '<script type="application/javascript" spa-preserve>' +
+        'const fetchData = fetch("../static/contentIndex.json").then(d => d.json())' +
+        '</script></head><body></body></html>'
+      )
+      const res = createRes()
+      handler(createReq('/notes/tags/online/'), res)
+      expect(res.body).toContain('fetch("/notes/static/contentIndex.json")')
+      expect(res.body).not.toContain('fetch("../static/')
+    })
+
+    test('rewrites fetch("../../static/...") on deep tag pages', () => {
+      fs.existsSync.mockReturnValue(true)
+      fs.readFileSync.mockReturnValue(
+        '<html><head>' +
+        '<script type="application/javascript" spa-preserve>' +
+        'const fetchData = fetch("../../static/contentIndex.json").then(d => d.json())' +
+        '</script></head><body></body></html>'
+      )
+      const res = createRes()
+      handler(createReq('/notes/tags/Economics/Competition/'), res)
+      expect(res.body).toContain('fetch("/notes/static/contentIndex.json")')
+      expect(res.body).not.toContain('fetch("../../static/')
+    })
+
+    test('rewrites fetch("./static/...") on root page (already correct but normalized)', () => {
+      fs.existsSync.mockReturnValue(true)
+      fs.readFileSync.mockReturnValue(
+        '<html><head>' +
+        '<script type="application/javascript" spa-preserve>' +
+        'const fetchData = fetch("./static/contentIndex.json").then(d => d.json())' +
+        '</script></head><body></body></html>'
+      )
+      const res = createRes()
+      handler(createReq('/notes/'), res)
+      expect(res.body).toContain('fetch("/notes/static/contentIndex.json")')
+    })
+
+    test('does not rewrite fetch() with absolute URLs', () => {
+      fs.existsSync.mockReturnValue(true)
+      fs.readFileSync.mockReturnValue(
+        '<html><head>' +
+        '<script>fetch("https://example.com/data.json")</script>' +
+        '</head><body></body></html>'
+      )
+      const res = createRes()
+      handler(createReq('/notes/'), res)
+      expect(res.body).toContain('fetch("https://example.com/data.json")')
+    })
+  })
+
   describe('client-side URL resolution fix', () => {
     // Quartz's SPA router constructs URLs like:
     //   new URL('./slug', location.toString())

@@ -151,6 +151,19 @@ function resolveRelativeUrls(html, pagePath, isDirIndex = false) {
     const pageUrl = pagePath.endsWith('/') ? pagePath : pagePath + '/'
     html = html.replace(/<a(\s[^>]*?)\bhref(?:="")?(\s|>)/g,
         (match, before, after) => `<a${before}href="${pageUrl}"${after}`)
+    // Rewrite relative fetch() URLs inside inline scripts.
+    // Quartz spa-preserve scripts use fetch("../static/contentIndex.json")
+    // on tag pages and fetch("../../static/...") on deep tag pages.
+    // These resolve against <base href="/notes/"> in the browser, so
+    // ../static becomes /static/ (404).  Rewrite to absolute paths.
+    html = html.replace(/fetch\("(\.\.?\/[^"]*)"\)/g, (match, relPath) => {
+        try {
+            const resolved = new URL(relPath, baseUrl)
+            return `fetch("${resolved.pathname}")`
+        } catch {
+            return match
+        }
+    })
     return html
 }
 
