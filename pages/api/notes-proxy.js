@@ -109,8 +109,13 @@ function rewriteNoteLinksToAbsolute(html) {
 
 function injectBaseTag(html, baseHref) {
     if (!html || !baseHref) return html
-    if (/<base\b/i.test(html)) return html
 
+    // Replace existing base tag with the correct href for this page's depth
+    if (/<base\b/i.test(html)) {
+        return html.replace(/<base\b[^>]*>/i, `<base href="${baseHref}" />`)
+    }
+
+    // No existing base tag — inject one after <head>
     const headMatch = html.match(/<head[^>]*>/i)
     if (headMatch) {
         return html.replace(headMatch[0], `${headMatch[0]}\n<base href="${baseHref}" />`)

@@ -153,25 +153,32 @@ describe('notes-proxy API', () => {
       expect(res.body).toContain('<base href="/notes/" />')
     })
 
-    test('sets base tag without trailing slash for nested pages', () => {
+    test('replaces existing base tag with correct depth for nested pages', () => {
       fs.existsSync.mockReturnValue(true)
-      fs.readFileSync.mockReturnValue('<html><head></head><body></body></html>')
+      fs.readFileSync.mockReturnValue(
+        '<html><head><base href="/notes/" /></head><body></body></html>'
+      )
       const res = createRes()
       handler(createReq('/notes/tags/online/'), res)
       expect(res.body).toContain('<base href="/notes/tags/online" />')
+      expect(res.body).not.toContain('<base href="/notes/" />')
     })
 
-    test('sets base tag without trailing slash for deep nested pages', () => {
+    test('replaces existing base tag for deep nested pages', () => {
       fs.existsSync.mockReturnValue(true)
-      fs.readFileSync.mockReturnValue('<html><head></head><body></body></html>')
+      fs.readFileSync.mockReturnValue(
+        '<html><head><base href="/notes/" /></head><body></body></html>'
+      )
       const res = createRes()
       handler(createReq('/notes/tags/Economics/Competition/'), res)
       expect(res.body).toContain('<base href="/notes/tags/Economics/Competition" />')
     })
 
-    test('sets base tag without trailing slash for top-level notes', () => {
+    test('replaces existing base tag for top-level notes', () => {
       fs.existsSync.mockReturnValue(true)
-      fs.readFileSync.mockReturnValue('<html><head></head><body></body></html>')
+      fs.readFileSync.mockReturnValue(
+        '<html><head><base href="/notes/" /></head><body></body></html>'
+      )
       const res = createRes()
       handler(createReq('/notes/Autoregressive-models/'), res)
       expect(res.body).toContain('<base href="/notes/Autoregressive-models" />')
