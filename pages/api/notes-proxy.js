@@ -80,29 +80,32 @@ function resolveNotesIndexHtml(requestedPath) {
 // so we match only actual file extensions rather than any dot in the path.
 const STATIC_EXT = /\.(css|js|mjs|json|xml|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|webp|avif|mp4|webm|pdf)$/i
 
-function appendTrailingSlashToNoteLinks(html) {
-    // Quartz generates internal note links without trailing slashes, e.g.:
-    //   href="./Autoregressive-models"
-    //   href="./@wang1000LayerNetworks2025"
-    //   href="./@jonesGrowthIdeas2005#17fe4e"
-    // The Quartz SPA router uses these hrefs for history.pushState, so the
-    // URL bar shows the non-slash version. Appending slashes here ensures
-    // the pushed URL matches the canonical trailing-slash form and avoids
-    // an extra 308 redirect on every SPA navigation.
-    return html.replace(/href="\.\/([^"]*)"/g, (match, rawPath) => {
+function rewriteNoteLinksToAbsolute(html) {
+    // Convert relative note links to absolute paths with trailing slashes.
+    //
+    // Quartz generates links like href="./slug" and its SPA router resolves
+    // them relative to the current page URL during navigation. With trailing-
+    // slash URLs (/notes/slug/), the "directory" becomes /notes/slug/ instead
+    // of /notes/, causing path stacking (e.g., /notes/a/b/ instead of /notes/b/).
+    //
+    // Absolute links (/notes/slug/) bypass this because the SPA router's URL
+    // resolver (We) only processes [href^="./"] — it leaves absolute paths alone.
+    html = html.replace(/href="\.\/([^"]*)"/g, (match, rawPath) => {
         if (!rawPath) return match
         // Separate slug from query/hash suffix (e.g., "foo#section" → "foo" + "#section")
         const sepIdx = rawPath.search(/[?#]/)
         const slug = sepIdx === -1 ? rawPath : rawPath.slice(0, sepIdx)
         const suffix = sepIdx === -1 ? '' : rawPath.slice(sepIdx)
-        // Skip when there is no slug (e.g., "./#section" or "./?foo")
+        // Skip fragment-only or query-only (e.g., "./#section", "./?foo")
         if (!slug) return match
-        // Skip static files with known extensions (css, js, png, etc.)
+        // Keep static files relative (handled by <base> tag + spa-preserve)
         if (STATIC_EXT.test(slug)) return match
-        // Skip if slug already has trailing slash
-        if (slug.endsWith('/')) return match
-        return `href="./${slug}/${suffix}"`
+        const normalizedSlug = slug.endsWith('/') ? slug : slug + '/'
+        return `href="/notes/${normalizedSlug}${suffix}"`
     })
+    // Convert the notes home link: href="." → href="/notes/"
+    html = html.replace(/href="\."/g, 'href="/notes/"')
+    return html
 }
 
 function injectBaseTag(html, baseHref) {
@@ -158,7 +161,7 @@ export default function handler(req, res) {
 
     try {
         const html = fs.readFileSync(indexHtmlPath, 'utf8')
-        const withSlashes = appendTrailingSlashToNoteLinks(html)
+        const withSlashes = rewriteNoteLinksToAbsolute(html)
         const withBase = injectBaseTag(withSlashes, '/notes/')
         const snippet = buildFathomScriptTag()
         const injected = injectBeforeHeadClose(withBase, snippet)
