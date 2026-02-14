@@ -111,7 +111,11 @@ function resolveRelativeUrls(html, pagePath, isDirIndex = false) {
             const suffix = (resolved.search || '') + (resolved.hash || '')
             // Static files: resolve to absolute but keep as file path (no trailing slash)
             if (STATIC_EXT.test(absPath)) return `${attr}="${absPath}${suffix}"`
-            // Note/page links: add trailing slash
+            // Note/page links: keep WITH trailing slash so the SPA
+            // router pushes the canonical URL and the middleware redirect
+            // from /notes/slug → /notes/slug/ is never needed.
+            // The injected URL-fix script (see buildUrlFixScript) prevents
+            // the path-stacking bug that would otherwise occur.
             if (!absPath.endsWith('/')) absPath += '/'
             return `${attr}="${absPath}${suffix}"`
         } catch {
@@ -148,6 +152,35 @@ function resolveRelativeUrls(html, pagePath, isDirIndex = false) {
     html = html.replace(/<a(\s[^>]*?)\bhref(?:="")?(\s|>)/g,
         (match, before, after) => `<a${before}href="${pageUrl}"${after}`)
     return html
+}
+
+/**
+ * Build an inline <script> that patches the global URL constructor to
+ * prevent path-stacking in Quartz's client-side JavaScript.
+ *
+ * Quartz's SPA router (postscript.js) constructs URLs like:
+ *   new URL('./slug', location.toString())
+ *
+ * When the browser is at /notes/page-A/ (trailing slash), the URL spec
+ * treats page-A/ as a directory, so ./slug resolves to
+ * /notes/page-A/slug — appending instead of replacing the last segment.
+ *
+ * This patch intercepts the URL constructor and strips the trailing slash
+ * from the base when ALL of these conditions are true:
+ *   1. The input is a relative path (starts with ./ or ../)
+ *   2. The base is a /notes/ subpage (not /notes/ itself)
+ *   3. The base has a trailing slash
+ *
+ * This makes /notes/page-A/ behave like /notes/page-A for relative
+ * resolution, so ./slug → /notes/slug (correct).
+ */
+function buildUrlFixScript() {
+    // The script is intentionally compact for inline injection.
+    // The __quartz_url_fix__ marker lets tests detect its presence and
+    // prevents double-injection.
+    return `<script>// __quartz_url_fix__
+(function(){var O=URL;function F(){var a=arguments,i=a[0],b=a[1];if(a.length>1&&typeof i==="string"&&typeof b==="string"&&(i.startsWith("./")|| i.startsWith("../")|| i==="."|| i==="..")){try{var u=new O(b);if(u.pathname!=="/notes/"&&u.pathname.startsWith("/notes/")&&u.pathname.endsWith("/")){b=u.origin+u.pathname.slice(0,-1)+(u.search||"")+(u.hash||"")}}catch(e){}}return a.length===1?new O(i):new O(i,b)}F.prototype=O.prototype;F.createObjectURL=O.createObjectURL.bind(O);F.revokeObjectURL=O.revokeObjectURL.bind(O);if(O.canParse)F.canParse=O.canParse.bind(O);if(O.parse)F.parse=O.parse.bind(O);URL=F})();
+</script>`
 }
 
 function injectBaseTag(html, baseHref) {
@@ -215,10 +248,22 @@ export default function handler(req, res) {
         const isNotesRoot = requestedPath === '/notes/' || requestedPath === '/notes'
         const isDirIndex = indexHtmlPath.endsWith(path.sep + 'index.html') && !isNotesRoot
         const withSlashes = resolveRelativeUrls(html, requestedPath, isDirIndex)
-        const baseHref = isNotesRoot ? '/notes/' : requestedPath.replace(/\/$/, '')
+        // Always set <base href="/notes/">.  Quartz's spa-preserve inline
+        // script fetches ./static/contentIndex.json which must resolve to
+        // /notes/static/contentIndex.json regardless of page depth.  Since
+        // resolveRelativeUrls already converted every href/src to an
+        // absolute path, the base tag only matters for inline JS fetches
+        // and any future spa-preserve resources.
+        const baseHref = '/notes/'
         const withBase = injectBaseTag(withSlashes, baseHref)
+        // Inject URL-fix script before </head> so it runs before any
+        // Quartz JS that constructs URLs via new URL(relative, base).
+        const urlFix = buildUrlFixScript()
+        const withUrlFix = !withBase.includes('__quartz_url_fix__')
+            ? withBase.replace(/<\/head>/i, `${urlFix}\n</head>`)
+            : withBase
         const snippet = buildFathomScriptTag()
-        const injected = injectBeforeHeadClose(withBase, snippet)
+        const injected = injectBeforeHeadClose(withUrlFix, snippet)
 
         res.setHeader('Content-Type', 'text/html; charset=utf-8')
         // Cache aggressively at the CDN edge (24 h) to minimize Fast Origin

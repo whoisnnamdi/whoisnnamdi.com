@@ -109,6 +109,7 @@ const TAG_PAGE_HTML = `<html><head>
 <a href="../Autoregressive-models">AR</a>
 <a href="../Tweets-From-vitalik.eth#85c681">vitalik §</a>
 <a href="../tags/Economics">Economics tag</a>
+<ul class="tags"><li><a class="internal tag-link" href="../tags/literature/paper">literature/paper</a></li><li><a class="internal tag-link" href="../tags/inbox/read">inbox/read</a></li><li><a class="internal tag-link" href="../tags/online">online</a></li></ul>
 <img src="../static/icon.png"/>
 <script src="../postscript.js"></script>
 </body></html>`
@@ -232,8 +233,8 @@ describe('leaf note (/notes/Autoregressive-models/)', () => {
     expect(body).toContain('href="/notes/@jonesGrowthIdeas2005/#section"')
   })
 
-  test('base tag strips trailing slash', () => {
-    expect(body).toContain('<base href="/notes/Autoregressive-models" />')
+  test('base tag is always /notes/', () => {
+    expect(body).toContain('<base href="/notes/" />')
   })
 })
 
@@ -284,6 +285,16 @@ describe('tag page (/notes/tags/online/)', () => {
     expect(body).toContain('href="/notes/tags/Economics/"')
   })
 
+  test('sidebar tag links resolve to /notes/tags/slug/', () => {
+    // Tag links in the sidebar use ../tags/slug relative to the tag page.
+    // They must resolve to /notes/tags/slug/, NOT /notes/tags/tags/slug/
+    expect(body).toContain('href="/notes/tags/literature/paper/"')
+    expect(body).toContain('href="/notes/tags/inbox/read/"')
+    expect(body).toContain('href="/notes/tags/online/"')
+    // Must NOT contain doubled tags/ path segment
+    expect(body).not.toContain('/notes/tags/tags/')
+  })
+
   test('bare href breadcrumb gets full page URL', () => {
     // Quartz emits <a href>Tag: online</a> — empty href resolves against
     // <base> which lacks trailing slash, causing SPA router to push wrong URL.
@@ -291,8 +302,8 @@ describe('tag page (/notes/tags/online/)', () => {
     expect(body).toMatch(/href="\/notes\/tags\/online\/"[^>]*>Tag: online</)
   })
 
-  test('base tag strips trailing slash', () => {
-    expect(body).toContain('<base href="/notes/tags/online" />')
+  test('base tag is always /notes/', () => {
+    expect(body).toContain('<base href="/notes/" />')
   })
 })
 
@@ -337,9 +348,8 @@ describe('tags index (/notes/tags/) — directory-index page', () => {
     expect(body).toContain('href="/notes/tags/online/"')
   })
 
-  test('base tag keeps trailing slash stripped (unchanged from code)', () => {
-    // The base tag is computed independently from URL resolution
-    expect(body).toContain('<base href="/notes/tags" />')
+  test('base tag is always /notes/', () => {
+    expect(body).toContain('<base href="/notes/" />')
   })
 })
 
@@ -388,8 +398,8 @@ describe('deep tag page (/notes/tags/Economics/Competition/)', () => {
     expect(body).toMatch(/href="\/notes\/tags\/Economics\/Competition\/"[^>]*>Tag: Economics\/Competition</)
   })
 
-  test('base tag reflects full depth', () => {
-    expect(body).toContain('<base href="/notes/tags/Economics/Competition" />')
+  test('base tag is always /notes/', () => {
+    expect(body).toContain('<base href="/notes/" />')
   })
 })
 
@@ -417,33 +427,181 @@ describe('URL resolution never escapes /notes/ prefix', () => {
 // 7. Existing base tag is always replaced, never doubled
 // ---------------------------------------------------------------------------
 describe('base tag handling', () => {
-  test('replaces Quartz default base tag on every page type', () => {
+  test('always sets base tag to /notes/ on every page type', () => {
     const pages = [
-      ['/notes/',                            false, '<base href="/notes/" />'],
-      ['/notes/Autoregressive-models/',      false, '<base href="/notes/Autoregressive-models" />'],
-      ['/notes/tags/online/',                false, '<base href="/notes/tags/online" />'],
-      ['/notes/tags/',                        true,  '<base href="/notes/tags" />'],
-      ['/notes/tags/Economics/Competition/',  false, '<base href="/notes/tags/Economics/Competition" />'],
+      ['/notes/',                            false],
+      ['/notes/Autoregressive-models/',      false],
+      ['/notes/tags/online/',                false],
+      ['/notes/tags/',                        true],
+      ['/notes/tags/Economics/Competition/',  false],
     ]
-    for (const [reqPath, dirIndex, expected] of pages) {
+    for (const [reqPath, dirIndex] of pages) {
       const html = '<html><head><base href="/notes/" /></head><body></body></html>'
       const res = serve(reqPath, html, { dirIndex })
-      expect(res.body).toContain(expected)
+      expect(res.body).toContain('<base href="/notes/" />')
       // Only one base tag
       const baseCount = (res.body.match(/<base\b/g) || []).length
       expect(baseCount).toBe(1)
     }
   })
 
-  test('injects base tag when none exists', () => {
+  test('injects base tag as /notes/ when none exists', () => {
     const html = '<html><head></head><body></body></html>'
     const res = serve('/notes/tags/online/', html)
-    expect(res.body).toContain('<base href="/notes/tags/online" />')
+    expect(res.body).toContain('<base href="/notes/" />')
   })
 })
 
 // ---------------------------------------------------------------------------
-// 8. Absolute links, data URIs, and external links are untouched
+// 8. Client-side SPA simulation
+// ---------------------------------------------------------------------------
+// After the proxy resolves all relative URLs to absolute paths, the Quartz
+// SPA router fetches the HTML, parses it with DOMParser, and runs We() to
+// resolve any remaining relative URLs against the navigation URL.
+//
+// If the proxy fails to resolve a link, We() re-resolves it against the
+// navigation URL (which has a trailing slash, treating the last segment as
+// a directory). This causes "../tags/" to resolve to "/notes/tags/tags/"
+// instead of "/notes/tags/" — the doubled-segment bug.
+//
+// These tests simulate the full SPA flow to catch this.
+describe('SPA client-side simulation: no relative links survive proxy', () => {
+  // Simulate Quartz's We() function (resolves ./  and ../ in fetched DOM)
+  function quartzResolveRelativeUrls(html, navigationUrl) {
+    // Parse with JSDOM (Jest environment)
+    const doc = new DOMParser().parseFromString(html, 'text/html')
+    doc.querySelectorAll('[href^="./"], [href^="../"]').forEach(el => {
+      const resolved = new URL(el.getAttribute('href'), navigationUrl)
+      el.setAttribute('href', resolved.pathname + resolved.hash)
+    })
+    doc.querySelectorAll('[src^="./"], [src^="../"]').forEach(el => {
+      const resolved = new URL(el.getAttribute('src'), navigationUrl)
+      el.setAttribute('src', resolved.pathname + resolved.hash)
+    })
+    return doc
+  }
+
+  test('tag page: breadcrumbs and tag links survive SPA We() without doubling', () => {
+    const res = serve('/notes/tags/online/', TAG_PAGE_HTML)
+    const navUrl = 'http://localhost:3000/notes/tags/online/'
+    const doc = quartzResolveRelativeUrls(res.body, navUrl)
+    const hrefs = [...doc.querySelectorAll('a[href]')].map(a => a.getAttribute('href'))
+
+    // Breadcrumbs should be correct
+    expect(hrefs).toContain('/notes/')
+    expect(hrefs).toContain('/notes/tags/')
+    // Note link
+    expect(hrefs).toContain('/notes/Autoregressive-models/')
+    // Tag links in sidebar
+    expect(hrefs).toContain('/notes/tags/literature/paper/')
+    expect(hrefs).toContain('/notes/tags/inbox/read/')
+    expect(hrefs).toContain('/notes/tags/online/')
+    // MUST NOT contain doubled /tags/tags/
+    hrefs.forEach(h => {
+      expect(h).not.toMatch(/\/tags\/tags\//)
+    })
+  })
+
+  test('deep tag page: breadcrumbs survive SPA We() without doubling', () => {
+    const res = serve('/notes/tags/Economics/Competition/', DEEP_TAG_HTML)
+    const navUrl = 'http://localhost:3000/notes/tags/Economics/Competition/'
+    const doc = quartzResolveRelativeUrls(res.body, navUrl)
+    const hrefs = [...doc.querySelectorAll('a[href]')].map(a => a.getAttribute('href'))
+
+    expect(hrefs).toContain('/notes/')
+    expect(hrefs).toContain('/notes/tags/')
+    expect(hrefs).toContain('/notes/Autoregressive-models/')
+    hrefs.forEach(h => {
+      expect(h).not.toMatch(/\/tags\/tags\//)
+    })
+  })
+
+  test('leaf note page: sibling links survive SPA We()', () => {
+    const res = serve('/notes/Autoregressive-models/', LEAF_NOTE_HTML)
+    const navUrl = 'http://localhost:3000/notes/Autoregressive-models/'
+    const doc = quartzResolveRelativeUrls(res.body, navUrl)
+    const hrefs = [...doc.querySelectorAll('a[href]')].map(a => a.getAttribute('href'))
+
+    expect(hrefs).toContain('/notes/Vector-autoregression/')
+    expect(hrefs).toContain('/notes/Local-projections-vs.-VARs/')
+    // Should NOT stack: /notes/Autoregressive-models/Vector-autoregression/
+    hrefs.forEach(h => {
+      expect(h).not.toMatch(/Autoregressive-models\/[A-Z]/)
+    })
+  })
+})
+
+// ---------------------------------------------------------------------------
+// 9. Real-world tag page: /notes/tags/literature/
+// ---------------------------------------------------------------------------
+// Regression test for the doubled /tags/tags/ bug reported on this specific
+// page.  Uses the exact HTML structure from the Quartz-generated file.
+describe('real-world tag page (/notes/tags/literature/)', () => {
+  const LITERATURE_TAG_HTML = `<html><head>
+<base href="/notes/" />
+<link href="../index.css" rel="stylesheet" type="text/css" spa-preserve/>
+<script src="../prescript.js" type="application/javascript" spa-preserve></script>
+<script type="application/javascript" spa-preserve>const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script>
+</head><body>
+<nav class="breadcrumb-container" aria-label="breadcrumbs">
+  <div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div>
+  <div class="breadcrumb-element"><a href="../tags/">tags</a><p> ❯ </p></div>
+  <div class="breadcrumb-element"><a href>Tag: literature</a></div>
+</nav>
+<a href="..">notes home</a>
+<a href="../Autoregressive-models">AR</a>
+<a href="../@wang1000LayerNetworks2025">ref</a>
+<ul class="tags"><li><a class="internal tag-link" href="../tags/literature/paper">literature/paper</a></li><li><a class="internal tag-link" href="../tags/inbox/read">inbox/read</a></li><li><a class="internal tag-link" href="../tags/online">online</a></li></ul>
+<ul class="tags"><li><a class="internal tag-link" href="../tags/literature">literature</a></li><li><a class="internal tag-link" href="../tags/Economics">Economics</a></li></ul>
+<script src="../postscript.js"></script>
+</body></html>`
+
+  let body
+  beforeEach(() => { body = serve('/notes/tags/literature/', LITERATURE_TAG_HTML).body })
+
+  test('breadcrumb Home → /notes/', () => {
+    expect(body).toMatch(/href="\/notes\/"[^>]*>Home</)
+  })
+
+  test('breadcrumb tags → /notes/tags/', () => {
+    expect(body).toMatch(/href="\/notes\/tags\/"[^>]*>tags</)
+  })
+
+  test('bare ".." → /notes/', () => {
+    expect(body).toMatch(/href="\/notes\/"[^>]*>notes home</)
+  })
+
+  test('note links resolve correctly', () => {
+    expect(body).toContain('href="/notes/Autoregressive-models/"')
+    expect(body).toContain('href="/notes/@wang1000LayerNetworks2025/"')
+  })
+
+  test('tag sidebar links do NOT double the tags/ segment', () => {
+    // These ../tags/X links must resolve to /notes/tags/X/, not /notes/tags/tags/X/
+    expect(body).toContain('href="/notes/tags/literature/paper/"')
+    expect(body).toContain('href="/notes/tags/inbox/read/"')
+    expect(body).toContain('href="/notes/tags/online/"')
+    expect(body).toContain('href="/notes/tags/literature/"')
+    expect(body).toContain('href="/notes/tags/Economics/"')
+    expect(body).not.toContain('/tags/tags/')
+  })
+
+  test('no relative href or src attributes remain after proxy resolution', () => {
+    const relativeAttrs = body.match(/(href|src)="\.\.?[/"]/g)
+    expect(relativeAttrs).toBeNull()
+  })
+
+  test('SPA We() does not re-resolve any links (all absolute)', () => {
+    const doc = new DOMParser().parseFromString(body, 'text/html')
+    const relativeHrefs = doc.querySelectorAll('[href^="./"], [href^="../"]')
+    const relativeSrcs = doc.querySelectorAll('[src^="./"], [src^="../"]')
+    expect(relativeHrefs.length).toBe(0)
+    expect(relativeSrcs.length).toBe(0)
+  })
+})
+
+// ---------------------------------------------------------------------------
+// 10. Absolute links, data URIs, and external links are untouched
 // ---------------------------------------------------------------------------
 describe('non-relative links left unchanged', () => {
   test('absolute paths are not modified', () => {
