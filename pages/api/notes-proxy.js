@@ -139,6 +139,14 @@ function resolveRelativeUrls(html, pagePath, isDirIndex = false) {
             return `href="."`
         }
     })
+    // Convert bare/empty href attributes to the full page URL.
+    // Quartz emits <a href>Tag: online</a> (empty href = "current page").
+    // The browser resolves empty href against the <base> tag, which lacks
+    // a trailing slash — producing a URL without slash that the SPA router
+    // then pushes into history.  Making it absolute sidesteps this.
+    const pageUrl = pagePath.endsWith('/') ? pagePath : pagePath + '/'
+    html = html.replace(/<a(\s[^>]*?)\bhref(?:="")?(\s|>)/g,
+        (match, before, after) => `<a${before}href="${pageUrl}"${after}`)
     return html
 }
 

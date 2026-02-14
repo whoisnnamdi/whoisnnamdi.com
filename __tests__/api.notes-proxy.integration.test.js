@@ -138,6 +138,7 @@ const DEEP_TAG_HTML = `<html><head>
   <div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div>
   <div class="breadcrumb-element"><a href="../../tags/">tags</a><p> ❯ </p></div>
   <div class="breadcrumb-element"><a href="../../tags/Economics">Economics</a><p> ❯ </p></div>
+  <div class="breadcrumb-element"><a href>Tag: Economics/Competition</a></div>
 </nav>
 <a href="../..">notes home</a>
 <a href="../../Autoregressive-models">AR</a>
@@ -283,6 +284,13 @@ describe('tag page (/notes/tags/online/)', () => {
     expect(body).toContain('href="/notes/tags/Economics/"')
   })
 
+  test('bare href breadcrumb gets full page URL', () => {
+    // Quartz emits <a href>Tag: online</a> — empty href resolves against
+    // <base> which lacks trailing slash, causing SPA router to push wrong URL.
+    expect(body).toContain('href="/notes/tags/online/"')
+    expect(body).toMatch(/href="\/notes\/tags\/online\/"[^>]*>Tag: online</)
+  })
+
   test('base tag strips trailing slash', () => {
     expect(body).toContain('<base href="/notes/tags/online" />')
   })
@@ -374,6 +382,10 @@ describe('deep tag page (/notes/tags/Economics/Competition/)', () => {
 
   test('note links resolve to /notes/slug/', () => {
     expect(body).toContain('href="/notes/Autoregressive-models/"')
+  })
+
+  test('bare href breadcrumb gets full page URL', () => {
+    expect(body).toMatch(/href="\/notes\/tags\/Economics\/Competition\/"[^>]*>Tag: Economics\/Competition</)
   })
 
   test('base tag reflects full depth', () => {
