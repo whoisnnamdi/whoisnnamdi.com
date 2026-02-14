@@ -56,6 +56,8 @@ twitter_image: "<image URL>"
 
 Tag defaults are usually from: `Founders`, `Developers`, `Investors`.
 
+**Date format:** Always use full ISO 8601 with the `Z` (UTC) suffix, e.g., `"2026-02-11T00:00:00.000Z"`. Bare dates like `"2026-02-11"` or timestamps without `Z` will be parsed in local time, causing off-by-one day display in timezones west of UTC. See the "Date Display" section in `AGENTS.md` for details.
+
 ### 3) Convert image embeds and move/upload assets
 
 Obsidian embeds usually look like:

@@ -45,9 +45,8 @@ function resolveNotesIndexHtml(requestedPath) {
     const slugEncoded = safeRequested.replace(/^\/notes\/?/, '').replace(/\/$/, '')
     const slug = decodeURIComponent(slugEncoded)
 
-    // SECURITY: Guard against traversal and path separators after decoding
-    // Disallow any path separators or parent directory segments
-    if (slug.includes('..') || slug.includes('/') || slug.includes('\\')) {
+    // SECURITY: Guard against path traversal after decoding
+    if (slug.includes('..') || slug.includes('\\')) {
         return null
     }
 
@@ -75,10 +74,137 @@ function resolveNotesIndexHtml(requestedPath) {
     return null
 }
 
+// Known static file extensions served under /notes.
+// Note slugs can contain dots (e.g., "vitalik.eth", "i.i.d.", "vs.-VARs"),
+// so we match only actual file extensions rather than any dot in the path.
+const STATIC_EXT = /\.(css|js|mjs|json|xml|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|webp|avif|mp4|webm|pdf)$/i
+
+function resolveRelativeUrls(html, pagePath, isDirIndex = false) {
+    // Convert ALL relative href and src attributes to absolute paths.
+    //
+    // Quartz generates relative links (./slug, ../slug) that break under
+    // our trailing-slash URL scheme. We resolve everything server-side so
+    // links, stylesheets, scripts, and images all use absolute paths and
+    // are completely independent of the <base> tag.
+    //
+    // pagePath is the requested URL path (e.g., "/notes/tags/online/").
+    //
+    // For leaf pages (slug.html), we strip the trailing slash so Quartz's
+    // relative links resolve as if the last segment is a "file":
+    //   /notes/tags/online  →  ../ = /notes/  (correct)
+    //
+    // For directory-index pages (slug/index.html, e.g., /notes/tags/),
+    // we keep the trailing slash so the URL is treated as a "directory":
+    //   /notes/tags/  →  ../ = /notes/  (correct)
+    //   /notes/tags   →  ../ = /        (wrong — tags is treated as a file)
+    const isNotesRoot = pagePath === '/notes/' || pagePath === '/notes'
+    const basePath = isNotesRoot || isDirIndex
+        ? (pagePath.endsWith('/') ? pagePath : pagePath + '/')
+        : pagePath.replace(/\/$/, '')
+    const baseUrl = 'http://localhost' + basePath
+
+    // Resolve both href= and src= attributes starting with ./ or ../
+    html = html.replace(/(href|src)="(\.\.?\/[^"]*)"/g, (match, attr, relPath) => {
+        try {
+            const resolved = new URL(relPath, baseUrl)
+            let absPath = resolved.pathname
+            const suffix = (resolved.search || '') + (resolved.hash || '')
+            // Static files: resolve to absolute but keep as file path (no trailing slash)
+            if (STATIC_EXT.test(absPath)) return `${attr}="${absPath}${suffix}"`
+            // Note/page links: keep WITH trailing slash so the SPA
+            // router pushes the canonical URL and the middleware redirect
+            // from /notes/slug → /notes/slug/ is never needed.
+            // The injected URL-fix script (see buildUrlFixScript) prevents
+            // the path-stacking bug that would otherwise occur.
+            if (!absPath.endsWith('/')) absPath += '/'
+            return `${attr}="${absPath}${suffix}"`
+        } catch {
+            return match
+        }
+    })
+    // Also handle bare href=".." and href="." (no trailing slash)
+    html = html.replace(/href="\.\."/g, () => {
+        try {
+            const resolved = new URL('..', baseUrl)
+            let absPath = resolved.pathname
+            if (!absPath.endsWith('/')) absPath += '/'
+            return `href="${absPath}"`
+        } catch {
+            return `href=".."`
+        }
+    })
+    html = html.replace(/href="\."/g, () => {
+        try {
+            const resolved = new URL('.', baseUrl)
+            let absPath = resolved.pathname
+            if (!absPath.endsWith('/')) absPath += '/'
+            return `href="${absPath}"`
+        } catch {
+            return `href="."`
+        }
+    })
+    // Convert bare/empty href attributes to the full page URL.
+    // Quartz emits <a href>Tag: online</a> (empty href = "current page").
+    // The browser resolves empty href against the <base> tag, which lacks
+    // a trailing slash — producing a URL without slash that the SPA router
+    // then pushes into history.  Making it absolute sidesteps this.
+    const pageUrl = pagePath.endsWith('/') ? pagePath : pagePath + '/'
+    html = html.replace(/<a(\s[^>]*?)\bhref(?:="")?(\s|>)/g,
+        (match, before, after) => `<a${before}href="${pageUrl}"${after}`)
+    // Rewrite relative fetch() URLs inside inline scripts.
+    // Quartz spa-preserve scripts use fetch("../static/contentIndex.json")
+    // on tag pages and fetch("../../static/...") on deep tag pages.
+    // These resolve against <base href="/notes/"> in the browser, so
+    // ../static becomes /static/ (404).  Rewrite to absolute paths.
+    html = html.replace(/fetch\("(\.\.?\/[^"]*)"\)/g, (match, relPath) => {
+        try {
+            const resolved = new URL(relPath, baseUrl)
+            return `fetch("${resolved.pathname}")`
+        } catch {
+            return match
+        }
+    })
+    return html
+}
+
+/**
+ * Build an inline <script> that patches the global URL constructor to
+ * prevent path-stacking in Quartz's client-side JavaScript.
+ *
+ * Quartz's SPA router (postscript.js) constructs URLs like:
+ *   new URL('./slug', location.toString())
+ *
+ * When the browser is at /notes/page-A/ (trailing slash), the URL spec
+ * treats page-A/ as a directory, so ./slug resolves to
+ * /notes/page-A/slug — appending instead of replacing the last segment.
+ *
+ * This patch intercepts the URL constructor and strips the trailing slash
+ * from the base when ALL of these conditions are true:
+ *   1. The input is a relative path (starts with ./ or ../)
+ *   2. The base is a /notes/ subpage (not /notes/ itself)
+ *   3. The base has a trailing slash
+ *
+ * This makes /notes/page-A/ behave like /notes/page-A for relative
+ * resolution, so ./slug → /notes/slug (correct).
+ */
+function buildUrlFixScript() {
+    // The script is intentionally compact for inline injection.
+    // The __quartz_url_fix__ marker lets tests detect its presence and
+    // prevents double-injection.
+    return `<script>// __quartz_url_fix__
+(function(){var O=URL;function F(){var a=arguments,i=a[0],b=a[1];if(a.length>1&&typeof i==="string"&&typeof b==="string"&&(i.startsWith("./")|| i.startsWith("../")|| i==="."|| i==="..")){try{var u=new O(b);if(u.pathname!=="/notes/"&&u.pathname.startsWith("/notes/")&&u.pathname.endsWith("/")){b=u.origin+u.pathname.slice(0,-1)+(u.search||"")+(u.hash||"")}}catch(e){}}return a.length===1?new O(i):new O(i,b)}F.prototype=O.prototype;F.createObjectURL=O.createObjectURL.bind(O);F.revokeObjectURL=O.revokeObjectURL.bind(O);if(O.canParse)F.canParse=O.canParse.bind(O);if(O.parse)F.parse=O.parse.bind(O);URL=F})();
+</script>`
+}
+
 function injectBaseTag(html, baseHref) {
     if (!html || !baseHref) return html
-    if (/<base\b/i.test(html)) return html
 
+    // Replace existing base tag with the correct href for this page's depth
+    if (/<base\b/i.test(html)) {
+        return html.replace(/<base\b[^>]*>/i, `<base href="${baseHref}" />`)
+    }
+
+    // No existing base tag — inject one after <head>
     const headMatch = html.match(/<head[^>]*>/i)
     if (headMatch) {
         return html.replace(headMatch[0], `${headMatch[0]}\n<base href="${baseHref}" />`)
@@ -128,9 +254,29 @@ export default function handler(req, res) {
 
     try {
         const html = fs.readFileSync(indexHtmlPath, 'utf8')
-        const withBase = injectBaseTag(html, '/notes/')
+        // Directory-index pages (e.g., tags/index.html served at /notes/tags/)
+        // need the trailing slash kept so ../ resolves correctly.
+        // Leaf pages (e.g., tags/online.html served at /notes/tags/online/)
+        // need it stripped so the last segment is treated as a "file".
+        const isNotesRoot = requestedPath === '/notes/' || requestedPath === '/notes'
+        const isDirIndex = indexHtmlPath.endsWith(path.sep + 'index.html') && !isNotesRoot
+        const withSlashes = resolveRelativeUrls(html, requestedPath, isDirIndex)
+        // Always set <base href="/notes/">.  Quartz's spa-preserve inline
+        // script fetches ./static/contentIndex.json which must resolve to
+        // /notes/static/contentIndex.json regardless of page depth.  Since
+        // resolveRelativeUrls already converted every href/src to an
+        // absolute path, the base tag only matters for inline JS fetches
+        // and any future spa-preserve resources.
+        const baseHref = '/notes/'
+        const withBase = injectBaseTag(withSlashes, baseHref)
+        // Inject URL-fix script before </head> so it runs before any
+        // Quartz JS that constructs URLs via new URL(relative, base).
+        const urlFix = buildUrlFixScript()
+        const withUrlFix = !withBase.includes('__quartz_url_fix__')
+            ? withBase.replace(/<\/head>/i, `${urlFix}\n</head>`)
+            : withBase
         const snippet = buildFathomScriptTag()
-        const injected = injectBeforeHeadClose(withBase, snippet)
+        const injected = injectBeforeHeadClose(withUrlFix, snippet)
 
         res.setHeader('Content-Type', 'text/html; charset=utf-8')
         // Cache aggressively at the CDN edge (24 h) to minimize Fast Origin
