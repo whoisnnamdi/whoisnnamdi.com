@@ -145,6 +145,38 @@ describe('notes-proxy API', () => {
       expect(res.body).toContain('</head>')
     })
 
+    test('sets base tag to /notes/ for the root page', () => {
+      fs.existsSync.mockReturnValue(true)
+      fs.readFileSync.mockReturnValue('<html><head></head><body></body></html>')
+      const res = createRes()
+      handler(createReq('/notes/'), res)
+      expect(res.body).toContain('<base href="/notes/" />')
+    })
+
+    test('sets base tag without trailing slash for nested pages', () => {
+      fs.existsSync.mockReturnValue(true)
+      fs.readFileSync.mockReturnValue('<html><head></head><body></body></html>')
+      const res = createRes()
+      handler(createReq('/notes/tags/online/'), res)
+      expect(res.body).toContain('<base href="/notes/tags/online" />')
+    })
+
+    test('sets base tag without trailing slash for deep nested pages', () => {
+      fs.existsSync.mockReturnValue(true)
+      fs.readFileSync.mockReturnValue('<html><head></head><body></body></html>')
+      const res = createRes()
+      handler(createReq('/notes/tags/Economics/Competition/'), res)
+      expect(res.body).toContain('<base href="/notes/tags/Economics/Competition" />')
+    })
+
+    test('sets base tag without trailing slash for top-level notes', () => {
+      fs.existsSync.mockReturnValue(true)
+      fs.readFileSync.mockReturnValue('<html><head></head><body></body></html>')
+      const res = createRes()
+      handler(createReq('/notes/Autoregressive-models/'), res)
+      expect(res.body).toContain('<base href="/notes/Autoregressive-models" />')
+    })
+
     test('does not double-inject Fathom script', () => {
       fs.existsSync.mockReturnValue(true)
       fs.readFileSync.mockReturnValue(

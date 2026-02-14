@@ -161,7 +161,15 @@ export default function handler(req, res) {
     try {
         const html = fs.readFileSync(indexHtmlPath, 'utf8')
         const withSlashes = rewriteNoteLinksToAbsolute(html)
-        const withBase = injectBaseTag(withSlashes, '/notes/')
+        // Set base to the page path WITHOUT trailing slash so that ../
+        // relative paths resolve correctly at any nesting depth.
+        // e.g., for /notes/tags/online/, base="/notes/tags/online" makes
+        // "../index.css" resolve to /notes/index.css (directory = /notes/tags/).
+        // The root /notes/ keeps its trailing slash since ./ paths need
+        // the directory to be /notes/ itself.
+        const isNotesRoot = requestedPath === '/notes/' || requestedPath === '/notes'
+        const baseHref = isNotesRoot ? '/notes/' : requestedPath.replace(/\/$/, '')
+        const withBase = injectBaseTag(withSlashes, baseHref)
         const snippet = buildFathomScriptTag()
         const injected = injectBeforeHeadClose(withBase, snippet)
 
