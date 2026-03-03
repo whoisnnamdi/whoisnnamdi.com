@@ -24,6 +24,28 @@ describe("LinkConverter", () => {
     expect(a.getAttribute("href")).toBe("https://example.com/page");
   });
 
+  test("keeps hash-only anchors unchanged when base URI differs", async () => {
+    const originalPath = window.location.pathname;
+    window.history.pushState({}, "", "/notes/subpage/");
+
+    const base = document.createElement("base");
+    base.setAttribute("href", "/notes/");
+    document.head.appendChild(base);
+
+    try {
+      const content = `<a href="#x">Jump</a>`;
+      const { container } = render(<LinkConverter content={content} />);
+
+      await new Promise((r) => setTimeout(r, 0));
+
+      const a = container.querySelector("a");
+      expect(a.getAttribute("href")).toBe("#x");
+    } finally {
+      base.remove();
+      window.history.pushState({}, "", originalPath || "/");
+    }
+  });
+
   test("renders content via dangerouslySetInnerHTML", () => {
     const content = `<p>Hello <strong>world</strong></p>`;
     const { container } = render(<LinkConverter content={content} />);

@@ -18,6 +18,7 @@ export default function LinkConverter({ content }) {
       links.forEach((link) => {
         const rawHref = link.getAttribute("href");
         if (!rawHref) return;
+        if (rawHref.startsWith("#")) return;
 
         let url;
 
