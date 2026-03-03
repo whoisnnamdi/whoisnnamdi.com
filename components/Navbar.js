@@ -85,12 +85,10 @@ export default function Navbar({ source, dateLabel, codeOverride }) {
 
         <div className="flex items-center gap-3">
           <Popover className="relative">
-            {({ open }) => (
+            {() => (
               <>
                 <Popover.Button
-                  className={`${
-                    open ? "hidden" : ""
-                  } px-4 py-2 text-[11px] font-mono uppercase tracking-[0.2em] text-white bg-neutral-900 rounded-none border border-neutral-900 hover:bg-accent transition-colors focus:outline-none`}
+                  className="px-4 py-2 text-[11px] font-mono uppercase tracking-[0.2em] text-white bg-neutral-900 rounded-none border border-neutral-900 hover:bg-accent transition-colors focus:outline-none"
                 >
                   Subscribe_
                 </Popover.Button>
