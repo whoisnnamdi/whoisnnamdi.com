@@ -16,10 +16,13 @@ export default function LinkConverter({ content }) {
 
     try {
       links.forEach((link) => {
+        const rawHref = link.getAttribute("href");
+        if (!rawHref) return;
+
         let url;
 
         try {
-          url = new URL(link.getAttribute("href"), window.location.origin);
+          url = new URL(rawHref, document.baseURI);
         } catch {
           return;
         }
@@ -29,6 +32,13 @@ export default function LinkConverter({ content }) {
           url.hostname === window.location.hostname;
 
         if (!isInternalLink) return;
+
+        const isInPageAnchor =
+          url.pathname === window.location.pathname &&
+          url.search === window.location.search &&
+          Boolean(url.hash);
+
+        if (isInPageAnchor) return;
 
         const normalizedHref = `${url.pathname}${url.search}${url.hash}`;
         link.setAttribute("href", normalizedHref);
