@@ -1,35 +1,70 @@
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import * as Fathom from "fathom-client";
 
 export default function LinkConverter({ content }) {
   const router = useRouter();
+  const containerRef = useRef(null);
 
   useEffect(() => {
-    // Convert internal links to use Next.js router
-    const links = document.querySelectorAll("a");
+    const container = containerRef.current;
+    if (!container) return;
+
+    // Convert internal links in rendered content to use Next.js router
+    const links = container.querySelectorAll("a");
     const clickHandlers = [];
 
     try {
       links.forEach((link) => {
-        // Handle internal links (whoisnnamdi.com)
-        if (link.href.includes("whoisnnamdi.com")) {
-          const url = new URL(link.href);
-          link.href = url.pathname;
-          const handler = (e) => {
-            e.preventDefault();
-            router.push(e.target.href);
-          };
-          link.addEventListener("click", handler, false);
-          clickHandlers.push({ link, handler });
+        const rawHref = link.getAttribute("href");
+        if (!rawHref) return;
+        if (rawHref.startsWith("#")) return;
+
+        let url;
+
+        try {
+          url = new URL(rawHref, document.baseURI);
+        } catch {
+          return;
         }
+
+        const isInternalLink =
+          url.hostname === "whoisnnamdi.com" ||
+          url.hostname === window.location.hostname;
+
+        if (!isInternalLink) return;
+
+        const isInPageAnchor =
+          url.pathname === window.location.pathname &&
+          url.search === window.location.search &&
+          Boolean(url.hash);
+
+        if (isInPageAnchor) return;
+
+        const normalizedHref = `${url.pathname}${url.search}${url.hash}`;
+        link.setAttribute("href", normalizedHref);
+
+        const handler = (e) => {
+          // Preserve default browser behaviors (new tab/window, download, etc)
+          if (e.defaultPrevented) return;
+          if (e.button !== 0) return;
+          if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+          if (link.target && link.target !== "_self") return;
+          if (link.hasAttribute("download")) return;
+
+          e.preventDefault();
+          router.push(normalizedHref);
+        };
+
+        link.addEventListener("click", handler, false);
+        clickHandlers.push({ link, handler });
       });
     } catch {
       // Ignore errors
     }
 
-    // Track form submissions
-    const forms = document.querySelectorAll("form");
+    // Track form submissions in rendered content
+    const forms = container.querySelectorAll("form");
     const submitHandlers = [];
 
     try {
@@ -52,7 +87,7 @@ export default function LinkConverter({ content }) {
         form.removeEventListener("submit", handler);
       });
     };
-  }, [router]);
+  }, [router, content]);
 
-  return <div dangerouslySetInnerHTML={{ __html: content }} />;
+  return <div ref={containerRef} dangerouslySetInnerHTML={{ __html: content }} />;
 }
