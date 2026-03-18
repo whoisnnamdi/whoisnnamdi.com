@@ -4,9 +4,9 @@ import Image from "next/image";
 export default function HeroSection({ latestPost }) {
   return (
     <section className="border border-neutral-900 bg-white">
-      <div className="grid grid-cols-1 lg:grid-cols-2">
+      <div className="grid grid-cols-1 md:grid-cols-2">
         {/* Text content */}
-        <div className="px-8 py-10 lg:px-12 lg:py-14">
+        <div className="px-8 py-10 md:px-12 md:py-14">
           <div className="flex items-center gap-3 text-[11px] font-mono uppercase tracking-[0.2em] text-blue-600">
             <span className="w-2 h-2 bg-blue-600" />
             Venture Investor & Writer
@@ -39,12 +39,12 @@ export default function HeroSection({ latestPost }) {
         </div>
 
         {/* Portrait */}
-        <div className="relative min-h-[320px] lg:min-h-[520px] border-t lg:border-t-0 lg:border-l border-neutral-900 bg-neutral-100 overflow-hidden">
+        <div className="relative min-h-[320px] md:min-h-[520px] border-t md:border-t-0 md:border-l border-neutral-900 bg-neutral-100 overflow-hidden">
           <Image
             src="/images/portrait2.png"
             alt="Nnamdi Iregbulem portrait"
             fill
-            className="object-cover grayscale"
+            className="object-cover object-[center_25%] md:object-center grayscale"
             priority
           />
           <svg
